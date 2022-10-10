@@ -6,111 +6,338 @@
 //
 
 import UIKit
-import QuartzCore
 import SceneKit
+import RealityKit
+import ARKit
 
-class GameViewController: UIViewController {
-
+class GameViewController: UIViewController, ARSCNViewDelegate {
+    
+    @IBOutlet var arSCN: ARSCNView!
+    
+    var blueCheckPointNode : SCNNode? = nil
+    
+    var redCheckPointNode : SCNNode? = nil
+    
+    var yellowCheckPointNode : SCNNode? = nil
+    
+    var greenCheckPointNode : SCNNode? = nil
+//
+//    var seraungNode: SCNNode? = nil
+//
+//    var tarumpahNode: SCNNode? = nil
+//
+//    var tinimiNode: SCNNode? = nil
+//
+//    var lontongNode: SCNNode? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
         
-        // create and add a camera to the scene
-        let cameraNode = SCNNode()
-        cameraNode.camera = SCNCamera()
-        scene.rootNode.addChildNode(cameraNode)
+        // Set the view's delegate
+        arSCN.delegate = self
         
-        // place the camera
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 15)
+        // Show statistics such as fps and timing information
+        arSCN.showsStatistics = true
         
-        // create and add a light to the scene
-        let lightNode = SCNNode()
-        lightNode.light = SCNLight()
-        lightNode.light!.type = .omni
-        lightNode.position = SCNVector3(x: 0, y: 10, z: 10)
-        scene.rootNode.addChildNode(lightNode)
+        arSCN.autoenablesDefaultLighting = true
         
-        // create and add an ambient light to the scene
-        let ambientLightNode = SCNNode()
-        ambientLightNode.light = SCNLight()
-        ambientLightNode.light!.type = .ambient
-        ambientLightNode.light!.color = UIColor.darkGray
-        scene.rootNode.addChildNode(ambientLightNode)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        // retrieve the ship node
-        let ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
+        let configuration = ARImageTrackingConfiguration()
         
-        // animate the 3d object
-        ship.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
+        if let imageToTrack = ARReferenceImage.referenceImages(inGroupNamed: "Guideline Cards", bundle: Bundle.main)
+            
+        {
+            configuration.trackingImages = imageToTrack
+            configuration.maximumNumberOfTrackedImages = 2
+            
+            print("Image Succesfully Added")
+        }
         
-        // retrieve the SCNView
-        let scnView = self.view as! SCNView
-        
-        // set the scene to the view
-        scnView.scene = scene
-        
-        // allows the user to manipulate the camera
-        scnView.allowsCameraControl = true
-        
-        // show statistics such as fps and timing information
-        scnView.showsStatistics = true
-        
-        // configure the view
-        scnView.backgroundColor = UIColor.black
-        
-        // add a tap gesture recognizer
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        scnView.addGestureRecognizer(tapGesture)
+        arSCN.session.run(configuration)
+        print("configuration ran")
     }
     
-    @objc
-    func handleTap(_ gestureRecognize: UIGestureRecognizer) {
-        // retrieve the SCNView
-        let scnView = self.view as! SCNView
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         
-        // check what nodes are tapped
-        let p = gestureRecognize.location(in: scnView)
-        let hitResults = scnView.hitTest(p, options: [:])
-        // check that we clicked on at least one object
-        if hitResults.count > 0 {
-            // retrieved the first clicked object
-            let result = hitResults[0]
-            
-            // get its material
-            let material = result.node.geometry!.firstMaterial!
-            
-            // highlight it
-            SCNTransaction.begin()
-            SCNTransaction.animationDuration = 0.5
-            
-            // on completion - unhighlight
-            SCNTransaction.completionBlock = {
-                SCNTransaction.begin()
-                SCNTransaction.animationDuration = 0.5
+        arSCN.session.pause()
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+        let node = SCNNode()
+        
+        DispatchQueue.main.async
+        {
+            if let imageAnchor = anchor as? ARImageAnchor
+            {
                 
-                material.emission.contents = UIColor.black
                 
-                SCNTransaction.commit()
+                if imageAnchor.referenceImage.name == "blue-card" {
+                    
+                    print("detect blue card")
+                    
+                    let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
+                    
+                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
+
+                    let planeNode = SCNNode(geometry: plane)
+                    
+                    planeNode.eulerAngles.x = -.pi / 2
+                    
+                    
+                    self.blueCheckPointNode = planeNode
+                    
+                    node.addChildNode(planeNode)
+                    
+                    if let checkPointScene = SCNScene(named: "Models.scnassets/Checkpoint_blue.scn") {
+
+                        if let checkPoint = checkPointScene.rootNode.childNodes.first {
+
+//                            checkPoint.eulerAngles.x = .pi / 2
+                            
+                            checkPoint.scale = SCNVector3(x: 2, y: 2, z: 2)
+
+                            planeNode.addChildNode(checkPoint)
+                        }
+                    }
+                }
+
+                if imageAnchor.referenceImage.name == "green-card" {
+                    
+                    print("detect green card")
+                    
+                    let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
+                    
+                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
+
+                    let planeNode = SCNNode(geometry: plane)
+                    
+                    planeNode.eulerAngles.x = -.pi / 2
+                    
+                    
+                    self.greenCheckPointNode = planeNode
+                    
+                    node.addChildNode(planeNode)
+                    
+                    if let checkPointScene = SCNScene(named: "Models.scnassets/Checkpoint_green.scn") {
+
+                        if let checkPoint = checkPointScene.rootNode.childNodes.first {
+
+//                            checkPoint.eulerAngles.x = .pi / 2
+
+                            planeNode.addChildNode(checkPoint)
+                        }
+                    }
+                }
+                
+                if imageAnchor.referenceImage.name == "red-card" {
+                    
+                    print("detect red card")
+                    
+                    let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
+                    
+                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
+
+                    let planeNode = SCNNode(geometry: plane)
+                    
+                    planeNode.eulerAngles.x = -.pi / 2
+                    
+                    
+                    self.redCheckPointNode = planeNode
+                    
+                    node.addChildNode(planeNode)
+                    
+                    if let checkPointScene = SCNScene(named: "Models.scnassets/Checkpoint_red.scn") {
+
+                        if let checkPoint = checkPointScene.rootNode.childNodes.first {
+
+//                            checkPoint.eulerAngles.x = .pi / 2
+
+                            planeNode.addChildNode(checkPoint)
+                        }
+                    }
+                }
+                
+                
+    //
+    //            if imageAnchor.referenceImage.name == "seraung-card" {
+    //
+    //                let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
+    //
+    //                plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
+    //
+    //                let planeNode = SCNNode(geometry: plane)
+    //
+    //                planeNode.eulerAngles.x = -.pi / 2
+    //
+    //
+    //                self.seraungNode = planeNode
+    //
+    //                node.addChildNode(planeNode)
+    //
+    //                if let checkPointScene = SCNScene(named: "Models.scnassets/Seraung.scn") {
+    //
+    //                    if let checkPoint = checkPointScene.rootNode.childNodes.first {
+    //
+    //                        checkPoint.eulerAngles.x = .pi / 2
+    //
+    //                        planeNode.addChildNode(checkPoint)
+    //                    }
+    //                }
+    //            }
+    //
+    //
+    //            if imageAnchor.referenceImage.name == "tarumpah-card" {
+    //
+    //                let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
+    //
+    //                plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
+    //
+    //                let planeNode = SCNNode(geometry: plane)
+    //
+    //                planeNode.eulerAngles.x = -.pi / 2
+    //
+    //
+    //                self.tarumpahNode = planeNode
+    //
+    //                node.addChildNode(planeNode)
+    //
+    //                if let checkPointScene = SCNScene(named: "Models.scnassets/Tarumpah.scn") {
+    //
+    //                    if let checkPoint = checkPointScene.rootNode.childNodes.first {
+    //
+    //                        checkPoint.eulerAngles.x = .pi / 2
+    //
+    //                        planeNode.addChildNode(checkPoint)
+    //                    }
+    //                }
+    //            }
+    //
+    //
+    //            if imageAnchor.referenceImage.name == "tinim-card" {
+    //
+    //                let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
+    //
+    //                plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
+    //
+    //                let planeNode = SCNNode(geometry: plane)
+    //
+    //                planeNode.eulerAngles.x = -.pi / 2
+    //
+    //
+    //                self.tinimiNode = planeNode
+    //
+    //                node.addChildNode(planeNode)
+    //
+    //                if let checkPointScene = SCNScene(named: "Models.scnassets/Tinim.scn") {
+    //
+    //                    if let checkPoint = checkPointScene.rootNode.childNodes.first {
+    //
+    //                        checkPoint.eulerAngles.x = .pi / 2
+    //
+    //                        planeNode.addChildNode(checkPoint)
+    //                    }
+    //                }
+    //            }
+    //
+    //            if imageAnchor.referenceImage.name == "lontong-card" {
+    //
+    //                let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
+    //
+    //                plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
+    //
+    //                let planeNode = SCNNode(geometry: plane)
+    //
+    //                planeNode.eulerAngles.x = -.pi / 2
+    //
+    //
+    //                self.lontongNode = planeNode
+    //
+    //                node.addChildNode(planeNode)
+    //
+    //                if let checkPointScene = SCNScene(named: "Models.scnassets/Lontong.scn") {
+    //
+    //                    if let checkPoint = checkPointScene.rootNode.childNodes.first {
+    //
+    //                        checkPoint.eulerAngles.x = .pi / 2
+    //
+    //                        planeNode.addChildNode(checkPoint)
+    //                    }
+    //                }
+    //            }
+    //
+                
+                
+                
+                
+            }
+        }
+        
+        return node
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first as! UITouch
+        
+        if (touch.view == self.arSCN)
+        {
+            print("Is Touching")
+            let viewTouchLocation:CGPoint = touch.location(in: arSCN)
+            guard let result = arSCN.hitTest(viewTouchLocation, options: nil).first else {
+                return
+            }
+            if let planeNode = blueCheckPointNode, planeNode == result.node {
+                print("Blue")
+                
+                //MARK: bring to respective story view
             }
             
-            material.emission.contents = UIColor.red
+            if let planeNode = greenCheckPointNode, planeNode == result.node {
+                print("Green")
+                
+                //MARK: bring to respective story view
+            }
             
-            SCNTransaction.commit()
-        }
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
-    }
+            if let planeNode = yellowCheckPointNode, planeNode == result.node {
+                print("Yellow")
+                
+                //MARK: bring to respective story view
+            }
+            
+            if let planeNode = redCheckPointNode, planeNode == result.node {
+                print("Red")
+                
+                //MARK: bring to respective story view
+            }
+            
+//            if let planeNode = seraungNode, planeNode == result.node {
+//                print("Seraung")
+//
+//                //MARK: Save Collection, open pop up
+//            }
+//
+//            if let planeNode = tarumpahNode, planeNode == result.node {
+//                print("Tarumpah")
+//
+//                //MARK: Save Collection, open pop up
+//            }
+//
+//            if let planeNode = tinimiNode, planeNode == result.node {
+//                print("Tinim")
+//
+//                //MARK: Save Collection, open pop up
+//            }
+//
+//            if let planeNode = lontongNode, planeNode == result.node {
+//                print("Lontong")
+//
+//               //MARK: Save Collection, open pop up
+//            }
 
+        }
+    }
 }

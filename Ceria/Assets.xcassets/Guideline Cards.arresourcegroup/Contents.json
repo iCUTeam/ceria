@@ -1,0 +1,20 @@
+{
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "resources" : [
+    {
+      "filename" : "blue-card.arreferenceimage"
+    },
+    {
+      "filename" : "green-card.arreferenceimage"
+    },
+    {
+      "filename" : "red-card.arreferenceimage"
+    },
+    {
+      "filename" : "yellow-card.arreferenceimage"
+    }
+  ]
+}
