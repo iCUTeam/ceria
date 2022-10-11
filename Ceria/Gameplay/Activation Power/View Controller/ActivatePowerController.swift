@@ -76,6 +76,9 @@ class ActivatePowerController: UIViewController {
     @objc func traceDots(recognizer: UIPanGestureRecognizer)
     {
         let location = recognizer.location(in: puzzleView)
+        
+        //MARK: Logic
+        //cek translation di view terus buat garis dari titik pertama start touch smpe ke translation
     }
     
 
