@@ -109,6 +109,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         
         var count = 0
 
+        gameStarted.toggle()
         
         //cek klo game start dia mulai jalanin objectnya sesuai accelerationdata yang diatas per sumbu x dan z nya ngikut dari pergerakan accelerometer
         
