@@ -18,8 +18,6 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
     
     var redCheckPointNode : SCNNode? = nil
     
-    var yellowCheckPointNode : SCNNode? = nil
-    
     var greenCheckPointNode : SCNNode? = nil
 //
 //    var seraungNode: SCNNode? = nil
@@ -75,14 +73,11 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
             if let imageAnchor = anchor as? ARImageAnchor
             {
                 
-                
                 if imageAnchor.referenceImage.name == "blue-card" {
-                    
-                    print("detect blue card")
                     
                     let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
                     
-                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
+                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0)
 
                     let planeNode = SCNNode(geometry: plane)
                     
@@ -97,9 +92,11 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
 
                         if let checkPoint = checkPointScene.rootNode.childNodes.first {
 
-//                            checkPoint.eulerAngles.x = .pi / 2
+                            checkPoint.eulerAngles.x = .pi / 2
                             
-                            checkPoint.scale = SCNVector3(x: 2, y: 2, z: 2)
+                            checkPoint.eulerAngles.z = .pi / 2
+                            
+                            checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
 
                             planeNode.addChildNode(checkPoint)
                         }
@@ -108,11 +105,10 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
 
                 if imageAnchor.referenceImage.name == "green-card" {
                     
-                    print("detect green card")
                     
                     let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
                     
-                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
+                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0)
 
                     let planeNode = SCNNode(geometry: plane)
                     
@@ -127,7 +123,9 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
 
                         if let checkPoint = checkPointScene.rootNode.childNodes.first {
 
-//                            checkPoint.eulerAngles.x = .pi / 2
+                            checkPoint.eulerAngles.x = .pi / 2
+                            
+                            checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
 
                             planeNode.addChildNode(checkPoint)
                         }
@@ -136,11 +134,10 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
                 
                 if imageAnchor.referenceImage.name == "red-card" {
                     
-                    print("detect red card")
                     
                     let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
                     
-                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
+                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0)
 
                     let planeNode = SCNNode(geometry: plane)
                     
@@ -155,7 +152,9 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
 
                         if let checkPoint = checkPointScene.rootNode.childNodes.first {
 
-//                            checkPoint.eulerAngles.x = .pi / 2
+                            checkPoint.eulerAngles.x = .pi / 2
+                            
+                            checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
 
                             planeNode.addChildNode(checkPoint)
                         }
@@ -302,11 +301,6 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
                 //MARK: bring to respective story view
             }
             
-            if let planeNode = yellowCheckPointNode, planeNode == result.node {
-                print("Yellow")
-                
-                //MARK: bring to respective story view
-            }
             
             if let planeNode = redCheckPointNode, planeNode == result.node {
                 print("Red")
