@@ -177,11 +177,18 @@
 		14E0F78728F6C639003D11AF /* PencilKit */ = {
 			isa = PBXGroup;
 			children = (
-				14E0F78328F6C622003D11AF /* PKStrokeMatching.swift */,
-				14E0F78528F6C635003D11AF /* PKStrokePathAdditions.swift */,
 				14E0F78828F6C911003D11AF /* PatternGenerator.swift */,
 			);
 			path = PencilKit;
+			sourceTree = "<group>";
+		};
+		14E0F78A28F6F21B003D11AF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				14E0F78328F6C622003D11AF /* PKStrokeMatching.swift */,
+				14E0F78528F6C635003D11AF /* PKStrokePathAdditions.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		95AB322A28F3C59C0003DCB0 = {
@@ -209,6 +216,7 @@
 			children = (
 				1496FD9928F51E61004F6133 /* Info.plist */,
 				1413AFF128F448D000FB552A /* Gameplay */,
+				14E0F78A28F6F21B003D11AF /* Extension */,
 				142AFC5228F42F170069046C /* Helper */,
 				142AFC5328F42F220069046C /* UI */,
 				95AB323628F3C59C0003DCB0 /* AppDelegate.swift */,

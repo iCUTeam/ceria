@@ -47,7 +47,7 @@ struct PatternGenerator
             return [CGPoint(x: 0, y: 0)]
             
             case .flash:
-            return [CGPoint(x: frame.width * 0.7, y: frame.height * 0.2), CGPoint(x: 0, y: frame.height * 0.3), CGPoint(x: frame.width * 0.8, y: frame.height * 0.4), CGPoint(x: frame.width * 0.5, y: frame.height * 0.5)]
+            return [CGPoint(x: frame.width * 0.7, y: frame.height * 0.2), CGPoint(x: frame.width * 0.1, y: frame.height * 0.5), CGPoint(x: frame.width * 0.8, y: frame.height * 0.55), CGPoint(x: frame.width * 0.3, y: frame.height * 0.85)]
             
             case .arrow:
             //MARK: Add the shape later
