@@ -16,10 +16,11 @@
 		142AFC4E28F42EFB0069046C /* MotionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AFC4C28F42EFB0069046C /* MotionHelper.swift */; };
 		142AFC4F28F42EFB0069046C /* VectorOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AFC4D28F42EFB0069046C /* VectorOperation.swift */; };
 		142AFC5128F42F030069046C /* HorizontalProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AFC5028F42F030069046C /* HorizontalProgressBar.swift */; };
-		1496FDA628F55F85004F6133 /* ActivatePowerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1496FDA528F55F85004F6133 /* ActivatePowerController.swift */; };
-		1496FDA828F55F98004F6133 /* PatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1496FDA728F55F98004F6133 /* PatternView.swift */; };
-		1496FDAA28F55FAE004F6133 /* DotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1496FDA928F55FAE004F6133 /* DotModel.swift */; };
-		1496FDAC28F56E49004F6133 /* ActivatePowerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1496FDAB28F56E49004F6133 /* ActivatePowerStoryboard.storyboard */; };
+		14E0F78028F6BA19003D11AF /* ActivatePower.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14E0F77F28F6BA19003D11AF /* ActivatePower.storyboard */; };
+		14E0F78228F6BA2E003D11AF /* ActivateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E0F78128F6BA2E003D11AF /* ActivateViewController.swift */; };
+		14E0F78428F6C622003D11AF /* PKStrokeMatching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E0F78328F6C622003D11AF /* PKStrokeMatching.swift */; };
+		14E0F78628F6C635003D11AF /* PKStrokePathAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E0F78528F6C635003D11AF /* PKStrokePathAdditions.swift */; };
+		14E0F78928F6C911003D11AF /* PatternGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E0F78828F6C911003D11AF /* PatternGenerator.swift */; };
 		95AB323728F3C59C0003DCB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AB323628F3C59C0003DCB0 /* AppDelegate.swift */; };
 		95AB323B28F3C59C0003DCB0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AB323A28F3C59C0003DCB0 /* GameViewController.swift */; };
 		95AB323E28F3C59C0003DCB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95AB323C28F3C59C0003DCB0 /* Main.storyboard */; };
@@ -58,11 +59,11 @@
 		142AFC4D28F42EFB0069046C /* VectorOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorOperation.swift; sourceTree = "<group>"; };
 		142AFC5028F42F030069046C /* HorizontalProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalProgressBar.swift; sourceTree = "<group>"; };
 		1496FD9928F51E61004F6133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		1496FDA528F55F85004F6133 /* ActivatePowerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivatePowerController.swift; sourceTree = "<group>"; };
-		1496FDA728F55F98004F6133 /* PatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternView.swift; sourceTree = "<group>"; };
-		1496FDA928F55FAE004F6133 /* DotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotModel.swift; sourceTree = "<group>"; };
-		1496FDAB28F56E49004F6133 /* ActivatePowerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivatePowerStoryboard.storyboard; sourceTree = "<group>"; };
-		1496FDB028F597C8004F6133 /* star.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = star.json; sourceTree = "<group>"; };
+		14E0F77F28F6BA19003D11AF /* ActivatePower.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivatePower.storyboard; sourceTree = "<group>"; };
+		14E0F78128F6BA2E003D11AF /* ActivateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateViewController.swift; sourceTree = "<group>"; };
+		14E0F78328F6C622003D11AF /* PKStrokeMatching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKStrokeMatching.swift; sourceTree = "<group>"; };
+		14E0F78528F6C635003D11AF /* PKStrokePathAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKStrokePathAdditions.swift; sourceTree = "<group>"; };
+		14E0F78828F6C911003D11AF /* PatternGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternGenerator.swift; sourceTree = "<group>"; };
 		95AB323328F3C59C0003DCB0 /* Ceria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ceria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AB323628F3C59C0003DCB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95AB323A28F3C59C0003DCB0 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +150,7 @@
 		142AFC5228F42F170069046C /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				14E0F78728F6C639003D11AF /* PencilKit */,
 				142AFC4C28F42EFB0069046C /* MotionHelper.swift */,
 				142AFC4D28F42EFB0069046C /* VectorOperation.swift */,
 			);
@@ -166,45 +168,20 @@
 		1496FD9F28F55DAE004F6133 /* Activation Power */ = {
 			isa = PBXGroup;
 			children = (
-				1496FDA428F55F72004F6133 /* View Controller */,
-				1496FDA328F55F6D004F6133 /* View */,
-				1496FDA228F55F5E004F6133 /* Model */,
+				14E0F77F28F6BA19003D11AF /* ActivatePower.storyboard */,
+				14E0F78128F6BA2E003D11AF /* ActivateViewController.swift */,
 			);
 			path = "Activation Power";
 			sourceTree = "<group>";
 		};
-		1496FDA228F55F5E004F6133 /* Model */ = {
+		14E0F78728F6C639003D11AF /* PencilKit */ = {
 			isa = PBXGroup;
 			children = (
-				1496FDAF28F597C3004F6133 /* Pattern Model */,
-				1496FDA928F55FAE004F6133 /* DotModel.swift */,
+				14E0F78328F6C622003D11AF /* PKStrokeMatching.swift */,
+				14E0F78528F6C635003D11AF /* PKStrokePathAdditions.swift */,
+				14E0F78828F6C911003D11AF /* PatternGenerator.swift */,
 			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		1496FDA328F55F6D004F6133 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				1496FDA728F55F98004F6133 /* PatternView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		1496FDA428F55F72004F6133 /* View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				1496FDA528F55F85004F6133 /* ActivatePowerController.swift */,
-				1496FDAB28F56E49004F6133 /* ActivatePowerStoryboard.storyboard */,
-			);
-			path = "View Controller";
-			sourceTree = "<group>";
-		};
-		1496FDAF28F597C3004F6133 /* Pattern Model */ = {
-			isa = PBXGroup;
-			children = (
-				1496FDB028F597C8004F6133 /* star.json */,
-			);
-			path = "Pattern Model";
+			path = PencilKit;
 			sourceTree = "<group>";
 		};
 		95AB322A28F3C59C0003DCB0 = {
@@ -369,8 +346,8 @@
 				95AB324328F3C59D0003DCB0 /* LaunchScreen.storyboard in Resources */,
 				95AB324028F3C59D0003DCB0 /* Assets.xcassets in Resources */,
 				142AFC4328F42DA20069046C /* Models.scnassets in Resources */,
-				1496FDAC28F56E49004F6133 /* ActivatePowerStoryboard.storyboard in Resources */,
 				95AB323E28F3C59C0003DCB0 /* Main.storyboard in Resources */,
+				14E0F78028F6BA19003D11AF /* ActivatePower.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,18 +372,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1496FDA828F55F98004F6133 /* PatternView.swift in Sources */,
-				1496FDA628F55F85004F6133 /* ActivatePowerController.swift in Sources */,
 				142AFC5128F42F030069046C /* HorizontalProgressBar.swift in Sources */,
 				95AB323B28F3C59C0003DCB0 /* GameViewController.swift in Sources */,
+				14E0F78928F6C911003D11AF /* PatternGenerator.swift in Sources */,
 				95AB323728F3C59C0003DCB0 /* AppDelegate.swift in Sources */,
-				1496FDAA28F55FAE004F6133 /* DotModel.swift in Sources */,
 				1413AFFD28F4499300FB552A /* Game4ViewController.swift in Sources */,
 				142AFC4A28F42E470069046C /* Game2ViewController.swift in Sources */,
 				142AFC4F28F42EFB0069046C /* VectorOperation.swift in Sources */,
 				142AFC4E28F42EFB0069046C /* MotionHelper.swift in Sources */,
 				1413AFFB28F4498800FB552A /* Game1ViewController.swift in Sources */,
 				1413AFF928F4497B00FB552A /* Game3ViewController.swift in Sources */,
+				14E0F78628F6C635003D11AF /* PKStrokePathAdditions.swift in Sources */,
+				14E0F78428F6C622003D11AF /* PKStrokeMatching.swift in Sources */,
+				14E0F78228F6BA2E003D11AF /* ActivateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,7 +569,7 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "Kami butuh ijin penggunaan kamera untuk scan card based AR";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = ActivatePower;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -626,7 +604,7 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "Kami butuh ijin penggunaan kamera untuk scan card based AR";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = ActivatePower;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
