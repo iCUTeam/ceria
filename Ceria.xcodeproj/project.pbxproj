@@ -17,13 +17,13 @@
 		142AFC4F28F42EFB0069046C /* VectorOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AFC4D28F42EFB0069046C /* VectorOperation.swift */; };
 		142AFC5128F42F030069046C /* HorizontalProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AFC5028F42F030069046C /* HorizontalProgressBar.swift */; };
 		95AB323728F3C59C0003DCB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AB323628F3C59C0003DCB0 /* AppDelegate.swift */; };
-		95AB323B28F3C59C0003DCB0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AB323A28F3C59C0003DCB0 /* GameViewController.swift */; };
+		95AB323B28F3C59C0003DCB0 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AB323A28F3C59C0003DCB0 /* ExploreViewController.swift */; };
 		95AB323E28F3C59C0003DCB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95AB323C28F3C59C0003DCB0 /* Main.storyboard */; };
-		95AB324028F3C59D0003DCB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95AB323F28F3C59D0003DCB0 /* Assets.xcassets */; };
 		95AB324328F3C59D0003DCB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95AB324128F3C59D0003DCB0 /* LaunchScreen.storyboard */; };
 		95AB324D28F3C59D0003DCB0 /* CeriaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AB324C28F3C59D0003DCB0 /* CeriaTests.swift */; };
 		95AB325728F3C59D0003DCB0 /* CeriaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AB325628F3C59D0003DCB0 /* CeriaUITests.swift */; };
 		95AB325928F3C59D0003DCB0 /* CeriaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AB325828F3C59D0003DCB0 /* CeriaUITestsLaunchTests.swift */; };
+		95E1732828F67158005252B0 /* Stanberry.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95E1732728F67158005252B0 /* Stanberry.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,15 +55,16 @@
 		142AFC5028F42F030069046C /* HorizontalProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalProgressBar.swift; sourceTree = "<group>"; };
 		95AB323328F3C59C0003DCB0 /* Ceria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ceria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AB323628F3C59C0003DCB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		95AB323A28F3C59C0003DCB0 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		95AB323A28F3C59C0003DCB0 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		95AB323D28F3C59C0003DCB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		95AB323F28F3C59D0003DCB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95AB324228F3C59D0003DCB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95AB324828F3C59D0003DCB0 /* CeriaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CeriaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AB324C28F3C59D0003DCB0 /* CeriaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeriaTests.swift; sourceTree = "<group>"; };
 		95AB325228F3C59D0003DCB0 /* CeriaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CeriaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AB325628F3C59D0003DCB0 /* CeriaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeriaUITests.swift; sourceTree = "<group>"; };
 		95AB325828F3C59D0003DCB0 /* CeriaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeriaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		95E1730E28F66156005252B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		95E1732728F67158005252B0 /* Stanberry.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Stanberry.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,21 +92,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1413AFF128F448D000FB552A /* Gameplay */ = {
-			isa = PBXGroup;
-			children = (
-				1413AFF428F4494200FB552A /* Game 1 */,
-				1413AFF528F4494700FB552A /* Game 2 */,
-				1413AFF628F4494D00FB552A /* Game 3 */,
-				1413AFF728F4495600FB552A /* Game 4 */,
-			);
-			path = Gameplay;
-			sourceTree = "<group>";
-		};
 		1413AFF428F4494200FB552A /* Game 1 */ = {
 			isa = PBXGroup;
 			children = (
-				1413AFFA28F4498800FB552A /* Game1ViewController.swift */,
 			);
 			path = "Game 1";
 			sourceTree = "<group>";
@@ -114,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				142AFC4928F42E470069046C /* Game2.storyboard */,
-				142AFC4828F42E470069046C /* Game2ViewController.swift */,
 			);
 			path = "Game 2";
 			sourceTree = "<group>";
@@ -122,7 +110,6 @@
 		1413AFF628F4494D00FB552A /* Game 3 */ = {
 			isa = PBXGroup;
 			children = (
-				1413AFF828F4497B00FB552A /* Game3ViewController.swift */,
 			);
 			path = "Game 3";
 			sourceTree = "<group>";
@@ -130,7 +117,6 @@
 		1413AFF728F4495600FB552A /* Game 4 */ = {
 			isa = PBXGroup;
 			children = (
-				1413AFFC28F4499300FB552A /* Game4ViewController.swift */,
 			);
 			path = "Game 4";
 			sourceTree = "<group>";
@@ -142,14 +128,6 @@
 				142AFC4D28F42EFB0069046C /* VectorOperation.swift */,
 			);
 			path = Helper;
-			sourceTree = "<group>";
-		};
-		142AFC5328F42F220069046C /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				142AFC5028F42F030069046C /* HorizontalProgressBar.swift */,
-			);
-			path = UI;
 			sourceTree = "<group>";
 		};
 		95AB322A28F3C59C0003DCB0 = {
@@ -175,15 +153,13 @@
 		95AB323528F3C59C0003DCB0 /* Ceria */ = {
 			isa = PBXGroup;
 			children = (
-				1413AFF128F448D000FB552A /* Gameplay */,
-				142AFC5228F42F170069046C /* Helper */,
-				142AFC5328F42F220069046C /* UI */,
-				95AB323628F3C59C0003DCB0 /* AppDelegate.swift */,
-				142AFC4228F42DA20069046C /* Models.scnassets */,
-				95AB323A28F3C59C0003DCB0 /* GameViewController.swift */,
-				95AB323C28F3C59C0003DCB0 /* Main.storyboard */,
-				95AB323F28F3C59D0003DCB0 /* Assets.xcassets */,
-				95AB324128F3C59D0003DCB0 /* LaunchScreen.storyboard */,
+				95E1730D28F6612C005252B0 /* Resources */,
+				95E1731328F664BC005252B0 /* Core */,
+				95E1731628F668D0005252B0 /* Utilities */,
+				95E1731728F66973005252B0 /* Services */,
+				95E1731128F66456005252B0 /* Models */,
+				95E1730F28F661C0005252B0 /* View */,
+				95E1731528F66893005252B0 /* ViewModels */,
 			);
 			path = Ceria;
 			sourceTree = "<group>";
@@ -203,6 +179,208 @@
 				95AB325828F3C59D0003DCB0 /* CeriaUITestsLaunchTests.swift */,
 			);
 			path = CeriaUITests;
+			sourceTree = "<group>";
+		};
+		95E1730D28F6612C005252B0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				95E1732528F66E22005252B0 /* Themes */,
+				95AB324128F3C59D0003DCB0 /* LaunchScreen.storyboard */,
+				95E1730E28F66156005252B0 /* Assets.xcassets */,
+				142AFC4228F42DA20069046C /* Models.scnassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		95E1730F28F661C0005252B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				95E1731228F66479005252B0 /* UI */,
+				95E1731028F661C9005252B0 /* Controllers */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		95E1731028F661C9005252B0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				95AB323A28F3C59C0003DCB0 /* ExploreViewController.swift */,
+				1413AFFA28F4498800FB552A /* Game1ViewController.swift */,
+				142AFC4828F42E470069046C /* Game2ViewController.swift */,
+				1413AFF828F4497B00FB552A /* Game3ViewController.swift */,
+				1413AFFC28F4499300FB552A /* Game4ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		95E1731128F66456005252B0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		95E1731228F66479005252B0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				95E1731928F66AD5005252B0 /* Components */,
+				95E1731828F66AC0005252B0 /* Pages */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		95E1731328F664BC005252B0 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				95AB323628F3C59C0003DCB0 /* AppDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		95E1731428F6680D005252B0 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		95E1731528F66893005252B0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		95E1731628F668D0005252B0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				142AFC5228F42F170069046C /* Helper */,
+				95E1731428F6680D005252B0 /* Coordinators */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		95E1731728F66973005252B0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		95E1731828F66AC0005252B0 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				95E1731B28F66BD0005252B0 /* Landing */,
+				95E1731C28F66C74005252B0 /* Instruction */,
+				95E1731E28F66C98005252B0 /* About */,
+				95E1731D28F66C8F005252B0 /* Collection */,
+				95E1731F28F66CB6005252B0 /* Story */,
+				95E1732228F66D18005252B0 /* Gameplay */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		95E1731928F66AD5005252B0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				95E1731A28F66B16005252B0 /* Custom */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		95E1731A28F66B16005252B0 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				142AFC5028F42F030069046C /* HorizontalProgressBar.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		95E1731B28F66BD0005252B0 /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Landing;
+			sourceTree = "<group>";
+		};
+		95E1731C28F66C74005252B0 /* Instruction */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Instruction;
+			sourceTree = "<group>";
+		};
+		95E1731D28F66C8F005252B0 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		95E1731E28F66C98005252B0 /* About */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		95E1731F28F66CB6005252B0 /* Story */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Story;
+			sourceTree = "<group>";
+		};
+		95E1732028F66CCA005252B0 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				95AB323C28F3C59C0003DCB0 /* Main.storyboard */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		95E1732128F66CEF005252B0 /* Power */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Power;
+			sourceTree = "<group>";
+		};
+		95E1732228F66D18005252B0 /* Gameplay */ = {
+			isa = PBXGroup;
+			children = (
+				95E1732028F66CCA005252B0 /* Explore */,
+				95E1732128F66CEF005252B0 /* Power */,
+				95E1732328F66D2D005252B0 /* Challenge */,
+			);
+			path = Gameplay;
+			sourceTree = "<group>";
+		};
+		95E1732328F66D2D005252B0 /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				1413AFF428F4494200FB552A /* Game 1 */,
+				1413AFF528F4494700FB552A /* Game 2 */,
+				1413AFF628F4494D00FB552A /* Game 3 */,
+				1413AFF728F4495600FB552A /* Game 4 */,
+			);
+			path = Challenge;
+			sourceTree = "<group>";
+		};
+		95E1732528F66E22005252B0 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				95E1732628F67115005252B0 /* Font */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		95E1732628F67115005252B0 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				95E1732728F67158005252B0 /* Stanberry.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,7 +489,7 @@
 			files = (
 				142AFC4B28F42E470069046C /* Game2.storyboard in Resources */,
 				95AB324328F3C59D0003DCB0 /* LaunchScreen.storyboard in Resources */,
-				95AB324028F3C59D0003DCB0 /* Assets.xcassets in Resources */,
+				95E1732828F67158005252B0 /* Stanberry.ttf in Resources */,
 				142AFC4328F42DA20069046C /* Models.scnassets in Resources */,
 				95AB323E28F3C59C0003DCB0 /* Main.storyboard in Resources */,
 			);
@@ -339,7 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				142AFC5128F42F030069046C /* HorizontalProgressBar.swift in Sources */,
-				95AB323B28F3C59C0003DCB0 /* GameViewController.swift in Sources */,
+				95AB323B28F3C59C0003DCB0 /* ExploreViewController.swift in Sources */,
 				95AB323728F3C59C0003DCB0 /* AppDelegate.swift in Sources */,
 				1413AFFD28F4499300FB552A /* Game4ViewController.swift in Sources */,
 				142AFC4A28F42E470069046C /* Game2ViewController.swift in Sources */,

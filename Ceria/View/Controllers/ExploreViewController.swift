@@ -10,7 +10,7 @@ import SceneKit
 import RealityKit
 import ARKit
 
-class GameViewController: UIViewController, ARSCNViewDelegate {
+class ExploreViewController: UIViewController, ARSCNViewDelegate {
     
     @IBOutlet var arSCN: ARSCNView!
     
