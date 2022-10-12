@@ -86,7 +86,15 @@ class ActivateViewController: UIViewController, PKCanvasViewDelegate, CALayerDel
     
     func animateNextStroke() {
         
-        let strokeToAnimate = backgroundCanvasView.drawing.strokes[0]
+        let nextStrokeIndex = canvasView.drawing.strokes.count
+        guard nextStrokeIndex < backgroundCanvasView.drawing.strokes.count else {
+            // Hide the animation markers.
+            animationMarkerLayer.opacity = 0.0
+            animationStartMarkerLayer.opacity = 0.0
+            return
+        }
+        
+        let strokeToAnimate = backgroundCanvasView.drawing.strokes[nextStrokeIndex]
         animatingStroke = strokeToAnimate
         animationParametricValue = 0
         animationLastFrameTime = Date()
@@ -156,9 +164,10 @@ class ActivateViewController: UIViewController, PKCanvasViewDelegate, CALayerDel
         let distance = lastStroke.discreteFrechetDistance(to: testDrawing.strokes[strokeIndex], maxThreshold: 10)
         
         print(distance)
-        if distance < 10 {
+        if distance < 50 {
             // Adjust the correct stroke to have a green ink.
             canvasView.drawing.strokes[strokeIndex].ink.color = .green
+            backgroundCanvasView.drawing.strokes[strokeIndex].ink.color = .clear
             
             //MARK: In 3 second, move to next page
         } else {
