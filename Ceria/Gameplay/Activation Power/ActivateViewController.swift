@@ -136,6 +136,8 @@ class ActivateViewController: UIViewController, PKCanvasViewDelegate, CALayerDel
             animationParametricValue,
             offsetBy: .time(delta * TimeInterval(animationSpeed)))
         animationMarkerLayer.position = CGPoint(x: backgroundCanvasView.frame.width * 0.7, y: backgroundCanvasView.frame.width * 0.2)
+        
+        print(animationMarkerLayer.position)
         animationMarkerLayer.opacity = 1
         animationLastFrameTime = currentTime
     }
@@ -161,7 +163,7 @@ class ActivateViewController: UIViewController, PKCanvasViewDelegate, CALayerDel
         
         isUpdatingDrawing = true
         
-        let distance = lastStroke.discreteFrechetDistance(to: testDrawing.strokes[strokeIndex], maxThreshold: 10)
+        let distance = lastStroke.discreteFrechetDistance(to: testDrawing.strokes[strokeIndex], maxThreshold: 5)
         
         print(distance)
         if distance < 50 {

@@ -30,7 +30,7 @@ struct PatternGenerator
         }
         
         let strokePath = PKStrokePath(controlPoints: strokePoints, creationDate: Date())
-        let stroke = PKStroke(ink: PKInk(.marker, color: .systemGray), path: strokePath)
+        let stroke = PKStroke(ink: PKInk(.marker, color: .systemGray4), path: strokePath)
         
         drawing.strokes = [stroke]
         
