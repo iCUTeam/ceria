@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -11,17 +13,85 @@
         <scene sceneID="tXr-a1-R10">
             <objects>
                 <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Ceria" customModuleProvider="target" sceneMemberID="viewController">
-                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="6aA-ap-egg">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                    <view key="view" contentMode="scaleToFill" id="eQr-lC-bTS">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </arscnView>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFl-g0-ixn">
+                                <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbN-CK-dhh">
+                                <rect key="frame" x="50" y="74" width="170" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="8sS-rN-lga"/>
+                                    <constraint firstAttribute="height" constant="50" id="biu-Uv-DoW"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Show Instruction"/>
+                                <connections>
+                                    <action selector="showedPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="YJ6-WP-Tqn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RuI-He-Rzv">
+                                <rect key="frame" x="614" y="74" width="170" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Joe-Ow-EMf"/>
+                                    <constraint firstAttribute="width" constant="170" id="pnt-vh-j6C"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Hide Instruction"/>
+                                <connections>
+                                    <action selector="hiddenPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="PVW-8X-Jqq"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x6b-3F-a28" userLabel="Instructions View Secondary" customClass="ClueExploration" customModule="Ceria" customModuleProvider="target">
+                                <rect key="frame" x="20" y="1399" width="794" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="ehb-QN-ewe"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JFY-YG-xfS" userLabel="Instructions View Primary" customClass="ClueExploration" customModule="Ceria" customModuleProvider="target">
+                                <rect key="frame" x="20" y="1549" width="794" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="IoF-mq-K8m"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3Wn-yo-BcZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YbN-CK-dhh" firstAttribute="top" secondItem="3Wn-yo-BcZ" secondAttribute="top" constant="50" id="ERT-Lg-Hda"/>
+                            <constraint firstItem="JFY-YG-xfS" firstAttribute="leading" secondItem="3Wn-yo-BcZ" secondAttribute="leading" constant="20" id="Gss-1m-WBk"/>
+                            <constraint firstItem="3Wn-yo-BcZ" firstAttribute="bottom" secondItem="x6b-3F-a28" secondAttribute="bottom" constant="-350" id="JO6-nx-445"/>
+                            <constraint firstItem="RuI-He-Rzv" firstAttribute="top" secondItem="3Wn-yo-BcZ" secondAttribute="top" constant="50" id="QUZ-Kc-JUE"/>
+                            <constraint firstItem="lFl-g0-ixn" firstAttribute="top" secondItem="eQr-lC-bTS" secondAttribute="top" id="STM-xH-j1L"/>
+                            <constraint firstItem="3Wn-yo-BcZ" firstAttribute="bottom" secondItem="JFY-YG-xfS" secondAttribute="bottom" constant="-500" id="d3A-XY-yRq"/>
+                            <constraint firstItem="x6b-3F-a28" firstAttribute="leading" secondItem="3Wn-yo-BcZ" secondAttribute="leading" constant="20" id="dfs-wU-8gn"/>
+                            <constraint firstItem="YbN-CK-dhh" firstAttribute="leading" secondItem="3Wn-yo-BcZ" secondAttribute="leading" constant="50" id="hho-L5-gbC"/>
+                            <constraint firstAttribute="bottom" secondItem="lFl-g0-ixn" secondAttribute="bottom" id="iXS-k3-Ezc"/>
+                            <constraint firstItem="3Wn-yo-BcZ" firstAttribute="trailing" secondItem="x6b-3F-a28" secondAttribute="trailing" constant="20" id="jXp-YI-d0R"/>
+                            <constraint firstItem="lFl-g0-ixn" firstAttribute="trailing" secondItem="eQr-lC-bTS" secondAttribute="trailing" id="nc7-xR-D5i"/>
+                            <constraint firstItem="3Wn-yo-BcZ" firstAttribute="trailing" secondItem="JFY-YG-xfS" secondAttribute="trailing" constant="20" id="pE2-ll-aiX"/>
+                            <constraint firstItem="lFl-g0-ixn" firstAttribute="leading" secondItem="eQr-lC-bTS" secondAttribute="leading" id="rRE-JK-AFu"/>
+                            <constraint firstItem="3Wn-yo-BcZ" firstAttribute="trailing" secondItem="RuI-He-Rzv" secondAttribute="trailing" constant="50" id="w7E-HM-L9l"/>
+                        </constraints>
+                    </view>
                     <connections>
-                        <outlet property="arSCN" destination="6aA-ap-egg" id="QVl-sE-eqI"/>
+                        <outlet property="arSCN" destination="lFl-g0-ixn" id="2gc-KQ-LI1"/>
+                        <outlet property="bottomPrimaryConstraint" destination="d3A-XY-yRq" id="OVy-fv-Bbv"/>
+                        <outlet property="bottomSecondaryConstraint" destination="JO6-nx-445" id="N0g-g2-6rZ"/>
+                        <outlet property="instructionViewPrimary" destination="JFY-YG-xfS" id="OPb-ND-wDL"/>
+                        <outlet property="instructionViewSecondary" destination="x6b-3F-a28" id="xBt-LK-i2Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="103" y="4"/>
+            <point key="canvasLocation" x="101.43884892086332" y="3.5175879396984926"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

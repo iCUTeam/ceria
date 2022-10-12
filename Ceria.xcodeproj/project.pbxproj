@@ -24,6 +24,9 @@
 		95AB324D28F3C59D0003DCB0 /* CeriaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AB324C28F3C59D0003DCB0 /* CeriaTests.swift */; };
 		95AB325728F3C59D0003DCB0 /* CeriaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AB325628F3C59D0003DCB0 /* CeriaUITests.swift */; };
 		95AB325928F3C59D0003DCB0 /* CeriaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AB325828F3C59D0003DCB0 /* CeriaUITestsLaunchTests.swift */; };
+		A950ECEB28F570F1009200E4 /* ClueExploration.xib in Resources */ = {isa = PBXBuildFile; fileRef = A950ECEA28F570F1009200E4 /* ClueExploration.xib */; };
+		A950ECED28F57435009200E4 /* ClueExploration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A950ECEC28F57435009200E4 /* ClueExploration.swift */; };
+		A950ECEF28F6771B009200E4 /* ClueMesseges.swift in Sources */ = {isa = PBXBuildFile; fileRef = A950ECEE28F6771B009200E4 /* ClueMesseges.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		95AB325228F3C59D0003DCB0 /* CeriaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CeriaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AB325628F3C59D0003DCB0 /* CeriaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeriaUITests.swift; sourceTree = "<group>"; };
 		95AB325828F3C59D0003DCB0 /* CeriaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeriaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A950ECEA28F570F1009200E4 /* ClueExploration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClueExploration.xib; sourceTree = "<group>"; };
+		A950ECEC28F57435009200E4 /* ClueExploration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueExploration.swift; sourceTree = "<group>"; };
+		A950ECEE28F6771B009200E4 /* ClueMesseges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueMesseges.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,7 @@
 			children = (
 				142AFC4C28F42EFB0069046C /* MotionHelper.swift */,
 				142AFC4D28F42EFB0069046C /* VectorOperation.swift */,
+				A950ECEE28F6771B009200E4 /* ClueMesseges.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -148,6 +155,7 @@
 		142AFC5328F42F220069046C /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A950ECE928F570CF009200E4 /* Clue Explorations */,
 				142AFC5028F42F030069046C /* HorizontalProgressBar.swift */,
 			);
 			path = UI;
@@ -205,6 +213,15 @@
 				95AB325828F3C59D0003DCB0 /* CeriaUITestsLaunchTests.swift */,
 			);
 			path = CeriaUITests;
+			sourceTree = "<group>";
+		};
+		A950ECE928F570CF009200E4 /* Clue Explorations */ = {
+			isa = PBXGroup;
+			children = (
+				A950ECEA28F570F1009200E4 /* ClueExploration.xib */,
+				A950ECEC28F57435009200E4 /* ClueExploration.swift */,
+			);
+			path = "Clue Explorations";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +332,7 @@
 				95AB324328F3C59D0003DCB0 /* LaunchScreen.storyboard in Resources */,
 				95AB324028F3C59D0003DCB0 /* Assets.xcassets in Resources */,
 				142AFC4328F42DA20069046C /* Models.scnassets in Resources */,
+				A950ECEB28F570F1009200E4 /* ClueExploration.xib in Resources */,
 				95AB323E28F3C59C0003DCB0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,11 +362,13 @@
 				95AB323B28F3C59C0003DCB0 /* GameViewController.swift in Sources */,
 				95AB323728F3C59C0003DCB0 /* AppDelegate.swift in Sources */,
 				1413AFFD28F4499300FB552A /* Game4ViewController.swift in Sources */,
+				A950ECEF28F6771B009200E4 /* ClueMesseges.swift in Sources */,
 				142AFC4A28F42E470069046C /* Game2ViewController.swift in Sources */,
 				142AFC4F28F42EFB0069046C /* VectorOperation.swift in Sources */,
 				142AFC4E28F42EFB0069046C /* MotionHelper.swift in Sources */,
 				1413AFFB28F4498800FB552A /* Game1ViewController.swift in Sources */,
 				1413AFF928F4497B00FB552A /* Game3ViewController.swift in Sources */,
+				A950ECED28F57435009200E4 /* ClueExploration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,7 +545,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4C96B7697Z;
+				DEVELOPMENT_TEAM = P7PL5J4AMN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Ceria/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Ceria;
@@ -560,7 +580,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4C96B7697Z;
+				DEVELOPMENT_TEAM = P7PL5J4AMN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Ceria/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Ceria;

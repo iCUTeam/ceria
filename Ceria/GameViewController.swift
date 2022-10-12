@@ -13,6 +13,10 @@ import ARKit
 class GameViewController: UIViewController, ARSCNViewDelegate {
     
     @IBOutlet var arSCN: ARSCNView!
+    @IBOutlet weak var bottomPrimaryConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomSecondaryConstraint: NSLayoutConstraint!
+    @IBOutlet weak var instructionViewPrimary: ClueExploration!
+    @IBOutlet weak var instructionViewSecondary: ClueExploration!
     
     var blueCheckPointNode : SCNNode? = nil
     
@@ -40,6 +44,36 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
         
         arSCN.autoenablesDefaultLighting = true
         
+        //set primary clue data
+        instructionViewPrimary.clueDescription.text = getDescClue(clueCode: 1)
+        instructionViewPrimary.clueGreyBackView.layer.cornerRadius = 20
+        instructionViewPrimary.clueImage.image = UIImage(named: "red-card")
+        
+        //set second clue data
+        instructionViewSecondary.clueDescription.text = getDescClue(clueCode: 2)
+        instructionViewSecondary.clueGreyBackView.layer.cornerRadius = 20
+        instructionViewSecondary.clueImage.image = UIImage(named: "blue-card")
+    }
+    
+    //MARK: TEMPORARY FOR CODE TESTING
+    @IBAction func showedPressed(_ sender: Any) {
+        UIView.animate(withDuration: 1) {
+            //constraint play
+            self.bottomPrimaryConstraint.constant = 10
+            self.bottomSecondaryConstraint.constant = 150
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    //MARK: TEMPORARY FOR CODE TESTING
+    @IBAction func hiddenPressed(_ sender: Any) {
+        UIView.animate(withDuration: 1) {
+            //constraint play
+            self.bottomPrimaryConstraint.constant = -500
+            self.bottomSecondaryConstraint.constant = -350
+            //self.instructionViewPrimary.clueDescription.text = "Done"
+            self.view.layoutIfNeeded()
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
