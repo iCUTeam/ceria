@@ -18,32 +18,32 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="751" height="189"/>
+            <rect key="frame" x="0.0" y="0.0" width="783" height="183"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="i2Z-uK-Rg1">
-                    <rect key="frame" x="10" y="10" width="751" height="169"/>
+                    <rect key="frame" x="10" y="10" width="763" height="163"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9yy-eA-8kQ">
-                            <rect key="frame" x="0.0" y="20.666666666666671" width="75" height="128"/>
+                            <rect key="frame" x="0.0" y="17.666666666666671" width="75" height="128"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="75" id="p0T-6G-G6l"/>
                             </constraints>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CLm-x2-1PZ">
-                            <rect key="frame" x="105" y="34.666666666666657" width="646" height="100"/>
+                            <rect key="frame" x="105" y="31.666666666666657" width="658" height="100"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="e1P-a3-Ptg">
-                                    <rect key="frame" x="45" y="10" width="556" height="80"/>
+                                    <rect key="frame" x="45" y="10" width="568" height="80"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Petunjuk:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQx-td-0h4" userLabel="Clue">
-                                            <rect key="frame" x="0.0" y="0.0" width="556" height="32"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="568" height="32"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jH-Pi-z7C" userLabel="Description">
-                                            <rect key="frame" x="0.0" y="42.000000000000007" width="556" height="37.999999999999993"/>
+                                            <rect key="frame" x="0.0" y="42.000000000000007" width="568" height="37.999999999999993"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -63,21 +63,17 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="CLm-x2-1PZ" secondAttribute="trailing" constant="20" id="Af5-kF-oIn"/>
-                        <constraint firstAttribute="trailing" secondItem="CLm-x2-1PZ" secondAttribute="trailing" constant="45" id="GcR-lQ-BuG"/>
-                    </constraints>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="i2Z-uK-Rg1" secondAttribute="bottom" constant="10" id="15V-9i-1Ui"/>
                 <constraint firstItem="i2Z-uK-Rg1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="BMT-MQ-x4n"/>
-                <constraint firstAttribute="trailing" secondItem="i2Z-uK-Rg1" secondAttribute="trailing" constant="-10" id="Wqb-gr-uhf"/>
+                <constraint firstAttribute="trailing" secondItem="i2Z-uK-Rg1" secondAttribute="trailing" constant="10" id="Wqb-gr-uhf"/>
                 <constraint firstItem="i2Z-uK-Rg1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="kyj-8X-imW"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-290" y="-260.54502369668245"/>
+            <point key="canvasLocation" x="-448.46153846153845" y="-273.34123222748815"/>
         </view>
     </objects>
     <resources>
