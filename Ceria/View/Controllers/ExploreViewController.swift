@@ -10,15 +10,19 @@ import SceneKit
 import RealityKit
 import ARKit
 
-class GameViewController: UIViewController, ARSCNViewDelegate {
+class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
+    
+    weak var coordinator: MainCoordinator?
     
     @IBOutlet var arSCN: ARSCNView!
+    @IBOutlet weak var bottomPrimaryConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomSecondaryConstraint: NSLayoutConstraint!
+    @IBOutlet weak var instructionViewPrimary: ClueExploration!
+    @IBOutlet weak var instructionViewSecondary: ClueExploration!
     
     var blueCheckPointNode : SCNNode? = nil
     
     var redCheckPointNode : SCNNode? = nil
-    
-    var yellowCheckPointNode : SCNNode? = nil
     
     var greenCheckPointNode : SCNNode? = nil
 //
@@ -42,9 +46,41 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
         
         arSCN.autoenablesDefaultLighting = true
         
+        //set primary clue data
+        instructionViewPrimary.clueDescription.text = getDescClue(clueCode: 1)
+        instructionViewPrimary.clueGreyBackView.layer.cornerRadius = 20
+        instructionViewPrimary.clueImage.image = UIImage(named: "red-card")
+        
+        //set second clue data
+        instructionViewSecondary.clueDescription.text = getDescClue(clueCode: 2)
+        instructionViewSecondary.clueGreyBackView.layer.cornerRadius = 20
+        instructionViewSecondary.clueImage.image = UIImage(named: "blue-card")
+    }
+    
+    //MARK: TEMPORARY FOR CODE TESTING
+    @IBAction func showedPressed(_ sender: Any) {
+        UIView.animate(withDuration: 1) {
+            //constraint play
+            self.bottomPrimaryConstraint.constant = 10
+            self.bottomSecondaryConstraint.constant = 150
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    //MARK: TEMPORARY FOR CODE TESTING
+    @IBAction func hiddenPressed(_ sender: Any) {
+        UIView.animate(withDuration: 1) {
+            //constraint play
+            self.bottomPrimaryConstraint.constant = -500
+            self.bottomSecondaryConstraint.constant = -350
+            //self.instructionViewPrimary.clueDescription.text = "Done"
+            self.view.layoutIfNeeded()
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         
         let configuration = ARImageTrackingConfiguration()
         
@@ -64,6 +100,8 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
         arSCN.session.pause()
     }
     
@@ -78,12 +116,10 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
                 
                 if imageAnchor.referenceImage.name == "blue-card" {
                     
-                    print("detect blue card")
-                    
                     let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
                     
-                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
-
+                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0)
+                    
                     let planeNode = SCNNode(geometry: plane)
                     
                     planeNode.eulerAngles.x = -.pi / 2
@@ -97,9 +133,11 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
 
                         if let checkPoint = checkPointScene.rootNode.childNodes.first {
 
-//                            checkPoint.eulerAngles.x = .pi / 2
+                            checkPoint.eulerAngles.x = .pi / 2
                             
-                            checkPoint.scale = SCNVector3(x: 2, y: 2, z: 2)
+                            checkPoint.eulerAngles.z = .pi / 2
+
+                            checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
 
                             planeNode.addChildNode(checkPoint)
                         }
@@ -108,12 +146,10 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
 
                 if imageAnchor.referenceImage.name == "green-card" {
                     
-                    print("detect green card")
-                    
                     let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
                     
-                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
-
+                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0)
+                    
                     let planeNode = SCNNode(geometry: plane)
                     
                     planeNode.eulerAngles.x = -.pi / 2
@@ -126,8 +162,10 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
                     if let checkPointScene = SCNScene(named: "Models.scnassets/Checkpoint_green.scn") {
 
                         if let checkPoint = checkPointScene.rootNode.childNodes.first {
+                            
+                            checkPoint.eulerAngles.x = .pi / 2
 
-//                            checkPoint.eulerAngles.x = .pi / 2
+                            checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
 
                             planeNode.addChildNode(checkPoint)
                         }
@@ -136,12 +174,10 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
                 
                 if imageAnchor.referenceImage.name == "red-card" {
                     
-                    print("detect red card")
-                    
                     let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
                     
-                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
-
+                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0)
+                    
                     let planeNode = SCNNode(geometry: plane)
                     
                     planeNode.eulerAngles.x = -.pi / 2
@@ -155,7 +191,9 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
 
                         if let checkPoint = checkPointScene.rootNode.childNodes.first {
 
-//                            checkPoint.eulerAngles.x = .pi / 2
+                            checkPoint.eulerAngles.x = .pi / 2
+
+                            checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
 
                             planeNode.addChildNode(checkPoint)
                         }
@@ -298,12 +336,6 @@ class GameViewController: UIViewController, ARSCNViewDelegate {
             
             if let planeNode = greenCheckPointNode, planeNode == result.node {
                 print("Green")
-                
-                //MARK: bring to respective story view
-            }
-            
-            if let planeNode = yellowCheckPointNode, planeNode == result.node {
-                print("Yellow")
                 
                 //MARK: bring to respective story view
             }

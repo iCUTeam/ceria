@@ -8,7 +8,9 @@
 import UIKit
 import SceneKit
 
-class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysicsContactDelegate{
+class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysicsContactDelegate, Storyboarded {
+    
+    weak var coordinator: MainCoordinator?
     
     @IBOutlet weak var powerProgressBar: HorizontalProgressBar!
     @IBOutlet weak var sceneView: SCNView!
@@ -43,6 +45,15 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         
         powerProgressBar.progress = 1
     
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     //manggil scene dan set delegate
@@ -108,7 +119,8 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
     {
         
         var count = 0
-
+        
+        gameStarted.toggle()
         
         //cek klo game start dia mulai jalanin objectnya sesuai accelerationdata yang diatas per sumbu x dan z nya ngikut dari pergerakan accelerometer
         
