@@ -29,7 +29,7 @@ class MainCoordinator: Coordinator {
     }
     
     func tapCollection() {
-        let vc = Game2ViewController.instantiate()
+        let vc = CollectionViewController.instantiate()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }

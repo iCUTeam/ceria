@@ -1,0 +1,256 @@
+[
+ {
+ "story_image" : "beta_1",
+ "story_dialogue" : "Pada suatu ketika, hiduplah seorang kaya dan keempat orang anaknya. Anak pertama bernama Lompo, anak kedua bernama Rua, anak ketiga bernama Tallu, dan anak keempat bernama Bungko. Keempat anak tersebut lalu ditugaskan oleh sang ayah untuk menimba ilmu seorang diri ke berbagai penjuru negeri dan segera setelah mendapatkan kemampuan masing-masing, keempat anak tersebut kembali lagi kepada sang ayah.",
+ "story_voice" : "narrator_1",
+ "story_music" : "4",
+ "back_button_visibility" : false,
+ "next_button_visibility" : true,
+ "action_button_visibility" : false,
+ "action_button_type": "",
+ "action_button_sfx": ""
+ },
+ {
+ "story_image" : "beta_2",
+ "story_dialogue" : "Lompo memiliki kemampuan melihat sesuatu yang tersembunyi, sementara Rua memiliki kemampuan untuk bisa bergerak dengan cepat tanpa menabrak penghalang di depannya. Tallu memiliki kemampuan dalam memanah dari jarak jauh, sementara Bungko memiliki kemampuan dalam menyatukan kembali sesuatu yang sudah pecah.",
+ "story_voice" : "narrator_2",
+ "story_music" : "4",
+ "back_button_visibility" : true,
+ "next_button_visibility" : true,
+ "action_button_visibility" : false,
+ "action_button_type": "",
+ "action_button_sfx": ""
+ },
+ {
+ "story_image" : "beta_3",
+ "story_dialogue" : "Sang Ayah pun memberikan pesan bahwa semua kemampuan mereka suatu saat akan menjadi sangat berguna jika mereka menggunakannya bersama untuk saling membantu. Tak lama setelah sang ayah mereka meninggal, terdengarlah sebuah kabar dari tuan Raja bahwa tuan puteri diculik dan barangsiapa yang berhasil membawa tuan puteri pulang kembali akan diberi hadiah yang berlimpah.",
+ "story_voice" : "narrator_3",
+ "story_music" : "4",
+ "back_button_visibility" : true,
+ "next_button_visibility" : true,
+ "action_button_visibility" : false,
+ "action_button_type": "",
+ "action_button_sfx": ""
+ },
+ {
+ "story_image" : "beta_4",
+ "story_dialogue" : "Lompo, Rua, Tallu dan Bungko pun bertemu raja dan berjanji akan membawa tuan puteri dengan selamat. Lompo menggunakan kemampunannya untuk melihat keberadaan tuan puteri, yang ternyata disembunyikan di sebuah pulau oleh burung garuda. Sebagai bentuk dukungan, raja pun menyediakan kapal besar beserta prajurit bantuan untuk membawa mereka ke sana.",
+ "story_voice" : "narrator_4",
+ "story_music" : "4",
+ "back_button_visibility" : true,
+ "next_button_visibility" : true,
+ "action_button_visibility" : false,
+ "action_button_type": "",
+ "action_button_sfx": ""
+ },
+ {
+ "story_image" : "scene_3-1",
+ "story_dialogue" : "Kapal kemudian berlayar mengarungi lautan dan pulau tempat tuan puteri berada pun mulai terlihat dari kejauhan.",
+ "story_voice" : "narrator_5",
+ "story_music" : "4",
+ "back_button_visibility" : true,
+ "next_button_visibility" : false,
+ "action_button_visibility" : true,
+ "action_button_type": "explore",
+ "action_button_sfx": "explore2"
+ },
+ {
+ "story_image" : "scene_3-2-1",
+ "story_dialogue" : "Lompo : Adikku Bungko, aku melihat burung garuda itu saat ini sedang tertidur lelap, mari kita merapat ke pulau itu sekarang.",
+ "story_voice" : "lompo_1",
+ "story_music" : "4",
+ "back_button_visibility" : false,
+ "next_button_visibility" : true,
+ "action_button_visibility" : false,
+ "action_button_type": "",
+ "action_button_sfx": ""
+ },
+ {
+ "story_image" : "scene_3-2-2",
+ "story_dialogue" : "Bungko: Baik kak! Tapi bagaimana kita menyelamatkan tuan puteri dari burung garuda itu?",
+ "story_voice" : "bungko_1",
+ "story_music" : "4",
+ "back_button_visibility" : true,
+ "next_button_visibility" : false,
+ "action_button_visibility" : true,
+ "action_button_type": "power",
+ "action_button_sfx": "power2"
+ },
+ {
+ "story_image" : "scene_3-3-1",
+ "story_dialogue" : "Tallu: Kakak Rua, kau memiliki kemampuan untuk bergerak dengan cepat, sekarang sebaiknya kita cepat menjemput tuan puteri yang berada di atas gunung sebelum garuda terbangun.",
+ "story_voice" : "narrator_6_tallu_1",
+ "story_music" : "4",
+ "back_button_visibility" : false,
+ "next_button_visibility" : true,
+ "action_button_visibility" : false,
+ "action_button_type": "",
+ "action_button_sfx": ""
+ },
+ {
+ "story_image" : "scene_3-3-2",
+ "story_dialogue" : "Lompo: Ini tempat puteri berada adikku Rua, ikuti saja arah pada peta ini.",
+ "story_voice" : "lompo_2",
+ "story_music" : "4",
+ "back_button_visibility" : true,
+ "next_button_visibility" : true,
+ "action_button_visibility" : false,
+ "action_button_type": "",
+ "action_button_sfx": ""
+ },
+ {
+ "story_image" : "scene_3-3-3",
+ "story_dialogue" : "Rua: Baik kak, serahkan kepadaku.",
+ "story_voice" : "rua_1",
+ "story_music" : "4",
+ "back_button_visibility" : true,
+ "next_button_visibility" : true,
+ "action_button_visibility" : false,
+ "action_button_type": "",
+ "action_button_sfx": ""
+ },
+ {
+ "story_image" : "scene_3-4",
+ "story_dialogue" : "Rua pun pergi menjemput tuan puteri yang berada di atas gunung, sementara Lompo, Tallu, Bungko, dan prajurit lainnya tetap tinggal di kapal untuk menunggu.",
+ "story_voice" : "narrator_7",
+ "story_music" : "4",
+ "back_button_visibility" : true,
+ "next_button_visibility" : false,
+ "action_button_visibility" : true,
+ "action_button_type": "game",
+ "action_button_sfx": "game2"
+ },
+ {
+ "story_image" : "scene_3-5-1",
+ "story_dialogue" : "Rua: Tuan puteri, aku datang untuk menyelamatkanmu.",
+ "story_voice" : "narrator_8_rua_2",
+ "story_music" : "4",
+ "back_button_visibility" : false,
+ "next_button_visibility" : true,
+ "action_button_visibility" : false,
+ "action_button_type": "",
+ "action_button_sfx": ""
+ },
+ {
+ "story_image" : "scene_3-5-2",
+ "story_dialogue" : "Puteri: Ahhh… Aku sangat senang akhirnya ada yang menjemputku.",
+ "story_voice" : "puteri_1",
+ "story_music" : "4",
+ "back_button_visibility" : true,
+ "next_button_visibility" : true,
+ "action_button_visibility" : false,
+ "action_button_type": "",
+ "action_button_sfx": ""
+ },
+ {
+ "story_image" : "scene_3-5-3",
+ "story_dialogue" : "Rua: Ayo kita pergi dari sini dengan perlahan selagi burung garuda masih tertidur, tuan puteri.",
+ "story_voice" : "rua_3",
+ "story_music" : "4",
+ "back_button_visibility" : true,
+ "next_button_visibility" : true,
+ "action_button_visibility" : false,
+ "action_button_type": "",
+ "action_button_sfx": ""
+ },
+ {
+ "story_image" : "scene_3-5-4",
+ "story_dialogue" : "Puteri: Baiklah.",
+ "story_voice" : "puteri_2",
+ "story_music" : "4",
+ "back_button_visibility" : true,
+ "next_button_visibility" : true,
+ "action_button_visibility" : false,
+ "action_button_type": "",
+ "action_button_sfx": ""
+ },
+ {
+ "story_image" : "scene_3-5-5",
+ "story_dialogue" : "Rua: Ikuti aku, tuan puteri.",
+ "story_voice" : "rua_4",
+ "story_music" : "4",
+ "back_button_visibility" : true,
+ "next_button_visibility" : true,
+ "action_button_visibility" : false,
+ "action_button_type": "",
+ "action_button_sfx": ""
+ },
+ {
+ "story_image" : "scene_3-6",
+ "story_dialogue" : "Rua dan tuan puteri kemudian perlahan turun kembali ke kapal sementara burung garuda masih tertidur lelap.",
+ "story_voice" : "narrator_9",
+ "story_music" : "4",
+ "back_button_visibility" : true,
+ "next_button_visibility" : false,
+ "action_button_visibility" : true,
+ "action_button_type": "explore",
+ "action_button_sfx": "explore3"
+ },
+ {
+ "story_image" : "scene_3-7-1",
+ "story_dialogue" : "Lompo: Selamat datang tuan puteri, kami siap membawa tuan puteri kembali kepada Paduka Raja.",
+ "story_voice" : "narrator_10_lompo_3",
+ "story_music" : "4",
+ "back_button_visibility" : false,
+ "next_button_visibility" : true,
+ "action_button_visibility" : false,
+ "action_button_type": "",
+ "action_button_sfx": ""
+ },
+ {
+ "story_image" : "scene_3-7-2",
+ "story_dialogue" : "Puteri: Terima kasih banyak sudah menjemputku, segeralah kita pergi dari sini sebelum burung garuda itu terbangun.",
+ "story_voice" : "puteri_3",
+ "story_music" : "4",
+ "back_button_visibility" : true,
+ "next_button_visibility" : true,
+ "action_button_visibility" : false,
+ "action_button_type": "",
+ "action_button_sfx": ""
+ },
+ {
+ "story_image" : "scene_3-7-3",
+ "story_dialogue" : "Bungko: Baiklah kalau begitu mari kita berangkat.",
+ "story_voice" : "bungko_2",
+ "story_music" : "4",
+ "back_button_visibility" : true,
+ "next_button_visibility" : true,
+ "action_button_visibility" : false,
+ "action_button_type": "",
+ "action_button_sfx": ""
+ },
+ {
+ "story_image" : "beta_5",
+ "story_dialogue" : "Saat kapal mulai berlayar menjauh, burung garuda tiba-tiba terbangun dan mengamuk karena menyadari tuan puteri sudah tidak ada. Burung garuda dalam amukan marahnya lalu mengejar kapal yang terlihat tak jauh dari pulau.",
+ "story_voice" : "narrator_11",
+ "story_music" : "4",
+ "back_button_visibility" : true,
+ "next_button_visibility" : true,
+ "action_button_visibility" : false,
+ "action_button_type": "",
+ "action_button_sfx": ""
+ },
+ {
+ "story_image" : "beta_6",
+ "story_dialogue" : "Saat itulah Tallu menggunakan keahlian memanahnya dan memanah burung garuda yang mendekati kapal. Burung garuda pun jatuh ke air dan sayapnya yang besar mengenai bagian depan kapal sehingga kapal terpecah menjadi beberapa bagian. Bungko dengan keahliannya dalam menyatukan pecahan lalu menyatukan bagian-bagian kapal yang terpecah menjadi utuh kembali sehingga mereka bisa berlayar kembali.",
+ "story_voice" : "narrator_12",
+ "story_music" : "4",
+ "back_button_visibility" : true,
+ "next_button_visibility" : true,
+ "action_button_visibility" : false,
+ "action_button_type": "",
+ "action_button_sfx": ""
+ },
+ {
+ "story_image" : "beta_7",
+ "story_dialogue" : "Kapal akhirnya pulang dengan selamat dan Raja membuktikan janjinya dan memilih Lompo, yang tertua, untuk menikahi tuan puteri sebagai hadiah. Hadiah lainnya adalah Rua, Tallu, dan Bungko kemudian diangkat menjadi pegawai di istana Raja. Mereka pun hidup bahagia dan makmur setelahnya.",
+ "story_voice" : "narrator_13",
+ "story_music" : "4",
+ "back_button_visibility" : true,
+ "next_button_visibility" : false,
+ "action_button_visibility" : true,
+ "action_button_type": "reflection",
+ "action_button_sfx": "reflection"
+ }
+]
+

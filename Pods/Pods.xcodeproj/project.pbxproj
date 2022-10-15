@@ -1,0 +1,968 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B9579CC651F5ECC0634860B67080B07 /* SwiftySound-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1707E5CFCD2BB1D66CCB49FD7F66C /* SwiftySound-dummy.m */; };
+		1342B1B855988BB30A92F8F1F896FB78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD9787FB7C94A0DC2A516C656509B78 /* Foundation.framework */; };
+		27B6622FF2D2C9E93C075D277DDDE794 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD9787FB7C94A0DC2A516C656509B78 /* Foundation.framework */; };
+		2DCC9EDD8E366C4269B7A7DAFB5DC078 /* Pods-CeriaTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 99C5E0E6FC60D6B1518D65933F296CC5 /* Pods-CeriaTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		519A619CF65D6A6947B49A7F0D0C7664 /* Pods-Ceria-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 18AB7F9BE655EB1447FE326E1E0D8942 /* Pods-Ceria-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5C17C5BB616B19B117268E9A67E6B23B /* Pods-Ceria-CeriaUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C0598C31EA83DE5FA795B1AF5C62182 /* Pods-Ceria-CeriaUITests-dummy.m */; };
+		988706CDCD09E753DF45C50AAF4938DC /* Pods-CeriaTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B614B592214BD9A3D4995F2597B070 /* Pods-CeriaTests-dummy.m */; };
+		ACAA5B9B4341425981D1CFEABAA4ED33 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A74A739E461BA006C5EBC77D25CAFBE /* Sound.swift */; };
+		C47C3F9667A73106761BB4EF41A0A5D9 /* Pods-Ceria-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA4AFF8839C70BEDFF75678B14F809B /* Pods-Ceria-dummy.m */; };
+		D6F519A0DDF8051607B63C6A777B29B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD9787FB7C94A0DC2A516C656509B78 /* Foundation.framework */; };
+		D878E8ED735390EB6D85CE6B484C1322 /* Pods-Ceria-CeriaUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 07F1041F386F60FCA0C042583AFDBC25 /* Pods-Ceria-CeriaUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F84771F061EDEC196B71AFDAFD300986 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD9787FB7C94A0DC2A516C656509B78 /* Foundation.framework */; };
+		F9F735423ABBDDB1679FFDACEB4B1BDE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2689EA712E5D78CDDF35E7B1BD8994B6 /* AVFoundation.framework */; };
+		FE8B9BD971E022ABE8E1CAF3CECAA0D8 /* SwiftySound-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 591DDA2EF37962ABC2D010316841A10D /* SwiftySound-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		312F35B0F9941A5A544C80EB661DB0B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF76419D4650F093FFACB1AD713C1EF1;
+			remoteInfo = SwiftySound;
+		};
+		93C7A290CD0BEC194B736300F2005249 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CAD0DF0B401A40AF8B687EDEB7D6491E;
+			remoteInfo = "Pods-Ceria";
+		};
+		C923612C07C51086507DFB6FCA9337CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF76419D4650F093FFACB1AD713C1EF1;
+			remoteInfo = SwiftySound;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07F1041F386F60FCA0C042583AFDBC25 /* Pods-Ceria-CeriaUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Ceria-CeriaUITests-umbrella.h"; sourceTree = "<group>"; };
+		18AB7F9BE655EB1447FE326E1E0D8942 /* Pods-Ceria-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Ceria-umbrella.h"; sourceTree = "<group>"; };
+		1F10C371D6735886EEEF2D7317585575 /* Pods-Ceria-CeriaUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Ceria-CeriaUITests-Info.plist"; sourceTree = "<group>"; };
+		2689EA712E5D78CDDF35E7B1BD8994B6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		2B0519442D9BB2F237573F42E8676B80 /* Pods-Ceria-CeriaUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Ceria-CeriaUITests-frameworks.sh"; sourceTree = "<group>"; };
+		2BD9787FB7C94A0DC2A516C656509B78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3BB1707E5CFCD2BB1D66CCB49FD7F66C /* SwiftySound-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftySound-dummy.m"; sourceTree = "<group>"; };
+		4560BA022427FA332863F7D7DC81ED56 /* Pods-Ceria-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Ceria-Info.plist"; sourceTree = "<group>"; };
+		4F835DC63DF0E70340CF19FDCF5F459F /* Pods-Ceria.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Ceria.modulemap"; sourceTree = "<group>"; };
+		500138D340A5B6C69E31873874800403 /* Pods-Ceria-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Ceria-acknowledgements.plist"; sourceTree = "<group>"; };
+		591DDA2EF37962ABC2D010316841A10D /* SwiftySound-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftySound-umbrella.h"; sourceTree = "<group>"; };
+		6C0598C31EA83DE5FA795B1AF5C62182 /* Pods-Ceria-CeriaUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Ceria-CeriaUITests-dummy.m"; sourceTree = "<group>"; };
+		72DFEBC4898D861736122CF9E97459F3 /* Pods-CeriaTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CeriaTests"; path = Pods_CeriaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A74A739E461BA006C5EBC77D25CAFBE /* Sound.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sound.swift; path = Sources/Sound.swift; sourceTree = "<group>"; };
+		8294E10AFE46B09CC9599919204FCE9F /* Pods-Ceria-CeriaUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Ceria-CeriaUITests"; path = Pods_Ceria_CeriaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		87D664B4DF1E88B2B8B8AD19AA0E3064 /* Pods-Ceria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ceria.debug.xcconfig"; sourceTree = "<group>"; };
+		88B614B592214BD9A3D4995F2597B070 /* Pods-CeriaTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CeriaTests-dummy.m"; sourceTree = "<group>"; };
+		8E34EEFF05210A0E3CB90F99002A692E /* SwiftySound.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftySound.modulemap; sourceTree = "<group>"; };
+		99158FD75C28427B6DDB5E8D18606E83 /* Pods-Ceria */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Ceria"; path = Pods_Ceria.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		996615DEDCD6C2933EC3F8504427765B /* SwiftySound */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftySound; path = SwiftySound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99C5E0E6FC60D6B1518D65933F296CC5 /* Pods-CeriaTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CeriaTests-umbrella.h"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DA4AFF8839C70BEDFF75678B14F809B /* Pods-Ceria-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Ceria-dummy.m"; sourceTree = "<group>"; };
+		9F4BF40DC6D0044972FEC1BF05A6174F /* Pods-Ceria-CeriaUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Ceria-CeriaUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A9B257FDC38A5B729D0E47E88791C8CB /* Pods-CeriaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CeriaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B6EDE42E261A12E6E2ABFD5E7C0015A6 /* Pods-CeriaTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CeriaTests-Info.plist"; sourceTree = "<group>"; };
+		BB74B1524F989BA27D2F860EBA090390 /* Pods-Ceria-CeriaUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Ceria-CeriaUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BF9A67F6F090D73DA9F2428AB88EB4AC /* Pods-Ceria-CeriaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ceria-CeriaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CC016A71D471AE522D4BD6A5B9805451 /* Pods-Ceria-CeriaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ceria-CeriaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CDEED940B21336AF526BD82B22D52B75 /* Pods-Ceria-CeriaUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Ceria-CeriaUITests.modulemap"; sourceTree = "<group>"; };
+		D01733B39CA44E66F26C3C822389C862 /* Pods-Ceria-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Ceria-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D08B73A259F0EF45E337D11D990F2E56 /* Pods-CeriaTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CeriaTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D46465C3F99099BB39C92F99E799044E /* Pods-CeriaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CeriaTests.release.xcconfig"; sourceTree = "<group>"; };
+		D5F90F2DFA24D3D8C6C4427819B6A154 /* SwiftySound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftySound.release.xcconfig; sourceTree = "<group>"; };
+		DAF5ADC0ABA931C1AF1CF19138F3F819 /* SwiftySound-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftySound-Info.plist"; sourceTree = "<group>"; };
+		DCFE3EC6C0BB963FB708E17C2B0139FD /* Pods-Ceria-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Ceria-frameworks.sh"; sourceTree = "<group>"; };
+		DFACE2C40FE32DA5863F4D426FCA6EB8 /* SwiftySound-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftySound-prefix.pch"; sourceTree = "<group>"; };
+		E9169E6943D9759AA1FD3211C44AC588 /* Pods-CeriaTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CeriaTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		ED45D323FBA5A24E97AF5FA5E115AFE9 /* Pods-CeriaTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CeriaTests.modulemap"; sourceTree = "<group>"; };
+		ED817135879F0023120693331E5B811C /* Pods-Ceria.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ceria.release.xcconfig"; sourceTree = "<group>"; };
+		F8A1E02019B3D26A15AB037DDA38AD9B /* SwiftySound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftySound.debug.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		331B018B2595780950ED9A0F0F7938D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27B6622FF2D2C9E93C075D277DDDE794 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BE29C388052B3B108EF9D4D3D772D90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9F735423ABBDDB1679FFDACEB4B1BDE /* AVFoundation.framework in Frameworks */,
+				D6F519A0DDF8051607B63C6A777B29B3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A241A0B1E860FA4796ACA0222BA98959 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F84771F061EDEC196B71AFDAFD300986 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F86E53B0B8FD5F9BF0D8EF2173BEF938 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1342B1B855988BB30A92F8F1F896FB78 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02BF7AE8DE4AA6432BE7FF1956EBBE00 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4870CEB943D661CBE56890CF84D93AD2 /* SwiftySound */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA13D49ADE69D79D70A8B79AAAC38DE9 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4870CEB943D661CBE56890CF84D93AD2 /* SwiftySound */ = {
+			isa = PBXGroup;
+			children = (
+				7A74A739E461BA006C5EBC77D25CAFBE /* Sound.swift */,
+				DFCD4114B4CC44842BB600223E7702B1 /* Support Files */,
+			);
+			name = SwiftySound;
+			path = SwiftySound;
+			sourceTree = "<group>";
+		};
+		93C73EB2B90BDC0C424EC93873E04E48 /* Pods-Ceria-CeriaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CDEED940B21336AF526BD82B22D52B75 /* Pods-Ceria-CeriaUITests.modulemap */,
+				BB74B1524F989BA27D2F860EBA090390 /* Pods-Ceria-CeriaUITests-acknowledgements.markdown */,
+				9F4BF40DC6D0044972FEC1BF05A6174F /* Pods-Ceria-CeriaUITests-acknowledgements.plist */,
+				6C0598C31EA83DE5FA795B1AF5C62182 /* Pods-Ceria-CeriaUITests-dummy.m */,
+				2B0519442D9BB2F237573F42E8676B80 /* Pods-Ceria-CeriaUITests-frameworks.sh */,
+				1F10C371D6735886EEEF2D7317585575 /* Pods-Ceria-CeriaUITests-Info.plist */,
+				07F1041F386F60FCA0C042583AFDBC25 /* Pods-Ceria-CeriaUITests-umbrella.h */,
+				BF9A67F6F090D73DA9F2428AB88EB4AC /* Pods-Ceria-CeriaUITests.debug.xcconfig */,
+				CC016A71D471AE522D4BD6A5B9805451 /* Pods-Ceria-CeriaUITests.release.xcconfig */,
+			);
+			name = "Pods-Ceria-CeriaUITests";
+			path = "Target Support Files/Pods-Ceria-CeriaUITests";
+			sourceTree = "<group>";
+		};
+		AC394D929E640C2247058B557104A83B /* Pods-Ceria */ = {
+			isa = PBXGroup;
+			children = (
+				4F835DC63DF0E70340CF19FDCF5F459F /* Pods-Ceria.modulemap */,
+				D01733B39CA44E66F26C3C822389C862 /* Pods-Ceria-acknowledgements.markdown */,
+				500138D340A5B6C69E31873874800403 /* Pods-Ceria-acknowledgements.plist */,
+				9DA4AFF8839C70BEDFF75678B14F809B /* Pods-Ceria-dummy.m */,
+				DCFE3EC6C0BB963FB708E17C2B0139FD /* Pods-Ceria-frameworks.sh */,
+				4560BA022427FA332863F7D7DC81ED56 /* Pods-Ceria-Info.plist */,
+				18AB7F9BE655EB1447FE326E1E0D8942 /* Pods-Ceria-umbrella.h */,
+				87D664B4DF1E88B2B8B8AD19AA0E3064 /* Pods-Ceria.debug.xcconfig */,
+				ED817135879F0023120693331E5B811C /* Pods-Ceria.release.xcconfig */,
+			);
+			name = "Pods-Ceria";
+			path = "Target Support Files/Pods-Ceria";
+			sourceTree = "<group>";
+		};
+		C97B900D4506469A5FC397079D240128 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AC394D929E640C2247058B557104A83B /* Pods-Ceria */,
+				93C73EB2B90BDC0C424EC93873E04E48 /* Pods-Ceria-CeriaUITests */,
+				DE4FA089141FD14F311317F436A03B44 /* Pods-CeriaTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CA13D49ADE69D79D70A8B79AAAC38DE9 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2689EA712E5D78CDDF35E7B1BD8994B6 /* AVFoundation.framework */,
+				2BD9787FB7C94A0DC2A516C656509B78 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				02BF7AE8DE4AA6432BE7FF1956EBBE00 /* Pods */,
+				D0BB789ED0461233B1FDC30EBCF4C29C /* Products */,
+				C97B900D4506469A5FC397079D240128 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D0BB789ED0461233B1FDC30EBCF4C29C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				99158FD75C28427B6DDB5E8D18606E83 /* Pods-Ceria */,
+				8294E10AFE46B09CC9599919204FCE9F /* Pods-Ceria-CeriaUITests */,
+				72DFEBC4898D861736122CF9E97459F3 /* Pods-CeriaTests */,
+				996615DEDCD6C2933EC3F8504427765B /* SwiftySound */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE4FA089141FD14F311317F436A03B44 /* Pods-CeriaTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED45D323FBA5A24E97AF5FA5E115AFE9 /* Pods-CeriaTests.modulemap */,
+				D08B73A259F0EF45E337D11D990F2E56 /* Pods-CeriaTests-acknowledgements.markdown */,
+				E9169E6943D9759AA1FD3211C44AC588 /* Pods-CeriaTests-acknowledgements.plist */,
+				88B614B592214BD9A3D4995F2597B070 /* Pods-CeriaTests-dummy.m */,
+				B6EDE42E261A12E6E2ABFD5E7C0015A6 /* Pods-CeriaTests-Info.plist */,
+				99C5E0E6FC60D6B1518D65933F296CC5 /* Pods-CeriaTests-umbrella.h */,
+				A9B257FDC38A5B729D0E47E88791C8CB /* Pods-CeriaTests.debug.xcconfig */,
+				D46465C3F99099BB39C92F99E799044E /* Pods-CeriaTests.release.xcconfig */,
+			);
+			name = "Pods-CeriaTests";
+			path = "Target Support Files/Pods-CeriaTests";
+			sourceTree = "<group>";
+		};
+		DFCD4114B4CC44842BB600223E7702B1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8E34EEFF05210A0E3CB90F99002A692E /* SwiftySound.modulemap */,
+				3BB1707E5CFCD2BB1D66CCB49FD7F66C /* SwiftySound-dummy.m */,
+				DAF5ADC0ABA931C1AF1CF19138F3F819 /* SwiftySound-Info.plist */,
+				DFACE2C40FE32DA5863F4D426FCA6EB8 /* SwiftySound-prefix.pch */,
+				591DDA2EF37962ABC2D010316841A10D /* SwiftySound-umbrella.h */,
+				F8A1E02019B3D26A15AB037DDA38AD9B /* SwiftySound.debug.xcconfig */,
+				D5F90F2DFA24D3D8C6C4427819B6A154 /* SwiftySound.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftySound";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		26E3A83D866C80C6667741357955867E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D878E8ED735390EB6D85CE6B484C1322 /* Pods-Ceria-CeriaUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5BCD7BF73FF0C7097CA498CEB4079A2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DCC9EDD8E366C4269B7A7DAFB5DC078 /* Pods-CeriaTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0BA81B3518F7F93320972110086D2A8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				519A619CF65D6A6947B49A7F0D0C7664 /* Pods-Ceria-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC8803EB6C8993ECF4A0B5D9FA30FB9A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8B9BD971E022ABE8E1CAF3CECAA0D8 /* SwiftySound-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0FF938D11342023073C9B42452A0EB4D /* Pods-CeriaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD452F2DB500C5F17A92848877BDF248 /* Build configuration list for PBXNativeTarget "Pods-CeriaTests" */;
+			buildPhases = (
+				A5BCD7BF73FF0C7097CA498CEB4079A2 /* Headers */,
+				183CCE7E636DFF8E282985D04261460E /* Sources */,
+				A241A0B1E860FA4796ACA0222BA98959 /* Frameworks */,
+				3647FEADCCF01AFD581D26CFF5B6EB1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				59839320036699114F95ADEDC6864418 /* PBXTargetDependency */,
+			);
+			name = "Pods-CeriaTests";
+			productName = Pods_CeriaTests;
+			productReference = 72DFEBC4898D861736122CF9E97459F3 /* Pods-CeriaTests */;
+			productType = "com.apple.product-type.framework";
+		};
+		41C8946D05AA351A8B0042F97CF9F36F /* Pods-Ceria-CeriaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60DC48E553F1403525DF0FFADE311FA6 /* Build configuration list for PBXNativeTarget "Pods-Ceria-CeriaUITests" */;
+			buildPhases = (
+				26E3A83D866C80C6667741357955867E /* Headers */,
+				FD5787439DC25A2A307BEB7775393B64 /* Sources */,
+				331B018B2595780950ED9A0F0F7938D2 /* Frameworks */,
+				7BA47F8E4C6374A0E5623E8844D5F2AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86ED41672B8D43E7599E4BE5EF083A5C /* PBXTargetDependency */,
+			);
+			name = "Pods-Ceria-CeriaUITests";
+			productName = Pods_Ceria_CeriaUITests;
+			productReference = 8294E10AFE46B09CC9599919204FCE9F /* Pods-Ceria-CeriaUITests */;
+			productType = "com.apple.product-type.framework";
+		};
+		AF76419D4650F093FFACB1AD713C1EF1 /* SwiftySound */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF74FADB2B69096A7F543A113959FD60 /* Build configuration list for PBXNativeTarget "SwiftySound" */;
+			buildPhases = (
+				BC8803EB6C8993ECF4A0B5D9FA30FB9A /* Headers */,
+				1C03CC6C1EDCAC90FE5A3BADFB4ED7D4 /* Sources */,
+				9BE29C388052B3B108EF9D4D3D772D90 /* Frameworks */,
+				FF497B1E6002E475922BFF4DD6F1750D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftySound;
+			productName = SwiftySound;
+			productReference = 996615DEDCD6C2933EC3F8504427765B /* SwiftySound */;
+			productType = "com.apple.product-type.framework";
+		};
+		CAD0DF0B401A40AF8B687EDEB7D6491E /* Pods-Ceria */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76CE4B79D0EFF1A60AB34C81B61A9183 /* Build configuration list for PBXNativeTarget "Pods-Ceria" */;
+			buildPhases = (
+				B0BA81B3518F7F93320972110086D2A8 /* Headers */,
+				BD04A821ADD240F7CEA116EB1399E893 /* Sources */,
+				F86E53B0B8FD5F9BF0D8EF2173BEF938 /* Frameworks */,
+				3B5B0091CFA50937A07A28CC9379F0DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6AEED33DBA7A5B608311F141FDC465E5 /* PBXTargetDependency */,
+			);
+			name = "Pods-Ceria";
+			productName = Pods_Ceria;
+			productReference = 99158FD75C28427B6DDB5E8D18606E83 /* Pods-Ceria */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = D0BB789ED0461233B1FDC30EBCF4C29C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CAD0DF0B401A40AF8B687EDEB7D6491E /* Pods-Ceria */,
+				41C8946D05AA351A8B0042F97CF9F36F /* Pods-Ceria-CeriaUITests */,
+				0FF938D11342023073C9B42452A0EB4D /* Pods-CeriaTests */,
+				AF76419D4650F093FFACB1AD713C1EF1 /* SwiftySound */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3647FEADCCF01AFD581D26CFF5B6EB1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B5B0091CFA50937A07A28CC9379F0DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7BA47F8E4C6374A0E5623E8844D5F2AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF497B1E6002E475922BFF4DD6F1750D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		183CCE7E636DFF8E282985D04261460E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				988706CDCD09E753DF45C50AAF4938DC /* Pods-CeriaTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C03CC6C1EDCAC90FE5A3BADFB4ED7D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACAA5B9B4341425981D1CFEABAA4ED33 /* Sound.swift in Sources */,
+				0B9579CC651F5ECC0634860B67080B07 /* SwiftySound-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD04A821ADD240F7CEA116EB1399E893 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C47C3F9667A73106761BB4EF41A0A5D9 /* Pods-Ceria-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD5787439DC25A2A307BEB7775393B64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C17C5BB616B19B117268E9A67E6B23B /* Pods-Ceria-CeriaUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		59839320036699114F95ADEDC6864418 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Ceria";
+			target = CAD0DF0B401A40AF8B687EDEB7D6491E /* Pods-Ceria */;
+			targetProxy = 93C7A290CD0BEC194B736300F2005249 /* PBXContainerItemProxy */;
+		};
+		6AEED33DBA7A5B608311F141FDC465E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftySound;
+			target = AF76419D4650F093FFACB1AD713C1EF1 /* SwiftySound */;
+			targetProxy = 312F35B0F9941A5A544C80EB661DB0B1 /* PBXContainerItemProxy */;
+		};
+		86ED41672B8D43E7599E4BE5EF083A5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftySound;
+			target = AF76419D4650F093FFACB1AD713C1EF1 /* SwiftySound */;
+			targetProxy = C923612C07C51086507DFB6FCA9337CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2906900B359A13587E6E55952DFA1E52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC016A71D471AE522D4BD6A5B9805451 /* Pods-Ceria-CeriaUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Ceria-CeriaUITests/Pods-Ceria-CeriaUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Ceria-CeriaUITests/Pods-Ceria-CeriaUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2E6C7BB0999482DB97C8DA0019739893 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87D664B4DF1E88B2B8B8AD19AA0E3064 /* Pods-Ceria.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Ceria/Pods-Ceria-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Ceria/Pods-Ceria.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6C503CDAA5F57E41EF9C36BD0DBE955C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF9A67F6F090D73DA9F2428AB88EB4AC /* Pods-Ceria-CeriaUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Ceria-CeriaUITests/Pods-Ceria-CeriaUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Ceria-CeriaUITests/Pods-Ceria-CeriaUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7C32EFD23F77627430DC503377A94E94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8A1E02019B3D26A15AB037DDA38AD9B /* SwiftySound.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftySound/SwiftySound-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftySound/SwiftySound-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftySound/SwiftySound.modulemap";
+				PRODUCT_MODULE_NAME = SwiftySound;
+				PRODUCT_NAME = SwiftySound;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		85CECAA2C9776449C0E077350FB21301 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED817135879F0023120693331E5B811C /* Pods-Ceria.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Ceria/Pods-Ceria-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Ceria/Pods-Ceria.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		90D4D09BCB6A4660E43ACBE9ECB6FE9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9553C89E183877A5CB2F3C6801BEC129 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		CAE41C3CB5EB1C9B108162D0F7C60E96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D46465C3F99099BB39C92F99E799044E /* Pods-CeriaTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CeriaTests/Pods-CeriaTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CeriaTests/Pods-CeriaTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E794E019C79B674554C596117C6CBD5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9B257FDC38A5B729D0E47E88791C8CB /* Pods-CeriaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CeriaTests/Pods-CeriaTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CeriaTests/Pods-CeriaTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F1236B56E1162C6A302E500B32BD086A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5F90F2DFA24D3D8C6C4427819B6A154 /* SwiftySound.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftySound/SwiftySound-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftySound/SwiftySound-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftySound/SwiftySound.modulemap";
+				PRODUCT_MODULE_NAME = SwiftySound;
+				PRODUCT_NAME = SwiftySound;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90D4D09BCB6A4660E43ACBE9ECB6FE9A /* Debug */,
+				9553C89E183877A5CB2F3C6801BEC129 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60DC48E553F1403525DF0FFADE311FA6 /* Build configuration list for PBXNativeTarget "Pods-Ceria-CeriaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C503CDAA5F57E41EF9C36BD0DBE955C /* Debug */,
+				2906900B359A13587E6E55952DFA1E52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76CE4B79D0EFF1A60AB34C81B61A9183 /* Build configuration list for PBXNativeTarget "Pods-Ceria" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E6C7BB0999482DB97C8DA0019739893 /* Debug */,
+				85CECAA2C9776449C0E077350FB21301 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD452F2DB500C5F17A92848877BDF248 /* Build configuration list for PBXNativeTarget "Pods-CeriaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E794E019C79B674554C596117C6CBD5F /* Debug */,
+				CAE41C3CB5EB1C9B108162D0F7C60E96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF74FADB2B69096A7F543A113959FD60 /* Build configuration list for PBXNativeTarget "SwiftySound" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C32EFD23F77627430DC503377A94E94 /* Debug */,
+				F1236B56E1162C6A302E500B32BD086A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
