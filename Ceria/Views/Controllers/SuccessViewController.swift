@@ -7,15 +7,22 @@
 
 import UIKit
 
-class SuccessViewController: UIViewController {
+class SuccessViewController: UIViewController, Storyboarded {
 
+    weak var coordinator: MainCoordinator?
+    
+    @IBOutlet weak var continueStoryButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func toStory(_ sender: Any) {
+        coordinator?.toStory()
+    }
+    
     /*
     // MARK: - Navigation
 

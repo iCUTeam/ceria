@@ -13,47 +13,57 @@ final class StoryViewModel {
     var storyDialogue: ObservableObject<String> = ObservableObject(value: "")
     var storyVoice: ObservableObject<String> = ObservableObject(value: "")
     var storyMusic: ObservableObject<String> = ObservableObject(value: "")
-    var isBackButtonVisible: ObservableObject<Bool> = ObservableObject(value: false)
-    var isNextButtonVisible: ObservableObject<Bool> = ObservableObject(value: true)
-    var isActionButtonVisible: ObservableObject<Bool> = ObservableObject(value: false)
+    var isBackButtonHidden: ObservableObject<Bool> = ObservableObject(value: false)
+    var isNextButtonHidden: ObservableObject<Bool> = ObservableObject(value: true)
+    var isActionButtonHidden: ObservableObject<Bool> = ObservableObject(value: false)
     var actionButtonType: ObservableObject<String> = ObservableObject(value: "")
     var actionButtonSFX: ObservableObject<String> = ObservableObject(value: "")
+    var currentIndex: ObservableObject<Int> = ObservableObject(value: 0)
     
     var storiesArray: [Story] = []
     var feeder = StoryFeeder()
-
-    var currIndex: ObservableObject<Int> = ObservableObject(value: 0)
+    
+    let defaults = UserDefaults.standard
     
     func getStory() {
         
         let storiesArray = feeder.feedStory()
        
-        self.storyImage.value = storiesArray[currIndex.value].storyImage
-        self.storyDialogue.value = storiesArray[currIndex.value].storyDialogue
-        self.storyVoice.value = storiesArray[currIndex.value].storyVoice
-        self.storyMusic.value = storiesArray[currIndex.value].storyMusic
-        self.isBackButtonVisible.value = storiesArray[currIndex.value].isBackButtonVisible
-        self.isNextButtonVisible.value = storiesArray[currIndex.value].isNextButtonVisible
-        self.isActionButtonVisible.value = storiesArray[currIndex.value].isActionButtonVisible
-        self.actionButtonType.value = storiesArray[currIndex.value].actionButtonType
-        self.actionButtonSFX.value = storiesArray[currIndex.value].actionButtonSFX
+        self.storyImage.value = storiesArray[currentIndex.value].storyImage
+        self.storyDialogue.value = storiesArray[currentIndex.value].storyDialogue
+        self.storyVoice.value = storiesArray[currentIndex.value].storyVoice
+        self.storyMusic.value = storiesArray[currentIndex.value].storyMusic
+        self.isBackButtonHidden.value = storiesArray[currentIndex.value].isBackButtonHidden
+        self.isNextButtonHidden.value = storiesArray[currentIndex.value].isNextButtonHidden
+        self.isActionButtonHidden.value = storiesArray[currentIndex.value].isActionButtonHidden
+        self.actionButtonType.value = storiesArray[currentIndex.value].actionButtonType
+        self.actionButtonSFX.value = storiesArray[currentIndex.value].actionButtonSFX
+    }
+    
+    func saveIndex() {
+        defaults.set(currentIndex.value, forKey: "storyIndex")
+    }
+    
+    func loadStory() {
+        currentIndex.value = defaults.integer(forKey: "storyIndex")
+        getStory()
     }
     
     func previousIndex() {
-        if currIndex.value == 0 {
-            currIndex.value = storiesArray.count-1
+        if currentIndex.value == 0 {
+            currentIndex.value = storiesArray.count-1
         } else {
-            currIndex.value -= 1
+            currentIndex.value -= 1
         }
         
         getStory()
     }
     
     func nextIndex() {
-        if currIndex.value == storiesArray.count-1 {
-            currIndex.value = 0
+        if currentIndex.value == storiesArray.count-1 {
+            currentIndex.value = 0
         } else {
-            currIndex.value += 1
+            currentIndex.value += 1
         }
         
         getStory()

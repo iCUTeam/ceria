@@ -12,9 +12,9 @@ struct Story: Codable {
     let storyDialogue: String
     let storyVoice: String
     let storyMusic: String
-    let isBackButtonVisible: Bool
-    let isNextButtonVisible: Bool
-    let isActionButtonVisible: Bool
+    let isBackButtonHidden: Bool
+    let isNextButtonHidden: Bool
+    let isActionButtonHidden: Bool
     let actionButtonType: String
     let actionButtonSFX: String
 
@@ -23,9 +23,9 @@ struct Story: Codable {
         case storyDialogue = "story_dialogue"
         case storyVoice = "story_voice"
         case storyMusic = "story_music"
-        case isBackButtonVisible = "back_button_visibility"
-        case isNextButtonVisible = "next_button_visibility"
-        case isActionButtonVisible = "action_button_visibility"
+        case isBackButtonHidden = "back_button_hidden"
+        case isNextButtonHidden = "next_button_hidden"
+        case isActionButtonHidden = "action_button_hidden"
         case actionButtonType = "action_button_type"
         case actionButtonSFX = "action_button_sfx"
     }

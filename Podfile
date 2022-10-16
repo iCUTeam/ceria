@@ -7,6 +7,7 @@ target 'Ceria' do
 
   # Pods for Ceria
   pod 'SwiftySound'
+  pod 'lottie-ios'
 
   target 'CeriaTests' do
     inherit! :search_paths

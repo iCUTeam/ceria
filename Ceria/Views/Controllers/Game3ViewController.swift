@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Game3ViewController: UIViewController {
+class Game3ViewController: UIViewController, Storyboarded {
     
     //Game 3 detail (Kath was here)
     
@@ -29,6 +29,7 @@ class Game3ViewController: UIViewController {
 
     //Dodging Garuda attack - accelerometer Y value if -, to the left, if + to the right, load wheel turning animation
 
+    weak var coordinator: MainCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()

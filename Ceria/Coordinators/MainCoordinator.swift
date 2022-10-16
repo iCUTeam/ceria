@@ -35,9 +35,6 @@ class MainCoordinator: Coordinator {
     }
     
     func tapPlay() {
-        
-        // WIP - Logic to differentiate if state is not_started or others. If not_started, then go to Instruction page
-        
         let vc = InstructionViewController.instantiate()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
@@ -49,11 +46,56 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: false)
     }
     
-    func tapGame() {
-        
-        // WIP - Logic to differentiate the state to select which gameplay page to return
-        
+    func toExplore() {
         let vc = ExploreViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func toPower() {
+        let vc = PowerViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func toTutorial() {
+        let vc = TutorialViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func toGame1() {
+        let vc = Game1ViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func toGame2() {
+        let vc = Game2ViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func toGame3() {
+        let vc = Game3ViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func toGame4() {
+        let vc = Game4ViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func toSuccess() {
+        let vc = SuccessViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func toReflection() {
+        let vc = ReflectionViewController.instantiate()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }

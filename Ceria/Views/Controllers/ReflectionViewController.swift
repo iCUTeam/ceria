@@ -7,8 +7,10 @@
 
 import UIKit
 
-class ReflectionViewController: UIViewController {
+class ReflectionViewController: UIViewController, Storyboarded {
 
+    weak var coordinator: MainCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

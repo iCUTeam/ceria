@@ -7,8 +7,10 @@
 
 import UIKit
 
-class Game4ViewController: UIViewController {
+class Game4ViewController: UIViewController, Storyboarded {
 
+    weak var coordinator: MainCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -9,6 +9,7 @@ import UIKit
 import SceneKit
 import RealityKit
 import ARKit
+import SwiftySound
 
 class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     
@@ -55,6 +56,9 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         instructionViewSecondary.clueDescription.text = getDescClue(clueCode: 2)
         instructionViewSecondary.clueGreyBackView.layer.cornerRadius = 20
         instructionViewSecondary.clueImage.image = UIImage(named: "blue-card")
+        
+        
+        Sound.play(file: "explore2-intro.m4a")
     }
     
     //MARK: TEMPORARY FOR CODE TESTING
@@ -76,6 +80,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             //self.instructionViewPrimary.clueDescription.text = "Done"
             self.view.layoutIfNeeded()
         }
+        coordinator?.toStory()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

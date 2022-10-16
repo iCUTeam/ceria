@@ -7,15 +7,22 @@
 
 import UIKit
 
-class TutorialViewController: UIViewController {
+class TutorialViewController: UIViewController, Storyboarded {
 
+    weak var coordinator: MainCoordinator?
+    
+    @IBOutlet weak var game2Button: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func game2Tapped(_ sender: Any) {
+        coordinator?.toGame2()
+    }
+    
     /*
     // MARK: - Navigation
 

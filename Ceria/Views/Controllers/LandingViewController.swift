@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftySound
 
 class LandingViewController: UIViewController, Storyboarded {
     
@@ -52,7 +51,7 @@ class LandingViewController: UIViewController, Storyboarded {
         
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "landing.png")
-        backgroundImage.contentMode = .scaleAspectFill
+        backgroundImage.contentMode = .scaleToFill
         view.insertSubview(backgroundImage, at: 0)
         
         view.addSubview(landingTextView)
@@ -63,12 +62,12 @@ class LandingViewController: UIViewController, Storyboarded {
         // Do any additional setup after loading the view.
         
         setUpAutoLayout()
-        Sound.play(file: "landing", fileExtension: "mp3", numberOfLoops: -1)
+        
+        AudioBGMPlayer.shared.playLanding()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
-        Sound.stopAll()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -83,20 +82,19 @@ class LandingViewController: UIViewController, Storyboarded {
     @objc
         func collectionTapped() {
             coordinator?.tapCollection()
-            Sound.play(file: "clicked", fileExtension: "wav")
+            AudioSFXPlayer.shared.playCommonSFX()
         }
     
     @objc
         func aboutTapped() {
             coordinator?.tapAbout()
-            Sound.play(file: "clicked", fileExtension: "wav")
+            AudioSFXPlayer.shared.playCommonSFX()
         }
     
     @objc
         func playTapped() {
             coordinator?.tapPlay()
-            Sound.play(file: "clicked", fileExtension: "wav")
-            Sound.play(file: "clicked", fileExtension: "wav")
+            AudioSFXPlayer.shared.playCommonSFX()
         }
     
     func setUpAutoLayout() {

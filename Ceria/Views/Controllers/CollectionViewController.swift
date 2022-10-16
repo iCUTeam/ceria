@@ -11,11 +11,17 @@ class CollectionViewController: UIViewController, Storyboarded {
     
     weak var coordinator: MainCoordinator?
     
-    @IBOutlet weak var backButton: UIButton!
+    private lazy var homeButton: MakeButton = {
+        let button = MakeButton(image: "home.png", size: CGSize(width: 100, height: 100))
+        button.addTarget(self, action: #selector(homeTapped), for: .touchUpInside)
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        view.addSubview(homeButton)
+        setUpAutoLayout()
         // Do any additional setup after loading the view.
     }
     
@@ -28,8 +34,18 @@ class CollectionViewController: UIViewController, Storyboarded {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    @IBAction func backTapped(_ sender: Any) {
-        coordinator?.toLanding()
+    @objc
+        func homeTapped() {
+            coordinator?.toLanding()
+            AudioSFXPlayer.shared.playCommonSFX()
+        }
+    
+    func setUpAutoLayout() {
+        
+        NSLayoutConstraint.activate([
+            homeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
+            homeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+        ])
     }
     
     /*

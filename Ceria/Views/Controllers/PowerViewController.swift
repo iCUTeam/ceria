@@ -181,6 +181,8 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
             canvasView.drawing.strokes[strokeIndex].ink.color = .green
             backgroundCanvasView.drawing.strokes[strokeIndex].ink.color = .clear
             
+            sleep(3)
+            coordinator?.toStory()
             //MARK: In 3 second, move to next page
         } else {
             // If the stroke drawn was bad, remove it so the user can try again.

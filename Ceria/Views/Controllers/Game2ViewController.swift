@@ -158,9 +158,12 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                         alert.addAction(UIAlertAction(title: "Asik", style: .default)
                         {_ in
                             alert.dismiss(animated: true)
+                            self.coordinator?.toSuccess()
                         })
                         
                         self.present(alert, animated: true)
+                        
+                        
                     }
                 }
             }

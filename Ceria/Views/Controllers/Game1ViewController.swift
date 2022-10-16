@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Game1ViewController: UIViewController {
+class Game1ViewController: UIViewController, Storyboarded {
     
     //Game 1 detail (Kath was here)
     
@@ -17,7 +17,7 @@ class Game1ViewController: UIViewController {
     // Painting on Ground level (0,0,0)
     // 10 cloud placed 5 point apart by Y and random value of x and z (0, 5, 0) -> (1, 10, 3) (bikin menutupi lukisannya)
     
-    
+    weak var coordinator: MainCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
