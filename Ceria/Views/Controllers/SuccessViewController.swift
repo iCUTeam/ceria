@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftySound
 
 class SuccessViewController: UIViewController, Storyboarded {
 
@@ -13,14 +14,46 @@ class SuccessViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var continueStoryButton: UIButton!
     
+    private lazy var homeButton: MakeButton = {
+        let button = MakeButton(image: "home.png", size: CGSize(width: 100, height: 100))
+        button.addTarget(self, action: #selector(homeTapped), for: .touchUpInside)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        view.addSubview(homeButton)
+        setUpAutoLayout()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     @IBAction func toStory(_ sender: Any) {
         coordinator?.toStory()
+    }
+    
+    @objc
+        func homeTapped() {
+            coordinator?.toLanding()
+            AudioSFXPlayer.shared.playCommonSFX()
+            Sound.stopAll()
+        }
+    
+    func setUpAutoLayout() {
+        
+        NSLayoutConstraint.activate([
+            homeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
+            homeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+        ])
     }
     
     /*

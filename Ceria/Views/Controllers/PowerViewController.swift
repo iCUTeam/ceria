@@ -7,10 +7,17 @@
 
 import UIKit
 import PencilKit
+import SwiftySound
 
 class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelegate, Storyboarded {
     
     weak var coordinator: MainCoordinator?
+    
+    private lazy var homeButton: MakeButton = {
+        let button = MakeButton(image: "home.png", size: CGSize(width: 100, height: 100))
+        button.addTarget(self, action: #selector(homeTapped), for: .touchUpInside)
+        return button
+    }()
     
     private let backgroundCanvasView: PKCanvasView =
     {
@@ -27,6 +34,8 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         canvas.tool = PKInkingTool(.marker, color: .red, width: 70)
         return canvas
     }()
+    
+    let defaults = UserDefaults.standard
     
     // Animation.
     static let repeatStrokeAnimationTime: TimeInterval = 4
@@ -48,7 +57,8 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         view.addSubview(backgroundCanvasView)
         view.addSubview(canvasView)
         
-
+        view.addSubview(homeButton)
+        setUpAutoLayout()
         
         animationMarkerLayer = CALayer()
         animationMarkerLayer.frame = CGRect(x: 0, y: 0, width: view.frame.width * 0.1, height: view.frame.width * 0.1)
@@ -93,6 +103,21 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
     }
     
     //MARK: Step Animation
+    
+    @objc
+        func homeTapped() {
+            coordinator?.toLanding()
+            AudioSFXPlayer.shared.playCommonSFX()
+            Sound.stopAll()
+        }
+    
+    func setUpAutoLayout() {
+        
+        NSLayoutConstraint.activate([
+            homeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
+            homeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+        ])
+    }
     
     func animateNextStroke() {
         
@@ -183,6 +208,7 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
             
             sleep(3)
             coordinator?.toStory()
+            defaults.set("clear_power_1", forKey: "userState")
             //MARK: In 3 second, move to next page
         } else {
             // If the stroke drawn was bad, remove it so the user can try again.

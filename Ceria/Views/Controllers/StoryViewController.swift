@@ -12,8 +12,6 @@ class StoryViewController: UIViewController, Storyboarded {
     
     weak var coordinator: MainCoordinator?
     
-    @IBOutlet weak var dialogueLabel: UILabel!
-    
     let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
     var storyVoice = ""
     var storyMusic = ""
@@ -21,6 +19,7 @@ class StoryViewController: UIViewController, Storyboarded {
     var actionButtonType = ""
     var currentBGM = ""
     var currentIndex = 0
+    let defaults = UserDefaults.standard
     
     private lazy var homeButton: MakeButton = {
         let button = MakeButton(image: "home.png", size: CGSize(width: 100, height: 100))
@@ -46,6 +45,11 @@ class StoryViewController: UIViewController, Storyboarded {
         return button
     }()
     
+    private lazy var storyTextBox: StoryView = {
+        let dialogue = StoryView(content: "Pada suatu ketika, hiduplah seorang kaya dan keempat orang anaknya. Anak pertama bernama Lompo, anak kedua bernama Rua, anak ketiga bernama Tallu, dan anak keempat bernama Bungko. Keempat anak tersebut lalu ditugaskan oleh sang ayah untuk menimba ilmu seorang diri ke berbagai penjuru negeri dan segera setelah mendapatkan kemampuan masing-masing, keempat anak tersebut kembali lagi kepada sang ayah.")
+        return dialogue
+    }()
+    
     private let viewModel = StoryViewModel()
     
     override func viewDidLoad() {
@@ -59,6 +63,7 @@ class StoryViewController: UIViewController, Storyboarded {
         view.addSubview(nextButton)
         view.addSubview(actionButton)
         view.addSubview(previousButton)
+        view.addSubview(storyTextBox)
         setUpAutoLayout()
         
         setupBinders()
@@ -67,6 +72,7 @@ class StoryViewController: UIViewController, Storyboarded {
         Sound.play(file: storyVoice)
         checkBGMChange()
         currentBGM = storyMusic
+        storyTextBox.content = "Hai"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,7 +86,7 @@ class StoryViewController: UIViewController, Storyboarded {
     
     private func setupBinders() {
         viewModel.storyDialogue.bind { [weak self] dialogue in
-            self?.dialogueLabel.text = dialogue
+            self?.storyTextBox.dialogueLabel.text = dialogue
         }
         viewModel.storyImage.bind { [weak self] image in
             self?.backgroundImage.image = UIImage(named: image)
@@ -155,23 +161,33 @@ class StoryViewController: UIViewController, Storyboarded {
         
         switch actionButtonType {
         case "explore2.png":
-            coordinator?.toExplore()
-            sleep(3)
-        case "explore3.png":
+            defaults.set("clear_story_1", forKey: "userState")
             coordinator?.toExplore()
             sleep(3)
         case "power2.png":
+            defaults.set("clear_story_2", forKey: "userState")
             coordinator?.toPower()
         case "game2.png":
+            defaults.set("clear_story_3", forKey: "userState")
             coordinator?.toTutorial()
+        case "explore3.png":
+            defaults.set("clear_story_4", forKey: "userState")
+            coordinator?.toExplore()
+            sleep(3)
         case "reflection.png":
+            defaults.set("cleared", forKey: "userState")
             coordinator?.toReflection()
         default:
             print("nowhere to go")
         }
         
-        viewModel.nextIndex()
-        viewModel.saveIndex()
+        if actionButtonType != "reflection.png" {
+            viewModel.nextIndex()
+            viewModel.saveIndex()
+        } else {
+            viewModel.saveIndex()
+        }
+        
     }
     
     func checkBGMChange() {
@@ -214,6 +230,9 @@ class StoryViewController: UIViewController, Storyboarded {
             
             previousButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200),
             previousButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
+            
+            storyTextBox.topAnchor.constraint(equalTo: view.topAnchor, constant: 130),
+            storyTextBox.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
     /*

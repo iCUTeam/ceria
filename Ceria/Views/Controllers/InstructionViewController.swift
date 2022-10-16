@@ -23,6 +23,8 @@ class InstructionViewController: UIViewController, Storyboarded {
         return button
     }()
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,9 +51,23 @@ class InstructionViewController: UIViewController, Storyboarded {
     
     @objc
         func startStoryTapped() {
-            coordinator?.toStory()
-            
-            // WIP - Logic to differentiate if state is not_started or others. If not_started, then go to Instruction page
+            var state = defaults.string(forKey: "userState")
+            switch state {
+            case "clear_story_1":
+                coordinator?.toExplore()
+                sleep(3)
+            case "clear_story_2":
+                coordinator?.toPower()
+            case "clear_story_3":
+                coordinator?.toTutorial()
+            case "clear_story_4":
+                coordinator?.toExplore()
+                sleep(3)
+            case "cleared":
+                coordinator?.toReflection()
+            default:
+                coordinator?.toStory()
+            }
             
             AudioSFXPlayer.shared.playCommonSFX()
             AudioBGMPlayer.shared.stopLanding()

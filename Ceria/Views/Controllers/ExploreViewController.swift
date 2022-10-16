@@ -21,6 +21,14 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     @IBOutlet weak var instructionViewPrimary: ClueExploration!
     @IBOutlet weak var instructionViewSecondary: ClueExploration!
     
+    let defaults = UserDefaults.standard
+    
+    private lazy var homeButton: MakeButton = {
+        let button = MakeButton(image: "home.png", size: CGSize(width: 100, height: 100))
+        button.addTarget(self, action: #selector(homeTapped), for: .touchUpInside)
+        return button
+    }()
+    
     var blueCheckPointNode : SCNNode? = nil
     
     var redCheckPointNode : SCNNode? = nil
@@ -38,6 +46,8 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.addSubview(homeButton)
+        setUpAutoLayout()
         
         // Set the view's delegate
         arSCN.delegate = self
@@ -81,6 +91,12 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             self.view.layoutIfNeeded()
         }
         coordinator?.toStory()
+        if defaults.string(forKey: "userState") == "clear_story_1" {
+            defaults.set("clear_explore_1", forKey: "userState")
+        } else {
+            defaults.set("clear_explore_2", forKey: "userState")
+        }
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -321,6 +337,21 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         }
         
         return node
+    }
+    
+    @objc
+        func homeTapped() {
+            coordinator?.toLanding()
+            AudioSFXPlayer.shared.playCommonSFX()
+            Sound.stopAll()
+        }
+    
+    func setUpAutoLayout() {
+        
+        NSLayoutConstraint.activate([
+            homeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
+            homeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+        ])
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

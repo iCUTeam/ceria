@@ -66,10 +66,6 @@ class LandingViewController: UIViewController, Storyboarded {
         AudioBGMPlayer.shared.playLanding()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(true)
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.setNavigationBarHidden(true, animated: true)

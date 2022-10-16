@@ -7,6 +7,7 @@
 
 import UIKit
 import SceneKit
+import SwiftySound
 
 class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysicsContactDelegate, Storyboarded {
     
@@ -14,6 +15,15 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
     
     @IBOutlet weak var powerProgressBar: HorizontalProgressBar!
     @IBOutlet weak var sceneView: SCNView!
+    
+    private lazy var homeButton: MakeButton = {
+        let button = MakeButton(image: "home.png", size: CGSize(width: 100, height: 100))
+        button.addTarget(self, action: #selector(homeTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    let defaults = UserDefaults.standard
+    
     //collision bitmask
     let categoryObstacles = 2
     
@@ -44,7 +54,9 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         setupNodes()
         
         powerProgressBar.progress = 1
-    
+        
+        view.addSubview(homeButton)
+        setUpAutoLayout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +66,21 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    @objc
+        func homeTapped() {
+            coordinator?.toLanding()
+            AudioSFXPlayer.shared.playCommonSFX()
+            Sound.stopAll()
+        }
+    
+    func setUpAutoLayout() {
+        
+        NSLayoutConstraint.activate([
+            homeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
+            homeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+        ])
     }
     
     //manggil scene dan set delegate
@@ -159,6 +186,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                         {_ in
                             alert.dismiss(animated: true)
                             self.coordinator?.toSuccess()
+                            self.defaults.set("clear_challenge_1", forKey: "userState")
                         })
                         
                         self.present(alert, animated: true)
