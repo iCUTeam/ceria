@@ -13,47 +13,47 @@ final class ReflectionViewModel {
     var promptDialogue: ObservableObject<String> = ObservableObject(value: "")
     var promptVoice: ObservableObject<String> = ObservableObject(value: "")
     var promptMusic: ObservableObject<String> = ObservableObject(value: "")
-    var isBackButtonVisible: ObservableObject<Bool> = ObservableObject(value: false)
-    var isNextButtonVisible: ObservableObject<Bool> = ObservableObject(value: true)
-    var isActionButtonVisible: ObservableObject<Bool> = ObservableObject(value: false)
+    var isBackButtonHidden: ObservableObject<Bool> = ObservableObject(value: false)
+    var isNextButtonHidden: ObservableObject<Bool> = ObservableObject(value: true)
+    var isActionButtonHidden: ObservableObject<Bool> = ObservableObject(value: false)
     var actionButtonType: ObservableObject<String> = ObservableObject(value: "")
     var actionButtonSFX: ObservableObject<String> = ObservableObject(value: "")
     
     var promptsArray: [Prompt] = []
     var feeder = PromptFeeder()
 
-    var currIndex: ObservableObject<Int> = ObservableObject(value: 0)
+    var currentIndex: ObservableObject<Int> = ObservableObject(value: 0)
     
     func getPrompt() {
         
         let promptsArray = feeder.feedPrompt()
        
-        self.promptImage.value = promptsArray[currIndex.value].promptImage
-        self.promptDialogue.value = promptsArray[currIndex.value].promptDialogue
-        self.promptVoice.value = promptsArray[currIndex.value].promptVoice
-        self.promptMusic.value = promptsArray[currIndex.value].promptMusic
-        self.isBackButtonVisible.value = promptsArray[currIndex.value].isBackButtonVisible
-        self.isNextButtonVisible.value = promptsArray[currIndex.value].isNextButtonVisible
-        self.isActionButtonVisible.value = promptsArray[currIndex.value].isActionButtonVisible
-        self.actionButtonType.value = promptsArray[currIndex.value].actionButtonType
-        self.actionButtonSFX.value = promptsArray[currIndex.value].actionButtonSFX
+        self.promptImage.value = promptsArray[currentIndex.value].promptImage
+        self.promptDialogue.value = promptsArray[currentIndex.value].promptDialogue
+        self.promptVoice.value = promptsArray[currentIndex.value].promptVoice
+        self.promptMusic.value = promptsArray[currentIndex.value].promptMusic
+        self.isBackButtonHidden.value = promptsArray[currentIndex.value].isBackButtonHidden
+        self.isNextButtonHidden.value = promptsArray[currentIndex.value].isNextButtonHidden
+        self.isActionButtonHidden.value = promptsArray[currentIndex.value].isActionButtonHidden
+        self.actionButtonType.value = promptsArray[currentIndex.value].actionButtonType
+        self.actionButtonSFX.value = promptsArray[currentIndex.value].actionButtonSFX
     }
     
     func previousIndex() {
-        if currIndex.value == 0 {
-            currIndex.value = promptsArray.count-1
+        if currentIndex.value == 0 {
+            currentIndex.value = promptsArray.count-1
         } else {
-            currIndex.value -= 1
+            currentIndex.value -= 1
         }
         
         getPrompt()
     }
     
     func nextIndex() {
-        if currIndex.value == promptsArray.count-1 {
-            currIndex.value = 0
+        if currentIndex.value == promptsArray.count-1 {
+            currentIndex.value = 0
         } else {
-            currIndex.value += 1
+            currentIndex.value += 1
         }
         
         getPrompt()

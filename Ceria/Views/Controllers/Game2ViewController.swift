@@ -57,6 +57,8 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         
         view.addSubview(homeButton)
         setUpAutoLayout()
+        
+        Sound.play(file: "game2.mp3", numberOfLoops: -1)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -186,6 +188,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                         {_ in
                             alert.dismiss(animated: true)
                             self.coordinator?.toSuccess()
+                            Sound.stopAll()
                             self.defaults.set("clear_challenge_1", forKey: "userState")
                         })
                         
