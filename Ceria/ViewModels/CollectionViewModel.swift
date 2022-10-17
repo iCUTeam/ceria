@@ -22,16 +22,33 @@ final class CollectionViewModel {
     
     let defaults = UserDefaults.standard
     
-    func getCollection() {
+    
+    func initializeCollection()
+    {
+        collectionArray = feeder.feedCollection()
+        
+        obtainedStatus.removeAll()
+        
+        for _ in collectionArray
+        {
+            obtainedStatus.append(false)
+        }
+        
+        defaults.set(obtainedStatus, forKey: "collectiblesObtainedStatus")
+        
+    }
+    
+    func getCollection(index: Int) {
         
         let collectionArray = feeder.feedCollection()
         
-        for collectibles in collectionArray
-        {
-            obtainedStatus.append(collectibles.isObtained)
-            defaults.set(obtainedStatus, forKey: "collectiblesObtainedStatus")
-        }
+        obtainedStatus = defaults.array(forKey: "collectiblesObtainedStatus") as? [Bool] ?? [Bool]()
         
+        self.collectibleItem.value = collectionArray[index].collectibleItem
+        self.collectibleName.value = collectionArray[index].collectibleName
+        self.collectibleDesc.value = collectionArray[index].collectibleDesc
+        self.collectibleOrigin.value = collectionArray[index].collectibleOrigin
+        self.isObtained.value = obtainedStatus[index]
     }
     
     func obtainItem(index: Int)

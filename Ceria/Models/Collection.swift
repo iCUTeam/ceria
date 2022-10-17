@@ -13,7 +13,6 @@ struct Collection: Codable
     let collectibleName: String
     let collectibleOrigin: String
     let collectibleDesc: String
-    let isObtained: Bool
     
     enum CodingKeys: String, CodingKey
     {
@@ -21,6 +20,5 @@ struct Collection: Codable
         case collectibleName = "collectible_name"
         case collectibleOrigin = "collectible_origin"
         case collectibleDesc = "collectible_desc"
-        case isObtained = "is_obtained"
     }
 }

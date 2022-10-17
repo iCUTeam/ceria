@@ -35,13 +35,15 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     
     var greenCheckPointNode : SCNNode? = nil
 //
-//    var seraungNode: SCNNode? = nil
+    var seraungNode: SCNNode? = nil
 //
-//    var tarumpahNode: SCNNode? = nil
+    var tarumpahNode: SCNNode? = nil
 //
-//    var tinimiNode: SCNNode? = nil
-//
-//    var lontongNode: SCNNode? = nil
+    var tinimiNode: SCNNode? = nil
+
+    var lontongNode: SCNNode? = nil
+    
+    private let collectionViewModel = CollectionViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +71,11 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         
         
         Sound.play(file: "explore2-intro.m4a")
+        
+        if defaults.string(forKey: "userState") == "clear_story_1"
+        {
+            collectionViewModel.initializeCollection()
+        }
     }
     
     //MARK: TEMPORARY FOR CODE TESTING
@@ -238,7 +245,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     //
     //                node.addChildNode(planeNode)
     //
-    //                if let checkPointScene = SCNScene(named: "Models.scnassets/Seraung.scn") {
+    //                if let checkPointScene = SCNScene(named: "Models.scnassets/seraung.scn") {
     //
     //                    if let checkPoint = checkPointScene.rootNode.childNodes.first {
     //
@@ -250,32 +257,34 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     //            }
     //
     //
-    //            if imageAnchor.referenceImage.name == "tarumpah-card" {
-    //
-    //                let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
-    //
-    //                plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
-    //
-    //                let planeNode = SCNNode(geometry: plane)
-    //
-    //                planeNode.eulerAngles.x = -.pi / 2
-    //
-    //
-    //                self.tarumpahNode = planeNode
-    //
-    //                node.addChildNode(planeNode)
-    //
-    //                if let checkPointScene = SCNScene(named: "Models.scnassets/Tarumpah.scn") {
-    //
-    //                    if let checkPoint = checkPointScene.rootNode.childNodes.first {
-    //
-    //                        checkPoint.eulerAngles.x = .pi / 2
-    //
-    //                        planeNode.addChildNode(checkPoint)
-    //                    }
-    //                }
-    //            }
-    //
+                if imageAnchor.referenceImage.name == "tarumpah-card" {
+    
+                    let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
+    
+                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
+    
+                    let planeNode = SCNNode(geometry: plane)
+    
+                    planeNode.eulerAngles.x = -.pi / 2
+    
+    
+                    self.tarumpahNode = planeNode
+    
+                    node.addChildNode(planeNode)
+    
+                    if let checkPointScene = SCNScene(named: "Models.scnassets/tarumpah.scn") {
+    
+                        if let checkPoint = checkPointScene.rootNode.childNodes.first {
+    
+                            checkPoint.eulerAngles.x = .pi / 2
+                            
+                            checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
+    
+                            planeNode.addChildNode(checkPoint)
+                        }
+                    }
+                }
+    
     //
     //            if imageAnchor.referenceImage.name == "tinim-card" {
     //
@@ -292,7 +301,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     //
     //                node.addChildNode(planeNode)
     //
-    //                if let checkPointScene = SCNScene(named: "Models.scnassets/Tinim.scn") {
+    //                if let checkPointScene = SCNScene(named: "Models.scnassets/tinim.scn") {
     //
     //                    if let checkPoint = checkPointScene.rootNode.childNodes.first {
     //
@@ -318,7 +327,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     //
     //                node.addChildNode(planeNode)
     //
-    //                if let checkPointScene = SCNScene(named: "Models.scnassets/Lontong.scn") {
+    //                if let checkPointScene = SCNScene(named: "Models.scnassets/lontong.scn") {
     //
     //                    if let checkPoint = checkPointScene.rootNode.childNodes.first {
     //
@@ -365,46 +374,49 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                 return
             }
             if let planeNode = blueCheckPointNode, planeNode == result.node {
-                print("Blue")
-                
-                //MARK: bring to respective story view
+                coordinator?.toStory()
+                defaults.set("clear_explore_1", forKey: "userState")
             }
             
             if let planeNode = greenCheckPointNode, planeNode == result.node {
                 print("Green")
-                
-                //MARK: bring to respective story view
+                coordinator?.toStory()
+                defaults.set("clear_explore_2", forKey: "userState")
             }
             
             if let planeNode = redCheckPointNode, planeNode == result.node {
                 print("Red")
-                
-                //MARK: bring to respective story view
+                coordinator?.toStory()
+                defaults.set("clear_explore_3", forKey: "userState")
             }
             
-//            if let planeNode = seraungNode, planeNode == result.node {
-//                print("Seraung")
+            if let planeNode = seraungNode, planeNode == result.node {
+                collectionViewModel.obtainItem(index: 0)
+                
+                
+                //MARK: Open Get Pop Up
+            }
 //
-//                //MARK: Save Collection, open pop up
-//            }
-//
-//            if let planeNode = tarumpahNode, planeNode == result.node {
-//                print("Tarumpah")
-//
-//                //MARK: Save Collection, open pop up
-//            }
-//
-//            if let planeNode = tinimiNode, planeNode == result.node {
-//                print("Tinim")
-//
-//                //MARK: Save Collection, open pop up
-//            }
-//
-//            if let planeNode = lontongNode, planeNode == result.node {
-//                print("Lontong")
-//
-//               //MARK: Save Collection, open pop up
-//            }
+            if let planeNode = tarumpahNode, planeNode == result.node {
+                
+                collectionViewModel.obtainItem(index: 1)
+                
+                //MARK: Open Get Pop Up
+            }
+
+            if let planeNode = tinimiNode, planeNode == result.node {
+                collectionViewModel.obtainItem(index: 2)
+                
+                
+                //MARK: Open Get Pop Up
+            }
+
+            if let planeNode = lontongNode, planeNode == result.node {
+                collectionViewModel.obtainItem(index: 3)
+                
+                
+                //MARK: Open Get Pop Up
+            }
 
         }
     }
