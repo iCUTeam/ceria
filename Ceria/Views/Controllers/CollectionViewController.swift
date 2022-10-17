@@ -6,12 +6,20 @@
 //
 
 import UIKit
+import SceneKit
 
 class CollectionViewController: UIViewController, Storyboarded {
     
     weak var coordinator: MainCoordinator?
     
-    
+    private let collectionSceneView: SCNView =
+    {
+        let scnView = SCNView()
+        let scene = SCNScene(named: "Models.scnassets/CollectionScene.scn")
+        scnView.scene = scene
+        
+        return scnView
+    }()
     
     private lazy var homeButton: MakeButton = {
         let button = MakeButton(image: "home.png", size: CGSize(width: 100, height: 100))
@@ -22,9 +30,15 @@ class CollectionViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.addSubview(collectionSceneView)
         view.addSubview(homeButton)
         setUpAutoLayout()
-        // Do any additional setup after loading the view.
+        //Do any additional setup after loading the view.
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionSceneView.frame = view.bounds
     }
     
     override func viewWillAppear(_ animated: Bool) {

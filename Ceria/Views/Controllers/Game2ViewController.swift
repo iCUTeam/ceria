@@ -91,6 +91,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         sceneView.allowsCameraControl = false
         scene = SCNScene(named: "Models.scnassets/Game2.scn")
         sceneView.scene = scene
+        sceneView.frame = view.bounds
         
         scene.physicsWorld.contactDelegate = self
         
