@@ -16,6 +16,8 @@
 		142AFC4E28F42EFB0069046C /* MotionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AFC4C28F42EFB0069046C /* MotionHelper.swift */; };
 		142AFC4F28F42EFB0069046C /* VectorOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AFC4D28F42EFB0069046C /* VectorOperation.swift */; };
 		142AFC5128F42F030069046C /* HorizontalProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AFC5028F42F030069046C /* HorizontalProgressBar.swift */; };
+		14E89D4428FD561A007EB47A /* collection.json in Resources */ = {isa = PBXBuildFile; fileRef = 14E89D4328FD561A007EB47A /* collection.json */; };
+		14E89D4628FD60F8007EB47A /* CollectionFeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E89D4528FD60F8007EB47A /* CollectionFeeder.swift */; };
 		2FDD8FC974CCB4309C7F42F5 /* Pods_Ceria_CeriaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68E101B4910F5A147B96657 /* Pods_Ceria_CeriaUITests.framework */; };
 		951C638E28F7C71700002FA5 /* MakeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951C638D28F7C71700002FA5 /* MakeButton.swift */; };
 		951C639028F7C76900002FA5 /* MakeStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951C638F28F7C76900002FA5 /* MakeStack.swift */; };
@@ -137,6 +139,8 @@
 		142AFC4C28F42EFB0069046C /* MotionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionHelper.swift; sourceTree = "<group>"; };
 		142AFC4D28F42EFB0069046C /* VectorOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorOperation.swift; sourceTree = "<group>"; };
 		142AFC5028F42F030069046C /* HorizontalProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalProgressBar.swift; sourceTree = "<group>"; };
+		14E89D4328FD561A007EB47A /* collection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collection.json; sourceTree = "<group>"; };
+		14E89D4528FD60F8007EB47A /* CollectionFeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionFeeder.swift; sourceTree = "<group>"; };
 		1D00A8085E8999FBE00BA709 /* Pods-Ceria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ceria.debug.xcconfig"; path = "Target Support Files/Pods-Ceria/Pods-Ceria.debug.xcconfig"; sourceTree = "<group>"; };
 		5A63DDF22E05F3976C7ECD4B /* Pods_CeriaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CeriaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62179B09A34CE40C2E0AF8C0 /* Pods-Ceria-CeriaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ceria-CeriaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Ceria-CeriaUITests/Pods-Ceria-CeriaUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -305,7 +309,7 @@
 				954C9CDD28FAC08D0005960D /* Audio Players */,
 				95EBB87628F8055C00EE82E7 /* PencilKit */,
 				95EBB87728F8057600EE82E7 /* CoreMotion */,
-				95EBB87828F8059E00EE82E7 /* 3D */,
+				95EBB87828F8059E00EE82E7 /* Gameplay */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -326,6 +330,7 @@
 		951C639C28F7EA4700002FA5 /* JSON Files */ = {
 			isa = PBXGroup;
 			children = (
+				14E89D4328FD561A007EB47A /* collection.json */,
 				95EBB88828F852BE00EE82E7 /* stories.json */,
 				953B9AB128FA21B7001C4A56 /* reflection.json */,
 			);
@@ -391,6 +396,7 @@
 			children = (
 				953B9AAD28FA069C001C4A56 /* StoryFeeder.swift */,
 				953B9AB428FA316B001C4A56 /* PromptFeeder.swift */,
+				14E89D4528FD60F8007EB47A /* CollectionFeeder.swift */,
 			);
 			path = Feeders;
 			sourceTree = "<group>";
@@ -769,12 +775,12 @@
 			path = CoreMotion;
 			sourceTree = "<group>";
 		};
-		95EBB87828F8059E00EE82E7 /* 3D */ = {
+		95EBB87828F8059E00EE82E7 /* Gameplay */ = {
 			isa = PBXGroup;
 			children = (
 				142AFC4D28F42EFB0069046C /* VectorOperation.swift */,
 			);
-			path = 3D;
+			path = Gameplay;
 			sourceTree = "<group>";
 		};
 		95EBB87928F8068400EE82E7 /* Extensions */ = {
@@ -947,6 +953,7 @@
 				95A6C5BC28FC19A200055B0A /* puteri_1.m4a in Resources */,
 				954C9CE228FAC5650005960D /* clicked.wav in Resources */,
 				9579502A28FCA3C700EE78A6 /* rua_2.m4a in Resources */,
+				14E89D4428FD561A007EB47A /* collection.json in Resources */,
 				9579502828FCA3C700EE78A6 /* tallu_1.m4a in Resources */,
 				95326A5E28FB3EF7002BAB3B /* narrator_4.m4a in Resources */,
 				9579502F28FCA4F300EE78A6 /* narrator_8.m4a in Resources */,
@@ -1095,6 +1102,7 @@
 				957D951528F708C1009AA012 /* TutorialViewModel.swift in Sources */,
 				95EBB88628F8166800EE82E7 /* ClueMesseges.swift in Sources */,
 				953B9A7528F92C5F001C4A56 /* ObservableObject.swift in Sources */,
+				14E89D4628FD60F8007EB47A /* CollectionFeeder.swift in Sources */,
 				957D950F28F70785009AA012 /* CollectionViewModel.swift in Sources */,
 				957D952528F71AFF009AA012 /* CollectionViewController.swift in Sources */,
 				95EBB87528F8055500EE82E7 /* PatternGenerator.swift in Sources */,
