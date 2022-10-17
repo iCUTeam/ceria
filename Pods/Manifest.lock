@@ -1,0 +1,20 @@
+PODS:
+  - lottie-ios (3.5.0)
+  - SwiftySound (1.2.0)
+
+DEPENDENCIES:
+  - lottie-ios
+  - SwiftySound
+
+SPEC REPOS:
+  trunk:
+    - lottie-ios
+    - SwiftySound
+
+SPEC CHECKSUMS:
+  lottie-ios: c55158d67d0629a260625cc2ded2052b829e3c3e
+  SwiftySound: 9eb28bb14edb601b40027e44319e0ef8383f88bf
+
+PODFILE CHECKSUM: ff86b57f18d8dfdaee015903bccb3b6fcc6a001c
+
+COCOAPODS: 1.11.3
