@@ -11,6 +11,8 @@ class CollectionViewController: UIViewController, Storyboarded {
     
     weak var coordinator: MainCoordinator?
     
+    
+    
     private lazy var homeButton: MakeButton = {
         let button = MakeButton(image: "home.png", size: CGSize(width: 100, height: 100))
         button.addTarget(self, action: #selector(homeTapped), for: .touchUpInside)
