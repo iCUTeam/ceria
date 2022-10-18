@@ -161,7 +161,6 @@ class CollectionViewController: UIViewController, Storyboarded {
         //MARK: Temporary Code
         
         viewModel.getCollection(index: 1)
-        viewModel.obtainItem(index: 1)
         if viewModel.obtainedStatus[1]
         {
             tarumpahUnlocked.isHidden = false
