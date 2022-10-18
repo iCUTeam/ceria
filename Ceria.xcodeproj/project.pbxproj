@@ -16,6 +16,8 @@
 		142AFC4E28F42EFB0069046C /* MotionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AFC4C28F42EFB0069046C /* MotionHelper.swift */; };
 		142AFC4F28F42EFB0069046C /* VectorOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AFC4D28F42EFB0069046C /* VectorOperation.swift */; };
 		142AFC5128F42F030069046C /* HorizontalProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AFC5028F42F030069046C /* HorizontalProgressBar.swift */; };
+		1490D4D528FE5D13005660C6 /* CollectionItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1490D4D428FE5D13005660C6 /* CollectionItem.xib */; };
+		1490D4D728FE5D2B005660C6 /* CollectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490D4D628FE5D2B005660C6 /* CollectionItem.swift */; };
 		14E89D4428FD561A007EB47A /* collection.json in Resources */ = {isa = PBXBuildFile; fileRef = 14E89D4328FD561A007EB47A /* collection.json */; };
 		14E89D4628FD60F8007EB47A /* CollectionFeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E89D4528FD60F8007EB47A /* CollectionFeeder.swift */; };
 		2FDD8FC974CCB4309C7F42F5 /* Pods_Ceria_CeriaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68E101B4910F5A147B96657 /* Pods_Ceria_CeriaUITests.framework */; };
@@ -139,6 +141,8 @@
 		142AFC4C28F42EFB0069046C /* MotionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionHelper.swift; sourceTree = "<group>"; };
 		142AFC4D28F42EFB0069046C /* VectorOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorOperation.swift; sourceTree = "<group>"; };
 		142AFC5028F42F030069046C /* HorizontalProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalProgressBar.swift; sourceTree = "<group>"; };
+		1490D4D428FE5D13005660C6 /* CollectionItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionItem.xib; sourceTree = "<group>"; };
+		1490D4D628FE5D2B005660C6 /* CollectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionItem.swift; sourceTree = "<group>"; };
 		14E89D4328FD561A007EB47A /* collection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collection.json; sourceTree = "<group>"; };
 		14E89D4528FD60F8007EB47A /* CollectionFeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionFeeder.swift; sourceTree = "<group>"; };
 		1D00A8085E8999FBE00BA709 /* Pods-Ceria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ceria.debug.xcconfig"; path = "Target Support Files/Pods-Ceria/Pods-Ceria.debug.xcconfig"; sourceTree = "<group>"; };
@@ -312,6 +316,15 @@
 				95EBB87828F8059E00EE82E7 /* Gameplay */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1490D4D328FE5C96005660C6 /* Collection Item */ = {
+			isa = PBXGroup;
+			children = (
+				1490D4D428FE5D13005660C6 /* CollectionItem.xib */,
+				1490D4D628FE5D2B005660C6 /* CollectionItem.swift */,
+			);
+			path = "Collection Item";
 			sourceTree = "<group>";
 		};
 		8B728F15CC201DD8CE6F1133 /* Pods */ = {
@@ -662,6 +675,7 @@
 		95E1731A28F66B16005252B0 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				1490D4D328FE5C96005660C6 /* Collection Item */,
 				95EBB88028F8160200EE82E7 /* Clue Explorations */,
 				142AFC5028F42F030069046C /* HorizontalProgressBar.swift */,
 			);
@@ -934,6 +948,7 @@
 				95A6C5B328FC19A200055B0A /* rua_3.m4a in Resources */,
 				95A6C5D628FC2A4400055B0A /* reflection.m4a in Resources */,
 				953B9AB228FA21B7001C4A56 /* reflection.json in Resources */,
+				1490D4D528FE5D13005660C6 /* CollectionItem.xib in Resources */,
 				95A6C5BE28FC19A200055B0A /* rua_1.m4a in Resources */,
 				95A6C5C128FC19A200055B0A /* narrator_12.m4a in Resources */,
 				95A6C5D928FC338800055B0A /* sedih.m4a in Resources */,
@@ -1140,6 +1155,7 @@
 				1413AFFB28F4498800FB552A /* Game1ViewController.swift in Sources */,
 				953B9AB028FA188D001C4A56 /* UIFont+CustomFont.swift in Sources */,
 				957D954428F7415C009AA012 /* MainCoordinator.swift in Sources */,
+				1490D4D728FE5D2B005660C6 /* CollectionItem.swift in Sources */,
 				95EBB87D28F8068400EE82E7 /* PKStrokeMatching.swift in Sources */,
 				1413AFF928F4497B00FB552A /* Game3ViewController.swift in Sources */,
 				95C814B028FAA810008E3036 /* UIView+RoundCornerView.swift in Sources */,
