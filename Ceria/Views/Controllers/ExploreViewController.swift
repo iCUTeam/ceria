@@ -45,10 +45,27 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     
     private let collectionViewModel = CollectionViewModel()
     
+    private var collectionItem: CollectionItem!
+    
+    private lazy var closeButton: MakeButton =
+    {
+        let button = MakeButton(image: "x.png", size: CGSize(width: 100, height: 100))
+        button.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionItem = CollectionItem(frame: CGRect(x: view.frame.width * 0.125, y: view.frame.height * 0.1, width: 800, height: 1100))
+        collectionItem.roundCornerView(corners: .allCorners, radius: 30)
+        view.addSubview(collectionItem)
         view.addSubview(homeButton)
+        view.addSubview(closeButton)
+        
+        collectionItem.isHidden = true
+        closeButton.isHidden = true
+        
         setUpAutoLayout()
         
         // Set the view's delegate
@@ -72,7 +89,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         
         Sound.play(file: "explore2-intro.m4a")
         
-        if defaults.string(forKey: "userState") == "clear_story_1"
+        if collectionViewModel.obtainedStatus.count == 0
         {
             collectionViewModel.initializeCollection()
         }
@@ -355,12 +372,50 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             Sound.stopAll()
         }
     
+    @objc func closeTapped()
+    {
+        collectionItem.isHidden = true
+        closeButton.isHidden = true
+        AudioSFXPlayer.shared.playBackSFX()
+    }
+    
     func setUpAutoLayout() {
         
         NSLayoutConstraint.activate([
             homeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
             homeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            closeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 875),
         ])
+    }
+    
+    private func setupPopUP(index: Int)
+    {
+        
+            collectionViewModel.getCollection(index: index)
+        
+            collectionItem.isHidden = false
+            closeButton.isHidden = false
+            
+            collectionViewModel.collectibleName.bind { [weak self] name in
+                self?.collectionItem.itemName.text = "Asik, kamu menemukan \(name)"
+            }
+            
+            collectionViewModel.collectibleOrigin.bind { [weak self] origin in
+                self?.collectionItem.itemOrigin.text = origin
+            }
+            
+            collectionViewModel.collectibleDesc.bind { [weak self] desc in
+                self?.collectionItem.itemDesc.text = "Kamu bisa menemukan item ini di rak koleksi kamu!"
+                self?.collectionItem.itemDesc.allowsEditingTextAttributes = false
+            }
+            
+            collectionViewModel.collectibleItem.bind { [weak self] item in
+                self?.collectionItem.setSCNView(scn: "Models.scnassets/\(item)")
+            }
+        
+       
+      
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -392,30 +447,23 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             
             if let planeNode = seraungNode, planeNode == result.node {
                 collectionViewModel.obtainItem(index: 0)
-                
-                
-                //MARK: Open Get Pop Up
+                setupPopUP(index: 0)
             }
 //
             if let planeNode = tarumpahNode, planeNode == result.node {
                 
                 collectionViewModel.obtainItem(index: 1)
-                
-                //MARK: Open Get Pop Up
+                setupPopUP(index: 1)
             }
 
             if let planeNode = tinimiNode, planeNode == result.node {
                 collectionViewModel.obtainItem(index: 2)
-                
-                
-                //MARK: Open Get Pop Up
+                setupPopUP(index: 2)
             }
 
             if let planeNode = lontongNode, planeNode == result.node {
                 collectionViewModel.obtainItem(index: 3)
-                
-                
-                //MARK: Open Get Pop Up
+                setupPopUP(index: 3)
             }
 
         }
