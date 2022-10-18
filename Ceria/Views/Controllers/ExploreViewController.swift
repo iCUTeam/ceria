@@ -35,18 +35,37 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     
     var greenCheckPointNode : SCNNode? = nil
 //
-//    var seraungNode: SCNNode? = nil
+    var seraungNode: SCNNode? = nil
 //
-//    var tarumpahNode: SCNNode? = nil
+    var tarumpahNode: SCNNode? = nil
 //
-//    var tinimiNode: SCNNode? = nil
-//
-//    var lontongNode: SCNNode? = nil
+    var tinimiNode: SCNNode? = nil
+
+    var lontongNode: SCNNode? = nil
+    
+    private let collectionViewModel = CollectionViewModel()
+    
+    private var collectionItem: CollectionItem!
+    
+    private lazy var closeButton: MakeButton =
+    {
+        let button = MakeButton(image: "x.png", size: CGSize(width: 100, height: 100))
+        button.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionItem = CollectionItem(frame: CGRect(x: view.frame.width * 0.125, y: view.frame.height * 0.1, width: 800, height: 1100))
+        collectionItem.roundCornerView(corners: .allCorners, radius: 30)
+        view.addSubview(collectionItem)
         view.addSubview(homeButton)
+        view.addSubview(closeButton)
+        
+        collectionItem.isHidden = true
+        closeButton.isHidden = true
+        
         setUpAutoLayout()
         
         // Set the view's delegate
@@ -69,6 +88,11 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         
         
         Sound.play(file: "explore2-intro.m4a")
+        
+        if collectionViewModel.obtainedStatus.count == 0
+        {
+            collectionViewModel.initializeCollection()
+        }
     }
     
     //MARK: TEMPORARY FOR CODE TESTING
@@ -238,7 +262,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     //
     //                node.addChildNode(planeNode)
     //
-    //                if let checkPointScene = SCNScene(named: "Models.scnassets/Seraung.scn") {
+    //                if let checkPointScene = SCNScene(named: "Models.scnassets/seraung.scn") {
     //
     //                    if let checkPoint = checkPointScene.rootNode.childNodes.first {
     //
@@ -250,32 +274,34 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     //            }
     //
     //
-    //            if imageAnchor.referenceImage.name == "tarumpah-card" {
-    //
-    //                let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
-    //
-    //                plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
-    //
-    //                let planeNode = SCNNode(geometry: plane)
-    //
-    //                planeNode.eulerAngles.x = -.pi / 2
-    //
-    //
-    //                self.tarumpahNode = planeNode
-    //
-    //                node.addChildNode(planeNode)
-    //
-    //                if let checkPointScene = SCNScene(named: "Models.scnassets/Tarumpah.scn") {
-    //
-    //                    if let checkPoint = checkPointScene.rootNode.childNodes.first {
-    //
-    //                        checkPoint.eulerAngles.x = .pi / 2
-    //
-    //                        planeNode.addChildNode(checkPoint)
-    //                    }
-    //                }
-    //            }
-    //
+                if imageAnchor.referenceImage.name == "tarumpah-card" {
+    
+                    let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
+    
+                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
+    
+                    let planeNode = SCNNode(geometry: plane)
+    
+                    planeNode.eulerAngles.x = -.pi / 2
+    
+    
+                    self.tarumpahNode = planeNode
+    
+                    node.addChildNode(planeNode)
+    
+                    if let checkPointScene = SCNScene(named: "Models.scnassets/tarumpah.scn") {
+    
+                        if let checkPoint = checkPointScene.rootNode.childNodes.first {
+    
+                            checkPoint.eulerAngles.x = .pi / 2
+                            
+                            checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
+    
+                            planeNode.addChildNode(checkPoint)
+                        }
+                    }
+                }
+    
     //
     //            if imageAnchor.referenceImage.name == "tinim-card" {
     //
@@ -292,7 +318,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     //
     //                node.addChildNode(planeNode)
     //
-    //                if let checkPointScene = SCNScene(named: "Models.scnassets/Tinim.scn") {
+    //                if let checkPointScene = SCNScene(named: "Models.scnassets/tinim.scn") {
     //
     //                    if let checkPoint = checkPointScene.rootNode.childNodes.first {
     //
@@ -318,7 +344,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     //
     //                node.addChildNode(planeNode)
     //
-    //                if let checkPointScene = SCNScene(named: "Models.scnassets/Lontong.scn") {
+    //                if let checkPointScene = SCNScene(named: "Models.scnassets/lontong.scn") {
     //
     //                    if let checkPoint = checkPointScene.rootNode.childNodes.first {
     //
@@ -346,12 +372,50 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             Sound.stopAll()
         }
     
+    @objc func closeTapped()
+    {
+        collectionItem.isHidden = true
+        closeButton.isHidden = true
+        AudioSFXPlayer.shared.playBackSFX()
+    }
+    
     func setUpAutoLayout() {
         
         NSLayoutConstraint.activate([
             homeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
             homeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            closeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 875),
         ])
+    }
+    
+    private func setupPopUP(index: Int)
+    {
+        
+            collectionViewModel.getCollection(index: index)
+        
+            collectionItem.isHidden = false
+            closeButton.isHidden = false
+            
+            collectionViewModel.collectibleName.bind { [weak self] name in
+                self?.collectionItem.itemName.text = "Asik, kamu menemukan \(name)"
+            }
+            
+            collectionViewModel.collectibleOrigin.bind { [weak self] origin in
+                self?.collectionItem.itemOrigin.text = origin
+            }
+            
+            collectionViewModel.collectibleDesc.bind { [weak self] desc in
+                self?.collectionItem.itemDesc.text = "Kamu bisa menemukan item ini di rak koleksi kamu!"
+                self?.collectionItem.itemDesc.allowsEditingTextAttributes = false
+            }
+            
+            collectionViewModel.collectibleItem.bind { [weak self] item in
+                self?.collectionItem.setSCNView(scn: "Models.scnassets/\(item)")
+            }
+        
+       
+      
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -365,46 +429,42 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                 return
             }
             if let planeNode = blueCheckPointNode, planeNode == result.node {
-                print("Blue")
-                
-                //MARK: bring to respective story view
+                coordinator?.toStory()
+                defaults.set("clear_explore_1", forKey: "userState")
             }
             
             if let planeNode = greenCheckPointNode, planeNode == result.node {
                 print("Green")
-                
-                //MARK: bring to respective story view
+                coordinator?.toStory()
+                defaults.set("clear_explore_2", forKey: "userState")
             }
             
             if let planeNode = redCheckPointNode, planeNode == result.node {
                 print("Red")
-                
-                //MARK: bring to respective story view
+                coordinator?.toStory()
+                defaults.set("clear_explore_3", forKey: "userState")
             }
             
-//            if let planeNode = seraungNode, planeNode == result.node {
-//                print("Seraung")
+            if let planeNode = seraungNode, planeNode == result.node {
+                collectionViewModel.obtainItem(index: 0)
+                setupPopUP(index: 0)
+            }
 //
-//                //MARK: Save Collection, open pop up
-//            }
-//
-//            if let planeNode = tarumpahNode, planeNode == result.node {
-//                print("Tarumpah")
-//
-//                //MARK: Save Collection, open pop up
-//            }
-//
-//            if let planeNode = tinimiNode, planeNode == result.node {
-//                print("Tinim")
-//
-//                //MARK: Save Collection, open pop up
-//            }
-//
-//            if let planeNode = lontongNode, planeNode == result.node {
-//                print("Lontong")
-//
-//               //MARK: Save Collection, open pop up
-//            }
+            if let planeNode = tarumpahNode, planeNode == result.node {
+                
+                collectionViewModel.obtainItem(index: 1)
+                setupPopUP(index: 1)
+            }
+
+            if let planeNode = tinimiNode, planeNode == result.node {
+                collectionViewModel.obtainItem(index: 2)
+                setupPopUP(index: 2)
+            }
+
+            if let planeNode = lontongNode, planeNode == result.node {
+                collectionViewModel.obtainItem(index: 3)
+                setupPopUP(index: 3)
+            }
 
         }
     }

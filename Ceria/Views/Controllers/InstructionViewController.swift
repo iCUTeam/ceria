@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SceneKit
 
 class InstructionViewController: UIViewController, Storyboarded {
 
@@ -27,9 +28,9 @@ class InstructionViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.addSubview(homeButton)
         view.addSubview(startStoryButton)
+      
         setUpAutoLayout()
         // Do any additional setup after loading the view.
     }
