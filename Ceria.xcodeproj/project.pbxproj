@@ -16,6 +16,8 @@
 		142AFC4E28F42EFB0069046C /* MotionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AFC4C28F42EFB0069046C /* MotionHelper.swift */; };
 		142AFC4F28F42EFB0069046C /* VectorOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AFC4D28F42EFB0069046C /* VectorOperation.swift */; };
 		142AFC5128F42F030069046C /* HorizontalProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AFC5028F42F030069046C /* HorizontalProgressBar.swift */; };
+		14691E0B28FEDF4600DCB254 /* damage.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14691E0928FEDF4600DCB254 /* damage.mp3 */; };
+		14691E0C28FEDF4600DCB254 /* walk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14691E0A28FEDF4600DCB254 /* walk.mp3 */; };
 		1490D4D528FE5D13005660C6 /* CollectionItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1490D4D428FE5D13005660C6 /* CollectionItem.xib */; };
 		1490D4D728FE5D2B005660C6 /* CollectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1490D4D628FE5D2B005660C6 /* CollectionItem.swift */; };
 		14E89D4428FD561A007EB47A /* collection.json in Resources */ = {isa = PBXBuildFile; fileRef = 14E89D4328FD561A007EB47A /* collection.json */; };
@@ -141,6 +143,9 @@
 		142AFC4C28F42EFB0069046C /* MotionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionHelper.swift; sourceTree = "<group>"; };
 		142AFC4D28F42EFB0069046C /* VectorOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorOperation.swift; sourceTree = "<group>"; };
 		142AFC5028F42F030069046C /* HorizontalProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalProgressBar.swift; sourceTree = "<group>"; };
+		14691E0828FEDE9800DCB254 /* game2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = game2.mp3; sourceTree = "<group>"; };
+		14691E0928FEDF4600DCB254 /* damage.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = damage.mp3; path = ../../../../../../Downloads/damage.mp3; sourceTree = "<group>"; };
+		14691E0A28FEDF4600DCB254 /* walk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = walk.mp3; path = ../../../../../../Downloads/walk.mp3; sourceTree = "<group>"; };
 		1490D4D428FE5D13005660C6 /* CollectionItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionItem.xib; sourceTree = "<group>"; };
 		1490D4D628FE5D2B005660C6 /* CollectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionItem.swift; sourceTree = "<group>"; };
 		14E89D4328FD561A007EB47A /* collection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collection.json; sourceTree = "<group>"; };
@@ -390,6 +395,7 @@
 				95A6C5D828FC338800055B0A /* petualangan.m4a */,
 				95A6C5D728FC338700055B0A /* sedih.m4a */,
 				95326A5228FACD91002BAB3B /* landing.mp3 */,
+				14691E0828FEDE9800DCB254 /* game2.mp3 */,
 			);
 			path = BGM;
 			sourceTree = "<group>";
@@ -446,6 +452,8 @@
 		954C9CE028FAC53E0005960D /* SFX */ = {
 			isa = PBXGroup;
 			children = (
+				14691E0928FEDF4600DCB254 /* damage.mp3 */,
+				14691E0A28FEDF4600DCB254 /* walk.mp3 */,
 				95A6C5CA28FC2A4400055B0A /* explore2-intro.m4a */,
 				95A6C5CC28FC2A4400055B0A /* explore2.m4a */,
 				95A6C5C928FC2A4400055B0A /* explore3.m4a */,
@@ -935,6 +943,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95A6C5BB28FC19A200055B0A /* lompo_1.m4a in Resources */,
+				14691E0B28FEDF4600DCB254 /* damage.mp3 in Resources */,
 				957D950828F701ED009AA012 /* Landing.storyboard in Resources */,
 				95A6C5BA28FC19A200055B0A /* bungko_2.m4a in Resources */,
 				95A6C5D128FC2A4400055B0A /* explore2-intro.m4a in Resources */,
@@ -953,6 +962,7 @@
 				95A6C5C128FC19A200055B0A /* narrator_12.m4a in Resources */,
 				95A6C5D928FC338800055B0A /* sedih.m4a in Resources */,
 				95A6C5D428FC2A4400055B0A /* power2.m4a in Resources */,
+				14691E0C28FEDF4600DCB254 /* walk.mp3 in Resources */,
 				95A6C5B528FC19A200055B0A /* narrator_11.m4a in Resources */,
 				95A6C5B228FC19A200055B0A /* puteri_3.m4a in Resources */,
 				95A6C5C228FC19A200055B0A /* narrator_9.m4a in Resources */,

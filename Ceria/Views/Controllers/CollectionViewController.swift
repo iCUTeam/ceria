@@ -96,6 +96,7 @@ class CollectionViewController: UIViewController, Storyboarded {
                 //MARK: Temporary Code
                 if node.name == "tarumpah_unlocked"
                 {
+                    AudioSFXPlayer.shared.playCommonSFX()
                     setupPopUP(index: 1, isUnlocked: true)
                     
                     UIView.animate(withDuration: 2) {
@@ -106,6 +107,7 @@ class CollectionViewController: UIViewController, Storyboarded {
                 
                 else if node.name == "tarumpah_locked"
                 {
+                    AudioSFXPlayer.shared.playCommonSFX()
                     setupPopUP(index: 1, isUnlocked: false)
                     
                     UIView.animate(withDuration: 2) {
