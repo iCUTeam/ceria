@@ -32,13 +32,33 @@ class CollectionViewController: UIViewController, Storyboarded {
         return button
     }()
     
+    private lazy var closeButton: MakeButton =
+    {
+        let button = MakeButton(image: "x.png", size: CGSize(width: 100, height: 100))
+        button.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
+        return button
+    }()
+    
+//    private var collectionItem: CollectionItem!
+    
+    let viewModel = CollectionViewModel()
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addSubview(collectionSceneView)
         view.addSubview(homeButton)
+        view.addSubview(closeButton)
+//
+//        collectionItem = CollectionItem(frame: CGRect(x: view.frame.width * 0.5, y: view.frame.height * 0.5, width: 793, height: 803))
+        
+//        collectionItem.isHidden = true
+        closeButton.isHidden = true
+        
         setUpAutoLayout()
         setupNode()
+        
         
         let tapRecognizer = UITapGestureRecognizer()
         tapRecognizer.numberOfTouchesRequired = 1
@@ -57,13 +77,103 @@ class CollectionViewController: UIViewController, Storyboarded {
     
     @objc func tapObject(recognizer: UITapGestureRecognizer)
     {
+        let location = recognizer.location(in: collectionSceneView)
+        let hitResults = collectionSceneView.hitTest(location)
         
+        if hitResults.count > 0
+        {
+            let result = hitResults.first
+            if let node = result?.node
+            {
+                
+                //MARK: Temporary Code
+                if node.name == "tarumpah_unlocked"
+                {
+                    setupPopUP(index: 1, isUnlocked: true)
+                    
+                    UIView.animate(withDuration: 2) {
+//                        self.collectionItem.isHidden = false
+                        self.closeButton.isHidden = false
+                    }
+                }
+                
+                else if node.name == "tarumpah_locked"
+                {
+                    setupPopUP(index: 1, isUnlocked: false)
+                    
+                    UIView.animate(withDuration: 2) {
+//                        self.collectionItem.isHidden = false
+                        self.closeButton.isHidden = false
+                    }
+                }
+               
+            }
+        }
+    }
+    
+    private func setupPopUP(index: Int, isUnlocked: Bool)
+    {
+        
+        switch(isUnlocked)
+        {
+            case true:
+            viewModel.getCollection(index: index)
+            
+            viewModel.collectibleName.bind { [weak self] name in
+                print(name)
+//                self?.collectionItem.itemName.text = name
+            }
+            
+            viewModel.collectibleOrigin.bind { [weak self] origin in
+                print(origin)
+//                self?.collectionItem.itemOrigin.text = origin
+            }
+            
+            viewModel.collectibleDesc.bind { [weak self] desc in
+                print(desc)
+//                self?.collectionItem.itemDesc.text = desc
+//                self?.collectionItem.itemDesc.allowsEditingTextAttributes = false
+            }
+            
+            //MARK: Temporary Code
+            
+//            collectionItem.setSCNView(scn: "Models.scnassets/tarumpah.scn")
+//
+            case false:
+            print("Locked")
+            
+//            collectionItem.itemName.text = "???"
+//            collectionItem.itemOrigin.text = "???"
+//            collectionItem.itemDesc.text = "Ikuti cerita Tuappaka Sisarikbattang untuk menemukan benda tersembunyi."
+//
+//            //MARK: Temporary Code
+//
+//            collectionItem.setSCNView(scn: "Models.scnassets/tarumpah-shadow.scn")
+        }
+      
     }
     
     func setupNode()
     {
         tarumpahLocked = collectionSceneView.scene?.rootNode.childNode(withName: "tarumpah_locked", recursively: true)
         tarumpahUnlocked = collectionSceneView.scene?.rootNode.childNode(withName: "tarumpah_unlocked", recursively: true)
+        
+        //MARK: Temporary Code
+        
+        viewModel.getCollection(index: 1)
+        if viewModel.obtainedStatus[1]
+        {
+            tarumpahUnlocked.isHidden = false
+            tarumpahLocked.isHidden = true
+        }
+        
+        else
+            
+        {
+            tarumpahUnlocked.isHidden = true
+            tarumpahLocked.isHidden = false
+        }
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,11 +191,20 @@ class CollectionViewController: UIViewController, Storyboarded {
             AudioSFXPlayer.shared.playCommonSFX()
         }
     
+    @objc func closeTapped()
+    {
+//        collectionItem.isHidden = true
+        closeButton.isHidden = true
+        AudioSFXPlayer.shared.playBackSFX()
+    }
+    
     func setUpAutoLayout() {
         
         NSLayoutConstraint.activate([
             homeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
             homeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+            closeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 30),
         ])
     }
     

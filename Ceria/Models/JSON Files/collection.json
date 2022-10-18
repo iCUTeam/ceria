@@ -3,7 +3,7 @@
     {
         "collectible_item": "",
         "collectible_name": "Seraung",
-        "collectible_origin": "Kalimantan"
+        "collectible_origin": "Kalimantan",
         "collectible_desc": "Seraung adalah topi pelindung kepala yang digunakan oleh suku Dayak di Kalimantan. Seraung ini terbuat dari daun biru, semacam daun palem yang banyak tumbuh di hutan Kalimantan. Daun ini dikeringkan lalu dijahit menjadi topi. Sumber: https://indonesiakaya.com/pustaka-indonesia/seraung-pelindung-kepala-khas-kalimantan/"
     },
     {
@@ -15,13 +15,13 @@
     {
         "collectible_item": "",
         "collectible_name": "Tinim dan Ando",
-        "collectible_origin": "Papua"
+        "collectible_origin": "Papua",
         "collectible_desc": "Tinim dan Ando adalah busur dan panah milik Suku Muyu asal Papua. Busur tinim ini dibuat menggunakan daun palem/enau kecil, sementara panah ando dibuat menggunakan pohon Kasim, sejenis pohon bambu yang diambil lalu dipanaskan dalam api untuk meluruskan mata panah. Sumber: https://warisanbudaya.kemdikbud.go.id/?newdetail&detailCatat=6401"
     },
     {
         "collectible_item": "",
         "collectible_name": "Lontong Sayur",
-        "collectible_origin": "Sumatra Barat"
+        "collectible_origin": "Sumatra Barat",
         "collectible_desc": "TBA"
     }
 ]
