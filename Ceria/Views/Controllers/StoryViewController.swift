@@ -72,7 +72,6 @@ class StoryViewController: UIViewController, Storyboarded {
         Sound.play(file: storyVoice)
         checkBGMChange()
         currentBGM = storyMusic
-        storyTextBox.content = "Hai"
     }
     
     override func viewWillAppear(_ animated: Bool) {

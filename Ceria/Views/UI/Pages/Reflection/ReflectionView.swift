@@ -1,5 +1,5 @@
 //
-//  StoryView.swift
+//  ReflectionView.swift
 //  Ceria
 //
 //  Created by Kevin Gosalim on 17/10/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class StoryView: UIView {
+final class ReflectionView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -30,7 +30,7 @@ final class StoryView: UIView {
             fatalError("init(coder:) has not been implemented")
         }
     
-    lazy var dialogueLabel: UILabel = {
+    lazy var promptLabel: UILabel = {
         
         let screenSize: CGRect = UIScreen.main.bounds
         let screenWidth = screenSize.width
@@ -56,23 +56,23 @@ final class StoryView: UIView {
         return label
     }()
     
-    private lazy var dialogueTextFrame: UIView = {
+    private lazy var promptTextFrame: UIView = {
         
-        let frame = UIView(frame: CGRect(x:0, y:0, width: (UIScreen.main.bounds.width)-54, height: 215))
+        let frame = UIView(frame: CGRect(x:0, y:0, width: (UIScreen.main.bounds.width)-54, height: 100))
         frame.backgroundColor = UIColor(red: 242.0/255, green: 205.0/255, blue: 93.0/255, alpha: 1.0)
         frame.roundCornerView(corners: .allCorners, radius: 25)
         addSubview(frame)
-        frame.addSubview(dialogueLabel)
+        frame.addSubview(promptLabel)
         return frame
     }()
     
     private func setupAutoLayout() {
         NSLayoutConstraint.activate([
-            dialogueTextFrame.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            promptTextFrame.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
-            dialogueLabel.topAnchor.constraint(equalTo: dialogueTextFrame.topAnchor, constant: 20),
-            dialogueLabel.leftAnchor.constraint(equalTo: dialogueTextFrame.leftAnchor, constant: 20),
-            dialogueLabel.rightAnchor.constraint(equalTo: dialogueTextFrame.rightAnchor, constant: -20),
+            promptLabel.topAnchor.constraint(equalTo: promptTextFrame.topAnchor, constant: 20),
+            promptLabel.leftAnchor.constraint(equalTo: promptTextFrame.leftAnchor, constant: 20),
+            promptLabel.rightAnchor.constraint(equalTo: promptTextFrame.rightAnchor, constant: -20),
         ])
     }
 }

@@ -12,9 +12,9 @@ struct Prompt: Codable {
     let promptDialogue: String
     let promptVoice: String
     let promptMusic: String
-    let isBackButtonVisible: Bool
-    let isNextButtonVisible: Bool
-    let isActionButtonVisible: Bool
+    let isBackButtonHidden: Bool
+    let isNextButtonHidden: Bool
+    let isActionButtonHidden: Bool
     let actionButtonType: String
     let actionButtonSFX: String
 
@@ -23,9 +23,9 @@ struct Prompt: Codable {
         case promptDialogue = "prompt_dialogue"
         case promptVoice = "prompt_voice"
         case promptMusic = "prompt_music"
-        case isBackButtonVisible = "back_button_visibility"
-        case isNextButtonVisible = "next_button_visibility"
-        case isActionButtonVisible = "action_button_visibility"
+        case isBackButtonHidden = "back_button_hidden"
+        case isNextButtonHidden = "next_button_hidden"
+        case isActionButtonHidden = "action_button_hidden"
         case actionButtonType = "action_button_type"
         case actionButtonSFX = "action_button_sfx"
     }
