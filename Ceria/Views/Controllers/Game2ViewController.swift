@@ -52,6 +52,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         super.viewDidLoad()
         setupScene()
         setupNodes()
+        setupSounds()
         
         powerProgressBar.progress = 1
         
@@ -93,6 +94,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         sceneView.allowsCameraControl = false
         scene = SCNScene(named: "Models.scnassets/Game2.scn")
         sceneView.scene = scene
+        sceneView.frame = view.bounds
         
         scene.physicsWorld.contactDelegate = self
         
@@ -118,12 +120,17 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
     //buat set sfx sama bgm nanti, feel free buat diubah"
     func setupSounds()
     {
-        let contohSound = SCNAudioSource(fileNamed: "gantiNamaNanti.wav")!
-        contohSound.load()
-        contohSound.volume = 0.4
-        sounds["contoh"] = contohSound
+        let walkSound = SCNAudioSource(fileNamed: "walk.mp3")!
+        walkSound.load()
+        walkSound.volume = 0.4
+        sounds["walk"] = walkSound
         
-        let backgroundMusic = SCNAudioSource(fileNamed: "BGM_game2.mp3")!
+        let damageSound = SCNAudioSource(fileNamed: "damage.mp3")!
+        damageSound.load()
+        damageSound.volume = 0.3
+        sounds["damage"] = damageSound
+        
+        let backgroundMusic = SCNAudioSource(fileNamed: "game2.mp3")!
         backgroundMusic.volume = 0.1
         backgroundMusic.loops = true
         backgroundMusic.load()
@@ -162,7 +169,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                         
                         self.crashNode.position += SCNVector3(x: self.accelerationData[self.index], y: 0, z: x * 0.50)
 
-                        
+                      
                     }
                     
     
@@ -174,6 +181,12 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                     {
                         self.index+=1
                         count = 0
+                    }
+                    
+                    if count == 0 || count%10 == 0
+                    {
+                        let walkSound = self.sounds["walk"]!
+                        self.crashNode.runAction(SCNAction.playAudio(walkSound, waitForCompletion: true))
                     }
                     
                     //validasi kalau sudah sampe finish
@@ -255,9 +268,6 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                     self.powerProgressBar.progress -= 0.2
                 }
                 
-                index = 0
-                
-                
                 //klo dia nabrak, dia bakal immune for 5 second sebelum dia balik bisa nabrak lagi
                 immune.toggle()
                 
@@ -300,7 +310,10 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                 node.isHidden = false
             }
             
-            let actionSequence = SCNAction.sequence([waitAction, unhideAction])
+            let damageSound = sounds["damage"]!
+            let damageSoundAction = SCNAction.playAudio(damageSound, waitForCompletion: false)
+            
+            let actionSequence = SCNAction.sequence([damageSoundAction, waitAction, unhideAction])
             
             contactNode.runAction(actionSequence)
         }
