@@ -34,6 +34,7 @@ import SceneKit
     func setSCNView(scn: String)
     {
         scnView.scene = SCNScene(named: scn)
+        scnView.frame = CGRect(x: 0, y:0, width: 375, height: 303)
         scnView.allowsCameraControl = true
     }
 

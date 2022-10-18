@@ -39,7 +39,7 @@ class CollectionViewController: UIViewController, Storyboarded {
         return button
     }()
     
-//    private var collectionItem: CollectionItem!
+    private var collectionItem: CollectionItem!
     
     let viewModel = CollectionViewModel()
     let defaults = UserDefaults.standard
@@ -47,13 +47,20 @@ class CollectionViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(collectionSceneView)
-        view.addSubview(homeButton)
-        view.addSubview(closeButton)
-//
-//        collectionItem = CollectionItem(frame: CGRect(x: view.frame.width * 0.5, y: view.frame.height * 0.5, width: 793, height: 803))
+        if defaults.string(forKey: "userState") == nil
+        {
+            viewModel.initializeCollection()
+        }
         
-//        collectionItem.isHidden = true
+        view.addSubview(collectionSceneView)
+        collectionItem = CollectionItem(frame: CGRect(x: view.frame.width * 0.125, y: view.frame.height * 0.1, width: 800, height: 1100))
+        collectionItem.roundCornerView(corners: .allCorners, radius: 30)
+        view.addSubview(collectionItem)
+        view.addSubview(homeButton)
+    
+        view.addSubview(closeButton)
+        
+        collectionItem.isHidden = true
         closeButton.isHidden = true
         
         setUpAutoLayout()
@@ -92,7 +99,7 @@ class CollectionViewController: UIViewController, Storyboarded {
                     setupPopUP(index: 1, isUnlocked: true)
                     
                     UIView.animate(withDuration: 2) {
-//                        self.collectionItem.isHidden = false
+                        self.collectionItem.isHidden = false
                         self.closeButton.isHidden = false
                     }
                 }
@@ -102,7 +109,7 @@ class CollectionViewController: UIViewController, Storyboarded {
                     setupPopUP(index: 1, isUnlocked: false)
                     
                     UIView.animate(withDuration: 2) {
-//                        self.collectionItem.isHidden = false
+                        self.collectionItem.isHidden = false
                         self.closeButton.isHidden = false
                     }
                 }
@@ -120,35 +127,33 @@ class CollectionViewController: UIViewController, Storyboarded {
             viewModel.getCollection(index: index)
             
             viewModel.collectibleName.bind { [weak self] name in
-                print(name)
-//                self?.collectionItem.itemName.text = name
+                self?.collectionItem.itemName.text = name
             }
             
             viewModel.collectibleOrigin.bind { [weak self] origin in
-                print(origin)
-//                self?.collectionItem.itemOrigin.text = origin
+                self?.collectionItem.itemOrigin.text = origin
             }
             
             viewModel.collectibleDesc.bind { [weak self] desc in
-                print(desc)
-//                self?.collectionItem.itemDesc.text = desc
-//                self?.collectionItem.itemDesc.allowsEditingTextAttributes = false
+                self?.collectionItem.itemDesc.text = desc
+                self?.collectionItem.itemDesc.allowsEditingTextAttributes = false
             }
             
-            //MARK: Temporary Code
+            viewModel.collectibleItem.bind { [weak self] item in
+                self?.collectionItem.setSCNView(scn: "Models.scnassets/\(item)")
+            }
             
-//            collectionItem.setSCNView(scn: "Models.scnassets/tarumpah.scn")
+//
 //
             case false:
-            print("Locked")
             
-//            collectionItem.itemName.text = "???"
-//            collectionItem.itemOrigin.text = "???"
-//            collectionItem.itemDesc.text = "Ikuti cerita Tuappaka Sisarikbattang untuk menemukan benda tersembunyi."
-//
-//            //MARK: Temporary Code
-//
-//            collectionItem.setSCNView(scn: "Models.scnassets/tarumpah-shadow.scn")
+            collectionItem.itemName.text = "???"
+            collectionItem.itemOrigin.text = "???"
+            collectionItem.itemDesc.text = "Ikuti cerita Tuappaka Sisarikbattang untuk menemukan benda tersembunyi."
+
+            //MARK: Temporary Code
+
+            collectionItem.setSCNView(scn: "Models.scnassets/tarumpah-shadow")
         }
       
     }
@@ -193,7 +198,7 @@ class CollectionViewController: UIViewController, Storyboarded {
     
     @objc func closeTapped()
     {
-//        collectionItem.isHidden = true
+        collectionItem.isHidden = true
         closeButton.isHidden = true
         AudioSFXPlayer.shared.playBackSFX()
     }
@@ -203,19 +208,11 @@ class CollectionViewController: UIViewController, Storyboarded {
         NSLayoutConstraint.activate([
             homeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
             homeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
-            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
-            closeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 30),
+            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            closeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 875),
         ])
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  
 
 }
