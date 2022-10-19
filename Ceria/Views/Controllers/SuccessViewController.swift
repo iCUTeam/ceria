@@ -12,7 +12,7 @@ class SuccessViewController: UIViewController, Storyboarded {
 
     weak var coordinator: MainCoordinator?
     
-    @IBOutlet weak var continueStoryButton: UIButton!
+    let defaults = UserDefaults.standard
     
     private lazy var homeButton: MakeButton = {
         let button = MakeButton(image: "home.png", size: CGSize(width: 100, height: 100))
@@ -20,11 +20,32 @@ class SuccessViewController: UIViewController, Storyboarded {
         return button
     }()
     
+    private lazy var nextButton: MakeButton = {
+        let button = MakeButton(image: "next.png", size: CGSize(width: 100, height: 100))
+        button.addTarget(self, action: #selector(toStory), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var promptTextBox: SuccessView = {
+        let prompt = SuccessView(content: "Rua:\nYay, kita berhasil sampai ke tuan puteri! Terimakasih ya untuk bantuannya, ini untuk kamu!")
+        return prompt
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "rua_success.png")
+        backgroundImage.contentMode = .scaleToFill
+        view.insertSubview(backgroundImage, at: 0)
+        
         view.addSubview(homeButton)
+        view.addSubview(nextButton)
+        view.addSubview(promptTextBox)
         setUpAutoLayout()
+        
+        AudioBGMPlayer.shared.playSuccessBGM()
+        Sound.play(file: "rua_challenge_success.m4a")
         // Do any additional setup after loading the view.
     }
     
@@ -37,22 +58,35 @@ class SuccessViewController: UIViewController, Storyboarded {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    @IBAction func toStory(_ sender: Any) {
-        coordinator?.toStory()
-    }
-    
     @objc
         func homeTapped() {
             coordinator?.toLanding()
             AudioSFXPlayer.shared.playCommonSFX()
+            AudioBGMPlayer.shared.stopSuccessBGM()
             Sound.stopAll()
         }
+    
+    @objc
+    func toStory() {
+        coordinator?.toStory()
+        self.defaults.set("clear_challenge_1", forKey: "userState")
+        AudioSFXPlayer.shared.playCommonSFX()
+        AudioBGMPlayer.shared.stopSuccessBGM()
+        Sound.play(file: "explore3_collect_hint.m4a")
+        sleep(6)
+    }
     
     func setUpAutoLayout() {
         
         NSLayoutConstraint.activate([
             homeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
             homeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+            
+            nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200),
+            nextButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24),
+            
+            promptTextBox.topAnchor.constraint(equalTo: view.topAnchor, constant: 130),
+            promptTextBox.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
     

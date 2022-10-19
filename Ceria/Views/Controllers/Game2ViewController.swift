@@ -14,6 +14,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
     weak var coordinator: MainCoordinator?
     
     @IBOutlet weak var powerProgressBar: HorizontalProgressBar!
+    @IBOutlet weak var distanceProgressBar: HorizontalProgressBar!
     @IBOutlet weak var sceneView: SCNView!
     
     private lazy var homeButton: MakeButton = {
@@ -21,8 +22,6 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         button.addTarget(self, action: #selector(homeTapped), for: .touchUpInside)
         return button
     }()
-    
-    let defaults = UserDefaults.standard
     
     //collision bitmask
     let categoryObstacles = 2
@@ -46,20 +45,27 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
     
     var index = 0
     
+    var voiceName = ""
+    
     var sounds:[String:SCNAudioSource] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupScene()
         setupNodes()
-        setupSounds()
+        setupOverlays()
+        
         
         powerProgressBar.progress = 1
+        distanceProgressBar.progress = 0
         
         view.addSubview(homeButton)
         setUpAutoLayout()
         
-        Sound.play(file: "game2.mp3", numberOfLoops: -1)
+        AudioBGMPlayer.shared.playGame2BGM()
+        
+        
+        Sound.play(file: "rua_game_2.m4a")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,13 +82,40 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
             coordinator?.toLanding()
             AudioSFXPlayer.shared.playCommonSFX()
             Sound.stopAll()
+            AudioBGMPlayer.shared.stopGame2BGM()
         }
+    
+    func setupOverlays() {
+        let playerImage = UIImageView(frame: CGRect(x: 255, y: 630, width: (UIScreen.main.bounds.width)-500, height: 800))
+        playerImage.image = UIImage(named: "rua_back.png")
+        playerImage.contentMode = .scaleAspectFit
+        view.insertSubview(playerImage, at: 1)
+        
+        let ruaImage = UIImageView(frame: CGRect(x: 150, y: 30, width: 100, height: 100))
+        ruaImage.image = UIImage(named: "rua.png")
+        ruaImage.contentMode = .scaleAspectFit
+        view.insertSubview(ruaImage, at: 1)
+        
+        let puteriImage = UIImageView(frame: CGRect(x: 900, y: 30, width: 100, height: 100))
+        puteriImage.image = UIImage(named: "putri.png")
+        puteriImage.contentMode = .scaleAspectFit
+        view.insertSubview(puteriImage, at: 1)
+        
+        let lineImage = UIImageView(frame: CGRect(x: 200, y: 80, width: 760, height: 10))
+        lineImage.image = UIImage(named: "line.png")
+        lineImage.contentMode = .scaleAspectFit
+        view.insertSubview(lineImage, at: 1)
+        
+    }
+    
+    
     
     func setUpAutoLayout() {
         
         NSLayoutConstraint.activate([
             homeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
             homeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+            
         ])
     }
     
@@ -120,23 +153,28 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
     //buat set sfx sama bgm nanti, feel free buat diubah"
     func setupSounds()
     {
-        let walkSound = SCNAudioSource(fileNamed: "walk.mp3")!
-        walkSound.load()
-        walkSound.volume = 0.4
-        sounds["walk"] = walkSound
+//        let walkSound = SCNAudioSource(fileNamed: "walk.m4a")!
+//        walkSound.load()
+//        walkSound.volume = 0.4
+//        sounds["walk"] = walkSound
         
-        let damageSound = SCNAudioSource(fileNamed: "damage.mp3")!
-        damageSound.load()
-        damageSound.volume = 0.3
-        sounds["damage"] = damageSound
+//        let damageSound = SCNAudioSource(fileNamed: "damage.m4a")!
+//        damageSound.load()
+//        damageSound.volume = 0.3
+//        sounds["damage"] = damageSound
         
-        let backgroundMusic = SCNAudioSource(fileNamed: "game2.mp3")!
-        backgroundMusic.volume = 0.1
-        backgroundMusic.loops = true
-        backgroundMusic.load()
+//        let backgroundMusic = SCNAudioSource(fileNamed: "game2.mp3")!
+//        backgroundMusic.volume = 0.1
+//        backgroundMusic.loops = true
+//        backgroundMusic.load()
+//
+//        let musicPlayer = SCNAudioPlayer(source: backgroundMusic)
+//        crashNode.addAudioPlayer(musicPlayer)
         
-        let musicPlayer = SCNAudioPlayer(source: backgroundMusic)
-        crashNode.addAudioPlayer(musicPlayer)
+        let randomNumber = Int.random(in: 1...2)
+        
+        voiceName = "rua_game_\(randomNumber).m4a"
+        print("\(voiceName)")
     }
     
 
@@ -156,6 +194,8 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         
         var count = 0
         
+        Sound.play(file: "walk.m4a", numberOfLoops: -1)
+        
         gameStarted.toggle()
         
         //cek klo game start dia mulai jalanin objectnya sesuai accelerationdata yang diatas per sumbu x dan z nya ngikut dari pergerakan accelerometer
@@ -168,13 +208,14 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                     self.motion.getAccelerometerData{ (x, y, z) in
                         
                         self.crashNode.position += SCNVector3(x: self.accelerationData[self.index], y: 0, z: x * 0.50)
-
-                      
+                        
                     }
                     
-    
+                    
                     //timernya kan jalan 0.1 detik sekali, jadi itungannya 10 detik tu berarti dah jalan 100 hitungan
                     count += 1
+                    self.distanceProgressBar.progress += CGFloat(self.crashNode.position.x*0.00002)
+                    
                     
                     //that's why klo countnya dia = 100 nanti kita tambahin index accelerationnya biar ambil next acceleration yang lebih cepet terus kita balik lagi count dari 0
                     if count % 100 == 0
@@ -183,29 +224,35 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                         count = 0
                     }
                     
-                    if count == 0 || count%10 == 0
-                    {
-                        let walkSound = self.sounds["walk"]!
-                        self.crashNode.runAction(SCNAction.playAudio(walkSound, waitForCompletion: true))
-                    }
+//                    if count == 0 || count%10 == 0
+//                    {
+//                        let walkSound = self.sounds["walk"]!
+//                        self.crashNode.runAction(SCNAction.playAudio(walkSound, waitForCompletion: true))
+//                    }
                     
                     //validasi kalau sudah sampe finish
                     if self.crashNode.position.x >= 280
                     {
+                        Sound.play(file: "finish.wav")
+                        Sound.play(file: "rua_game_2.m4a")
                         timer.invalidate()
+                        sleep(2)
+                        self.coordinator?.toSuccess()
+                        Sound.stopAll()
+                        AudioBGMPlayer.shared.stopGame2BGM()
+                        
+                        
                         
                         //temporary alert
-                        let alert = UIAlertController(title: "Kamu berhasil!", message: "Asik, kita sudah sampai ke sarang Garuda! Ayo selamatkan tuan putri!", preferredStyle: .alert)
-                        
-                        alert.addAction(UIAlertAction(title: "Asik", style: .default)
-                        {_ in
-                            alert.dismiss(animated: true)
-                            self.coordinator?.toSuccess()
-                            Sound.stopAll()
-                            self.defaults.set("clear_challenge_1", forKey: "userState")
-                        })
-                        
-                        self.present(alert, animated: true)
+//                        let alert = UIAlertController(title: "Kamu berhasil!", message: "Asik, kita sudah sampai ke sarang Garuda! Ayo selamatkan tuan putri!", preferredStyle: .alert)
+//
+//                        alert.addAction(UIAlertAction(title: "Asik", style: .default)
+//                        {_ in
+//                            alert.dismiss(animated: true)
+//
+//                        })
+//
+//                        self.present(alert, animated: true)
                         
                         
                     }
@@ -217,6 +264,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
             else
             {
                 timer.invalidate()
+                Sound.stop(file: "walk.m4a")
             }
         }
         
@@ -266,6 +314,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                 
                 DispatchQueue.main.async {
                     self.powerProgressBar.progress -= 0.2
+                    Sound.play(file: "damage.m4a")
                 }
                 
                 //klo dia nabrak, dia bakal immune for 5 second sebelum dia balik bisa nabrak lagi
@@ -298,22 +347,27 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                 
                 DispatchQueue.main.async {
                     self.powerProgressBar.progress = 1
+                    Sound.play(file: "game2_fail.m4a")
+                    self.setupSounds()
+                    Sound.play(file: self.voiceName)
                 }
                
                 crashNode.position = initialPosition
+                distanceProgressBar.progress = 0
+                index = 0
             }
           
             
             //setelah 2 second, nodenya akan ditampilin lagi
-            let waitAction = SCNAction.wait(duration: 2)
+            let waitAction = SCNAction.wait(duration: 1)
             let unhideAction = SCNAction.run { (node) in
                 node.isHidden = false
             }
             
-            let damageSound = sounds["damage"]!
-            let damageSoundAction = SCNAction.playAudio(damageSound, waitForCompletion: false)
+//            let damageSound = sounds["damage"]!
+//            let damageSoundAction = SCNAction.playAudio(damageSound, waitForCompletion: false)
             
-            let actionSequence = SCNAction.sequence([damageSoundAction, waitAction, unhideAction])
+            let actionSequence = SCNAction.sequence([waitAction, unhideAction])
             
             contactNode.runAction(actionSequence)
         }

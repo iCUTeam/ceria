@@ -1,0 +1,36 @@
+[
+ {
+ "tutorial_image" : "tutorial_1",
+ "tutorial_dialogue" : "Rua:\nGerakkan tabletmu ke kanan dan ke kiri untuk membantuku menghindari halangan di depan, agar dapat sampai ke tuan puteri.",
+ "tutorial_voice" : "rua_tutorial_1.m4a",
+ "tutorial_music" : "petualangan",
+ "back_button_hidden" : true,
+ "next_button_hidden" : false,
+ "action_button_hidden" : true,
+ "action_button_type": "",
+ "action_button_sfx": ""
+ },
+ {
+ "tutorial_image" : "tutorial_2",
+ "tutorial_dialogue" : "Rua:\nJika halangan menabrak bagian tengah layar, nanti tenagaku akan berkurang. Dan jika tenagaku habis maka kamu akan mengulang dari awal lagi.",
+ "tutorial_voice" : "rua_tutorial_2.m4a",
+ "tutorial_music" : "petualangan",
+ "back_button_hidden" : false,
+ "next_button_hidden" : false,
+ "action_button_hidden" : true,
+ "action_button_type": "",
+ "action_button_sfx": ""
+ },
+ {
+ "tutorial_image" : "tutorial_3",
+ "tutorial_dialogue" : "Rua:\nKamu bisa lihat berapa jauh kita sampai ke tuan puteri, lewat penanda yang ada di atas layar.",
+ "tutorial_voice" : "rua_tutorial_3.m4a",
+ "tutorial_music" : "petualangan",
+ "back_button_hidden" : false,
+ "next_button_hidden" : true,
+ "action_button_hidden" : false,
+ "action_button_type": "startgame.png",
+ "action_button_sfx": "game2.m4a"
+ }
+]
+

@@ -151,7 +151,7 @@ class CollectionViewController: UIViewController, Storyboarded {
             
             collectionItem.itemName.text = "???"
             collectionItem.itemOrigin.text = "???"
-            collectionItem.itemDesc.text = "Ikuti cerita Tuappaka Sisarikbattang untuk menemukan benda tersembunyi."
+            collectionItem.itemDesc.text = "\n\nIkuti cerita Tuappaka Sisarikbattang untuk menemukan benda tersembunyi ini ya."
 
             //MARK: Temporary Code
 
@@ -212,6 +212,9 @@ class CollectionViewController: UIViewController, Storyboarded {
             homeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
             closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             closeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 875),
+            
+            collectionItem.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            collectionItem.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
     

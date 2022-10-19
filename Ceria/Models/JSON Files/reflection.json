@@ -1,7 +1,7 @@
 [
  {
  "prompt_image" : "reflection_1",
- "prompt_dialogue" : "Lompo: Pelajaran yang kita dapat dari cerita ini adalah, patuhlah pada pesan orang tua karena itu bisa menjadi kebaikan hidupmu.",
+ "prompt_dialogue" : "Lompo:\nPelajaran yang kita dapat dari cerita ini adalah, patuhlah pada pesan orang tua karena itu bisa menjadi kebaikan hidupmu.",
  "prompt_voice" : "lompo_4.m4a",
  "prompt_music" : "petualangan",
  "back_button_hidden" : true,
@@ -12,7 +12,7 @@
  },
  {
  "prompt_image" : "reflection_2",
- "prompt_dialogue" : "Rua: Lalu, bangunlah keberanian untuk selalu melakukan perbuatan yang benar, berani berbicara dan menyuarakan pendapat.",
+ "prompt_dialogue" : "Rua:\nLalu, bangunlah keberanian untuk selalu melakukan perbuatan yang benar, berani berbicara dan menyuarakan pendapat.",
  "prompt_voice" : "rua_5.m4a",
  "prompt_music" : "petualangan",
  "back_button_hidden" : false,
@@ -23,7 +23,7 @@
  },
  {
  "prompt_image" : "reflection_3",
- "prompt_dialogue" : "Tallu: Ingatlah untuk saling tolong menolong, bantu-membantu adalah penting untuk mencapai hal yang besar.",
+ "prompt_dialogue" : "Tallu:\nIngatlah untuk saling tolong menolong, bantu-membantu adalah penting untuk mencapai hal yang besar.",
  "prompt_voice" : "tallu_2.m4a",
  "prompt_music" : "petualangan",
  "back_button_hidden" : false,
@@ -34,7 +34,7 @@
  },
  {
  "prompt_image" : "reflection_4",
- "prompt_dialogue" : "Bungko: Tak lupa jagalah kerukunan antar bersaudara.",
+ "prompt_dialogue" : "Bungko:\nTak lupa jagalah kerukunan antar bersaudara.",
  "prompt_voice" : "bungko_3.m4a",
  "prompt_music" : "petualangan",
  "back_button_hidden" : false,

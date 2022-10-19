@@ -166,9 +166,11 @@ class StoryViewController: UIViewController, Storyboarded {
         case "power2.png":
             defaults.set("clear_story_2", forKey: "userState")
             coordinator?.toPower()
+            sleep(3)
         case "game2.png":
             defaults.set("clear_story_3", forKey: "userState")
             coordinator?.toTutorial()
+            sleep(3)
         case "explore3.png":
             defaults.set("clear_story_4", forKey: "userState")
             coordinator?.toExplore()
@@ -176,6 +178,7 @@ class StoryViewController: UIViewController, Storyboarded {
         case "reflection.png":
             defaults.set("cleared", forKey: "userState")
             coordinator?.toReflection()
+            sleep(5)
         default:
             print("nowhere to go")
         }

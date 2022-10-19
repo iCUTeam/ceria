@@ -56,7 +56,7 @@
  },
  {
  "story_image" : "scene_3-2-1",
- "story_dialogue" : "Lompo : Adikku Bungko, aku melihat burung garuda itu saat ini sedang tertidur lelap, mari kita merapat ke pulau itu sekarang.",
+ "story_dialogue" : "Lompo:\nAdikku Bungko, aku melihat burung garuda itu saat ini sedang tertidur lelap, mari kita merapat ke pulau itu sekarang.",
  "story_voice" : "lompo_1.m4a",
  "story_music" : "laut",
  "back_button_hidden" : true,
@@ -67,7 +67,7 @@
  },
  {
  "story_image" : "scene_3-2-2",
- "story_dialogue" : "Bungko: Baik kak! Tapi bagaimana kita menyelamatkan tuan puteri dari burung garuda itu?",
+ "story_dialogue" : "Bungko:\nBaik kak! Tapi bagaimana kita menyelamatkan tuan puteri dari burung garuda itu?",
  "story_voice" : "bungko_1.m4a",
  "story_music" : "laut",
  "back_button_hidden" : false,
@@ -89,7 +89,7 @@
  },
  {
  "story_image" : "scene_3-3-1",
- "story_dialogue" : "Tallu: Kakak Rua, kau memiliki kemampuan untuk bergerak dengan cepat, sekarang sebaiknya kita cepat menjemput tuan puteri yang berada di atas gunung sebelum garuda terbangun.",
+ "story_dialogue" : "Tallu:\nKakak Rua, kau memiliki kemampuan untuk bergerak dengan cepat, sekarang sebaiknya kita cepat menjemput tuan puteri yang berada di atas gunung sebelum garuda terbangun.",
  "story_voice" : "tallu_1.m4a",
  "story_music" : "laut",
  "back_button_hidden" : false,
@@ -100,7 +100,7 @@
  },
  {
  "story_image" : "scene_3-3-2",
- "story_dialogue" : "Lompo: Ini tempat puteri berada adikku Rua, ikuti saja arah pada peta ini.",
+ "story_dialogue" : "Lompo:\nIni tempat puteri berada adikku Rua, ikuti saja arah pada peta ini.",
  "story_voice" : "lompo_2.m4a",
  "story_music" : "laut",
  "back_button_hidden" : false,
@@ -111,7 +111,7 @@
  },
  {
  "story_image" : "scene_3-3-3",
- "story_dialogue" : "Rua: Baik kak, serahkan kepadaku.",
+ "story_dialogue" : "Rua:\nBaik kak, serahkan kepadaku.",
  "story_voice" : "rua_1.m4a",
  "story_music" : "laut.wav",
  "back_button_hidden" : false,
@@ -144,7 +144,7 @@
  },
  {
  "story_image" : "scene_3-5-1",
- "story_dialogue" : "Rua: Tuan puteri, aku datang untuk menyelamatkanmu.",
+ "story_dialogue" : "Rua:\nTuan puteri, aku datang untuk menyelamatkanmu.",
  "story_voice" : "rua_2.m4a",
  "story_music" : "",
  "back_button_hidden" : false,
@@ -155,7 +155,7 @@
  },
  {
  "story_image" : "scene_3-5-2",
- "story_dialogue" : "Puteri: Ahhh… Aku sangat senang akhirnya ada yang menjemputku.",
+ "story_dialogue" : "Puteri:\nAhhh… Aku sangat senang akhirnya ada yang menjemputku.",
  "story_voice" : "puteri_1.m4a",
  "story_music" : "",
  "back_button_hidden" : false,
@@ -166,7 +166,7 @@
  },
  {
  "story_image" : "scene_3-5-3",
- "story_dialogue" : "Rua: Ayo kita pergi dari sini dengan perlahan selagi burung garuda masih tertidur, tuan puteri.",
+ "story_dialogue" : "Rua:\nAyo kita pergi dari sini dengan perlahan selagi burung garuda masih tertidur, tuan puteri.",
  "story_voice" : "rua_3.m4a",
  "story_music" : "",
  "back_button_hidden" : false,
@@ -177,7 +177,7 @@
  },
  {
  "story_image" : "scene_3-5-4",
- "story_dialogue" : "Puteri: Baiklah.",
+ "story_dialogue" : "Puteri:\nBaiklah.",
  "story_voice" : "puteri_2.m4a",
  "story_music" : "",
  "back_button_hidden" : false,
@@ -188,7 +188,7 @@
  },
  {
  "story_image" : "scene_3-5-5",
- "story_dialogue" : "Rua: Ikuti aku, tuan puteri.",
+ "story_dialogue" : "Rua:\nIkuti aku, tuan puteri.",
  "story_voice" : "rua_4.m4a",
  "story_music" : "",
  "back_button_hidden" : false,
@@ -221,7 +221,7 @@
  },
  {
  "story_image" : "scene_3-7-1",
- "story_dialogue" : "Lompo: Selamat datang tuan puteri, kami siap membawa tuan puteri kembali kepada Paduka Raja.",
+ "story_dialogue" : "Lompo:\nSelamat datang tuan puteri, kami siap membawa tuan puteri kembali kepada Paduka Raja.",
  "story_voice" : "lompo_3.m4a",
  "story_music" : "petualangan",
  "back_button_hidden" : false,
@@ -232,7 +232,7 @@
  },
  {
  "story_image" : "scene_3-7-2",
- "story_dialogue" : "Puteri: Terima kasih banyak sudah menjemputku, segeralah kita pergi dari sini sebelum burung garuda itu terbangun.",
+ "story_dialogue" : "Puteri:\nTerima kasih banyak sudah menjemputku, segeralah kita pergi dari sini sebelum burung garuda itu terbangun.",
  "story_voice" : "puteri_3.m4a",
  "story_music" : "petualangan",
  "back_button_hidden" : false,
@@ -243,7 +243,7 @@
  },
  {
  "story_image" : "scene_3-7-3",
- "story_dialogue" : "Bungko: Baiklah kalau begitu mari kita berangkat.",
+ "story_dialogue" : "Bungko:\nBaiklah kalau begitu mari kita berangkat.",
  "story_voice" : "bungko_2.m4a",
  "story_music" : "petualangan",
  "back_button_hidden" : false,

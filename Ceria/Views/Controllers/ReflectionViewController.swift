@@ -159,6 +159,7 @@ class ReflectionViewController: UIViewController, Storyboarded {
         
         defaults.set("not_started", forKey: "userState")
         defaults.set(0, forKey: "storyIndex")
+        sleep(5)
         coordinator?.toStory()
         
     }
