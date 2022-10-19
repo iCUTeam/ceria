@@ -24,4 +24,11 @@ extension UILabel {
         self.attributedText = attributeString
     }
 
+    func underline() {
+        if let textUnwrapped = self.text {
+            let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
+            let underlineAttributedString = NSAttributedString(string: textUnwrapped, attributes: underlineAttribute)
+            self.attributedText = underlineAttributedString
+        }
+    }
 }

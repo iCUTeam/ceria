@@ -108,6 +108,7 @@
 		95EBB88628F8166800EE82E7 /* ClueMesseges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EBB88528F8166800EE82E7 /* ClueMesseges.swift */; };
 		95EBB88728F8184400EE82E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E1730E28F66156005252B0 /* Assets.xcassets */; };
 		95EBB88928F852BE00EE82E7 /* stories.json in Resources */ = {isa = PBXBuildFile; fileRef = 95EBB88828F852BE00EE82E7 /* stories.json */; };
+		A91DA8F928FFE484009E2428 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DA8F828FFE484009E2428 /* Checkbox.swift */; };
 		BBD8F63D9A2C283F97DAC813 /* Pods_Ceria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5039E298D11B9EA863C1D3 /* Pods_Ceria.framework */; };
 /* End PBXBuildFile section */
 
@@ -238,6 +239,7 @@
 		95EBB88528F8166800EE82E7 /* ClueMesseges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClueMesseges.swift; sourceTree = "<group>"; };
 		95EBB88828F852BE00EE82E7 /* stories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stories.json; sourceTree = "<group>"; };
 		A0EFD431A5CCE27FC26AC7CF /* Pods-CeriaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CeriaTests.release.xcconfig"; path = "Target Support Files/Pods-CeriaTests/Pods-CeriaTests.release.xcconfig"; sourceTree = "<group>"; };
+		A91DA8F828FFE484009E2428 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		BB5039E298D11B9EA863C1D3 /* Pods_Ceria.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ceria.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C377D7A2916A58F426FC98E8 /* Pods-Ceria-CeriaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ceria-CeriaUITests.release.xcconfig"; path = "Target Support Files/Pods-Ceria-CeriaUITests/Pods-Ceria-CeriaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C68E101B4910F5A147B96657 /* Pods_Ceria_CeriaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ceria_CeriaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -649,6 +651,7 @@
 				95E1731A28F66B16005252B0 /* Custom */,
 				951C638D28F7C71700002FA5 /* MakeButton.swift */,
 				951C638F28F7C76900002FA5 /* MakeStack.swift */,
+				A91DA8F828FFE484009E2428 /* Checkbox.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1137,6 +1140,7 @@
 				95C814B028FAA810008E3036 /* UIView+RoundCornerView.swift in Sources */,
 				951C639228F7E4AB00002FA5 /* Story.swift in Sources */,
 				951C639628F7E4DB00002FA5 /* Card.swift in Sources */,
+				A91DA8F928FFE484009E2428 /* Checkbox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1306,7 +1310,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = S955BH56FW;
+				DEVELOPMENT_TEAM = P7PL5J4AMN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Ceria/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Ceria;
@@ -1342,7 +1346,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = S955BH56FW;
+				DEVELOPMENT_TEAM = P7PL5J4AMN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Ceria/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Ceria;
