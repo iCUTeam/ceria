@@ -89,6 +89,8 @@
 		95BD1E5628FF93B9003832EF /* tutorial.json in Resources */ = {isa = PBXBuildFile; fileRef = 95BD1E5528FF93B9003832EF /* tutorial.json */; };
 		95BD1E5828FF97B7003832EF /* TutorialFeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BD1E5728FF97B7003832EF /* TutorialFeeder.swift */; };
 		95BD1E5A28FF988A003832EF /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BD1E5928FF988A003832EF /* TutorialView.swift */; };
+		95BD1E5C28FFBB59003832EF /* PowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BD1E5B28FFBB59003832EF /* PowerView.swift */; };
+		95BD1E5E28FFC1D1003832EF /* power2_fail.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95BD1E5D28FFC1D1003832EF /* power2_fail.m4a */; };
 		95C77C0428FEDEC9009B9D69 /* bungko_3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C0128FEDEC8009B9D69 /* bungko_3.m4a */; };
 		95C77C0528FEDEC9009B9D69 /* bungko_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C0228FEDEC8009B9D69 /* bungko_2.m4a */; };
 		95C77C0628FEDEC9009B9D69 /* bungko_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C0328FEDEC8009B9D69 /* bungko_1.m4a */; };
@@ -261,6 +263,8 @@
 		95BD1E5528FF93B9003832EF /* tutorial.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tutorial.json; sourceTree = "<group>"; };
 		95BD1E5728FF97B7003832EF /* TutorialFeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialFeeder.swift; sourceTree = "<group>"; };
 		95BD1E5928FF988A003832EF /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		95BD1E5B28FFBB59003832EF /* PowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerView.swift; sourceTree = "<group>"; };
+		95BD1E5D28FFC1D1003832EF /* power2_fail.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = power2_fail.m4a; sourceTree = "<group>"; };
 		95C77C0128FEDEC8009B9D69 /* bungko_3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bungko_3.m4a; sourceTree = "<group>"; };
 		95C77C0228FEDEC8009B9D69 /* bungko_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bungko_2.m4a; sourceTree = "<group>"; };
 		95C77C0328FEDEC8009B9D69 /* bungko_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bungko_1.m4a; sourceTree = "<group>"; };
@@ -405,7 +409,7 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		951C639C28F7EA4700002FA5 /* JSON Files */ = {
+		951C639C28F7EA4700002FA5 /* JSON_Files */ = {
 			isa = PBXGroup;
 			children = (
 				14E89D4328FD561A007EB47A /* collection.json */,
@@ -413,7 +417,7 @@
 				95BD1E5528FF93B9003832EF /* tutorial.json */,
 				953B9AB128FA21B7001C4A56 /* reflection.json */,
 			);
-			path = "JSON Files";
+			path = JSON_Files;
 			sourceTree = "<group>";
 		};
 		951C639D28F7EC4600002FA5 /* Voices */ = {
@@ -658,6 +662,7 @@
 		95C77C3628FEE332009B9D69 /* power2 */ = {
 			isa = PBXGroup;
 			children = (
+				95BD1E5D28FFC1D1003832EF /* power2_fail.m4a */,
 				95C77C1628FEE0E1009B9D69 /* tallu_power2.m4a */,
 				95C77C4528FEEE8A009B9D69 /* power2_hint.m4a */,
 				95C77C2C28FEE30C009B9D69 /* rua_power_success.m4a */,
@@ -775,7 +780,7 @@
 			isa = PBXGroup;
 			children = (
 				95EBB88528F8166800EE82E7 /* ClueMesseges.swift */,
-				951C639C28F7EA4700002FA5 /* JSON Files */,
+				951C639C28F7EA4700002FA5 /* JSON_Files */,
 				951C639128F7E4AB00002FA5 /* Story.swift */,
 				951C639328F7E4C400002FA5 /* Collection.swift */,
 				951C639528F7E4DB00002FA5 /* Card.swift */,
@@ -907,6 +912,7 @@
 		95E1732128F66CEF005252B0 /* Power */ = {
 			isa = PBXGroup;
 			children = (
+				95BD1E5B28FFBB59003832EF /* PowerView.swift */,
 			);
 			path = Power;
 			sourceTree = "<group>";
@@ -1136,6 +1142,7 @@
 				95C77C5528FEEE8B009B9D69 /* narrator_6.m4a in Resources */,
 				95C77C6728FEEE8B009B9D69 /* narrator_4.m4a in Resources */,
 				95C77C0D28FEDF8C009B9D69 /* lompo_2.m4a in Resources */,
+				95BD1E5E28FFC1D1003832EF /* power2_fail.m4a in Resources */,
 				95C77C0428FEDEC9009B9D69 /* bungko_3.m4a in Resources */,
 				95A6C5D628FC2A4400055B0A /* reflection.m4a in Resources */,
 				953B9AB228FA21B7001C4A56 /* reflection.json in Resources */,
@@ -1347,6 +1354,7 @@
 				95326A5628FB3A46002BAB3B /* PowerViewModel.swift in Sources */,
 				95BD1E5A28FF988A003832EF /* TutorialView.swift in Sources */,
 				957D951128F70794009AA012 /* ExploreViewModel.swift in Sources */,
+				95BD1E5C28FFBB59003832EF /* PowerView.swift in Sources */,
 				957D951928F70956009AA012 /* InstructionViewController.swift in Sources */,
 				95AB323728F3C59C0003DCB0 /* AppDelegate.swift in Sources */,
 				951C639A28F7E4FB00002FA5 /* Tutorial.swift in Sources */,

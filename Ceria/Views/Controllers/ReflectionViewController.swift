@@ -56,6 +56,9 @@ class ReflectionViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        defaults.set(0, forKey: "promptIndex")
+        
         backgroundImage.contentMode = .scaleToFill
         view.insertSubview(backgroundImage, at: 0)
         
@@ -127,6 +130,7 @@ class ReflectionViewController: UIViewController, Storyboarded {
             coordinator?.toLanding()
             AudioSFXPlayer.shared.playCommonSFX()
             Sound.stopAll()
+            defaults.set(0, forKey: "promptIndex")
         }
     
     @objc
@@ -158,6 +162,7 @@ class ReflectionViewController: UIViewController, Storyboarded {
         Sound.play(file: actionButtonSFX)
         
         defaults.set("not_started", forKey: "userState")
+        defaults.set(0, forKey: "promptIndex")
         defaults.set(0, forKey: "storyIndex")
         sleep(5)
         coordinator?.toStory()

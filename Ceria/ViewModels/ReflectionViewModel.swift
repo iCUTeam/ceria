@@ -18,11 +18,12 @@ final class ReflectionViewModel {
     var isActionButtonHidden: ObservableObject<Bool> = ObservableObject(value: false)
     var actionButtonType: ObservableObject<String> = ObservableObject(value: "")
     var actionButtonSFX: ObservableObject<String> = ObservableObject(value: "")
+    var currentIndex: ObservableObject<Int> = ObservableObject(value: 0)
     
     var promptsArray: [Prompt] = []
     var feeder = PromptFeeder()
 
-    var currentIndex: ObservableObject<Int> = ObservableObject(value: 0)
+    let defaults = UserDefaults.standard
     
     func getPrompt() {
         
@@ -37,6 +38,15 @@ final class ReflectionViewModel {
         self.isActionButtonHidden.value = promptsArray[currentIndex.value].isActionButtonHidden
         self.actionButtonType.value = promptsArray[currentIndex.value].actionButtonType
         self.actionButtonSFX.value = promptsArray[currentIndex.value].actionButtonSFX
+    }
+    
+    func saveIndex() {
+        defaults.set(currentIndex.value, forKey: "promptIndex")
+    }
+    
+    func loadPrompt() {
+        currentIndex.value = defaults.integer(forKey: "currentIndex")
+        getPrompt()
     }
     
     func previousIndex() {

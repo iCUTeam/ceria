@@ -86,10 +86,6 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         }
     
     func setupOverlays() {
-        let playerImage = UIImageView(frame: CGRect(x: 255, y: 630, width: (UIScreen.main.bounds.width)-500, height: 800))
-        playerImage.image = UIImage(named: "rua_back.png")
-        playerImage.contentMode = .scaleAspectFit
-        view.insertSubview(playerImage, at: 1)
         
         let ruaImage = UIImageView(frame: CGRect(x: 150, y: 30, width: 100, height: 100))
         ruaImage.image = UIImage(named: "rua.png")
@@ -315,6 +311,8 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                 DispatchQueue.main.async {
                     self.powerProgressBar.progress -= 0.2
                     Sound.play(file: "damage.m4a")
+                    self.setupSounds()
+                    Sound.play(file: self.voiceName)
                 }
                 
                 //klo dia nabrak, dia bakal immune for 5 second sebelum dia balik bisa nabrak lagi
@@ -348,8 +346,6 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                 DispatchQueue.main.async {
                     self.powerProgressBar.progress = 1
                     Sound.play(file: "game2_fail.m4a")
-                    self.setupSounds()
-                    Sound.play(file: self.voiceName)
                 }
                
                 crashNode.position = initialPosition

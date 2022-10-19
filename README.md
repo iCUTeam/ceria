@@ -55,7 +55,7 @@ ceria
 |       |
 |       |__ Core Motion
 |       |
-|       |__ 3D
+|       |__ Gameplay
 |
 |__ Services
 |   |
