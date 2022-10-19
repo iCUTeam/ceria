@@ -13,6 +13,8 @@ class AudioBGMPlayer {
     static let shared = AudioBGMPlayer()
     var playerBGMLanding: AVAudioPlayer?
     var playerBGMStory: AVAudioPlayer?
+    var playerBGMGame: AVAudioPlayer?
+    var playerBGMSuccess: AVAudioPlayer?
     
     func playLanding() {
         let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "landing", ofType: "mp3")!)
@@ -78,5 +80,43 @@ class AudioBGMPlayer {
     
     func stopStoryBGM() {
         playerBGMStory?.stop()
+    }
+    
+    func playGame2BGM() {
+        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "game2-bgm", ofType: "m4a")!)
+        do {
+            playerBGMGame = try AVAudioPlayer(contentsOf:sound as URL)
+            playerBGMGame?.numberOfLoops = -1
+            playerBGMGame?.prepareToPlay()
+            playerBGMGame?.volume = 0.2
+            playerBGMGame?.numberOfLoops = -1
+            playerBGMGame?.play()
+        }
+        catch {
+            print("Cannot play the file")
+        }
+    }
+    
+    func stopGame2BGM() {
+        playerBGMGame?.stop()
+    }
+    
+    func playSuccessBGM() {
+        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "success-page", ofType: "m4a")!)
+        do {
+            playerBGMSuccess = try AVAudioPlayer(contentsOf:sound as URL)
+            playerBGMSuccess?.numberOfLoops = -1
+            playerBGMSuccess?.prepareToPlay()
+            playerBGMSuccess?.volume = 0.2
+            playerBGMSuccess?.numberOfLoops = -1
+            playerBGMSuccess?.play()
+        }
+        catch {
+            print("Cannot play the file")
+        }
+    }
+    
+    func stopSuccessBGM() {
+        playerBGMSuccess?.stop()
     }
 }

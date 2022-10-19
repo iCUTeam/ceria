@@ -160,33 +160,38 @@ class StoryViewController: UIViewController, Storyboarded {
         
         switch actionButtonType {
         case "explore2.png":
+            saveAndNextIndex()
             defaults.set("clear_story_1", forKey: "userState")
             coordinator?.toExplore()
             sleep(3)
         case "power2.png":
+            saveAndNextIndex()
             defaults.set("clear_story_2", forKey: "userState")
             coordinator?.toPower()
+            sleep(5)
         case "game2.png":
+            saveAndNextIndex()
             defaults.set("clear_story_3", forKey: "userState")
             coordinator?.toTutorial()
+            sleep(3)
         case "explore3.png":
+            saveAndNextIndex()
             defaults.set("clear_story_4", forKey: "userState")
             coordinator?.toExplore()
             sleep(3)
         case "reflection.png":
+            viewModel.saveIndex()
             defaults.set("cleared", forKey: "userState")
             coordinator?.toReflection()
         default:
             print("nowhere to go")
         }
         
-        if actionButtonType != "reflection.png" {
-            viewModel.nextIndex()
-            viewModel.saveIndex()
-        } else {
-            viewModel.saveIndex()
-        }
-        
+    }
+    
+    func saveAndNextIndex() {
+        viewModel.nextIndex()
+        viewModel.saveIndex()
     }
     
     func checkBGMChange() {

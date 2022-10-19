@@ -19,6 +19,17 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         return button
     }()
     
+    private lazy var nextButton: MakeButton = {
+        let button = MakeButton(image: "next.png", size: CGSize(width: 100, height: 100))
+        button.addTarget(self, action: #selector(hintTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var dialogueTextBox: PowerView = {
+        let dialogue = PowerView(content: "Tallu:\nPerlu seseorang yang bergerak cepat untuk menyelamatkan putri dari garuda, kekuatan siapa yang cocok untuk hal ini?")
+        return dialogue
+    }()
+    
     private let backgroundCanvasView: PKCanvasView =
     {
         let canvas = PKCanvasView()
@@ -56,8 +67,9 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         super.viewDidLoad()
         view.addSubview(backgroundCanvasView)
         view.addSubview(canvasView)
-        
+        view.addSubview(dialogueTextBox)
         view.addSubview(homeButton)
+        view.addSubview(nextButton)
         setUpAutoLayout()
         
         animationMarkerLayer = CALayer()
@@ -77,8 +89,8 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         
         canvasView.delegate = self
         
-     
-
+        Sound.play(file: "tallu_power2.m4a")
+        AudioBGMPlayer.shared.playStoryBGM1()
     }
     
     override func viewDidLayoutSubviews() {
@@ -109,6 +121,12 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
             coordinator?.toLanding()
             AudioSFXPlayer.shared.playCommonSFX()
             Sound.stopAll()
+            AudioBGMPlayer.shared.playStoryBGM1()
+        }
+    
+    @objc
+        func hintTapped() {
+            Sound.play(file: "power2_hint.m4a")
         }
     
     func setUpAutoLayout() {
@@ -116,6 +134,12 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         NSLayoutConstraint.activate([
             homeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
             homeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+            
+            nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200),
+            nextButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24),
+            
+            dialogueTextBox.topAnchor.constraint(equalTo: view.topAnchor, constant: 130),
+            dialogueTextBox.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
     
@@ -204,15 +228,19 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         if distance < 50 {
             // Adjust the correct stroke to have a green ink.
             canvasView.drawing.strokes[strokeIndex].ink.color = .green
+            Sound.play(file: "finish.wav")
             backgroundCanvasView.drawing.strokes[strokeIndex].ink.color = .clear
-            
+            Sound.play(file: "rua_power_success.m4a")
             sleep(3)
             coordinator?.toStory()
             defaults.set("clear_power_1", forKey: "userState")
+            AudioBGMPlayer.shared.playStoryBGM1()
             //MARK: In 3 second, move to next page
         } else {
             // If the stroke drawn was bad, remove it so the user can try again.
+            Sound.play(file: "power2_fail.m4a")
             canvasView.drawing.strokes.removeLast()
+            
         }
         
         startAnimation(afterDelay: PowerViewController.nextStrokeAnimationTime)

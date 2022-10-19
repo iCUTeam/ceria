@@ -58,7 +58,7 @@ final class ReflectionView: UIView {
     
     private lazy var promptTextFrame: UIView = {
         
-        let frame = UIView(frame: CGRect(x:0, y:0, width: (UIScreen.main.bounds.width)-54, height: 100))
+        let frame = UIView(frame: CGRect(x:0, y:0, width: (UIScreen.main.bounds.width)-54, height: 125))
         frame.backgroundColor = UIColor(red: 242.0/255, green: 205.0/255, blue: 93.0/255, alpha: 1.0)
         frame.roundCornerView(corners: .allCorners, radius: 25)
         addSubview(frame)

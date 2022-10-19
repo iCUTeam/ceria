@@ -29,6 +29,18 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         return button
     }()
     
+    private lazy var nextButton: MakeButton = {
+        let button = MakeButton(image: "next.png", size: CGSize(width: 100, height: 100))
+        button.addTarget(self, action: #selector(hintTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var previousButton: MakeButton = {
+        let button = MakeButton(image: "previous.png", size: CGSize(width: 100, height: 100))
+        button.addTarget(self, action: #selector(hint2Tapped), for: .touchUpInside)
+        return button
+    }()
+    
     var blueCheckPointNode : SCNNode? = nil
     
     var redCheckPointNode : SCNNode? = nil
@@ -42,6 +54,9 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     var tinimiNode: SCNNode? = nil
 
     var lontongNode: SCNNode? = nil
+    
+    var hint: String = ""
+    var hint2: String = ""
     
     private let collectionViewModel = CollectionViewModel()
     
@@ -61,6 +76,8 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         collectionItem.roundCornerView(corners: .allCorners, radius: 30)
         view.addSubview(collectionItem)
         view.addSubview(homeButton)
+        view.addSubview(nextButton)
+        view.addSubview(previousButton)
         view.addSubview(closeButton)
         
         collectionItem.isHidden = true
@@ -87,7 +104,18 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         instructionViewSecondary.clueImage.image = UIImage(named: "blue-card")
         
         
-        Sound.play(file: "explore2-intro.m4a")
+        if defaults.string(forKey: "userState") == "clear_story_1" {
+            Sound.play(file: "explore2-intro.m4a")
+            
+            hint = "explore2_hint.m4a"
+            hint2 = ""
+            
+        } else {
+            Sound.play(file: "tallu_explore3.m4a")
+            
+            hint = "explore3_hint.m4a"
+            hint2 = "explore3_collect_hint.m4a"
+        }
         
         if collectionViewModel.obtainedStatus.count == 0
         {
@@ -120,6 +148,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         } else {
             defaults.set("clear_explore_2", forKey: "userState")
         }
+        sleep(3)
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -379,6 +408,17 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         AudioSFXPlayer.shared.playBackSFX()
     }
     
+    @objc
+    func hintTapped() {
+        Sound.play(file: hint)
+    }
+    
+    @objc
+    func hint2Tapped() {
+        Sound.play(file: hint2)
+    }
+    
+    
     func setUpAutoLayout() {
         
         NSLayoutConstraint.activate([
@@ -386,6 +426,12 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             homeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
             closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             closeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 875),
+            
+            nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200),
+            nextButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24),
+            
+            previousButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200),
+            previousButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
         ])
     }
     
@@ -431,39 +477,52 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             if let planeNode = blueCheckPointNode, planeNode == result.node {
                 coordinator?.toStory()
                 defaults.set("clear_explore_1", forKey: "userState")
+                Sound.play(file: "checkpoint_found.m4a")
+                
+                //Sound.play(file:"explore2_found.m4a")
             }
             
             if let planeNode = greenCheckPointNode, planeNode == result.node {
                 print("Green")
                 coordinator?.toStory()
                 defaults.set("clear_explore_2", forKey: "userState")
+                Sound.play(file: "checkpoint_found.m4a")
+                
+                //Sound.play(file:"explore3_found.m4a")
             }
             
             if let planeNode = redCheckPointNode, planeNode == result.node {
                 print("Red")
                 coordinator?.toStory()
                 defaults.set("clear_explore_3", forKey: "userState")
+                Sound.play(file: "checkpoint_found.m4a")
             }
             
             if let planeNode = seraungNode, planeNode == result.node {
                 collectionViewModel.obtainItem(index: 0)
                 setupPopUP(index: 0)
+                Sound.play(file: "checkpoint_clicked.m4a")
             }
 //
             if let planeNode = tarumpahNode, planeNode == result.node {
                 
                 collectionViewModel.obtainItem(index: 1)
                 setupPopUP(index: 1)
+                Sound.play(file: "checkpoint_clicked.m4a")
+                
+                //Sound.play(file:"explore3_collect_found.m4a")
             }
 
             if let planeNode = tinimiNode, planeNode == result.node {
                 collectionViewModel.obtainItem(index: 2)
                 setupPopUP(index: 2)
+                Sound.play(file: "checkpoint_clicked.m4a")
             }
 
             if let planeNode = lontongNode, planeNode == result.node {
                 collectionViewModel.obtainItem(index: 3)
                 setupPopUP(index: 3)
+                Sound.play(file: "checkpoint_clicked.m4a")
             }
 
         }
