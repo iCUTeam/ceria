@@ -188,7 +188,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             {
                 
                 
-                if imageAnchor.referenceImage.name == "blue-card" {
+                if imageAnchor.referenceImage.name == "kartu_kapal" {
                     
                     let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
                     
@@ -218,7 +218,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                     }
                 }
 
-                if imageAnchor.referenceImage.name == "green-card" {
+                if imageAnchor.referenceImage.name == "kartu_pulau" {
                     
                     let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
                     
@@ -246,33 +246,33 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                     }
                 }
                 
-                if imageAnchor.referenceImage.name == "red-card" {
-                    
-                    let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
-                    
-                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0)
-                    
-                    let planeNode = SCNNode(geometry: plane)
-                    
-                    planeNode.eulerAngles.x = -.pi / 2
-                    
-                    
-                    self.redCheckPointNode = planeNode
-                    
-                    node.addChildNode(planeNode)
-                    
-                    if let checkPointScene = SCNScene(named: "Models.scnassets/Checkpoint_red.scn") {
-
-                        if let checkPoint = checkPointScene.rootNode.childNodes.first {
-
-                            checkPoint.eulerAngles.x = .pi / 2
-
-                            checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
-
-                            planeNode.addChildNode(checkPoint)
-                        }
-                    }
-                }
+//                if imageAnchor.referenceImage.name == "kartu_istana" {
+//
+//                    let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
+//
+//                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0)
+//
+//                    let planeNode = SCNNode(geometry: plane)
+//
+//                    planeNode.eulerAngles.x = -.pi / 2
+//
+//
+//                    self.redCheckPointNode = planeNode
+//
+//                    node.addChildNode(planeNode)
+//
+//                    if let checkPointScene = SCNScene(named: "Models.scnassets/Checkpoint_red.scn") {
+//
+//                        if let checkPoint = checkPointScene.rootNode.childNodes.first {
+//
+//                            checkPoint.eulerAngles.x = .pi / 2
+//
+//                            checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
+//
+//                            planeNode.addChildNode(checkPoint)
+//                        }
+//                    }
+//                }
                 
                 
     //
@@ -303,7 +303,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     //            }
     //
     //
-                if imageAnchor.referenceImage.name == "tarumpah-card" {
+                if imageAnchor.referenceImage.name == "kartu_rua" {
     
                     let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
     
@@ -483,7 +483,6 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             }
             
             if let planeNode = greenCheckPointNode, planeNode == result.node {
-                print("Green")
                 coordinator?.toStory()
                 defaults.set("clear_explore_2", forKey: "userState")
                 Sound.play(file: "checkpoint_found.m4a")
@@ -492,7 +491,6 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             }
             
             if let planeNode = redCheckPointNode, planeNode == result.node {
-                print("Red")
                 coordinator?.toStory()
                 defaults.set("clear_explore_3", forKey: "userState")
                 Sound.play(file: "checkpoint_found.m4a")

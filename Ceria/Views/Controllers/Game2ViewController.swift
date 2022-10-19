@@ -48,6 +48,8 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
     var voiceName = ""
     
     var sounds:[String:SCNAudioSource] = [:]
+    
+    var ruaImage: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,7 +89,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
     
     func setupOverlays() {
         
-        let ruaImage = UIImageView(frame: CGRect(x: 150, y: 30, width: 100, height: 100))
+        ruaImage = UIImageView(frame: CGRect(x: 150, y: 30, width: 100, height: 100))
         ruaImage.image = UIImage(named: "rua.png")
         ruaImage.contentMode = .scaleAspectFit
         view.insertSubview(ruaImage, at: 1)
@@ -146,33 +148,6 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         selfieNode = scene.rootNode.childNode(withName: "selfie-stick", recursively: true)!
     }
     
-    //buat set sfx sama bgm nanti, feel free buat diubah"
-    func setupSounds()
-    {
-//        let walkSound = SCNAudioSource(fileNamed: "walk.m4a")!
-//        walkSound.load()
-//        walkSound.volume = 0.4
-//        sounds["walk"] = walkSound
-        
-//        let damageSound = SCNAudioSource(fileNamed: "damage.m4a")!
-//        damageSound.load()
-//        damageSound.volume = 0.3
-//        sounds["damage"] = damageSound
-        
-//        let backgroundMusic = SCNAudioSource(fileNamed: "game2.mp3")!
-//        backgroundMusic.volume = 0.1
-//        backgroundMusic.loops = true
-//        backgroundMusic.load()
-//
-//        let musicPlayer = SCNAudioPlayer(source: backgroundMusic)
-//        crashNode.addAudioPlayer(musicPlayer)
-        
-        let randomNumber = Int.random(in: 1...2)
-        
-        voiceName = "rua_game_\(randomNumber).m4a"
-        print("\(voiceName)")
-    }
-    
 
     //hide status bar wktu gameplay
     override var prefersStatusBarHidden: Bool{
@@ -212,6 +187,10 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                     count += 1
                     self.distanceProgressBar.progress += CGFloat(self.crashNode.position.x*0.00002)
                     
+                    UIView.animate(withDuration: 0.1) {
+                        self.ruaImage.layer.position.x += 1.25
+                    }
+                    
                     
                     //that's why klo countnya dia = 100 nanti kita tambahin index accelerationnya biar ambil next acceleration yang lebih cepet terus kita balik lagi count dari 0
                     if count % 100 == 0
@@ -220,12 +199,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                         count = 0
                     }
                     
-//                    if count == 0 || count%10 == 0
-//                    {
-//                        let walkSound = self.sounds["walk"]!
-//                        self.crashNode.runAction(SCNAction.playAudio(walkSound, waitForCompletion: true))
-//                    }
-                    
+//
                     //validasi kalau sudah sampe finish
                     if self.crashNode.position.x >= 280
                     {
@@ -311,8 +285,6 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                 DispatchQueue.main.async {
                     self.powerProgressBar.progress -= 0.2
                     Sound.play(file: "damage.m4a")
-                    self.setupSounds()
-                    Sound.play(file: self.voiceName)
                 }
                 
                 //klo dia nabrak, dia bakal immune for 5 second sebelum dia balik bisa nabrak lagi
@@ -360,8 +332,6 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                 node.isHidden = false
             }
             
-//            let damageSound = sounds["damage"]!
-//            let damageSoundAction = SCNAction.playAudio(damageSound, waitForCompletion: false)
             
             let actionSequence = SCNAction.sequence([waitAction, unhideAction])
             
