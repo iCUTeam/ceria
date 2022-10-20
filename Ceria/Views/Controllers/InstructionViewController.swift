@@ -74,19 +74,20 @@ class InstructionViewController: UIViewController, Storyboarded {
         perintahSatu.heightAnchor.constraint(equalToConstant: 75).isActive = true
         perintahSatu.numberOfLines = 0
         
-        let linkInstruksi = UILabel()
-        linkInstruksi.text = "Instruksi & Kartu Permainan"
-        linkInstruksi.font = UIFont.scriptFont(size: 20)
-        linkInstruksi.underline()
+        let buttonInstruksi = UIButton()
+        buttonInstruksi.setTitle("Instruksi & Kartu Permainan", for: .normal)
+        buttonInstruksi.setTitleColor(.black, for: .normal)
+        buttonInstruksi.titleLabel?.font = UIFont.scriptFont(size: 20)
         
-        //MARK: Clickable Link Label
-        linkInstruksi.isUserInteractionEnabled = true
-        let tapgesture = UITapGestureRecognizer.init(target: self, action: #selector(instructionClicked))
-        tapgesture.numberOfTapsRequired = 1
-        linkInstruksi.addGestureRecognizer(tapgesture)
+        let attributedString = NSAttributedString(string: NSLocalizedString("Instruksi & Kartu Permainan", comment: ""), attributes: [
+            NSAttributedString.Key.underlineStyle: 1.0
+        ] )
+        
+        buttonInstruksi.setAttributedTitle(attributedString, for: .normal)
+        buttonInstruksi.addTarget(self, action: #selector(instructionClicked(_:)), for: .touchUpInside)
         
         //MARK: Perintah 1 Stack Vertical
-        let stackPerintahSatu = UIStackView(arrangedSubviews: [judulSatu, perintahSatu, linkInstruksi])
+        let stackPerintahSatu = UIStackView(arrangedSubviews: [judulSatu, perintahSatu, buttonInstruksi])
         stackPerintahSatu.axis = .vertical
         stackPerintahSatu.alignment = .leading
         stackPerintahSatu.distribution = .fill
@@ -314,10 +315,18 @@ class InstructionViewController: UIViewController, Storyboarded {
         }
     
     @objc
-        func instructionClicked() {
-            //TODO: action here
-            print("Label Clicked")
+    func instructionClicked(_ sender: UIButton) {
+        //MARK: share instruction
+        guard let url = Bundle.main.url(forResource: "Instruksi_Dan_Kartu_Permainan", withExtension: ".pdf") else {
+            return
         }
+        
+        let shareSheetVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        
+        shareSheetVC.popoverPresentationController?.sourceView = sender
+        shareSheetVC.popoverPresentationController?.sourceRect = sender.frame
+        present(shareSheetVC, animated: true)
+    }
     
     @objc
     func agreeClicked() {
