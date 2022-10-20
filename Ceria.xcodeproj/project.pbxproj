@@ -149,6 +149,8 @@
 		95EBB88628F8166800EE82E7 /* ClueMesseges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EBB88528F8166800EE82E7 /* ClueMesseges.swift */; };
 		95EBB88728F8184400EE82E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E1730E28F66156005252B0 /* Assets.xcassets */; };
 		95EBB88928F852BE00EE82E7 /* stories.json in Resources */ = {isa = PBXBuildFile; fileRef = 95EBB88828F852BE00EE82E7 /* stories.json */; };
+		A91DA8F928FFE484009E2428 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DA8F828FFE484009E2428 /* Checkbox.swift */; };
+		A91DA90A2900DC5F009E2428 /* Instruksi_Dan_Kartu_Permainan.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A91DA9092900DC5F009E2428 /* Instruksi_Dan_Kartu_Permainan.pdf */; };
 		BBD8F63D9A2C283F97DAC813 /* Pods_Ceria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5039E298D11B9EA863C1D3 /* Pods_Ceria.framework */; };
 /* End PBXBuildFile section */
 
@@ -324,6 +326,8 @@
 		95EBB88528F8166800EE82E7 /* ClueMesseges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClueMesseges.swift; sourceTree = "<group>"; };
 		95EBB88828F852BE00EE82E7 /* stories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stories.json; sourceTree = "<group>"; };
 		A0EFD431A5CCE27FC26AC7CF /* Pods-CeriaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CeriaTests.release.xcconfig"; path = "Target Support Files/Pods-CeriaTests/Pods-CeriaTests.release.xcconfig"; sourceTree = "<group>"; };
+		A91DA8F828FFE484009E2428 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		A91DA9092900DC5F009E2428 /* Instruksi_Dan_Kartu_Permainan.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Instruksi_Dan_Kartu_Permainan.pdf; sourceTree = "<group>"; };
 		BB5039E298D11B9EA863C1D3 /* Pods_Ceria.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ceria.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C377D7A2916A58F426FC98E8 /* Pods-Ceria-CeriaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ceria-CeriaUITests.release.xcconfig"; path = "Target Support Files/Pods-Ceria-CeriaUITests/Pods-Ceria-CeriaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C68E101B4910F5A147B96657 /* Pods_Ceria_CeriaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ceria_CeriaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -737,6 +741,7 @@
 		95E1730D28F6612C005252B0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A91DA90C2900DD68009E2428 /* Files */,
 				95326A5428FAE6F9002BAB3B /* Audio */,
 				95E1732528F66E22005252B0 /* Themes */,
 				95AB324128F3C59D0003DCB0 /* LaunchScreen.storyboard */,
@@ -860,6 +865,7 @@
 				142AFC5028F42F030069046C /* HorizontalProgressBar.swift */,
 				951C638D28F7C71700002FA5 /* MakeButton.swift */,
 				951C638F28F7C76900002FA5 /* MakeStack.swift */,
+				A91DA8F828FFE484009E2428 /* Checkbox.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -996,6 +1002,14 @@
 				95EBB88228F8160200EE82E7 /* ClueExploration.xib */,
 			);
 			path = "Clue Explorations";
+			sourceTree = "<group>";
+		};
+		A91DA90C2900DD68009E2428 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				A91DA9092900DC5F009E2428 /* Instruksi_Dan_Kartu_Permainan.pdf */,
+			);
+			path = Files;
 			sourceTree = "<group>";
 		};
 		DFFED23D3FBF4BE8647BF6C2 /* Frameworks */ = {
@@ -1145,6 +1159,7 @@
 				95BD1E5E28FFC1D1003832EF /* power2_fail.m4a in Resources */,
 				95C77C0428FEDEC9009B9D69 /* bungko_3.m4a in Resources */,
 				95A6C5D628FC2A4400055B0A /* reflection.m4a in Resources */,
+				A91DA90A2900DC5F009E2428 /* Instruksi_Dan_Kartu_Permainan.pdf in Resources */,
 				953B9AB228FA21B7001C4A56 /* reflection.json in Resources */,
 				95C77C1B28FEE127009B9D69 /* tallu_1.m4a in Resources */,
 				95C77C1728FEE0E1009B9D69 /* tallu_explore3.m4a in Resources */,
@@ -1381,6 +1396,7 @@
 				95C814B028FAA810008E3036 /* UIView+RoundCornerView.swift in Sources */,
 				951C639228F7E4AB00002FA5 /* Story.swift in Sources */,
 				951C639628F7E4DB00002FA5 /* Card.swift in Sources */,
+				A91DA8F928FFE484009E2428 /* Checkbox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
