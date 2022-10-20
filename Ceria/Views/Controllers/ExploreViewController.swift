@@ -117,14 +117,14 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         arSCN.autoenablesDefaultLighting = true
         
         //set primary clue data
-        instructionViewPrimary.clueDescription.text = getDescClue(clueCode: 1)
-        instructionViewPrimary.clueGreyBackView.layer.cornerRadius = 20
-        instructionViewPrimary.clueImage.image = UIImage(named: "red-card")
+//        instructionViewPrimary.clueDescription.text = getDescClue(clueCode: 1)
+//        instructionViewPrimary.clueGreyBackView.layer.cornerRadius = 20
+//        instructionViewPrimary.clueImage.image = UIImage(named: "red-card")
         
         //set second clue data
-        instructionViewSecondary.clueDescription.text = getDescClue(clueCode: 2)
-        instructionViewSecondary.clueGreyBackView.layer.cornerRadius = 20
-        instructionViewSecondary.clueImage.image = UIImage(named: "blue-card")
+//        instructionViewSecondary.clueDescription.text = getDescClue(clueCode: 2)
+//        instructionViewSecondary.clueGreyBackView.layer.cornerRadius = 20
+//        instructionViewSecondary.clueImage.image = UIImage(named: "blue-card")
         
         
         if defaults.string(forKey: "userState") == "clear_story_1" {

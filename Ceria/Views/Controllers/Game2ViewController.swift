@@ -65,7 +65,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         AudioBGMPlayer.shared.playGame2BGM()
         
         
-        Sound.play(file: "rua_game_2.m4a")
+        Sound.play(file: "rua_game_1.m4a")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -318,15 +318,16 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                 DispatchQueue.main.async {
                     self.powerProgressBar.progress = 1
                     Sound.play(file: "game2_fail.m4a")
+                    self.crashNode.position = self.initialPosition
+                    
+                    UIView.animate(withDuration: 0.1) {
+                        self.ruaImage.layer.position.x = 150
+                    }
+                    
+                    self.index = 0
                 }
                
-                crashNode.position = initialPosition
                 
-                UIView.animate(withDuration: 0.1) {
-                    self.ruaImage.layer.position.x = 150
-                }
-                
-                index = 0
             }
           
             

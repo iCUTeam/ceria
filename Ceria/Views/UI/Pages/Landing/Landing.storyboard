@@ -70,15 +70,6 @@
                     <view key="view" contentMode="scaleToFill" id="adV-bO-DYJ">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="INSTRUCTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwB-LL-qYM">
-                                <rect key="frame" x="457" y="149" width="111" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="GbZ-li-d2J"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -132,7 +123,7 @@
                                     <constraint firstAttribute="width" constant="170" id="zul-ky-OqK"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Hide Instruction"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Skip"/>
                                 <connections>
                                     <action selector="hiddenPressed:" destination="vBz-OZ-fS4" eventType="touchUpInside" id="mKp-62-AGj"/>
                                 </connections>
