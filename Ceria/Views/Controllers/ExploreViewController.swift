@@ -31,13 +31,14 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     
     //checkpoint
     private lazy var dialogueTextBox: ExploreView = {
-        let dialogue = ExploreView(content: hintText)
+        let dialogue = ExploreView(content: "Cari kartu dengan gambar pulau di sekitarmu untuk membantu kapal berlabuh ke pulau yang tepat.")
+        
         return dialogue
     }()
     
     //collectibles
     private lazy var dialogueTextBox2: ExploreView = {
-        let dialogue = ExploreView(content: hintText2)
+        let dialogue = ExploreView(content: "Cari kartu bergambar wajah Rua sebelum cerita usai untuk mengambil hadiah dari Rua ya.")
         return dialogue
     }()
     
@@ -456,6 +457,8 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         collectionItem.isHidden = true
         closeButton.isHidden = true
         AudioSFXPlayer.shared.playBackSFX()
+        hintButton.isHidden.toggle()
+        dialogueTextBox.isHidden.toggle()
     }
     
     @objc
@@ -518,7 +521,10 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                 self?.collectionItem.setSCNView(scn: "Models.scnassets/\(item)")
             }
         
-       
+        hintButton.isHidden.toggle()
+        hint2Button.isHidden = true
+        dialogueTextBox.isHidden.toggle()
+        dialogueTextBox2.isHidden = true
       
     }
     
