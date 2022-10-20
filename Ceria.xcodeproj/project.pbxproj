@@ -147,7 +147,6 @@
 		95EBB87D28F8068400EE82E7 /* PKStrokeMatching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EBB87B28F8068400EE82E7 /* PKStrokeMatching.swift */; };
 		95EBB88328F8160200EE82E7 /* ClueExploration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EBB88128F8160200EE82E7 /* ClueExploration.swift */; };
 		95EBB88428F8160200EE82E7 /* ClueExploration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95EBB88228F8160200EE82E7 /* ClueExploration.xib */; };
-		95EBB88628F8166800EE82E7 /* ClueMesseges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EBB88528F8166800EE82E7 /* ClueMesseges.swift */; };
 		95EBB88728F8184400EE82E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E1730E28F66156005252B0 /* Assets.xcassets */; };
 		95EBB88928F852BE00EE82E7 /* stories.json in Resources */ = {isa = PBXBuildFile; fileRef = 95EBB88828F852BE00EE82E7 /* stories.json */; };
 		A91DA8F928FFE484009E2428 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DA8F828FFE484009E2428 /* Checkbox.swift */; };
@@ -325,7 +324,6 @@
 		95EBB87B28F8068400EE82E7 /* PKStrokeMatching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKStrokeMatching.swift; sourceTree = "<group>"; };
 		95EBB88128F8160200EE82E7 /* ClueExploration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClueExploration.swift; sourceTree = "<group>"; };
 		95EBB88228F8160200EE82E7 /* ClueExploration.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClueExploration.xib; sourceTree = "<group>"; };
-		95EBB88528F8166800EE82E7 /* ClueMesseges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClueMesseges.swift; sourceTree = "<group>"; };
 		95EBB88828F852BE00EE82E7 /* stories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stories.json; sourceTree = "<group>"; };
 		A0EFD431A5CCE27FC26AC7CF /* Pods-CeriaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CeriaTests.release.xcconfig"; path = "Target Support Files/Pods-CeriaTests/Pods-CeriaTests.release.xcconfig"; sourceTree = "<group>"; };
 		A91DA8F828FFE484009E2428 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
@@ -786,7 +784,6 @@
 		95E1731128F66456005252B0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				95EBB88528F8166800EE82E7 /* ClueMesseges.swift */,
 				951C639C28F7EA4700002FA5 /* JSON_Files */,
 				951C639128F7E4AB00002FA5 /* Story.swift */,
 				951C639328F7E4C400002FA5 /* Collection.swift */,
@@ -1349,7 +1346,6 @@
 				95BD1E5428FF6254003832EF /* SuccessView.swift in Sources */,
 				951C639828F7E4EB00002FA5 /* Reflection.swift in Sources */,
 				957D951528F708C1009AA012 /* TutorialViewModel.swift in Sources */,
-				95EBB88628F8166800EE82E7 /* ClueMesseges.swift in Sources */,
 				953B9A7528F92C5F001C4A56 /* ObservableObject.swift in Sources */,
 				957D950F28F70785009AA012 /* CollectionViewModel.swift in Sources */,
 				95BD1E5828FF97B7003832EF /* TutorialFeeder.swift in Sources */,
@@ -1570,7 +1566,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4C96B7697Z;
+				DEVELOPMENT_TEAM = S955BH56FW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Ceria/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Ceria;
@@ -1606,7 +1602,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4C96B7697Z;
+				DEVELOPMENT_TEAM = S955BH56FW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Ceria/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Ceria;

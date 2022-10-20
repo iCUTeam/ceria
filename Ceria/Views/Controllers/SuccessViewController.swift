@@ -31,6 +31,17 @@ class SuccessViewController: UIViewController, Storyboarded {
         return prompt
     }()
     
+    private lazy var dialogueTextBox: ExploreView = {
+        let dialogue = ExploreView(content: "Cari kartu bergambar wajah Rua sebelum cerita usai untuk mengambil hadiah dari Rua ya.")
+        return dialogue
+    }()
+    
+    private lazy var hintButton: MakeButton = {
+        let button = MakeButton(image: "kartu_rua", size: CGSize(width: 115, height: 150))
+        button.addTarget(self, action: #selector(hintTapped), for: .touchUpInside)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,6 +53,8 @@ class SuccessViewController: UIViewController, Storyboarded {
         view.addSubview(homeButton)
         view.addSubview(nextButton)
         view.addSubview(promptTextBox)
+        view.addSubview(hintButton)
+        view.addSubview(dialogueTextBox)
         setUpAutoLayout()
         
         AudioBGMPlayer.shared.playSuccessBGM()
@@ -67,6 +80,11 @@ class SuccessViewController: UIViewController, Storyboarded {
         }
     
     @objc
+    func hintTapped() {
+        Sound.play(file: "explore3_collect_hint.m4a")
+    }
+    
+    @objc
     func toStory() {
         coordinator?.toStory()
         self.defaults.set("clear_challenge_1", forKey: "userState")
@@ -86,7 +104,14 @@ class SuccessViewController: UIViewController, Storyboarded {
             nextButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24),
             
             promptTextBox.topAnchor.constraint(equalTo: view.topAnchor, constant: 130),
-            promptTextBox.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            promptTextBox.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            hintButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+            hintButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
+            
+            dialogueTextBox.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -170),
+            dialogueTextBox.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 95),
+            dialogueTextBox.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 24),
         ])
     }
     
