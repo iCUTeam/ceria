@@ -58,16 +58,6 @@ final class StoryView: UIView {
     
     private lazy var dialogueTextFrame: UIView = {
         
-        let screenSize: CGRect = UIScreen.main.bounds
-        let screenWidth = screenSize.width
-        let constant: CGFloat
-        
-        if screenWidth == 834.0 {
-            constant = 200
-        } else {
-            constant = 215
-        }
-        
         let frame = UIView(frame: CGRect(x:0, y:0, width: (UIScreen.main.bounds.width)-54, height: 215))
         frame.backgroundColor = UIColor(red: 242.0/255, green: 205.0/255, blue: 93.0/255, alpha: 1.0)
         frame.roundCornerView(corners: .allCorners, radius: 25)

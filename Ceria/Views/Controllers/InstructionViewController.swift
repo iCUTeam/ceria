@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SceneKit
 
 class InstructionViewController: UIViewController, Storyboarded {
 
@@ -292,7 +293,7 @@ class InstructionViewController: UIViewController, Storyboarded {
     
     @objc
         func startStoryTapped() {
-            var state = defaults.string(forKey: "userState")
+            let state = defaults.string(forKey: "userState")
             switch state {
             case "clear_story_1":
                 coordinator?.toExplore()
