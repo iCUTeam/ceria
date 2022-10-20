@@ -64,7 +64,7 @@ class AudioBGMPlayer {
     }
     
     func playStoryBGM3() {
-        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "laut", ofType: "wav")!)
+        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "laut", ofType: "m4a")!)
         do {
             playerBGMStory = try AVAudioPlayer(contentsOf:sound as URL)
             playerBGMStory?.numberOfLoops = -1

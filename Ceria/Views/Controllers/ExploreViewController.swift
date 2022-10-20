@@ -29,17 +29,32 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         return button
     }()
     
-    private lazy var nextButton: MakeButton = {
-        let button = MakeButton(image: "next.png", size: CGSize(width: 100, height: 100))
+    //checkpoint
+    private lazy var dialogueTextBox: ExploreView = {
+        let dialogue = ExploreView(content: hintText)
+        return dialogue
+    }()
+    
+    //collectibles
+    private lazy var dialogueTextBox2: ExploreView = {
+        let dialogue = ExploreView(content: hintText2)
+        return dialogue
+    }()
+    
+    //checkpoint
+    private lazy var hintButton: MakeButton = {
+        let button = MakeButton(image: hintImage, size: CGSize(width: 115, height: 150))
         button.addTarget(self, action: #selector(hintTapped), for: .touchUpInside)
         return button
     }()
     
-    private lazy var previousButton: MakeButton = {
-        let button = MakeButton(image: "previous.png", size: CGSize(width: 100, height: 100))
+    //collectibles
+    private lazy var hint2Button: MakeButton = {
+        let button = MakeButton(image: hintImage2, size: CGSize(width: 115,  height: 150))
         button.addTarget(self, action: #selector(hint2Tapped), for: .touchUpInside)
         return button
     }()
+    
     
     var blueCheckPointNode : SCNNode? = nil
     
@@ -57,6 +72,10 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     
     var hint: String = ""
     var hint2: String = ""
+    var hintText: String = ""
+    var hintText2: String = ""
+    var hintImage: String = ""
+    var hintImage2: String = ""
     
     private let collectionViewModel = CollectionViewModel()
     
@@ -76,8 +95,12 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         collectionItem.roundCornerView(corners: .allCorners, radius: 30)
         view.addSubview(collectionItem)
         view.addSubview(homeButton)
-        view.addSubview(nextButton)
-        view.addSubview(previousButton)
+        
+        view.addSubview(hintButton)
+        view.addSubview(hint2Button)
+        view.addSubview(dialogueTextBox)
+        view.addSubview(dialogueTextBox2)
+        
         view.addSubview(closeButton)
         
         collectionItem.isHidden = true
@@ -89,7 +112,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         arSCN.delegate = self
         
         // Show statistics such as fps and timing information
-        arSCN.showsStatistics = true
+        arSCN.showsStatistics = false
         
         arSCN.autoenablesDefaultLighting = true
         
@@ -110,11 +133,34 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             hint = "explore2_hint.m4a"
             hint2 = ""
             
+            dialogueTextBox.dialogueLabel.text = "Cari kartu dengan gambar pulau di sekitarmu untuk membantu kapal berlabuh ke pulau yang tepat."
+            
+            let customButtonImage = UIImage(named:  "kartu_pulau")
+            let newimage = customButtonImage?.resizedImage(size: CGSize(width: 115, height: 150))
+            hintButton.setImage(newimage, for: .normal)
+            
+            hint2Button.isHidden = true
+            dialogueTextBox2.isHidden = true
+            
         } else {
             Sound.play(file: "tallu_explore3.m4a")
             
             hint = "explore3_hint.m4a"
             hint2 = "explore3_collect_hint.m4a"
+            
+            dialogueTextBox.dialogueLabel.text = "Cari kartu dengan gambar kapal di sekitarmu untuk membantu Rua dan tuan puteri kembali ke kapal."
+            dialogueTextBox2.dialogueLabel.text = "Cari kartu bergambar wajah Rua sebelum cerita usai untuk mengambil hadiah dari Rua ya."
+            
+            let customButtonImage = UIImage(named:  "kartu_kapal")
+            let newimage = customButtonImage?.resizedImage(size: CGSize(width: 115, height: 150))
+            hintButton.setImage(newimage, for: .normal)
+            
+            let customButtonImage2 = UIImage(named:  "kartu_rua")
+            let newimage2 = customButtonImage2?.resizedImage(size: CGSize(width: 115, height: 150))
+            hint2Button.setImage(newimage2, for: .normal)
+            
+            hint2Button.isHidden = false
+            dialogueTextBox2.isHidden = false
         }
         
         if collectionViewModel.obtainedStatus.count == 0
@@ -162,7 +208,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             
         {
             configuration.trackingImages = imageToTrack
-            configuration.maximumNumberOfTrackedImages = 2
+            configuration.maximumNumberOfTrackedImages = 1
             
             print("Image Succesfully Added")
         }
@@ -427,11 +473,19 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             closeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 875),
             
-            nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200),
-            nextButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24),
+            hint2Button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -190),
+            hint2Button.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
             
-            previousButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200),
-            previousButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
+            hintButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+            hintButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
+            
+            dialogueTextBox2.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -340),
+            dialogueTextBox2.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 95),
+            dialogueTextBox2.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 24),
+            
+            dialogueTextBox.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -170),
+            dialogueTextBox.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 95),
+            dialogueTextBox.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 24),
         ])
     }
     

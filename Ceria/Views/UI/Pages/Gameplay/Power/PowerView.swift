@@ -56,12 +56,24 @@ class PowerView: UIView {
         return label
     }()
     
+    lazy var titleLabel: UILabel = {
+        
+        let label = UILabel()
+        label.text = "Petunjuk:"
+        label.font = UIFont.scriptFont(size: 24)
+        label.textColor = .black
+        label.textAlignment = .left
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     private lazy var dialogueTextFrame: UIView = {
         
-        let frame = UIView(frame: CGRect(x:0, y:0, width: (UIScreen.main.bounds.width)-54, height: 125))
+        let frame = UIView(frame: CGRect(x:0, y:0, width: (UIScreen.main.bounds.width)-200, height: 150))
         frame.backgroundColor = UIColor(red: 242.0/255, green: 205.0/255, blue: 93.0/255, alpha: 1.0)
         frame.roundCornerView(corners: .allCorners, radius: 25)
         addSubview(frame)
+        frame.addSubview(titleLabel)
         frame.addSubview(dialogueLabel)
         return frame
     }()
@@ -70,7 +82,10 @@ class PowerView: UIView {
         NSLayoutConstraint.activate([
             dialogueTextFrame.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
-            dialogueLabel.topAnchor.constraint(equalTo: dialogueTextFrame.topAnchor, constant: 20),
+            titleLabel.topAnchor.constraint(equalTo: dialogueTextFrame.topAnchor, constant: 20),
+            titleLabel.leftAnchor.constraint(equalTo: dialogueTextFrame.leftAnchor, constant: 20),
+            
+            dialogueLabel.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 50),
             dialogueLabel.leftAnchor.constraint(equalTo: dialogueTextFrame.leftAnchor, constant: 20),
             dialogueLabel.rightAnchor.constraint(equalTo: dialogueTextFrame.rightAnchor, constant: -20),
         ])
