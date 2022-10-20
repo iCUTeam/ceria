@@ -248,22 +248,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KAe-dq-xTv" customClass="HorizontalProgressBar" customModule="Ceria" customModuleProvider="target">
-                                <rect key="frame" x="238" y="76" width="679" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" systemColor="systemGreenColor"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rgt-x9-pVV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="distanceProgressBar" destination="KAe-dq-xTv" id="nlo-tV-mK8"/>
                         <outlet property="powerProgressBar" destination="4Xy-YX-qrA" id="i7s-cJ-TuP"/>
                         <outlet property="sceneView" destination="Wxa-ar-8yJ" id="Fcg-Jq-WnC"/>
                     </connections>

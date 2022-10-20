@@ -14,7 +14,6 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
     weak var coordinator: MainCoordinator?
     
     @IBOutlet weak var powerProgressBar: HorizontalProgressBar!
-    @IBOutlet weak var distanceProgressBar: HorizontalProgressBar!
     @IBOutlet weak var sceneView: SCNView!
     
     private lazy var homeButton: MakeButton = {
@@ -59,7 +58,6 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         
         
         powerProgressBar.progress = 1
-        distanceProgressBar.progress = 0
         
         view.addSubview(homeButton)
         setUpAutoLayout()
@@ -185,10 +183,9 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                     
                     //timernya kan jalan 0.1 detik sekali, jadi itungannya 10 detik tu berarti dah jalan 100 hitungan
                     count += 1
-                    self.distanceProgressBar.progress += CGFloat(self.crashNode.position.x*0.00002)
                     
                     UIView.animate(withDuration: 0.1) {
-                        self.ruaImage.layer.position.x += 1.25
+                        self.ruaImage.layer.position.x += 1.5
                     }
                     
                     
@@ -203,8 +200,11 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                     //validasi kalau sudah sampe finish
                     if self.crashNode.position.x >= 280
                     {
+                        
                         Sound.play(file: "finish.wav")
                         Sound.play(file: "rua_game_2.m4a")
+                        
+                        
                         timer.invalidate()
                         sleep(2)
                         self.coordinator?.toSuccess()
@@ -321,7 +321,11 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                 }
                
                 crashNode.position = initialPosition
-                distanceProgressBar.progress = 0
+                
+                UIView.animate(withDuration: 0.1) {
+                    self.ruaImage.layer.position.x = 150
+                }
+                
                 index = 0
             }
           

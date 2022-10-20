@@ -188,7 +188,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             {
                 
                 
-                if imageAnchor.referenceImage.name == "kartu_kapal" {
+                if imageAnchor.referenceImage.name == "kartu_pulau" {
                     
                     let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
                     
@@ -218,7 +218,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                     }
                 }
 
-                if imageAnchor.referenceImage.name == "kartu_pulau" {
+                if imageAnchor.referenceImage.name == "kartu_kapal" {
                     
                     let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
                     
@@ -238,6 +238,8 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                         if let checkPoint = checkPointScene.rootNode.childNodes.first {
                             
                             checkPoint.eulerAngles.x = .pi / 2
+                            
+                            checkPoint.eulerAngles.z = .pi / 2
 
                             checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
 
@@ -318,11 +320,13 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     
                     node.addChildNode(planeNode)
     
-                    if let checkPointScene = SCNScene(named: "Models.scnassets/tarumpah.scn") {
+                    if let checkPointScene = SCNScene(named: "Models.scnassets/Checkpoint_red.scn") {
     
                         if let checkPoint = checkPointScene.rootNode.childNodes.first {
     
                             checkPoint.eulerAngles.x = .pi / 2
+                            
+                            checkPoint.eulerAngles.z = .pi / 2
                             
                             checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
     
@@ -444,7 +448,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             closeButton.isHidden = false
             
             collectionViewModel.collectibleName.bind { [weak self] name in
-                self?.collectionItem.itemName.text = "Asik, kamu menemukan \(name)"
+                self?.collectionItem.itemName.text = name
             }
             
             collectionViewModel.collectibleOrigin.bind { [weak self] origin in
@@ -452,7 +456,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             }
             
             collectionViewModel.collectibleDesc.bind { [weak self] desc in
-                self?.collectionItem.itemDesc.text = "Kamu bisa menemukan item ini di rak koleksi kamu!"
+                self?.collectionItem.itemDesc.text = "Asik! Kamu menemukan hadiah dari Rua! Kamu bisa menemukan item ini di rak koleksi kamu, ya!"
                 self?.collectionItem.itemDesc.allowsEditingTextAttributes = false
             }
             

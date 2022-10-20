@@ -37,7 +37,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCF-Vb-tca">
                                     <rect key="frame" x="100" y="0.0" width="500" height="58"/>
                                     <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="60"/>
-                                    <color key="textColor" systemColor="systemBackgroundColor"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SFf-Ao-LgF">
@@ -61,7 +61,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXP-FO-BrG">
                                             <rect key="frame" x="90" y="0.0" width="68.666666666666686" height="60"/>
                                             <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="30"/>
-                                            <color key="textColor" systemColor="systemBackgroundColor"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -86,7 +86,7 @@
                             </constraints>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="Bsc-CP-mhs" firstAttribute="leading" secondItem="M6t-o0-IuN" secondAttribute="leading" constant="50" id="9za-XJ-5T9"/>
                         <constraint firstAttribute="trailing" secondItem="Bsc-CP-mhs" secondAttribute="trailing" constant="50" id="Or9-SF-XUI"/>
