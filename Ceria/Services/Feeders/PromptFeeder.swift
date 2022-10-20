@@ -12,8 +12,8 @@ class PromptFeeder {
     func feedPrompt() -> [Prompt] {
         
         var promptsArray: [Prompt] = []
-        let url = Bundle.main.url(forResource: "reflection", withExtension: "json")!
-        let data = try! Data(contentsOf: url)
+        let url = NSURL(fileURLWithPath: Bundle.main.path(forResource: "reflection", ofType: "json")!)
+        let data = try! Data(contentsOf: url as URL)
         promptsArray = try! JSONDecoder().decode([Prompt].self, from: data)
         
         return promptsArray

@@ -21,19 +21,20 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
     
     private lazy var nextButton: MakeButton = {
         let button = MakeButton(image: "next.png", size: CGSize(width: 100, height: 100))
-        button.addTarget(self, action: #selector(hintTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
         return button
     }()
     
     private lazy var dialogueTextBox: PowerView = {
-        let dialogue = PowerView(content: "Tallu:\nPerlu seseorang yang bergerak cepat untuk menyelamatkan putri dari garuda, kekuatan siapa yang cocok untuk hal ini?")
+        let dialogue = PowerView(content: "Ikuti pola di atas untuk memilih seseorang dari keempat bersaudara yang akan menjemput tuan puteri dari tempat burung garuda.")
         return dialogue
     }()
     
     private let backgroundCanvasView: PKCanvasView =
     {
         let canvas = PKCanvasView()
-        canvas.backgroundColor = .white
+        canvas.backgroundColor = .clear
+        canvas.translatesAutoresizingMaskIntoConstraints = false
         return canvas
     }()
 
@@ -42,9 +43,38 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         let canvas = PKCanvasView()
         canvas.drawingPolicy = .anyInput
         canvas.backgroundColor = .clear
-        canvas.tool = PKInkingTool(.marker, color: .red, width: 70)
+        canvas.tool = PKInkingTool(.marker, color: .black, width: 70)
+        canvas.translatesAutoresizingMaskIntoConstraints = false
         return canvas
     }()
+    
+    private lazy var ruaSymbol: UIImageView = {
+        let ruaSymbol = UIImageView(frame: CGRect(x: 15, y: -15, width: 1000, height: 1200))
+        ruaSymbol.image = UIImage(named: "rua_symbol.png")
+        ruaSymbol.contentMode = .scaleToFill
+        return ruaSymbol
+    }()
+    
+    private lazy var hintButton: MakeButton = {
+        let button = MakeButton(image: "rua_silhouette.png", size: CGSize(width: 150, height: 150))
+        button.addTarget(self, action: #selector(hintTapped), for: .touchUpInside)
+        return button
+    }()
+    
+//    private lazy var ruaSilhouette: UIImageView = {
+//        let silhouette = UIImageView(frame: CGRect(x: 5, y: 1200, width: 150, height: 150))
+//        silhouette.image = UIImage(named: "rua_silhouette.png")
+//        silhouette.contentMode = .scaleAspectFit
+//        return silhouette
+//    }()
+//
+//    private lazy var ruaFace: UIImageView = {
+//        let face = UIImageView(frame: CGRect(x: 5, y: 1200, width: 150, height: 150))
+//        face.image = UIImage(named: "rua.png")
+//        face.contentMode = .scaleAspectFit
+//        return face
+//    }()
+    
     
     let defaults = UserDefaults.standard
     
@@ -58,6 +88,7 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
     var animationParametricValue: CGFloat = 0
     var animationLastFrameTime = Date()
     var animationTimer: Timer?
+    var isCharacterShown: Bool = false
     
     var patternGenerator = PatternGenerator()
     
@@ -65,8 +96,13 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(ruaSymbol)
+        
+        view.addSubview(hintButton)
+        
         view.addSubview(backgroundCanvasView)
         view.addSubview(canvasView)
+        
         view.addSubview(dialogueTextBox)
         view.addSubview(homeButton)
         view.addSubview(nextButton)
@@ -81,7 +117,7 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         
         animationStartMarkerLayer = CALayer()
         animationStartMarkerLayer.frame = CGRect(x: 0, y: 0, width: view.frame.width * 0.1, height: view.frame.width * 0.1)
-        animationStartMarkerLayer.borderColor = UIColor.gray.cgColor
+        animationStartMarkerLayer.borderColor = UIColor.yellow.cgColor
         animationStartMarkerLayer.borderWidth = view.frame.width * 0.01
         animationStartMarkerLayer.cornerRadius = view.frame.width * 0.05
         animationStartMarkerLayer.delegate = self
@@ -89,14 +125,16 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         
         canvasView.delegate = self
         
+        nextButton.isHidden = true
+        
         Sound.play(file: "tallu_power2.m4a")
         AudioBGMPlayer.shared.playStoryBGM1()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        backgroundCanvasView.frame = view.bounds
-        canvasView.frame = view.bounds
+        backgroundCanvasView.frame = CGRect(x: -100, y: -150, width: 1200, height: 1400)
+        canvasView.frame = CGRect(x: -100, y: -150, width: 1200, height: 1400)
         
         patternGenerator.dotsPoint = patternGenerator.setPoints(currentShape: .flash, frame: backgroundCanvasView.frame)
         backgroundCanvasView.drawing = patternGenerator.synthDrawing(frame: backgroundCanvasView.frame)
@@ -126,8 +164,29 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
     
     @objc
         func hintTapped() {
-            Sound.play(file: "power2_hint.m4a")
+            if isCharacterShown == false {
+                Sound.play(file: "power2_hint.m4a")
+            } else {
+                Sound.play(file: "")
+            }
         }
+    
+    @objc
+    func nextTapped() {
+        
+        coordinator?.toStory()
+        defaults.set("clear_power_1", forKey: "userState")
+    }
+    
+    func checkHintButtonChange() {
+        let customButtonImage = UIImage(named: "rua.png")
+        let newimage = customButtonImage?.resizedImage(size: CGSize(width: 150, height: 150))
+        hintButton.setImage(newimage, for: .normal)
+        
+        isCharacterShown = true
+        
+        nextButton.isHidden = false
+    }
     
     func setUpAutoLayout() {
         
@@ -135,11 +194,21 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
             homeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
             homeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
             
+            hintButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15),
+            hintButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
+            
             nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200),
             nextButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24),
             
-            dialogueTextBox.topAnchor.constraint(equalTo: view.topAnchor, constant: 130),
-            dialogueTextBox.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            dialogueTextBox.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -170),
+            dialogueTextBox.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 95),
+            dialogueTextBox.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 24),
+            //dialogueTextBox.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
+            
+            backgroundCanvasView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            backgroundCanvasView.topAnchor.constraint(equalTo: view.topAnchor, constant: 500),
+            canvasView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            canvasView.topAnchor.constraint(equalTo: view.topAnchor, constant: 500)
         ])
     }
     
@@ -227,14 +296,15 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         print(distance)
         if distance < 50 {
             // Adjust the correct stroke to have a green ink.
-            canvasView.drawing.strokes[strokeIndex].ink.color = .green
+            canvasView.drawing.strokes[strokeIndex].ink.color = .yellow
             Sound.play(file: "finish.wav")
+            checkHintButtonChange()
+            
             backgroundCanvasView.drawing.strokes[strokeIndex].ink.color = .clear
             Sound.play(file: "rua_power_success.m4a")
-            sleep(3)
-            coordinator?.toStory()
-            defaults.set("clear_power_1", forKey: "userState")
-            AudioBGMPlayer.shared.playStoryBGM1()
+            
+            
+//            AudioBGMPlayer.shared.playStoryBGM1()
             //MARK: In 3 second, move to next page
         } else {
             // If the stroke drawn was bad, remove it so the user can try again.

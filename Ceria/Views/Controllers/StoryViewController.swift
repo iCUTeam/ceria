@@ -183,6 +183,7 @@ class StoryViewController: UIViewController, Storyboarded {
             viewModel.saveIndex()
             defaults.set("cleared", forKey: "userState")
             coordinator?.toReflection()
+            sleep(5)
         default:
             print("nowhere to go")
         }
