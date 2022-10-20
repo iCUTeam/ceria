@@ -366,13 +366,11 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     
                     node.addChildNode(planeNode)
     
-                    if let checkPointScene = SCNScene(named: "Models.scnassets/Checkpoint_red.scn") {
+                    if let checkPointScene = SCNScene(named: "Models.scnassets/Treasure_chest.scn") {
     
                         if let checkPoint = checkPointScene.rootNode.childNodes.first {
     
                             checkPoint.eulerAngles.x = .pi / 2
-                            
-                            checkPoint.eulerAngles.z = .pi / 2
                             
                             checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
     

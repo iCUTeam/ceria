@@ -180,7 +180,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="eiU-gc-eg7"/>
-                        <color key="backgroundColor" red="1" green="0.97149233647100453" blue="0.81945968266684655" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.995014488697052" green="0.79174262185669431" blue="0.60084973442824219" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aBF-s0-C6v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

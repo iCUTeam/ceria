@@ -296,7 +296,7 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         print(distance)
         if distance < 50 {
             // Adjust the correct stroke to have a green ink.
-            canvasView.drawing.strokes[strokeIndex].ink.color = .yellow
+            canvasView.drawing.strokes[strokeIndex].ink.color = .init(red: 255/255, green: 196/255, blue: 0/255, alpha: 1)
             Sound.play(file: "finish.wav")
             checkHintButtonChange()
             

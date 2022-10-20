@@ -42,6 +42,8 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
     
     let accelerationData: [Float] = [0.40, 0.50, 0.60, 0.70, 0.80, 0.90]
     
+    var count = 0
+    
     var index = 0
     
     var voiceName = ""
@@ -161,7 +163,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
     @objc func startPauseGame(recognizer: UITapGestureRecognizer)
     {
         
-        var count = 0
+        count = 0
         
         Sound.play(file: "walk.m4a", numberOfLoops: -1)
         
@@ -182,7 +184,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                     
                     
                     //timernya kan jalan 0.1 detik sekali, jadi itungannya 10 detik tu berarti dah jalan 100 hitungan
-                    count += 1
+                    self.count += 1
                     
                     UIView.animate(withDuration: 0.1) {
                         self.ruaImage.layer.position.x += 1.5
@@ -190,10 +192,10 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                     
                     
                     //that's why klo countnya dia = 100 nanti kita tambahin index accelerationnya biar ambil next acceleration yang lebih cepet terus kita balik lagi count dari 0
-                    if count % 100 == 0
+                    if self.count % 100 == 0
                     {
                         self.index+=1
-                        count = 0
+                        self.count = 0
                     }
                     
 //
@@ -325,6 +327,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                     }
                     
                     self.index = 0
+                    self.count = 0
                 }
                
                 
