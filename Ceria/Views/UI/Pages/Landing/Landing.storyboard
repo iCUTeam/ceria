@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -12,9 +12,9 @@
         <!--Landing View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="LandingViewController" id="Y6W-OH-hqX" customClass="LandingViewController" customModule="Ceria" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LandingViewController" id="Y6W-OH-hqX" customClass="LandingViewController" customModule="Carita" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -27,31 +27,31 @@
         <!--About View Controller-->
         <scene sceneID="2AO-Iv-JCR">
             <objects>
-                <viewController storyboardIdentifier="AboutViewController" id="k61-Qp-Kfm" customClass="AboutViewController" customModule="Ceria" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutViewController" id="k61-Qp-Kfm" customClass="AboutViewController" customModule="Carita" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qiU-e0-1TI">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ikU-aA-hA7">
-                                <rect key="frame" x="90" y="140" width="844" height="1106"/>
+                                <rect key="frame" x="90" y="144" width="654" height="910"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1l-2z-wJc">
-                                        <rect key="frame" x="0.0" y="0.0" width="844" height="1106"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="654" height="910"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1W-5j-XMg" userLabel="ContentView">
-                                                <rect key="frame" x="0.0" y="0.0" width="844" height="1880"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="654" height="1901"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="8hv-bC-LZx" userLabel="StackView Scroll View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="844" height="1880"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="654" height="1901"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iYd-H4-IGE">
-                                                                <rect key="frame" x="302" y="0.0" width="240" height="10"/>
+                                                                <rect key="frame" x="207" y="0.0" width="240" height="10"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="10" id="2Mc-FP-2LT"/>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tentang Kami" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tq0-m3-jM0" userLabel="Judul">
-                                                                <rect key="frame" x="272" y="90" width="300.5" height="60"/>
+                                                                <rect key="frame" x="177" y="90" width="300.5" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="60" id="WRq-1N-5q3"/>
                                                                 </constraints>
@@ -60,7 +60,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="7wh-CK-5IQ" userLabel="StackView Tim Pembuat">
-                                                                <rect key="frame" x="265" y="230" width="314" height="330"/>
+                                                                <rect key="frame" x="170" y="230" width="314" height="330"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dibuat oleh - Tim iCU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAP-ez-Wwe">
                                                                         <rect key="frame" x="0.0" y="0.0" width="314" height="38.5"/>
@@ -110,7 +110,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bXi-7V-EwY" userLabel="StackView Musik">
-                                                                <rect key="frame" x="263.5" y="640" width="317" height="90"/>
+                                                                <rect key="frame" x="168.5" y="640" width="317" height="90"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Musik Didukung Oleh" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12i-sa-a50">
                                                                         <rect key="frame" x="0.0" y="0.0" width="317" height="43.5"/>
@@ -130,7 +130,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7eV-f5-eTh" userLabel="StackView Cerita &amp; Ilustrasi">
-                                                                <rect key="frame" x="282" y="810" width="280" height="150"/>
+                                                                <rect key="frame" x="187" y="810" width="280" height="150"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Supervisi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oA5-bD-npY">
                                                                         <rect key="frame" x="70" y="0.0" width="140" height="57"/>
@@ -156,28 +156,28 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="lmy-uU-w9M" userLabel="StackView Musik Latar">
-                                                                <rect key="frame" x="56.5" y="1040" width="731.5" height="180"/>
+                                                                <rect key="frame" x="18.5" y="1040" width="617" height="201"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Musik Latar (Kredit)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2L1-Nd-Ldd">
-                                                                        <rect key="frame" x="217.5" y="0.0" width="296" height="38.5"/>
+                                                                        <rect key="frame" x="160.5" y="0.0" width="296" height="38.5"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vadim krakhmal - Journey To The Toucan Isle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3P-jA-5cM">
-                                                                        <rect key="frame" x="57" y="47" width="617" height="38.5"/>
+                                                                        <rect key="frame" x="0.0" y="41.5" width="617" height="38.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vino Ramaldo - Alone (Sad Piano Music Instrumental)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jd0-CY-4DC">
-                                                                        <rect key="frame" x="0.0" y="94.5" width="731.5" height="38.5"/>
+                                                                        <rect key="frame" x="34" y="83" width="549.5" height="76.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MaxKoMusic - Victory" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LxA-p0-XKR">
-                                                                        <rect key="frame" x="214" y="141.5" width="303" height="38.5"/>
+                                                                        <rect key="frame" x="157" y="162.5" width="303" height="38.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -188,7 +188,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="NHk-9U-1UJ" userLabel="StackView Efek Musik">
-                                                                <rect key="frame" x="272" y="1300" width="300.5" height="450"/>
+                                                                <rect key="frame" x="177" y="1321" width="300.5" height="450"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Efek Suara (Kredit)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvM-xG-xCm">
                                                                         <rect key="frame" x="9.5" y="0.0" width="281.5" height="38.5"/>
@@ -256,7 +256,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hnu-PH-sy6">
-                                                                <rect key="frame" x="302" y="1830" width="240" height="50"/>
+                                                                <rect key="frame" x="207" y="1851" width="240" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="How-Bh-gbL"/>
                                                                 </constraints>
@@ -311,9 +311,9 @@
         <!--Collection View Controller-->
         <scene sceneID="27k-q1-c06">
             <objects>
-                <viewController storyboardIdentifier="CollectionViewController" id="zHH-QT-7eZ" customClass="CollectionViewController" customModule="Ceria" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CollectionViewController" id="zHH-QT-7eZ" customClass="CollectionViewController" customModule="Carita" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DKu-tp-LML">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="FHL-4q-kza"/>
                         <color key="backgroundColor" red="0.81960785390000002" green="0.82745099070000006" blue="0.64313727620000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -326,9 +326,9 @@
         <!--Instruction View Controller-->
         <scene sceneID="zSr-im-7wp">
             <objects>
-                <viewController storyboardIdentifier="InstructionViewController" id="fEN-Ix-NIO" customClass="InstructionViewController" customModule="Ceria" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InstructionViewController" id="fEN-Ix-NIO" customClass="InstructionViewController" customModule="Carita" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="adV-bO-DYJ">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="GbZ-li-d2J"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -341,9 +341,9 @@
         <!--Story View Controller-->
         <scene sceneID="sTL-xS-KhD">
             <objects>
-                <viewController storyboardIdentifier="StoryViewController" id="gk1-N7-zdS" customClass="StoryViewController" customModule="Ceria" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StoryViewController" id="gk1-N7-zdS" customClass="StoryViewController" customModule="Carita" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NIr-ID-5WE">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="e38-fx-Frj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -356,16 +356,16 @@
         <!--Explore View Controller-->
         <scene sceneID="TYb-5q-mJ1">
             <objects>
-                <viewController storyboardIdentifier="ExploreViewController" id="vBz-OZ-fS4" customClass="ExploreViewController" customModule="Ceria" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExploreViewController" id="vBz-OZ-fS4" customClass="ExploreViewController" customModule="Carita" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qRt-UA-RD2">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NSm-V2-h5M">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                             </arscnView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCL-Az-EaA">
-                                <rect key="frame" x="50" y="70" width="170" height="50"/>
+                                <rect key="frame" x="50" y="74" width="170" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Aod-OC-Snc"/>
                                     <constraint firstAttribute="width" constant="170" id="riP-7t-w15"/>
@@ -376,8 +376,8 @@
                                     <action selector="showedPressed:" destination="vBz-OZ-fS4" eventType="touchUpInside" id="JjC-0h-KRa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfL-pH-0EG">
-                                <rect key="frame" x="804" y="70" width="170" height="50"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfL-pH-0EG">
+                                <rect key="frame" x="614" y="74" width="170" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RRI-gZ-2UZ"/>
                                     <constraint firstAttribute="width" constant="170" id="zul-ky-OqK"/>
@@ -388,14 +388,14 @@
                                     <action selector="hiddenPressed:" destination="vBz-OZ-fS4" eventType="touchUpInside" id="mKp-62-AGj"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhp-J5-8dN" userLabel="Instructions View Secondary" customClass="ClueExploration" customModule="Ceria" customModuleProvider="target">
-                                <rect key="frame" x="20" y="1591" width="984" height="125"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhp-J5-8dN" userLabel="Instructions View Secondary" customClass="ClueExploration" customModule="Carita" customModuleProvider="target">
+                                <rect key="frame" x="20" y="1399" width="794" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="qV1-jX-6O3"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oHv-MU-o0b" userLabel="Instructions View Primary" customClass="ClueExploration" customModule="Ceria" customModuleProvider="target">
-                                <rect key="frame" x="20" y="1741" width="984" height="125"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oHv-MU-o0b" userLabel="Instructions View Primary" customClass="ClueExploration" customModule="Carita" customModuleProvider="target">
+                                <rect key="frame" x="20" y="1549" width="794" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="ipU-nR-k5g"/>
                                 </constraints>
@@ -435,9 +435,9 @@
         <!--Power View Controller-->
         <scene sceneID="iXT-3a-K3b">
             <objects>
-                <viewController storyboardIdentifier="PowerViewController" id="1A8-ys-GN4" customClass="PowerViewController" customModule="Ceria" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PowerViewController" id="1A8-ys-GN4" customClass="PowerViewController" customModule="Carita" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gzv-PG-Q4B">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="eiU-gc-eg7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -450,9 +450,9 @@
         <!--Tutorial View Controller-->
         <scene sceneID="wlH-9J-vWW">
             <objects>
-                <viewController storyboardIdentifier="TutorialViewController" id="APf-kK-OmU" customClass="TutorialViewController" customModule="Ceria" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialViewController" id="APf-kK-OmU" customClass="TutorialViewController" customModule="Carita" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nSn-Dj-hS6">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="G65-I0-drR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -465,9 +465,9 @@
         <!--Game1 View Controller-->
         <scene sceneID="DR2-zC-NSt">
             <objects>
-                <viewController storyboardIdentifier="Game1ViewController" id="5f1-gM-Cb0" customClass="Game1ViewController" customModule="Ceria" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Game1ViewController" id="5f1-gM-Cb0" customClass="Game1ViewController" customModule="Carita" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3hU-mE-Vbr">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="jIJ-yB-8zv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -480,18 +480,18 @@
         <!--Game2 View Controller-->
         <scene sceneID="mmO-Gy-dEX">
             <objects>
-                <viewController storyboardIdentifier="Game2ViewController" id="vvO-4N-SgJ" customClass="Game2ViewController" customModule="Ceria" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Game2ViewController" id="vvO-4N-SgJ" customClass="Game2ViewController" customModule="Carita" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4lD-eM-H2t">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Wxa-ar-8yJ">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </sceneKitView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Xy-YX-qrA" customClass="HorizontalProgressBar" customModule="Ceria" customModuleProvider="target">
-                                <rect key="frame" x="62" y="1164" width="900" height="88"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Xy-YX-qrA" customClass="HorizontalProgressBar" customModule="Carita" customModuleProvider="target">
+                                <rect key="frame" x="76" y="1020" width="683" height="61"/>
+                                <autoresizingMask key="autoresizingMask"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
@@ -510,14 +510,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Mh-NU-F0X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="680.859375" y="1225.9150805270863"/>
+            <point key="canvasLocation" x="680.57553956834533" y="1225.6281407035176"/>
         </scene>
         <!--Game3 View Controller-->
         <scene sceneID="65L-bM-ZOF">
             <objects>
-                <viewController storyboardIdentifier="Game3ViewController" id="2iJ-M8-zVJ" customClass="Game3ViewController" customModule="Ceria" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Game3ViewController" id="2iJ-M8-zVJ" customClass="Game3ViewController" customModule="Carita" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cjL-zb-SPh">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="gpk-rN-N0c"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -530,9 +530,9 @@
         <!--Game4 View Controller-->
         <scene sceneID="eBp-tK-f0K">
             <objects>
-                <viewController storyboardIdentifier="Game4ViewController" id="TIV-I0-W7S" customClass="Game4ViewController" customModule="Ceria" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Game4ViewController" id="TIV-I0-W7S" customClass="Game4ViewController" customModule="Carita" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="50G-kp-af1">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="eyl-71-XbR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -545,9 +545,9 @@
         <!--Success View Controller-->
         <scene sceneID="j3d-Xp-i7y">
             <objects>
-                <viewController storyboardIdentifier="SuccessViewController" id="R6E-l5-Hdv" customClass="SuccessViewController" customModule="Ceria" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SuccessViewController" id="R6E-l5-Hdv" customClass="SuccessViewController" customModule="Carita" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UeG-NK-WcM">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="cLC-mp-yIp"/>
                         <color key="backgroundColor" red="1" green="0.90215159481192797" blue="0.72729851381958732" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -560,9 +560,9 @@
         <!--Reflection View Controller-->
         <scene sceneID="pxM-0v-JLx">
             <objects>
-                <viewController storyboardIdentifier="ReflectionViewController" id="IQj-5v-kxf" customClass="ReflectionViewController" customModule="Ceria" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReflectionViewController" id="IQj-5v-kxf" customClass="ReflectionViewController" customModule="Carita" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jo3-zF-sLz">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Gxt-Ps-1Fz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

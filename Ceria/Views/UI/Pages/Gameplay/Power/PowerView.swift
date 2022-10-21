@@ -38,11 +38,11 @@ class PowerView: UIView {
         let size: CGFloat
         
         if screenWidth == 834.0 {
-            constant = 12.0
-            size = 21
+            constant = 10.0
+            size = 20
         } else {
-            constant = 15.0
-            size = 23
+            constant = 12.0
+            size = 22
         }
         
         let label = UILabel()
@@ -85,7 +85,7 @@ class PowerView: UIView {
             titleLabel.topAnchor.constraint(equalTo: dialogueTextFrame.topAnchor, constant: 20),
             titleLabel.leftAnchor.constraint(equalTo: dialogueTextFrame.leftAnchor, constant: 20),
             
-            dialogueLabel.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 50),
+            dialogueLabel.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 40),
             dialogueLabel.leftAnchor.constraint(equalTo: dialogueTextFrame.leftAnchor, constant: 20),
             dialogueLabel.rightAnchor.constraint(equalTo: dialogueTextFrame.rightAnchor, constant: -20),
         ])

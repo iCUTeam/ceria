@@ -78,6 +78,10 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     var hintImage: String = ""
     var hintImage2: String = ""
     
+    var isCheckpointFound: Bool = false
+    var isCollectibleFound: Bool = false
+    
+    
     private let collectionViewModel = CollectionViewModel()
     
     private var collectionItem: CollectionItem!
@@ -92,7 +96,29 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionItem = CollectionItem(frame: CGRect(x: view.frame.width * 0.125, y: view.frame.height * 0.1, width: 800, height: 1100))
+        isCheckpointFound = false
+        isCollectibleFound = false
+        
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenWidth: CGFloat = screenSize.width
+        let x: CGFloat
+        let y: CGFloat
+        let w: CGFloat
+        let h: CGFloat
+        
+        if screenWidth == 834.0 {
+            x = 65
+            y = 150
+            w = 700
+            h = 1000
+        } else {
+            x = 160
+            y = 200
+            w = 700
+            h = 1000
+        }
+    
+        collectionItem = CollectionItem(frame: CGRect(x: x, y: y, width: w, height: h))
         collectionItem.roundCornerView(corners: .allCorners, radius: 30)
         view.addSubview(collectionItem)
         view.addSubview(homeButton)
@@ -235,7 +261,9 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             {
                 
                 
-                if imageAnchor.referenceImage.name == "kartu_pulau" {
+                if imageAnchor.referenceImage.name == "kartu_pulau2" && self.defaults.string(forKey: "userState") == "clear_story_1" {
+                    
+                    self.isCheckpointFound = true
                     
                     let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
                     
@@ -260,11 +288,19 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                             checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
 
                             planeNode.addChildNode(checkPoint)
+                            
+                            
+                            if self.isCheckpointFound == true {
+                                Sound.play(file: "checkpoint_found.wav")
+                                Sound.play(file:"explore2_found.m4a")
+                            }
                         }
                     }
                 }
 
-                if imageAnchor.referenceImage.name == "kartu_kapal" {
+                if imageAnchor.referenceImage.name == "kartu_kapal2" && self.defaults.string(forKey: "userState") == "clear_story_4" {
+                    
+                    self.isCheckpointFound = true
                     
                     let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
                     
@@ -290,6 +326,13 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                             checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
 
                             planeNode.addChildNode(checkPoint)
+                            
+                            
+                            
+                            if self.isCheckpointFound == true {
+                                Sound.play(file: "checkpoint_found.wav")
+                                Sound.play(file:"explore3_found.m4a")
+                            }
                         }
                     }
                 }
@@ -351,8 +394,10 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     //            }
     //
     //
-                if imageAnchor.referenceImage.name == "kartu_rua" {
+                if imageAnchor.referenceImage.name == "kartu_rua2" && self.defaults.string(forKey: "userState") == "clear_story_4" {
     
+                    self.isCollectibleFound = true
+                    
                     let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
     
                     plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
@@ -361,7 +406,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     
                     planeNode.eulerAngles.x = -.pi / 2
     
-    
+                    
                 
     
                     node.addChildNode(planeNode)
@@ -378,6 +423,12 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                             checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
     
                             planeNode.addChildNode(checkPoint)
+                            
+                            if self.isCollectibleFound == true {
+                                Sound.play(file: "checkpoint_found.wav")
+                                Sound.play(file:"explore3_collect_found.m4a")
+                            }
+                            
                         }
                     }
                 }
@@ -474,11 +525,25 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     
     func setUpAutoLayout() {
         
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenWidth: CGFloat = screenSize.width
+        let constant: CGFloat
+        let constant2: CGFloat
+        
+        if screenWidth == 834.0 {
+            constant = 100
+            constant2 = 700
+        } else {
+            constant = 150
+            constant2 = 800
+        }
+        
         NSLayoutConstraint.activate([
             homeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
             homeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
-            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            closeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 875),
+            
+            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: constant),
+            closeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: constant2),
             
             hint2Button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -190),
             hint2Button.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
@@ -513,7 +578,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             }
             
             collectionViewModel.collectibleDesc.bind { [weak self] desc in
-                self?.collectionItem.itemDesc.text = "Asik! Kamu menemukan hadiah dari Rua! Kamu bisa menemukan item ini di rak koleksi kamu, ya!"
+                self?.collectionItem.itemDesc.text = "Asik! Kamu menemukan hadiah dari Rua!\nKamu bisa menemukan barang ini di rak koleksi kamu, ya!"
                 self?.collectionItem.itemDesc.allowsEditingTextAttributes = false
             }
             
@@ -525,7 +590,8 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         hint2Button.isHidden = true
         dialogueTextBox.isHidden.toggle()
         dialogueTextBox2.isHidden = true
-      
+        
+        collectionViewModel.obtainItem(index: 1)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -538,53 +604,53 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             guard let result = arSCN.hitTest(viewTouchLocation, options: nil).first else {
                 return
             }
+            
+            //pulau
             if let planeNode = blueCheckPointNode, planeNode == result.node {
+                Sound.play(file: "checkpoint_clicked.wav")
+                sleep(2)
                 coordinator?.toStory()
                 defaults.set("clear_explore_1", forKey: "userState")
-                Sound.play(file: "checkpoint_found.m4a")
                 
-                //Sound.play(file:"explore2_found.m4a")
+                
             }
             
+            //kapal
             if let planeNode = greenCheckPointNode, planeNode == result.node {
+                Sound.play(file: "checkpoint_clicked.wav")
+                sleep(2)
                 coordinator?.toStory()
                 defaults.set("clear_explore_2", forKey: "userState")
-                Sound.play(file: "checkpoint_found.m4a")
                 
-                //Sound.play(file:"explore3_found.m4a")
+                
+                
+                
             }
             
             if let planeNode = redCheckPointNode, planeNode == result.node {
-                coordinator?.toStory()
-                defaults.set("clear_explore_3", forKey: "userState")
-                Sound.play(file: "checkpoint_found.m4a")
+//                coordinator?.toStory()
+//                defaults.set("clear_explore_3", forKey: "userState")
+//                Sound.play(file: "checkpoint_found.m4a")
             }
             
             if let planeNode = seraungNode, planeNode == result.node {
                 collectionViewModel.obtainItem(index: 0)
                 setupPopUP(index: 0)
-                Sound.play(file: "checkpoint_clicked.m4a")
             }
 //
             if let planeNode = tarumpahNode, planeNode == result.node {
-                
-                collectionViewModel.obtainItem(index: 1)
+                Sound.play(file: "checkpoint_clicked.wav")
                 setupPopUP(index: 1)
-                Sound.play(file: "checkpoint_clicked.m4a")
-                
-                //Sound.play(file:"explore3_collect_found.m4a")
             }
 
             if let planeNode = tinimiNode, planeNode == result.node {
                 collectionViewModel.obtainItem(index: 2)
                 setupPopUP(index: 2)
-                Sound.play(file: "checkpoint_clicked.m4a")
             }
 
             if let planeNode = lontongNode, planeNode == result.node {
                 collectionViewModel.obtainItem(index: 3)
                 setupPopUP(index: 3)
-                Sound.play(file: "checkpoint_clicked.m4a")
             }
 
         }

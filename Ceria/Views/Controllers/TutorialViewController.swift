@@ -191,6 +191,16 @@ class TutorialViewController: UIViewController, Storyboarded {
     
     func setUpAutoLayout() {
         
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenWidth: CGFloat = screenSize.width
+        let constant: CGFloat
+        
+        if screenWidth == 834.0 {
+            constant = 200
+        } else {
+            constant = 100
+        }
+        
         NSLayoutConstraint.activate([
             homeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
             homeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
@@ -198,7 +208,7 @@ class TutorialViewController: UIViewController, Storyboarded {
             nextButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             nextButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24),
             
-            actionButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100),
+            actionButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: constant),
             actionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             actionButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24),
             

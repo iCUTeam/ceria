@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SceneKit
 
 class InstructionViewController: UIViewController, Storyboarded {
 
@@ -69,9 +68,10 @@ class InstructionViewController: UIViewController, Storyboarded {
         judulSatu.heightAnchor.constraint(equalToConstant: 70).isActive = true
         
         let perintahSatu = UILabel()
-        perintahSatu.text = "Permainan ini membutuhkan kartu fisik yang dicetak\nberwarna. Instruksi bermain dan kartu permainan bisa\ndiunduh dengan menekan link di bawah ini."
+        perintahSatu.text = "Permainan ini membutuhkan kartu fisik yang dicetak berwarna. Instruksi bermain dan kartu permainan bisa diunduh dengan menekan link di bawah ini."
         perintahSatu.textAlignment = .left
         perintahSatu.font = UIFont.scriptFont(size: 20)
+        perintahSatu.setLineHeight(lineHeight: 6)
         perintahSatu.heightAnchor.constraint(equalToConstant: 75).isActive = true
         perintahSatu.numberOfLines = 0
         
@@ -133,9 +133,10 @@ class InstructionViewController: UIViewController, Storyboarded {
         judulDua.heightAnchor.constraint(equalToConstant: 75).isActive = true
         
         let perintahDua = UILabel()
-        perintahDua.text = "Sebarkan seluruh kartu di berbagai tempat berbeda di\ndalam rumah dengan lokasi yang aman untuk anak dan\nmasih bisa terlihat dari pandangannya."
+        perintahDua.text = "Sebarkan seluruh kartu di berbagai tempat berbeda di dalam rumah dengan lokasi yang aman untuk anak dan masih bisa terlihat dari pandangannya."
         perintahDua.textAlignment = .left
         perintahDua.font = UIFont.scriptFont(size: 20)
+        perintahDua.setLineHeight(lineHeight: 6)
         perintahDua.numberOfLines = 0
         
         let spacerPerintahDua = UIView()
@@ -186,9 +187,10 @@ class InstructionViewController: UIViewController, Storyboarded {
         judulTiga.heightAnchor.constraint(equalToConstant: 70).isActive = true
         
         let perintahTiga = UILabel()
-        perintahTiga.text = "Ajak dan dampingi anak untuk bermain bersama, dipandu\nmenggunakan aplikasi ini, sambil nantinya akan mencari\nkartu-kartu tersebut sesuai petunjuk dari permainan.\nUntuklebih jelasnya, lihat instruksi permainan di langkah 1."
+        perintahTiga.text = "Ajak dan dampingi anak untuk bermain bersama, dipandu menggunakan aplikasi ini, sambil nantinya akan mencari kartu - kartu tersebut sesuai petunjuk dari permainan. Untuk lebih jelasnya, lihat instruksi permainan di langkah 1."
         perintahTiga.textAlignment = .left
         perintahTiga.font = UIFont.scriptFont(size: 20)
+        perintahTiga.setLineHeight(lineHeight: 6)
         perintahTiga.numberOfLines = 0
         
         let spacerPerintahTiga = UIView()
@@ -213,7 +215,7 @@ class InstructionViewController: UIViewController, Storyboarded {
         checkbox.widthAnchor.constraint(equalToConstant: 50).isActive = true
         
         let agreeLabel = UILabel()
-        agreeLabel.text = "Persiapan permainan sudah siap!"
+        agreeLabel.text = "Persiapan permainan untuk anak sudah siap!"
         agreeLabel.textAlignment = .left
         agreeLabel.font = UIFont.scriptFont(size: 25)
         
@@ -338,6 +340,7 @@ class InstructionViewController: UIViewController, Storyboarded {
         } else {
             startStoryButton.isEnabled = false
         }
+        AudioSFXPlayer.shared.playCommonSFX()
     }
     
     func setUpAutoLayout() {

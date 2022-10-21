@@ -5,25 +5,13 @@
   },
   "resources" : [
     {
-      "filename" : "blue-card.arreferenceimage"
+      "filename" : "kartu_kapal2.arreferenceimage"
     },
     {
-      "filename" : "green-card.arreferenceimage"
+      "filename" : "kartu_pulau2.arreferenceimage"
     },
     {
-      "filename" : "kartu_kapal.arreferenceimage"
-    },
-    {
-      "filename" : "kartu_pulau.arreferenceimage"
-    },
-    {
-      "filename" : "kartu_rua.arreferenceimage"
-    },
-    {
-      "filename" : "red-card.arreferenceimage"
-    },
-    {
-      "filename" : "yellow-card.arreferenceimage"
+      "filename" : "kartu_rua2.arreferenceimage"
     }
   ]
 }

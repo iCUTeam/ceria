@@ -89,17 +89,54 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
     
     func setupOverlays() {
         
-        ruaImage = UIImageView(frame: CGRect(x: 150, y: 30, width: 100, height: 100))
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenWidth: CGFloat = screenSize.width
+        let x: CGFloat
+        let y: CGFloat
+        let x2: CGFloat
+        let y2: CGFloat
+        let x3: CGFloat
+        let y3: CGFloat
+        let w: CGFloat
+        let h: CGFloat
+        
+        if screenWidth == 834.0 {
+            x = 150
+            y = 30
+            
+            x2 = 720
+            y2 = 30
+            
+            x3 = 200
+            y3 = 80
+            
+            w = 600
+            h = 10
+        } else {
+            x = 150
+            y = 30
+            
+            x2 = 900
+            y2 = 30
+            
+            x3 = 200
+            y3 = 80
+            
+            w = 760
+            h = 10
+        }
+        
+        ruaImage = UIImageView(frame: CGRect(x: x, y: y, width: 100, height: 100))
         ruaImage.image = UIImage(named: "rua.png")
         ruaImage.contentMode = .scaleAspectFit
         view.insertSubview(ruaImage, at: 1)
         
-        let puteriImage = UIImageView(frame: CGRect(x: 900, y: 30, width: 100, height: 100))
+        let puteriImage = UIImageView(frame: CGRect(x: x2, y: y2, width: 100, height: 100))
         puteriImage.image = UIImage(named: "putri.png")
         puteriImage.contentMode = .scaleAspectFit
         view.insertSubview(puteriImage, at: 1)
         
-        let lineImage = UIImageView(frame: CGRect(x: 200, y: 80, width: 760, height: 10))
+        let lineImage = UIImageView(frame: CGRect(x: x3, y: y3, width: w, height: h))
         lineImage.image = UIImage(named: "line.png")
         lineImage.contentMode = .scaleAspectFit
         view.insertSubview(lineImage, at: 1)
@@ -162,6 +199,15 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
     //fungsi buat start dan pause the game
     @objc func startPauseGame(recognizer: UITapGestureRecognizer)
     {
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenWidth: CGFloat = screenSize.width
+        let increment: CGFloat
+        
+        if screenWidth == 834.0 {
+            increment = 1.1
+        } else {
+            increment = 1.5
+        }
         
         count = 0
         
@@ -187,7 +233,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                     self.count += 1
                     
                     UIView.animate(withDuration: 0.1) {
-                        self.ruaImage.layer.position.x += 1.5
+                        self.ruaImage.layer.position.x += increment
                     }
                     
                     

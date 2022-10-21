@@ -49,7 +49,27 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
     }()
     
     private lazy var ruaSymbol: UIImageView = {
-        let ruaSymbol = UIImageView(frame: CGRect(x: 15, y: -15, width: 1000, height: 1200))
+        
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenWidth: CGFloat = screenSize.width
+        let x: CGFloat
+        let y: CGFloat
+        let w: CGFloat
+        let h: CGFloat
+        
+        if screenWidth == 834.0 {
+            x = -10
+            y = -10
+            w = 850
+            h = 1020
+        } else {
+            x = 15
+            y = -15
+            w = 1000
+            h = 1200
+        }
+        
+        let ruaSymbol = UIImageView(frame: CGRect(x: x, y: y, width: w, height: h))
         ruaSymbol.image = UIImage(named: "rua_symbol.png")
         ruaSymbol.contentMode = .scaleToFill
         return ruaSymbol
@@ -133,8 +153,28 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        backgroundCanvasView.frame = CGRect(x: -100, y: -150, width: 1200, height: 1400)
-        canvasView.frame = CGRect(x: -100, y: -150, width: 1200, height: 1400)
+        
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenWidth: CGFloat = screenSize.width
+        let x: CGFloat
+        let y: CGFloat
+        let w: CGFloat
+        let h: CGFloat
+        
+        if screenWidth == 834.0 {
+            x = -90
+            y = -120
+            w = 1020
+            h = 1190
+        } else {
+            x = -100
+            y = -150
+            w = 1200
+            h = 1400
+        }
+        
+        backgroundCanvasView.frame = CGRect(x: x, y: y, width: w, height: h)
+        canvasView.frame = CGRect(x: x, y: y, width: w, height: h)
         
         patternGenerator.dotsPoint = patternGenerator.setPoints(currentShape: .flash, frame: backgroundCanvasView.frame)
         backgroundCanvasView.drawing = patternGenerator.synthDrawing(frame: backgroundCanvasView.frame)

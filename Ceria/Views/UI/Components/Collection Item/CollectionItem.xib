@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CollectionItem" customModule="Ceria" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CollectionItem" customModule="Carita" customModuleProvider="target">
             <connections>
                 <outlet property="itemDesc" destination="Lge-he-B2u" id="QNl-NL-7m2"/>
                 <outlet property="itemName" destination="oCF-Vb-tca" id="pgL-qh-hYc"/>
@@ -28,30 +28,30 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" id="M6t-o0-IuN">
-                    <rect key="frame" x="0.0" y="0.0" width="800" height="1100"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <rect key="frame" x="-0.46314831666859391" y="0.60327570518666107" width="799.99999999999966" height="1100"/>
+                    <autoresizingMask key="autoresizingMask"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Bsc-CP-mhs">
-                            <rect key="frame" x="50" y="35" width="700" height="978"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Bsc-CP-mhs">
+                            <rect key="frame" x="50" y="61" width="700" height="878"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCF-Vb-tca">
-                                    <rect key="frame" x="100" y="0.0" width="500" height="58"/>
+                                    <rect key="frame" x="281.5" y="0.0" width="137" height="58"/>
                                     <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="60"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SFf-Ao-LgF">
-                                    <rect key="frame" x="0.0" y="78" width="700" height="500"/>
+                                    <rect key="frame" x="0.0" y="78" width="700" height="400"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="500" id="LQh-9c-RaX"/>
+                                        <constraint firstAttribute="height" constant="400" id="LQh-9c-RaX"/>
                                         <constraint firstAttribute="width" constant="700" id="ocP-zv-c99"/>
                                     </constraints>
                                 </sceneKitView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="LjN-AJ-RJq">
-                                    <rect key="frame" x="270.66666666666669" y="598" width="158.66666666666669" height="60"/>
+                                    <rect key="frame" x="271" y="498" width="158.5" height="60"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.and.ellipse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yVB-dM-z66">
-                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                            <rect key="frame" x="0.0" y="-0.5" width="60" height="60.5"/>
                                             <color key="tintColor" systemColor="systemRedColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="HHa-C3-3Nd"/>
@@ -59,7 +59,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXP-FO-BrG">
-                                            <rect key="frame" x="90" y="0.0" width="68.666666666666686" height="60"/>
+                                            <rect key="frame" x="90" y="0.0" width="68.5" height="60"/>
                                             <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="30"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -67,10 +67,10 @@
                                     </subviews>
                                 </stackView>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Lge-he-B2u">
-                                    <rect key="frame" x="50" y="678" width="600" height="300"/>
+                                    <rect key="frame" x="25" y="578" width="650" height="300"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="600" id="HjG-kK-jxy"/>
+                                        <constraint firstAttribute="width" constant="650" id="HjG-kK-jxy"/>
                                         <constraint firstAttribute="height" constant="300" id="Ku1-7G-Ajb"/>
                                     </constraints>
                                     <color key="textColor" systemColor="labelColor"/>
@@ -79,25 +79,17 @@
                                 </textView>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="Lge-he-B2u" secondAttribute="trailing" constant="50" id="BkZ-dR-14m"/>
-                                <constraint firstAttribute="trailing" secondItem="oCF-Vb-tca" secondAttribute="trailing" constant="100" id="FSr-8c-zNv"/>
-                                <constraint firstItem="Lge-he-B2u" firstAttribute="leading" secondItem="Bsc-CP-mhs" secondAttribute="leading" constant="50" id="Sd3-2w-Kex"/>
-                                <constraint firstItem="oCF-Vb-tca" firstAttribute="leading" secondItem="Bsc-CP-mhs" secondAttribute="leading" constant="100" id="zQj-Av-2W5"/>
+                                <constraint firstItem="oCF-Vb-tca" firstAttribute="top" secondItem="Bsc-CP-mhs" secondAttribute="top" constant="50" id="evS-gN-gBL"/>
                             </constraints>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="Bsc-CP-mhs" firstAttribute="leading" secondItem="M6t-o0-IuN" secondAttribute="leading" constant="50" id="9za-XJ-5T9"/>
-                        <constraint firstAttribute="trailing" secondItem="Bsc-CP-mhs" secondAttribute="trailing" constant="50" id="Or9-SF-XUI"/>
-                        <constraint firstItem="Bsc-CP-mhs" firstAttribute="top" secondItem="M6t-o0-IuN" secondAttribute="top" constant="35" id="h4u-By-nth"/>
-                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="bz0-iO-q1u"/>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-483.07692307692304" y="-53.317535545023695"/>
+            <point key="canvasLocation" x="-483.59375" y="-53.3203125"/>
         </view>
     </objects>
     <resources>

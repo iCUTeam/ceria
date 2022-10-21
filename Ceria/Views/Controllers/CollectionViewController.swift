@@ -53,7 +53,27 @@ class CollectionViewController: UIViewController, Storyboarded {
         }
         
         view.addSubview(collectionSceneView)
-        collectionItem = CollectionItem(frame: CGRect(x: view.frame.width * 0.125, y: view.frame.height * 0.1, width: 800, height: 1100))
+        
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenWidth: CGFloat = screenSize.width
+        let x: CGFloat
+        let y: CGFloat
+        let w: CGFloat
+        let h: CGFloat
+        
+        if screenWidth == 834.0 {
+            x = 65
+            y = 150
+            w = 700
+            h = 1000
+        } else {
+            x = 160
+            y = 200
+            w = 700
+            h = 1000
+        }
+    
+        collectionItem = CollectionItem(frame: CGRect(x: x, y: y, width: w, height: h))
         collectionItem.roundCornerView(corners: .allCorners, radius: 30)
         view.addSubview(collectionItem)
         view.addSubview(homeButton)
@@ -207,11 +227,25 @@ class CollectionViewController: UIViewController, Storyboarded {
     
     func setUpAutoLayout() {
         
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenWidth: CGFloat = screenSize.width
+        let constant: CGFloat
+        let constant2: CGFloat
+        
+        if screenWidth == 834.0 {
+            constant = 100
+            constant2 = 700
+        } else {
+            constant = 150
+            constant2 = 800
+        }
+        
         NSLayoutConstraint.activate([
             homeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
             homeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
-            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            closeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 875),
+            
+            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: constant),
+            closeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: constant2),
             
             collectionItem.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             collectionItem.centerYAnchor.constraint(equalTo: view.centerYAnchor)
