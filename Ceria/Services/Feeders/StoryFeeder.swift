@@ -12,8 +12,8 @@ class StoryFeeder {
     func feedStory() -> [Story] {
         
         var storiesArray: [Story] = []
-        let url = Bundle.main.url(forResource: "stories", withExtension: "json")!
-        let data = try! Data(contentsOf: url)
+        let url = NSURL(fileURLWithPath: Bundle.main.path(forResource: "stories", ofType: "json")!)
+        let data = try! Data(contentsOf: url as URL)
         storiesArray = try! JSONDecoder().decode([Story].self, from: data)
         
         return storiesArray
