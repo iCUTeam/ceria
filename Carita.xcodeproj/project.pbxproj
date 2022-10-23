@@ -39,6 +39,7 @@
 		954C9CDF28FAC0AD0005960D /* AudioBGMPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954C9CDE28FAC0AD0005960D /* AudioBGMPlayer.swift */; };
 		954C9CE228FAC5650005960D /* clicked.wav in Resources */ = {isa = PBXBuildFile; fileRef = 954C9CE128FAC5650005960D /* clicked.wav */; };
 		9557987829002B0B0082C57B /* laut.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9557987729002B0B0082C57B /* laut.m4a */; };
+		95659ED52905BBB80088ECA2 /* Instruksi_Dan_Kartu_Permainan.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 95659ED42905BBB80088ECA2 /* Instruksi_Dan_Kartu_Permainan.pdf */; };
 		9579502428FC8CA600EE78A6 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9579502328FC8CA600EE78A6 /* StoryView.swift */; };
 		957D950628F701CE009AA012 /* Coordinators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D950528F701CE009AA012 /* Coordinators.swift */; };
 		957D950828F701ED009AA012 /* Landing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 957D950728F701ED009AA012 /* Landing.storyboard */; };
@@ -150,7 +151,6 @@
 		95EBB88728F8184400EE82E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E1730E28F66156005252B0 /* Assets.xcassets */; };
 		95EBB88928F852BE00EE82E7 /* stories.json in Resources */ = {isa = PBXBuildFile; fileRef = 95EBB88828F852BE00EE82E7 /* stories.json */; };
 		A91DA8F928FFE484009E2428 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DA8F828FFE484009E2428 /* Checkbox.swift */; };
-		A91DA90A2900DC5F009E2428 /* Instruksi_Dan_Kartu_Permainan.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A91DA9092900DC5F009E2428 /* Instruksi_Dan_Kartu_Permainan.pdf */; };
 		BBD8F63D9A2C283F97DAC813 /* Pods_Ceria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5039E298D11B9EA863C1D3 /* Pods_Ceria.framework */; };
 /* End PBXBuildFile section */
 
@@ -211,6 +211,7 @@
 		954C9CDE28FAC0AD0005960D /* AudioBGMPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBGMPlayer.swift; sourceTree = "<group>"; };
 		954C9CE128FAC5650005960D /* clicked.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clicked.wav; sourceTree = "<group>"; };
 		9557987729002B0B0082C57B /* laut.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = laut.m4a; sourceTree = "<group>"; };
+		95659ED42905BBB80088ECA2 /* Instruksi_Dan_Kartu_Permainan.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Instruksi_Dan_Kartu_Permainan.pdf; sourceTree = "<group>"; };
 		9579502328FC8CA600EE78A6 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
 		957D950528F701CE009AA012 /* Coordinators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinators.swift; sourceTree = "<group>"; };
 		957D950728F701ED009AA012 /* Landing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Landing.storyboard; sourceTree = "<group>"; };
@@ -327,7 +328,6 @@
 		95EBB88828F852BE00EE82E7 /* stories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stories.json; sourceTree = "<group>"; };
 		A0EFD431A5CCE27FC26AC7CF /* Pods-CeriaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CeriaTests.release.xcconfig"; path = "Target Support Files/Pods-CeriaTests/Pods-CeriaTests.release.xcconfig"; sourceTree = "<group>"; };
 		A91DA8F828FFE484009E2428 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
-		A91DA9092900DC5F009E2428 /* Instruksi_Dan_Kartu_Permainan.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Instruksi_Dan_Kartu_Permainan.pdf; sourceTree = "<group>"; };
 		BB5039E298D11B9EA863C1D3 /* Pods_Ceria.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ceria.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C377D7A2916A58F426FC98E8 /* Pods-Ceria-CeriaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ceria-CeriaUITests.release.xcconfig"; path = "Target Support Files/Pods-Ceria-CeriaUITests/Pods-Ceria-CeriaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C68E101B4910F5A147B96657 /* Pods_Ceria_CeriaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ceria_CeriaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1007,7 +1007,7 @@
 		A91DA90C2900DD68009E2428 /* Files */ = {
 			isa = PBXGroup;
 			children = (
-				A91DA9092900DC5F009E2428 /* Instruksi_Dan_Kartu_Permainan.pdf */,
+				95659ED42905BBB80088ECA2 /* Instruksi_Dan_Kartu_Permainan.pdf */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -1145,6 +1145,7 @@
 				95C77C2F28FEE30C009B9D69 /* rua_tutorial_2.m4a in Resources */,
 				95BD1E4E28FF2866003832EF /* success-page.m4a in Resources */,
 				95BD1E4228FF07DA003832EF /* CollectionItem.xib in Resources */,
+				95659ED52905BBB80088ECA2 /* Instruksi_Dan_Kartu_Permainan.pdf in Resources */,
 				95C77C3028FEE30C009B9D69 /* rua_tutorial_1.m4a in Resources */,
 				95BD1E4A28FF2609003832EF /* game2_fail.m4a in Resources */,
 				95C77C5928FEEE8B009B9D69 /* explore3_collect_hint.m4a in Resources */,
@@ -1158,7 +1159,6 @@
 				95BD1E5E28FFC1D1003832EF /* power2_fail.m4a in Resources */,
 				95C77C0428FEDEC9009B9D69 /* bungko_3.m4a in Resources */,
 				95A6C5D628FC2A4400055B0A /* reflection.m4a in Resources */,
-				A91DA90A2900DC5F009E2428 /* Instruksi_Dan_Kartu_Permainan.pdf in Resources */,
 				953B9AB228FA21B7001C4A56 /* reflection.json in Resources */,
 				95C77C1B28FEE127009B9D69 /* tallu_1.m4a in Resources */,
 				95C77C1728FEE0E1009B9D69 /* tallu_explore3.m4a in Resources */,

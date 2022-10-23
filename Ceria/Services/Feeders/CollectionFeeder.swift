@@ -12,8 +12,8 @@ class CollectionFeeder
     func feedCollection() -> [Collection]
     {
         var collectionArray: [Collection] = []
-        let url = Bundle.main.url(forResource: "collection", withExtension: "json")!
-        let data = try! Data(contentsOf: url)
+        let url = NSURL(fileURLWithPath: Bundle.main.path(forResource: "collection", ofType: "json")!)
+        let data = try! Data(contentsOf: url as URL)
         collectionArray = try! JSONDecoder().decode([Collection].self, from: data)
         
         return collectionArray
