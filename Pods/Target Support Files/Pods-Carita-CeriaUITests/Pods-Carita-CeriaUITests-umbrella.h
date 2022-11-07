@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Ceria_CeriaUITestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Ceria_CeriaUITestsVersionString[];
+FOUNDATION_EXPORT double Pods_Carita_CeriaUITestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Carita_CeriaUITestsVersionString[];
 

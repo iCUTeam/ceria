@@ -16,6 +16,7 @@
 		05794A4295E8F9630297E67B837CF0E8 /* BundleImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A8E6245E174EE35D4140619CCAC815 /* BundleImageProvider.swift */; };
 		05F3D218FC2B7BA4C328CCABB1451F6A /* TextDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976757E9C5364F84E74F58412C348305 /* TextDocument.swift */; };
 		061654473A4275457C4D5BF1A12E4BA7 /* LegacyGradientFillRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C463E21E088E31A8140BBF6E3A36D5A /* LegacyGradientFillRenderer.swift */; };
+		066772FC33364B8A5449ACBDA564271F /* Pods-CeriaTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C355C0ABC183D4BCCBA945F8B54AB804 /* Pods-CeriaTests-dummy.m */; };
 		0679BD85D004091F12C3F994B3A4B5B1 /* LayerModel+makeAnimationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A306BDD012D403C62B82960F2990D17 /* LayerModel+makeAnimationLayer.swift */; };
 		0A6A6E205489927C2DFC0E359FC8A373 /* AnyValueProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D13C61B56087824C335EF71557EAAA /* AnyValueProvider.swift */; };
 		0B9579CC651F5ECC0634860B67080B07 /* SwiftySound-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E88964C78EC9CF383A4D7B7871BF3AAE /* SwiftySound-dummy.m */; };
@@ -24,7 +25,6 @@
 		14FCDB91F28E611C14A1D9C432191ED7 /* GroupInterpolator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D730F7F619D141D590F8277D94ED94C8 /* GroupInterpolator.swift */; };
 		17C5441344765DAF002267AD5A434277 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B003B4E2BEA0B7098DC3F3583934F9BC /* CoreGraphics.framework */; };
 		18B96EFEC10ECE60F6872B21FD3CA29D /* PreCompositionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145BAA65A8777A11A6347EB1578AE239 /* PreCompositionLayer.swift */; };
-		1937E2DB9D652506271ECC5DC73EFBEE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909ED176CE3CF111A763A3235622CBF9 /* Foundation.framework */; };
 		1CD7898F9044B74F40EC13CCE025D9E6 /* GradientStroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C449A68034D4A59CCE009CEDE3D410 /* GradientStroke.swift */; };
 		1D3C0114889D69B8663E2A11AE1879DC /* KeyframeGroup+exactlyOneKeyframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF837C1667BA18240F001C43633E774 /* KeyframeGroup+exactlyOneKeyframe.swift */; };
 		1EB1D12F35C9D773A6045471CB914C07 /* FloatValueProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F538FDCFD0AE9C8EF77BA24989EF8D4 /* FloatValueProvider.swift */; };
@@ -33,9 +33,9 @@
 		21637D58E3D254ED41EA1DEF31158898 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046F75103039184C440836F17107636A /* UIKit.framework */; };
 		22EE8C3E361D72ABD4F8131600C983A6 /* lottie-ios-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 957604C213967A7AC257522B7A1E740E /* lottie-ios-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2ADD1E00F8EF5EFD158D10DC8E4B99E8 /* AssetLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E519C8B39B0A8C66BBAFE38647ACE5CD /* AssetLibrary.swift */; };
+		2D08F6922D168FB0844947387770706B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909ED176CE3CF111A763A3235622CBF9 /* Foundation.framework */; };
 		2D29928D02FA39C7761094191790E6EC /* AnimationTextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F76FFCA5E83A4D96F7B0C3845CF939 /* AnimationTextProvider.swift */; };
 		2D66DF5CF0F656ECA34EE5729B862513 /* AnimatorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792EFEC5E8C74AA8BC312F0872520004 /* AnimatorNode.swift */; };
-		2DCC9EDD8E366C4269B7A7DAFB5DC078 /* Pods-CeriaTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 99C5E0E6FC60D6B1518D65933F296CC5 /* Pods-CeriaTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2FE2BE1792AFFD11D223FDA3197A141B /* Mask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BFA2DC566ED23DC565DFF4496C5944 /* Mask.swift */; };
 		324EFBAAAAAA7D130A31EA1A5D04F9C9 /* LottieAnimationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9DBBE26F5F0C42055B7507BE8B0B9 /* LottieAnimationHelpers.swift */; };
 		3497076ADBADC870494CC6F19B01D8DC /* NodeProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BD1F61AE221CADB74BD77181E86B3F /* NodeProperty.swift */; };
@@ -52,10 +52,13 @@
 		444E55EE816A371505AC43CB9AFBF59C /* KeyframeGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EA3CBF39BEC2492B6BE37E1005769 /* KeyframeGroup.swift */; };
 		455AB82C8800475AB4CC568B6D19C487 /* ShapeTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F020D74A35EA29606AFE3DC2E53F0C /* ShapeTransform.swift */; };
 		4578E5914E7B709E58CB3754DAD4F594 /* CurveVertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AD471E09977E5F65293357A2BEED28 /* CurveVertex.swift */; };
+		460A2F0B64C721CBBF7F892297A2A29C /* Pods-Carita-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 47702AEED7E0EF2A42C4FCD59F3BCE80 /* Pods-Carita-dummy.m */; };
 		4668BFF4F3A7682B68DBC88B19481FBC /* ShapeContainerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B92A8B54A5AEF54DE5F8AE8A71BB9C /* ShapeContainerLayer.swift */; };
 		4769BF76214083CA738B1E9A283A7A81 /* RectNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF3F14E101831C4496D3253D4AF30E3 /* RectNode.swift */; };
+		4825D74353ED7B7E68F4D0D58E84E1D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909ED176CE3CF111A763A3235622CBF9 /* Foundation.framework */; };
 		493806DBBA15C3FB087E6D4F62C3C04C /* DashPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBEE5A7A1E0C354A4C22E47FBD878B5 /* DashPattern.swift */; };
 		4A6B312B2DEC2B7CD9BEF44676D197FA /* MaskContainerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385B592C9B7BB442D3D4D4698FBBFB9F /* MaskContainerLayer.swift */; };
+		518596AB6535994F8C752B3BC5E9029E /* Pods-Carita-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 59D831BD9EB1ADB1DCC793D026A4165F /* Pods-Carita-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		523B4EC13C209E49FAE199EAB8C99A8B /* NodePropertyMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78C7FBF0E22322B4DD1DE192A88BEDB /* NodePropertyMap.swift */; };
 		524921AB1DDE1539AA8E6D50F320100D /* GradientFillRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225390D133C6177D065056DDC7577806 /* GradientFillRenderer.swift */; };
 		539B01E989B0CEB28538516BF74BD278 /* TransformAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D410E7C05FFDF295BA10588E1BF8F7 /* TransformAnimations.swift */; };
@@ -64,6 +67,7 @@
 		54F518C4890D4647308A1C4F3FC28BE6 /* ImageLayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8742EFE740234ACC96326B6357B62E41 /* ImageLayerModel.swift */; };
 		55AE8E8FE427877AEF37B7BCCBF1A65C /* CoreAnimationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20E97E32A8A85B460FEC8257C8F946A /* CoreAnimationLayer.swift */; };
 		58F0D7893BB6F09B7F4E4BB08552D090 /* LayerTextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6415104AFE5369434413DFD3249AC443 /* LayerTextProvider.swift */; };
+		590E62AEAE04E2655976F9755A99ED35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909ED176CE3CF111A763A3235622CBF9 /* Foundation.framework */; };
 		5DB2462A0BBB9680ED98D88CB790E950 /* ShapeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C4F5A6475A5ADA51EB5CC24995E9D2 /* ShapeNode.swift */; };
 		5E01715C3EB9055801979171F184E9E9 /* TextAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF05924642A2C30E0CA18B7F72268CBC /* TextAnimator.swift */; };
 		5E731EDCF5664A80BE942D4AB0A1DE64 /* BaseCompositionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F715AC775551D382E215434A74156A3 /* BaseCompositionLayer.swift */; };
@@ -92,9 +96,11 @@
 		75FE24B0A5BE0B1C74D1702A91ECAB9F /* PreCompLayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7731C68A4B4CCDC1F048CA2C6A590756 /* PreCompLayerModel.swift */; };
 		76927BF744506CDC201A8A83BCEE2C56 /* KeyedDecodingContainerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CF44EE0817EB6DBA3CD16DB01275CB /* KeyedDecodingContainerExtensions.swift */; };
 		784A5532205C5CF155CAB41125C9F509 /* LottieAnimationViewInitializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150B769F4D00667C8753174AD38098EE /* LottieAnimationViewInitializers.swift */; };
+		79E521084F8EB788B1289D249523D63A /* Pods-Carita-CeriaUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A52D4FFA2E94346A60309BD752A05AB /* Pods-Carita-CeriaUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7CA745A5E7777BE4DC270CD9AAE341F2 /* AnimationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FA2A71C9DE3851CD4B4DAF13B4ADC1 /* AnimationContext.swift */; };
 		7F2E363F3F323E72737B82B353B761A4 /* ImageCompositionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCABF3776673B0E8FB1C2CFBC9169C6A /* ImageCompositionLayer.swift */; };
 		816C981F171E00871421F24445651FFE /* TransformLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C660754C5354D7A5D95DD9178F3CD1F /* TransformLayer.swift */; };
+		82D8625EC81B733E5AE6C6A99ADF87A0 /* Pods-CeriaTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F88F9F285D788D20469565301223EFC5 /* Pods-CeriaTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8318E8CBF0B20B3F620E62BA7554AE4E /* PathOutputNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DA296B8F234B0968D065F8D93854CC /* PathOutputNode.swift */; };
 		8410EC5C005A875FA353E24B67E71535 /* TextCompositionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD8D3C099D0E9BFA91E809CB922B5CB /* TextCompositionLayer.swift */; };
 		84242B2274C6751764BBBFA0156417CA /* BaseAnimationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F323D63A4A1D4C8C100287D9DD24AA /* BaseAnimationLayer.swift */; };
@@ -119,9 +125,9 @@
 		9255AB27FD01C5DEB7CB0AA2A3048BE5 /* CompoundBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DFB74A77AB1B72236924B1A8E3C435 /* CompoundBezierPath.swift */; };
 		92E113F8ACFB48AEEE7446D231C7C5A7 /* PreCompLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A27D209E5618D625971DC9F86E7210 /* PreCompLayer.swift */; };
 		933A7EF27E525F35CFCD1B4D9C7085FA /* ValueProviderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B6FE414B49870B68ABED43A5A5E325 /* ValueProviderStore.swift */; };
+		9463A89C8D31E144FA61F4D0F9328FB8 /* Pods-Carita-CeriaUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB554A6DA256AF225C161CF3B8E6048F /* Pods-Carita-CeriaUITests-dummy.m */; };
 		946EE7B721DBB38B27E0A262BDEBACF3 /* StrokeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4E9E3BA19FDC059E3140EB008A91E8 /* StrokeAnimation.swift */; };
 		97B601DB52B7D6979FA12138CAF8865A /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55891C9CD18E3CDA9ABA3E4142750BB /* Star.swift */; };
-		988706CDCD09E753DF45C50AAF4938DC /* Pods-CeriaTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B614B592214BD9A3D4995F2597B070 /* Pods-CeriaTests-dummy.m */; };
 		98B741ED3C5AFF6564FFBA2B5F65C257 /* CALayer+fillBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA174ED6B8A73263B5F8809B72E89718 /* CALayer+fillBounds.swift */; };
 		997B1BC20B83A90B13BAD8992CBAE3EB /* SolidLayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D0E32249E9388EC1BCBF4B1C032AEF /* SolidLayerModel.swift */; };
 		9B373149F5986E530F5759F3D27AE8F5 /* AnimationCacheProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8E9C56C7DF04A8598322629D031E8B /* AnimationCacheProvider.swift */; };
@@ -136,7 +142,6 @@
 		A9564E2BEC4A6C5E25E8F5CEFBF1DA39 /* ShapeCompositionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241DDA245925BD2685C7648748F9B50 /* ShapeCompositionLayer.swift */; };
 		AA6F8FCA753BE3D017B37DEB4E86FBAD /* MathKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DA043F3932414C53CFDAF2FE2FDD92 /* MathKit.swift */; };
 		ACAA5B9B4341425981D1CFEABAA4ED33 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DD45CDA0BF61F249DEB55F3A2EF375 /* Sound.swift */; };
-		AE7C2A7C7AE437836FDF429341837761 /* Pods-Ceria-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 18AB7F9BE655EB1447FE326E1E0D8942 /* Pods-Ceria-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEA2F086CD534420C87597842E9D862F /* Keyframes+combinedIfPossible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D2FD9A521057D442DF72802BD4D334 /* Keyframes+combinedIfPossible.swift */; };
 		B1DF9733DF866824BD146C7E63D34D11 /* GroupNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E77BB51E71535EF7EDB7E562BB00B08 /* GroupNode.swift */; };
 		B3F5F934919A4808D754FCF51EB23BE3 /* AnimatedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7535F151FFB9559CA7E77502E79308F1 /* AnimatedControl.swift */; };
@@ -160,8 +165,6 @@
 		C6EA67DD0010E357A314A0983150CDFC /* CoreTextRenderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBD96A4CD4A2453579495F587DFEF0D /* CoreTextRenderLayer.swift */; };
 		CDDC9491DB90B0D885F9122883D66DF3 /* AnimationImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EE0483102E8B0083DAEA8F20EE5BCC /* AnimationImageProvider.swift */; };
 		CF1DFBCB7DF42E8391A9FAF836A2E590 /* KeyframeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0040B64E1B4C421713BE9EDD8FA8EA0F /* KeyframeExtensions.swift */; };
-		D11B6C7A6FAF967C56C5C64F1F585061 /* Pods-Ceria-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA4AFF8839C70BEDFF75678B14F809B /* Pods-Ceria-dummy.m */; };
-		D2AD55BF4E27BC1A978292E924B041AD /* Pods-Ceria-CeriaUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C0598C31EA83DE5FA795B1AF5C62182 /* Pods-Ceria-CeriaUITests-dummy.m */; };
 		D3C84D7D50173C002896203078AC50AC /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748FAAB9CC8E2925D3C8FD69369C6F04 /* Rectangle.swift */; };
 		D5F2F17B0B3DED7441F5E191D52C1922 /* Fill.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48AF959C2E96383A18858F7E82A1118 /* Fill.swift */; };
 		D6F519A0DDF8051607B63C6A777B29B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909ED176CE3CF111A763A3235622CBF9 /* Foundation.framework */; };
@@ -186,7 +189,6 @@
 		EB219689A61030994848491190427473 /* LottieAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4360B80AC11E88797532A3B0D557B7 /* LottieAnimationView.swift */; };
 		EC3B23CD0A9E7970A02C7F48C0F7A08F /* StrokeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C340ED6D9557728DD6292E8DDA0D5ADC /* StrokeRenderer.swift */; };
 		EC59D1B9D92DA0352AB9679AE7912B2A /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92063EF4EB6EB05CA691981E125930DA /* Group.swift */; };
-		EC9D4090DBDBB4228A4D2D83EFB9358C /* Pods-Ceria-CeriaUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 07F1041F386F60FCA0C042583AFDBC25 /* Pods-Ceria-CeriaUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED2B90EA13757325AC3EA302C7D3A89F /* AnyNodeProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04DD9FE92C76CEB6618F9D663988CB4 /* AnyNodeProperty.swift */; };
 		EE71807873CD65CAF4AF71D71D4CD907 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC072CA6E5EF5444DA4FF1029119B79 /* DataExtension.swift */; };
 		EF316596D8081CCE7D389F5A3650981B /* TrimPathNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF15CF0A4B1A7CAC60EF0E2E546AFAF9 /* TrimPathNode.swift */; };
@@ -200,8 +202,6 @@
 		F6D8125C4B3CE0DD3CFB9022F88C4E3F /* Trim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEFDBC1EA665EE2735B3634C28E43F4 /* Trim.swift */; };
 		F77FD63982FA1BF446777CAB0C067600 /* BezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279899274F29DC7C74D0E23C1E924998 /* BezierPath.swift */; };
 		F7CBBFD022292137D05EB0CB05D3DEA5 /* CALayer+setupLayerHierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5A86748E93BEE207D24ACB42F2829A /* CALayer+setupLayerHierarchy.swift */; };
-		F84771F061EDEC196B71AFDAFD300986 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909ED176CE3CF111A763A3235622CBF9 /* Foundation.framework */; };
-		F847A73E15C984FEB8C2CF7BD4E4C43F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909ED176CE3CF111A763A3235622CBF9 /* Foundation.framework */; };
 		F99DF6B2266D68E9044E7566AEB2335E /* Keyframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE557A54DE7AA7B7B3944A9992871A1B /* Keyframe.swift */; };
 		F9F735423ABBDDB1679FFDACEB4B1BDE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F214BF675F23E2181DA0F7059E3CE81 /* AVFoundation.framework */; };
 		FCD2BAD5242788060A9CCFF31B003F5E /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E763339ED8E5A09A0BC2DBE2834A6D7 /* Font.swift */; };
@@ -210,35 +210,35 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1F30F822FDDEF47FA4E8BFD7D598750B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0B967D7F8561D42493EE289EC8D450D1;
-			remoteInfo = "lottie-ios";
-		};
-		373284FD92DFDF5A7F8C13F32D8B8F58 /* PBXContainerItemProxy */ = {
+		3159F2715001869FBF38CF4EE27F093B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = AF76419D4650F093FFACB1AD713C1EF1;
 			remoteInfo = SwiftySound;
 		};
-		7AE022322CB9C477FF7A2E36704138CA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CAD0DF0B401A40AF8B687EDEB7D6491E;
-			remoteInfo = "Pods-Ceria";
-		};
-		DFA725A80A270A83E2520CA06626D795 /* PBXContainerItemProxy */ = {
+		A08C6169D152FE01A6A78F3EB51E0AEB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0B967D7F8561D42493EE289EC8D450D1;
 			remoteInfo = "lottie-ios";
 		};
-		E7856387AFEC790D853E9893B3354ACE /* PBXContainerItemProxy */ = {
+		A101C5996CB35070EFB0432D7EF3C782 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04EAA0772CC0725DDEE16E9F9C342553;
+			remoteInfo = "Pods-Carita";
+		};
+		BDE6C2668B47EF50D87C075DDA103E96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B967D7F8561D42493EE289EC8D450D1;
+			remoteInfo = "lottie-ios";
+		};
+		F331E15062D59BDD1107F8531E15A708 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -248,17 +248,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0022C6D14A85C13A7DD07AD8F7364C77 /* Pods-Carita-CeriaUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Carita-CeriaUITests.modulemap"; sourceTree = "<group>"; };
 		0040B64E1B4C421713BE9EDD8FA8EA0F /* KeyframeExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyframeExtensions.swift; path = Sources/Private/Utility/Interpolatable/KeyframeExtensions.swift; sourceTree = "<group>"; };
 		046F75103039184C440836F17107636A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		051BFCA66A2216A17327C12BE9031897 /* TestHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TestHelpers.swift; path = Sources/Private/Utility/Debugging/TestHelpers.swift; sourceTree = "<group>"; };
 		07362C985B85146E7068AFF2A9A6760D /* lottie-ios-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "lottie-ios-prefix.pch"; sourceTree = "<group>"; };
 		07D410E7C05FFDF295BA10588E1BF8F7 /* TransformAnimations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformAnimations.swift; path = Sources/Private/CoreAnimation/Animations/TransformAnimations.swift; sourceTree = "<group>"; };
-		07F1041F386F60FCA0C042583AFDBC25 /* Pods-Ceria-CeriaUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Ceria-CeriaUITests-umbrella.h"; sourceTree = "<group>"; };
 		07F76FFCA5E83A4D96F7B0C3845CF939 /* AnimationTextProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationTextProvider.swift; path = Sources/Public/TextProvider/AnimationTextProvider.swift; sourceTree = "<group>"; };
+		07FA52A28A4990BBCA8A620F790EF36F /* Pods-Carita-CeriaUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Carita-CeriaUITests-frameworks.sh"; sourceTree = "<group>"; };
 		082032BE738DE348CFA78143B29FDBEB /* MaskCompositionLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MaskCompositionLayer.swift; path = Sources/Private/CoreAnimation/Layers/MaskCompositionLayer.swift; sourceTree = "<group>"; };
 		0A306BDD012D403C62B82960F2990D17 /* LayerModel+makeAnimationLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LayerModel+makeAnimationLayer.swift"; path = "Sources/Private/CoreAnimation/Layers/LayerModel+makeAnimationLayer.swift"; sourceTree = "<group>"; };
 		0A6DDEEF5E2E5B633D35A4819638D7AE /* GradientStrokeNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientStrokeNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/RenderNodes/GradientStrokeNode.swift; sourceTree = "<group>"; };
 		0A7B80371E441A3F554C606D5E6EF937 /* LayerModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayerModel.swift; path = Sources/Private/Model/Layers/LayerModel.swift; sourceTree = "<group>"; };
+		0EC3500C7A184DA0526F046A5C5E2674 /* Pods-Carita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Carita.release.xcconfig"; sourceTree = "<group>"; };
 		10DA043F3932414C53CFDAF2FE2FDD92 /* MathKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MathKit.swift; path = Sources/Private/Utility/Extensions/MathKit.swift; sourceTree = "<group>"; };
 		10EFA1BC95BC6F3565B031353D64A1CE /* GroupOutputNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GroupOutputNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/OutputNodes/GroupOutputNode.swift; sourceTree = "<group>"; };
 		11C5B45141910FC03D8782DD9A4FAF50 /* GradientAnimations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientAnimations.swift; path = Sources/Private/CoreAnimation/Animations/GradientAnimations.swift; sourceTree = "<group>"; };
@@ -271,10 +273,10 @@
 		158AC4C6071F3C487FCD823ED5F2D34E /* lottie-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "lottie-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		15BD5981C3846D59F41135722DF92C95 /* NullCompositionLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NullCompositionLayer.swift; path = Sources/Private/MainThread/LayerContainers/CompLayers/NullCompositionLayer.swift; sourceTree = "<group>"; };
 		15D2FD9A521057D442DF72802BD4D334 /* Keyframes+combinedIfPossible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Keyframes+combinedIfPossible.swift"; path = "Sources/Private/CoreAnimation/Extensions/Keyframes+combinedIfPossible.swift"; sourceTree = "<group>"; };
-		18AB7F9BE655EB1447FE326E1E0D8942 /* Pods-Ceria-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Ceria-umbrella.h"; sourceTree = "<group>"; };
+		1A0CB3D03BDD9CB780B023F1DEE70D41 /* Pods-CeriaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CeriaTests.release.xcconfig"; sourceTree = "<group>"; };
+		1A52D4FFA2E94346A60309BD752A05AB /* Pods-Carita-CeriaUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Carita-CeriaUITests-umbrella.h"; sourceTree = "<group>"; };
 		1A7EB1ACB8D5016EB911A8B66AB98024 /* AnimationKeypath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationKeypath.swift; path = Sources/Public/DynamicProperties/AnimationKeypath.swift; sourceTree = "<group>"; };
 		1C660754C5354D7A5D95DD9178F3CD1F /* TransformLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformLayer.swift; path = Sources/Private/CoreAnimation/Layers/TransformLayer.swift; sourceTree = "<group>"; };
-		1F10C371D6735886EEEF2D7317585575 /* Pods-Ceria-CeriaUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Ceria-CeriaUITests-Info.plist"; sourceTree = "<group>"; };
 		1F715AC775551D382E215434A74156A3 /* BaseCompositionLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseCompositionLayer.swift; path = Sources/Private/CoreAnimation/Layers/BaseCompositionLayer.swift; sourceTree = "<group>"; };
 		209C264EA802323B2CAB0BEE489C0422 /* AnimationLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationLayer.swift; path = Sources/Private/CoreAnimation/Layers/AnimationLayer.swift; sourceTree = "<group>"; };
 		225390D133C6177D065056DDC7577806 /* GradientFillRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientFillRenderer.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/OutputNodes/Renderables/GradientFillRenderer.swift; sourceTree = "<group>"; };
@@ -282,7 +284,6 @@
 		24AD471E09977E5F65293357A2BEED28 /* CurveVertex.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CurveVertex.swift; path = Sources/Private/Utility/Primitives/CurveVertex.swift; sourceTree = "<group>"; };
 		279899274F29DC7C74D0E23C1E924998 /* BezierPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BezierPath.swift; path = Sources/Private/Utility/Primitives/BezierPath.swift; sourceTree = "<group>"; };
 		28F323D63A4A1D4C8C100287D9DD24AA /* BaseAnimationLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseAnimationLayer.swift; path = Sources/Private/CoreAnimation/Layers/BaseAnimationLayer.swift; sourceTree = "<group>"; };
-		2B0519442D9BB2F237573F42E8676B80 /* Pods-Ceria-CeriaUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Ceria-CeriaUITests-frameworks.sh"; sourceTree = "<group>"; };
 		2BAAF387800587D53A509BCAEC3F2DD4 /* GradientFill.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientFill.swift; path = Sources/Private/Model/ShapeItems/GradientFill.swift; sourceTree = "<group>"; };
 		2C305BFE1CD3C1ACE695B52FEC8CC08E /* MainThreadAnimationLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MainThreadAnimationLayer.swift; path = Sources/Private/MainThread/LayerContainers/MainThreadAnimationLayer.swift; sourceTree = "<group>"; };
 		2D4360B80AC11E88797532A3B0D557B7 /* LottieAnimationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LottieAnimationView.swift; path = Sources/Public/Animation/LottieAnimationView.swift; sourceTree = "<group>"; };
@@ -292,6 +293,7 @@
 		2F538FDCFD0AE9C8EF77BA24989EF8D4 /* FloatValueProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatValueProvider.swift; path = Sources/Public/DynamicProperties/ValueProviders/FloatValueProvider.swift; sourceTree = "<group>"; };
 		2F6EA3CBF39BEC2492B6BE37E1005769 /* KeyframeGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyframeGroup.swift; path = Sources/Private/Model/Keyframes/KeyframeGroup.swift; sourceTree = "<group>"; };
 		2FC072CA6E5EF5444DA4FF1029119B79 /* DataExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataExtension.swift; path = Sources/Private/Utility/Extensions/DataExtension.swift; sourceTree = "<group>"; };
+		31DCC8E14EA0AD907A2A272A321F7609 /* Pods-Carita-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Carita-frameworks.sh"; sourceTree = "<group>"; };
 		32BD1F61AE221CADB74BD77181E86B3F /* NodeProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NodeProperty.swift; path = Sources/Private/MainThread/NodeRenderSystem/NodeProperties/NodeProperty.swift; sourceTree = "<group>"; };
 		32FA2A71C9DE3851CD4B4DAF13B4ADC1 /* AnimationContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationContext.swift; path = Sources/Private/Utility/Helpers/AnimationContext.swift; sourceTree = "<group>"; };
 		33C874613070959F9518A2A28651E626 /* LayerProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayerProperty.swift; path = Sources/Private/CoreAnimation/Animations/LayerProperty.swift; sourceTree = "<group>"; };
@@ -303,20 +305,24 @@
 		3D9F4F7DBB59A480CEC08FDCE0387D79 /* LottieConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LottieConfiguration.swift; path = Sources/Public/LottieConfiguration.swift; sourceTree = "<group>"; };
 		3E59D8270C45B495721EBF2CA113CF56 /* InvertedMatteLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InvertedMatteLayer.swift; path = Sources/Private/MainThread/LayerContainers/Utility/InvertedMatteLayer.swift; sourceTree = "<group>"; };
 		3E6CF3473D4A79C13D1E85AE8A1DBE2E /* CALayer+addAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CALayer+addAnimation.swift"; path = "Sources/Private/CoreAnimation/Animations/CALayer+addAnimation.swift"; sourceTree = "<group>"; };
+		3FD6041C3EE39B5E3878E5B400D3D67A /* Pods-Carita.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Carita.modulemap"; sourceTree = "<group>"; };
+		427CE4BF0A677034CEC9FB545BB33B3C /* Pods-CeriaTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CeriaTests.modulemap"; sourceTree = "<group>"; };
 		44C947401DBC24DB90F51D2766C686A8 /* ShapeLayerModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeLayerModel.swift; path = Sources/Private/Model/Layers/ShapeLayerModel.swift; sourceTree = "<group>"; };
-		4560BA022427FA332863F7D7DC81ED56 /* Pods-Ceria-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Ceria-Info.plist"; sourceTree = "<group>"; };
+		47702AEED7E0EF2A42C4FCD59F3BCE80 /* Pods-Carita-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Carita-dummy.m"; sourceTree = "<group>"; };
+		49944F3521F5D136C5D95F38D54F8557 /* Pods-Carita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Carita.debug.xcconfig"; sourceTree = "<group>"; };
 		4A097708E8D3E8EBBD15D38025D81F0A /* Shape.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Shape.swift; path = Sources/Private/Model/ShapeItems/Shape.swift; sourceTree = "<group>"; };
 		4BC187745706EB3DF68762DF4D3A4E8F /* LottieAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LottieAnimation.swift; path = Sources/Public/Animation/LottieAnimation.swift; sourceTree = "<group>"; };
 		4CB366162EFCE9DC694D4E05DE28EE7B /* SwiftySound-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftySound-umbrella.h"; sourceTree = "<group>"; };
 		4CBEE5A7A1E0C354A4C22E47FBD878B5 /* DashPattern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DashPattern.swift; path = Sources/Private/Model/Objects/DashPattern.swift; sourceTree = "<group>"; };
+		4EF05D735E4D1352EEA2C74846B3FA73 /* Pods-CeriaTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CeriaTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4F214BF675F23E2181DA0F7059E3CE81 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
-		4F835DC63DF0E70340CF19FDCF5F459F /* Pods-Ceria.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Ceria.modulemap"; sourceTree = "<group>"; };
 		4F8A7DBDABEFD524CA8ACEC5A68EA9C2 /* LayerDebugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayerDebugging.swift; path = Sources/Private/Utility/Debugging/LayerDebugging.swift; sourceTree = "<group>"; };
-		500138D340A5B6C69E31873874800403 /* Pods-Ceria-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Ceria-acknowledgements.plist"; sourceTree = "<group>"; };
-		51BA97E8B5085EFFB47BC9C0B785CEA7 /* lottie-ios */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "lottie-ios"; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53FC4DCEA506A0B347393A92A5F219A5 /* Pods-Carita-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Carita-acknowledgements.markdown"; sourceTree = "<group>"; };
 		547EAFE60FF993D67869590039CDB4A0 /* AnimationTime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationTime.swift; path = Sources/Public/Primitives/AnimationTime.swift; sourceTree = "<group>"; };
 		5493F7B3946F7A125D729F9331B7D6DF /* SizeValueProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SizeValueProvider.swift; path = Sources/Public/DynamicProperties/ValueProviders/SizeValueProvider.swift; sourceTree = "<group>"; };
 		56321F6D030DB96AD5C9897BB3CF73AA /* LottieLogger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LottieLogger.swift; path = Sources/Public/Logging/LottieLogger.swift; sourceTree = "<group>"; };
+		59D831BD9EB1ADB1DCC793D026A4165F /* Pods-Carita-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Carita-umbrella.h"; sourceTree = "<group>"; };
 		5A265624CE2E7DDACB34D03CC1E824E7 /* PointValueProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PointValueProvider.swift; path = Sources/Public/DynamicProperties/ValueProviders/PointValueProvider.swift; sourceTree = "<group>"; };
 		5AB54FAE93685608821C806530B256C0 /* AnimationSubview.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationSubview.swift; path = Sources/Public/iOS/AnimationSubview.swift; sourceTree = "<group>"; };
 		5AF63B88A4BD89EE94E7FF3D062218E1 /* lottie-ios-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "lottie-ios-dummy.m"; sourceTree = "<group>"; };
@@ -331,7 +337,6 @@
 		63EE0483102E8B0083DAEA8F20EE5BCC /* AnimationImageProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationImageProvider.swift; path = Sources/Public/ImageProvider/AnimationImageProvider.swift; sourceTree = "<group>"; };
 		6415104AFE5369434413DFD3249AC443 /* LayerTextProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayerTextProvider.swift; path = Sources/Private/MainThread/LayerContainers/Utility/LayerTextProvider.swift; sourceTree = "<group>"; };
 		654EA26754FCD457A3D4DA88AE8E4CD1 /* PassThroughOutputNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PassThroughOutputNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/OutputNodes/PassThroughOutputNode.swift; sourceTree = "<group>"; };
-		6C0598C31EA83DE5FA795B1AF5C62182 /* Pods-Ceria-CeriaUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Ceria-CeriaUITests-dummy.m"; sourceTree = "<group>"; };
 		6E66486A315B28D6196E6199609B3D94 /* EllipseAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EllipseAnimation.swift; path = Sources/Private/CoreAnimation/Animations/EllipseAnimation.swift; sourceTree = "<group>"; };
 		6ED6E6A7807329E6D2E0F6D4AF54D7A6 /* lottie-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "lottie-ios.release.xcconfig"; sourceTree = "<group>"; };
 		6EEFDBC1EA665EE2735B3634C28E43F4 /* Trim.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Trim.swift; path = Sources/Private/Model/ShapeItems/Trim.swift; sourceTree = "<group>"; };
@@ -348,18 +353,17 @@
 		7B8E9C56C7DF04A8598322629D031E8B /* AnimationCacheProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationCacheProvider.swift; path = Sources/Public/AnimationCache/AnimationCacheProvider.swift; sourceTree = "<group>"; };
 		7CDFB79AB4E983A8149EDD1ED1EFB14D /* lottie-ios.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "lottie-ios.modulemap"; sourceTree = "<group>"; };
 		7D18435FB3143AB64CD25EF001D93763 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		7DDF145FF6910FA0A090144DC9DDBBAE /* Pods-CeriaTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CeriaTests-Info.plist"; sourceTree = "<group>"; };
 		7EF3F14E101831C4496D3253D4AF30E3 /* RectNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RectNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/PathNodes/RectNode.swift; sourceTree = "<group>"; };
 		7FBD96A4CD4A2453579495F587DFEF0D /* CoreTextRenderLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoreTextRenderLayer.swift; path = Sources/Private/MainThread/LayerContainers/Utility/CoreTextRenderLayer.swift; sourceTree = "<group>"; };
 		80FCE654F51A389AF7E4683A80282146 /* ValueContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValueContainer.swift; path = Sources/Private/MainThread/NodeRenderSystem/NodeProperties/ValueContainer.swift; sourceTree = "<group>"; };
 		81DA296B8F234B0968D065F8D93854CC /* PathOutputNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PathOutputNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/OutputNodes/PathOutputNode.swift; sourceTree = "<group>"; };
-		8294E10AFE46B09CC9599919204FCE9F /* Pods-Ceria-CeriaUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Ceria-CeriaUITests"; path = Pods_Ceria_CeriaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D6D0DCD59FF2CBE5A4D023F36C3BB5 /* CAAnimation+TimingConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CAAnimation+TimingConfiguration.swift"; path = "Sources/Private/CoreAnimation/Animations/CAAnimation+TimingConfiguration.swift"; sourceTree = "<group>"; };
 		84A36AC9C4F3AFC606194879EF3ED50C /* Ellipse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Ellipse.swift; path = Sources/Private/Model/ShapeItems/Ellipse.swift; sourceTree = "<group>"; };
+		84DCB9EE9F8DE1FCB208B61508371545 /* Pods-Carita */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Carita"; path = Pods_Carita.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		853F71F6DA373815EC088CD9C4756D53 /* CompatibleAnimationKeypath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompatibleAnimationKeypath.swift; path = Sources/Public/iOS/Compatibility/CompatibleAnimationKeypath.swift; sourceTree = "<group>"; };
 		8742EFE740234ACC96326B6357B62E41 /* ImageLayerModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageLayerModel.swift; path = Sources/Private/Model/Layers/ImageLayerModel.swift; sourceTree = "<group>"; };
 		87CF437CD74AD218019E8CDC40CBF8FD /* PathNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PathNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Protocols/PathNode.swift; sourceTree = "<group>"; };
-		87D664B4DF1E88B2B8B8AD19AA0E3064 /* Pods-Ceria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ceria.debug.xcconfig"; sourceTree = "<group>"; };
-		88B614B592214BD9A3D4995F2597B070 /* Pods-CeriaTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CeriaTests-dummy.m"; sourceTree = "<group>"; };
 		8A54FF6CC3F97BFE080A2E475FF423EB /* GradientValueProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientValueProvider.swift; path = Sources/Public/DynamicProperties/ValueProviders/GradientValueProvider.swift; sourceTree = "<group>"; };
 		8AF837C1667BA18240F001C43633E774 /* KeyframeGroup+exactlyOneKeyframe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "KeyframeGroup+exactlyOneKeyframe.swift"; path = "Sources/Private/CoreAnimation/Extensions/KeyframeGroup+exactlyOneKeyframe.swift"; sourceTree = "<group>"; };
 		8C463E21E088E31A8140BBF6E3A36D5A /* LegacyGradientFillRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LegacyGradientFillRenderer.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/OutputNodes/Renderables/LegacyGradientFillRenderer.swift; sourceTree = "<group>"; };
@@ -381,26 +385,21 @@
 		976757E9C5364F84E74F58412C348305 /* TextDocument.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextDocument.swift; path = Sources/Private/Model/Text/TextDocument.swift; sourceTree = "<group>"; };
 		983A991BA4A9A3EBAFBF0C48121471F8 /* LottieColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LottieColor.swift; path = Sources/Public/Primitives/LottieColor.swift; sourceTree = "<group>"; };
 		983B61A20626EAD6D4E17B82FFC740CA /* Merge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Merge.swift; path = Sources/Private/Model/ShapeItems/Merge.swift; sourceTree = "<group>"; };
-		99158FD75C28427B6DDB5E8D18606E83 /* Pods-Ceria */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Ceria"; path = Pods_Ceria.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		996615DEDCD6C2933EC3F8504427765B /* SwiftySound */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftySound; path = SwiftySound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		99C5E0E6FC60D6B1518D65933F296CC5 /* Pods-CeriaTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CeriaTests-umbrella.h"; sourceTree = "<group>"; };
+		996615DEDCD6C2933EC3F8504427765B /* SwiftySound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftySound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A77E3E3C62BCB1531AD5B0F1E528A2F /* GradientStrokeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientStrokeRenderer.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/OutputNodes/Renderables/GradientStrokeRenderer.swift; sourceTree = "<group>"; };
 		9AE8FF4B64831752CAF13218F4F09B00 /* Asset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Asset.swift; path = Sources/Private/Model/Assets/Asset.swift; sourceTree = "<group>"; };
 		9B38A2311E0EC049F16D0E636C8297BF /* AnimatedSwitch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatedSwitch.swift; path = Sources/Public/iOS/AnimatedSwitch.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9DA4AFF8839C70BEDFF75678B14F809B /* Pods-Ceria-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Ceria-dummy.m"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E77BB51E71535EF7EDB7E562BB00B08 /* GroupNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GroupNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/RenderContainers/GroupNode.swift; sourceTree = "<group>"; };
 		9E8F8716134FF380799C829F06C391A6 /* DictionaryInitializable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DictionaryInitializable.swift; path = Sources/Private/Model/DictionaryInitializable.swift; sourceTree = "<group>"; };
 		9EE985FE4E8BC7BCB15E95FA8B29A634 /* Stroke.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stroke.swift; path = Sources/Private/Model/ShapeItems/Stroke.swift; sourceTree = "<group>"; };
 		9F1B6DD407751FE1D5F370B8B13FB469 /* AnimationKeypathExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationKeypathExtension.swift; path = Sources/Private/Utility/Extensions/AnimationKeypathExtension.swift; sourceTree = "<group>"; };
-		9F4BF40DC6D0044972FEC1BF05A6174F /* Pods-Ceria-CeriaUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Ceria-CeriaUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		A394199BE6BEEF1802343A182A6DD2AD /* Transform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Transform.swift; path = Sources/Private/Model/Objects/Transform.swift; sourceTree = "<group>"; };
 		A3FB211F63E8F89409F8C27267F18199 /* RepeaterLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RepeaterLayer.swift; path = Sources/Private/CoreAnimation/Layers/RepeaterLayer.swift; sourceTree = "<group>"; };
 		A4206D68517A642D96406A45F8520453 /* ColorValueProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorValueProvider.swift; path = Sources/Public/DynamicProperties/ValueProviders/ColorValueProvider.swift; sourceTree = "<group>"; };
 		A55891C9CD18E3CDA9ABA3E4142750BB /* Star.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Star.swift; path = Sources/Private/Model/ShapeItems/Star.swift; sourceTree = "<group>"; };
 		A5C2F0E6644A374A784033F5D094F14A /* StrokeNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StrokeNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/RenderNodes/StrokeNode.swift; sourceTree = "<group>"; };
 		A8C358813E51A497250305B4DCEF4765 /* VectorsExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VectorsExtensions.swift; path = Sources/Private/Utility/Primitives/VectorsExtensions.swift; sourceTree = "<group>"; };
-		A9B257FDC38A5B729D0E47E88791C8CB /* Pods-CeriaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CeriaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A9BFA2DC566ED23DC565DFF4496C5944 /* Mask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mask.swift; path = Sources/Private/Model/Objects/Mask.swift; sourceTree = "<group>"; };
 		AAA2A26127484584F27708F7A4ECAA7A /* Marker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Marker.swift; path = Sources/Private/Model/Objects/Marker.swift; sourceTree = "<group>"; };
 		AD0AFB08D736EF8951DA6AE6F37181C4 /* PolygonNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PolygonNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/PathNodes/PolygonNode.swift; sourceTree = "<group>"; };
@@ -414,37 +413,36 @@
 		B3A6EF0A5D9492FD891EF5BBBDBDBE80 /* CGColor+RGB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CGColor+RGB.swift"; path = "Sources/Private/Utility/Extensions/CGColor+RGB.swift"; sourceTree = "<group>"; };
 		B4C1820CFBD888566E3C47EB463240E3 /* RenderNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RenderNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Protocols/RenderNode.swift; sourceTree = "<group>"; };
 		B5945BE3DA99C878E3AFFDF9C80B32E0 /* ShapeLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeLayer.swift; path = Sources/Private/CoreAnimation/Layers/ShapeLayer.swift; sourceTree = "<group>"; };
+		B5F41E49010D7FF0C673AFBC9A4FAB53 /* Pods-Carita-CeriaUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Carita-CeriaUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B6D13C61B56087824C335EF71557EAAA /* AnyValueProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyValueProvider.swift; path = Sources/Public/DynamicProperties/AnyValueProvider.swift; sourceTree = "<group>"; };
-		B6EDE42E261A12E6E2ABFD5E7C0015A6 /* Pods-CeriaTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CeriaTests-Info.plist"; sourceTree = "<group>"; };
 		B81B1AEA2923B76E39BEEE18B3E53649 /* LRUAnimationCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LRUAnimationCache.swift; path = Sources/Public/AnimationCache/LRUAnimationCache.swift; sourceTree = "<group>"; };
 		B89446197D2424A335BD48C82662C1D7 /* SwiftySound-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftySound-Info.plist"; sourceTree = "<group>"; };
 		B8F020D74A35EA29606AFE3DC2E53F0C /* ShapeTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeTransform.swift; path = Sources/Private/Model/ShapeItems/ShapeTransform.swift; sourceTree = "<group>"; };
+		B9318E0DD2A458A988921529E4F8AF7D /* Pods-Carita-CeriaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Carita-CeriaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BA5A86748E93BEE207D24ACB42F2829A /* CALayer+setupLayerHierarchy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CALayer+setupLayerHierarchy.swift"; path = "Sources/Private/CoreAnimation/Layers/CALayer+setupLayerHierarchy.swift"; sourceTree = "<group>"; };
-		BB74B1524F989BA27D2F860EBA090390 /* Pods-Ceria-CeriaUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Ceria-CeriaUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BB554A6DA256AF225C161CF3B8E6048F /* Pods-Carita-CeriaUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Carita-CeriaUITests-dummy.m"; sourceTree = "<group>"; };
 		BBB634727B326C8C600EC9DA0BCE7BF3 /* ColorExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorExtension.swift; path = Sources/Private/Utility/Primitives/ColorExtension.swift; sourceTree = "<group>"; };
 		BBC8E376B912859401328FA9DC0D965B /* TextAnimatorNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextAnimatorNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/Text/TextAnimatorNode.swift; sourceTree = "<group>"; };
 		BE345C114E662759A58D9E6DA5C88E3C /* CompatibleAnimationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompatibleAnimationView.swift; path = Sources/Public/iOS/Compatibility/CompatibleAnimationView.swift; sourceTree = "<group>"; };
-		BF9A67F6F090D73DA9F2428AB88EB4AC /* Pods-Ceria-CeriaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ceria-CeriaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BFF477CD48A03B8974D1F531941BCD6A /* Interpolatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Interpolatable.swift; path = Sources/Public/Keyframes/Interpolatable.swift; sourceTree = "<group>"; };
+		C0B834EEB79258F4DE191504CADC4675 /* Pods-Carita-CeriaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Carita-CeriaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C340ED6D9557728DD6292E8DDA0D5ADC /* StrokeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StrokeRenderer.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/OutputNodes/Renderables/StrokeRenderer.swift; sourceTree = "<group>"; };
+		C355C0ABC183D4BCCBA945F8B54AB804 /* Pods-CeriaTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CeriaTests-dummy.m"; sourceTree = "<group>"; };
 		C35E410079861963D94342A97B82291F /* CombinedShapeAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombinedShapeAnimation.swift; path = Sources/Private/CoreAnimation/Animations/CombinedShapeAnimation.swift; sourceTree = "<group>"; };
 		C500C048BABCDB200417C2F9D74E0481 /* SolidCompositionLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SolidCompositionLayer.swift; path = Sources/Private/MainThread/LayerContainers/CompLayers/SolidCompositionLayer.swift; sourceTree = "<group>"; };
 		C5F55F78858F711D47459B05155CC40D /* UIColorExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = Sources/Public/iOS/UIColorExtension.swift; sourceTree = "<group>"; };
 		C78C7FBF0E22322B4DD1DE192A88BEDB /* NodePropertyMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NodePropertyMap.swift; path = Sources/Private/MainThread/NodeRenderSystem/NodeProperties/Protocols/NodePropertyMap.swift; sourceTree = "<group>"; };
+		C8DEF4595F7C19235DDAF8F302EF341D /* Pods-CeriaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CeriaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C942D23610904141C3F0F50EEEA31CC6 /* VisibilityAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VisibilityAnimation.swift; path = Sources/Private/CoreAnimation/Animations/VisibilityAnimation.swift; sourceTree = "<group>"; };
-		CC016A71D471AE522D4BD6A5B9805451 /* Pods-Ceria-CeriaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ceria-CeriaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CAE587EEB3548571834A713DA3ECA807 /* Pods-CeriaTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CeriaTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		CCABF3776673B0E8FB1C2CFBC9169C6A /* ImageCompositionLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCompositionLayer.swift; path = Sources/Private/MainThread/LayerContainers/CompLayers/ImageCompositionLayer.swift; sourceTree = "<group>"; };
-		CDEED940B21336AF526BD82B22D52B75 /* Pods-Ceria-CeriaUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Ceria-CeriaUITests.modulemap"; sourceTree = "<group>"; };
 		CEEFE749DBA005BE9F47602E5A1C1095 /* Glyph.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Glyph.swift; path = Sources/Private/Model/Text/Glyph.swift; sourceTree = "<group>"; };
 		CF05924642A2C30E0CA18B7F72268CBC /* TextAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextAnimator.swift; path = Sources/Private/Model/Text/TextAnimator.swift; sourceTree = "<group>"; };
-		D01733B39CA44E66F26C3C822389C862 /* Pods-Ceria-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Ceria-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D08B73A259F0EF45E337D11D990F2E56 /* Pods-CeriaTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CeriaTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D0CF44EE0817EB6DBA3CD16DB01275CB /* KeyedDecodingContainerExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyedDecodingContainerExtensions.swift; path = Sources/Private/Model/Extensions/KeyedDecodingContainerExtensions.swift; sourceTree = "<group>"; };
 		D241DDA245925BD2685C7648748F9B50 /* ShapeCompositionLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeCompositionLayer.swift; path = Sources/Private/MainThread/LayerContainers/CompLayers/ShapeCompositionLayer.swift; sourceTree = "<group>"; };
 		D36754FF5EB6388A3F1B37E02D4A44AF /* TextLayerModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextLayerModel.swift; path = Sources/Private/Model/Layers/TextLayerModel.swift; sourceTree = "<group>"; };
 		D3CC89800AC5736DB90D31FAC74A1011 /* lottie-ios-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "lottie-ios-Info.plist"; sourceTree = "<group>"; };
 		D43EB711538CE746DD7659FEFC8F4F3B /* SwiftySound.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftySound.modulemap; sourceTree = "<group>"; };
-		D46465C3F99099BB39C92F99E799044E /* Pods-CeriaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CeriaTests.release.xcconfig"; sourceTree = "<group>"; };
 		D4C449A68034D4A59CCE009CEDE3D410 /* GradientStroke.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientStroke.swift; path = Sources/Private/Model/ShapeItems/GradientStroke.swift; sourceTree = "<group>"; };
 		D505D638DE90BA75502F3653FA5FD582 /* ImageAsset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageAsset.swift; path = Sources/Private/Model/Assets/ImageAsset.swift; sourceTree = "<group>"; };
 		D5B92A8B54A5AEF54DE5F8AE8A71BB9C /* ShapeContainerLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeContainerLayer.swift; path = Sources/Private/MainThread/NodeRenderSystem/RenderLayers/ShapeContainerLayer.swift; sourceTree = "<group>"; };
@@ -454,27 +452,29 @@
 		DA174ED6B8A73263B5F8809B72E89718 /* CALayer+fillBounds.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CALayer+fillBounds.swift"; path = "Sources/Private/CoreAnimation/Extensions/CALayer+fillBounds.swift"; sourceTree = "<group>"; };
 		DBC5AF0E4DC22C3627ACB95254794B6E /* KeyframeData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyframeData.swift; path = Sources/Private/Model/Keyframes/KeyframeData.swift; sourceTree = "<group>"; };
 		DC7E1814F105C26DCB6A796FB859F681 /* TextLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextLayer.swift; path = Sources/Private/CoreAnimation/Layers/TextLayer.swift; sourceTree = "<group>"; };
-		DCFE3EC6C0BB963FB708E17C2B0139FD /* Pods-Ceria-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Ceria-frameworks.sh"; sourceTree = "<group>"; };
 		DD75B93C5DD9D65600BE9984594DFFE7 /* CGPointExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CGPointExtension.swift; path = Sources/Private/Utility/Primitives/CGPointExtension.swift; sourceTree = "<group>"; };
+		DF6D26A63B0A3327FCABE46E255675E1 /* Pods-Carita-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Carita-acknowledgements.plist"; sourceTree = "<group>"; };
 		E00160C41FF0BF81EDB280815169E66B /* SwiftySound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftySound.release.xcconfig; sourceTree = "<group>"; };
 		E1C4F5A6475A5ADA51EB5CC24995E9D2 /* ShapeNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/PathNodes/ShapeNode.swift; sourceTree = "<group>"; };
 		E20E97E32A8A85B460FEC8257C8F946A /* CoreAnimationLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoreAnimationLayer.swift; path = Sources/Private/CoreAnimation/CoreAnimationLayer.swift; sourceTree = "<group>"; };
 		E231F89D173E026786202571922E770D /* SwiftySound-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftySound-prefix.pch"; sourceTree = "<group>"; };
+		E27370501E48DB844D90119FD50F0B1E /* Pods-Carita-CeriaUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Carita-CeriaUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		E4DFB74A77AB1B72236924B1A8E3C435 /* CompoundBezierPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompoundBezierPath.swift; path = Sources/Private/Utility/Primitives/CompoundBezierPath.swift; sourceTree = "<group>"; };
 		E519C8B39B0A8C66BBAFE38647ACE5CD /* AssetLibrary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssetLibrary.swift; path = Sources/Private/Model/Assets/AssetLibrary.swift; sourceTree = "<group>"; };
+		E5D061AD8C3654CF75B49D98856CAE0A /* Pods-Carita-CeriaUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Carita-CeriaUITests-Info.plist"; sourceTree = "<group>"; };
 		E5D3ECD27F39E052542C4AF3814DC2A9 /* CompositionLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompositionLayer.swift; path = Sources/Private/MainThread/LayerContainers/CompLayers/CompositionLayer.swift; sourceTree = "<group>"; };
 		E783E7C90156071BB40C60EAB4CD88A6 /* RectangleAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RectangleAnimation.swift; path = Sources/Private/CoreAnimation/Animations/RectangleAnimation.swift; sourceTree = "<group>"; };
 		E88964C78EC9CF383A4D7B7871BF3AAE /* SwiftySound-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftySound-dummy.m"; sourceTree = "<group>"; };
 		E8988F5682A09B9881F15E424E958B8D /* BlendMode+Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BlendMode+Filter.swift"; path = "Sources/Private/Utility/Extensions/BlendMode+Filter.swift"; sourceTree = "<group>"; };
-		E9169E6943D9759AA1FD3211C44AC588 /* Pods-CeriaTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CeriaTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		E8CE0DA1DC81ABF1FD3C16DC6E829F51 /* Pods-Carita-CeriaUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Carita-CeriaUITests"; path = Pods_Carita_CeriaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9A23679115EA27BFB3C3A6F4D57FEE0 /* SwiftySound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftySound.debug.xcconfig; sourceTree = "<group>"; };
-		ED45D323FBA5A24E97AF5FA5E115AFE9 /* Pods-CeriaTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CeriaTests.modulemap"; sourceTree = "<group>"; };
-		ED817135879F0023120693331E5B811C /* Pods-Ceria.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ceria.release.xcconfig"; sourceTree = "<group>"; };
+		EC87A7C0AE5621CF134A6E977E5FC1C7 /* Pods-Carita-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Carita-Info.plist"; sourceTree = "<group>"; };
 		EED0EB99A119C2D821B311F9BBCBB179 /* PrecompAsset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrecompAsset.swift; path = Sources/Private/Model/Assets/PrecompAsset.swift; sourceTree = "<group>"; };
 		F33908B793A73A5BA098CFDA4E3DC09C /* StringExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Sources/Private/Utility/Extensions/StringExtensions.swift; sourceTree = "<group>"; };
 		F47DFA02798274F891ADD2376DC5F17C /* AnyValueContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyValueContainer.swift; path = Sources/Private/MainThread/NodeRenderSystem/NodeProperties/Protocols/AnyValueContainer.swift; sourceTree = "<group>"; };
 		F48AF959C2E96383A18858F7E82A1118 /* Fill.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Fill.swift; path = Sources/Private/Model/ShapeItems/Fill.swift; sourceTree = "<group>"; };
 		F748CA293FB5A15C4FB782FA0E7056C7 /* AnimatorNodeDebugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimatorNodeDebugging.swift; path = Sources/Private/Utility/Debugging/AnimatorNodeDebugging.swift; sourceTree = "<group>"; };
+		F88F9F285D788D20469565301223EFC5 /* Pods-CeriaTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CeriaTests-umbrella.h"; sourceTree = "<group>"; };
 		FB22990E21E86C7B292762373BF453C5 /* ShapeRenderLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeRenderLayer.swift; path = Sources/Private/MainThread/NodeRenderSystem/RenderLayers/ShapeRenderLayer.swift; sourceTree = "<group>"; };
 		FDA0077C84D20EAAE51796FAF9FCE702 /* AnimationFontProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationFontProvider.swift; path = Sources/Public/FontProvider/AnimationFontProvider.swift; sourceTree = "<group>"; };
 		FE22222586B136B3397F7663248D7E66 /* StarNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StarNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/PathNodes/StarNode.swift; sourceTree = "<group>"; };
@@ -483,19 +483,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1707BB1E55E309740B324379FCCDDF06 /* Frameworks */ = {
+		03B6424CC44E4C7206DCC4E6EBF0E039 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1937E2DB9D652506271ECC5DC73EFBEE /* Foundation.framework in Frameworks */,
+				4825D74353ED7B7E68F4D0D58E84E1D4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		337641957C4B0D57ADCF3F90A8FFA0D3 /* Frameworks */ = {
+		3230120EEF481FEF0589CBB4C2AF4566 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F847A73E15C984FEB8C2CF7BD4E4C43F /* Foundation.framework in Frameworks */,
+				590E62AEAE04E2655976F9755A99ED35 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47A4AE58F8AE7AD0212C3C93C6BE70CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D08F6922D168FB0844947387770706B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,14 +527,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A241A0B1E860FA4796ACA0222BA98959 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F84771F061EDEC196B71AFDAFD300986 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -545,16 +545,20 @@
 			path = "../Target Support Files/SwiftySound";
 			sourceTree = "<group>";
 		};
-		4A45D394C04D2ECFEFD7B8444FC431C8 /* Products */ = {
+		468E29B376196046ABB9891FD374B2C5 /* Pods-CeriaTests */ = {
 			isa = PBXGroup;
 			children = (
-				51BA97E8B5085EFFB47BC9C0B785CEA7 /* lottie-ios */,
-				99158FD75C28427B6DDB5E8D18606E83 /* Pods-Ceria */,
-				8294E10AFE46B09CC9599919204FCE9F /* Pods-Ceria-CeriaUITests */,
-				72DFEBC4898D861736122CF9E97459F3 /* Pods-CeriaTests */,
-				996615DEDCD6C2933EC3F8504427765B /* SwiftySound */,
+				427CE4BF0A677034CEC9FB545BB33B3C /* Pods-CeriaTests.modulemap */,
+				4EF05D735E4D1352EEA2C74846B3FA73 /* Pods-CeriaTests-acknowledgements.markdown */,
+				CAE587EEB3548571834A713DA3ECA807 /* Pods-CeriaTests-acknowledgements.plist */,
+				C355C0ABC183D4BCCBA945F8B54AB804 /* Pods-CeriaTests-dummy.m */,
+				7DDF145FF6910FA0A090144DC9DDBBAE /* Pods-CeriaTests-Info.plist */,
+				F88F9F285D788D20469565301223EFC5 /* Pods-CeriaTests-umbrella.h */,
+				C8DEF4595F7C19235DDAF8F302EF341D /* Pods-CeriaTests.debug.xcconfig */,
+				1A0CB3D03BDD9CB780B023F1DEE70D41 /* Pods-CeriaTests.release.xcconfig */,
 			);
-			name = Products;
+			name = "Pods-CeriaTests";
+			path = "Target Support Files/Pods-CeriaTests";
 			sourceTree = "<group>";
 		};
 		54EF39A29BD5BD294B41B4AC7AEE102E /* lottie-ios */ = {
@@ -742,8 +746,19 @@
 				C942D23610904141C3F0F50EEEA31CC6 /* VisibilityAnimation.swift */,
 				A03A5F40E910736113CEEE2BEB94552A /* Support Files */,
 			);
-			name = "lottie-ios";
 			path = "lottie-ios";
+			sourceTree = "<group>";
+		};
+		752F310CC219FDBE164CAFCDEB85C811 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */,
+				84DCB9EE9F8DE1FCB208B61508371545 /* Pods-Carita */,
+				E8CE0DA1DC81ABF1FD3C16DC6E829F51 /* Pods-Carita-CeriaUITests */,
+				72DFEBC4898D861736122CF9E97459F3 /* Pods-CeriaTests */,
+				996615DEDCD6C2933EC3F8504427765B /* SwiftySound.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		8939AE650DECD86E69A7E5EB1A1BF7A2 /* iOS */ = {
@@ -758,21 +773,14 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		93C73EB2B90BDC0C424EC93873E04E48 /* Pods-Ceria-CeriaUITests */ = {
+		996A998D2F9619C0D2F4E071E472610F /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				CDEED940B21336AF526BD82B22D52B75 /* Pods-Ceria-CeriaUITests.modulemap */,
-				BB74B1524F989BA27D2F860EBA090390 /* Pods-Ceria-CeriaUITests-acknowledgements.markdown */,
-				9F4BF40DC6D0044972FEC1BF05A6174F /* Pods-Ceria-CeriaUITests-acknowledgements.plist */,
-				6C0598C31EA83DE5FA795B1AF5C62182 /* Pods-Ceria-CeriaUITests-dummy.m */,
-				2B0519442D9BB2F237573F42E8676B80 /* Pods-Ceria-CeriaUITests-frameworks.sh */,
-				1F10C371D6735886EEEF2D7317585575 /* Pods-Ceria-CeriaUITests-Info.plist */,
-				07F1041F386F60FCA0C042583AFDBC25 /* Pods-Ceria-CeriaUITests-umbrella.h */,
-				BF9A67F6F090D73DA9F2428AB88EB4AC /* Pods-Ceria-CeriaUITests.debug.xcconfig */,
-				CC016A71D471AE522D4BD6A5B9805451 /* Pods-Ceria-CeriaUITests.release.xcconfig */,
+				E6EF52642DA304FD3938ABBFA5768C56 /* Pods-Carita */,
+				FAD40A56FB87387C90DB9363566F0C6F /* Pods-Carita-CeriaUITests */,
+				468E29B376196046ABB9891FD374B2C5 /* Pods-CeriaTests */,
 			);
-			name = "Pods-Ceria-CeriaUITests";
-			path = "Target Support Files/Pods-Ceria-CeriaUITests";
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		A03A5F40E910736113CEEE2BEB94552A /* Support Files */ = {
@@ -790,30 +798,12 @@
 			path = "../Target Support Files/lottie-ios";
 			sourceTree = "<group>";
 		};
-		AC394D929E640C2247058B557104A83B /* Pods-Ceria */ = {
-			isa = PBXGroup;
-			children = (
-				4F835DC63DF0E70340CF19FDCF5F459F /* Pods-Ceria.modulemap */,
-				D01733B39CA44E66F26C3C822389C862 /* Pods-Ceria-acknowledgements.markdown */,
-				500138D340A5B6C69E31873874800403 /* Pods-Ceria-acknowledgements.plist */,
-				9DA4AFF8839C70BEDFF75678B14F809B /* Pods-Ceria-dummy.m */,
-				DCFE3EC6C0BB963FB708E17C2B0139FD /* Pods-Ceria-frameworks.sh */,
-				4560BA022427FA332863F7D7DC81ED56 /* Pods-Ceria-Info.plist */,
-				18AB7F9BE655EB1447FE326E1E0D8942 /* Pods-Ceria-umbrella.h */,
-				87D664B4DF1E88B2B8B8AD19AA0E3064 /* Pods-Ceria.debug.xcconfig */,
-				ED817135879F0023120693331E5B811C /* Pods-Ceria.release.xcconfig */,
-			);
-			name = "Pods-Ceria";
-			path = "Target Support Files/Pods-Ceria";
-			sourceTree = "<group>";
-		};
 		AEF10C21AE40AC197159E532740AAEA8 /* SwiftySound */ = {
 			isa = PBXGroup;
 			children = (
 				96DD45CDA0BF61F249DEB55F3A2EF375 /* Sound.swift */,
 				449E15B2FE0C49CEB69B13499DBA9686 /* Support Files */,
 			);
-			name = SwiftySound;
 			path = SwiftySound;
 			sourceTree = "<group>";
 		};
@@ -825,41 +815,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C97B900D4506469A5FC397079D240128 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				AC394D929E640C2247058B557104A83B /* Pods-Ceria */,
-				93C73EB2B90BDC0C424EC93873E04E48 /* Pods-Ceria-CeriaUITests */,
-				DE4FA089141FD14F311317F436A03B44 /* Pods-CeriaTests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				B94D7768568A9992200DB461E8CF687F /* Frameworks */,
 				FA1047CE598030A3BD45831B60F865AE /* Pods */,
-				4A45D394C04D2ECFEFD7B8444FC431C8 /* Products */,
-				C97B900D4506469A5FC397079D240128 /* Targets Support Files */,
+				752F310CC219FDBE164CAFCDEB85C811 /* Products */,
+				996A998D2F9619C0D2F4E071E472610F /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		DE4FA089141FD14F311317F436A03B44 /* Pods-CeriaTests */ = {
+		E6EF52642DA304FD3938ABBFA5768C56 /* Pods-Carita */ = {
 			isa = PBXGroup;
 			children = (
-				ED45D323FBA5A24E97AF5FA5E115AFE9 /* Pods-CeriaTests.modulemap */,
-				D08B73A259F0EF45E337D11D990F2E56 /* Pods-CeriaTests-acknowledgements.markdown */,
-				E9169E6943D9759AA1FD3211C44AC588 /* Pods-CeriaTests-acknowledgements.plist */,
-				88B614B592214BD9A3D4995F2597B070 /* Pods-CeriaTests-dummy.m */,
-				B6EDE42E261A12E6E2ABFD5E7C0015A6 /* Pods-CeriaTests-Info.plist */,
-				99C5E0E6FC60D6B1518D65933F296CC5 /* Pods-CeriaTests-umbrella.h */,
-				A9B257FDC38A5B729D0E47E88791C8CB /* Pods-CeriaTests.debug.xcconfig */,
-				D46465C3F99099BB39C92F99E799044E /* Pods-CeriaTests.release.xcconfig */,
+				3FD6041C3EE39B5E3878E5B400D3D67A /* Pods-Carita.modulemap */,
+				53FC4DCEA506A0B347393A92A5F219A5 /* Pods-Carita-acknowledgements.markdown */,
+				DF6D26A63B0A3327FCABE46E255675E1 /* Pods-Carita-acknowledgements.plist */,
+				47702AEED7E0EF2A42C4FCD59F3BCE80 /* Pods-Carita-dummy.m */,
+				31DCC8E14EA0AD907A2A272A321F7609 /* Pods-Carita-frameworks.sh */,
+				EC87A7C0AE5621CF134A6E977E5FC1C7 /* Pods-Carita-Info.plist */,
+				59D831BD9EB1ADB1DCC793D026A4165F /* Pods-Carita-umbrella.h */,
+				49944F3521F5D136C5D95F38D54F8557 /* Pods-Carita.debug.xcconfig */,
+				0EC3500C7A184DA0526F046A5C5E2674 /* Pods-Carita.release.xcconfig */,
 			);
-			name = "Pods-CeriaTests";
-			path = "Target Support Files/Pods-CeriaTests";
+			name = "Pods-Carita";
+			path = "Target Support Files/Pods-Carita";
 			sourceTree = "<group>";
 		};
 		FA1047CE598030A3BD45831B60F865AE /* Pods */ = {
@@ -871,14 +852,39 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FAD40A56FB87387C90DB9363566F0C6F /* Pods-Carita-CeriaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0022C6D14A85C13A7DD07AD8F7364C77 /* Pods-Carita-CeriaUITests.modulemap */,
+				B5F41E49010D7FF0C673AFBC9A4FAB53 /* Pods-Carita-CeriaUITests-acknowledgements.markdown */,
+				E27370501E48DB844D90119FD50F0B1E /* Pods-Carita-CeriaUITests-acknowledgements.plist */,
+				BB554A6DA256AF225C161CF3B8E6048F /* Pods-Carita-CeriaUITests-dummy.m */,
+				07FA52A28A4990BBCA8A620F790EF36F /* Pods-Carita-CeriaUITests-frameworks.sh */,
+				E5D061AD8C3654CF75B49D98856CAE0A /* Pods-Carita-CeriaUITests-Info.plist */,
+				1A52D4FFA2E94346A60309BD752A05AB /* Pods-Carita-CeriaUITests-umbrella.h */,
+				C0B834EEB79258F4DE191504CADC4675 /* Pods-Carita-CeriaUITests.debug.xcconfig */,
+				B9318E0DD2A458A988921529E4F8AF7D /* Pods-Carita-CeriaUITests.release.xcconfig */,
+			);
+			name = "Pods-Carita-CeriaUITests";
+			path = "Target Support Files/Pods-Carita-CeriaUITests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		A5BCD7BF73FF0C7097CA498CEB4079A2 /* Headers */ = {
+		1A0F4EC255A3C00590AD767CC355B29A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCC9EDD8E366C4269B7A7DAFB5DC078 /* Pods-CeriaTests-umbrella.h in Headers */,
+				79E521084F8EB788B1289D249523D63A /* Pods-Carita-CeriaUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		859B56753DF5B76BFD667957D4D13C62 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82D8625EC81B733E5AE6C6A99ADF87A0 /* Pods-CeriaTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -890,6 +896,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C560F68D4A5CF744C5ACFDB55A8DCC2C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				518596AB6535994F8C752B3BC5E9029E /* Pods-Carita-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DA26B5AF498BE08950BC46EB1D6C3B9B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -898,25 +912,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F8FE7E8DF127297F552E7546E5E1D18D /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AE7C2A7C7AE437836FDF429341837761 /* Pods-Ceria-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FE1E361C2112C8E30935078D3A350265 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EC9D4090DBDBB4228A4D2D83EFB9358C /* Pods-Ceria-CeriaUITests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		04EAA0772CC0725DDEE16E9F9C342553 /* Pods-Carita */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BB0E1505D5F83298C576F64120DA851 /* Build configuration list for PBXNativeTarget "Pods-Carita" */;
+			buildPhases = (
+				C560F68D4A5CF744C5ACFDB55A8DCC2C /* Headers */,
+				72F3A7B6EF9497E49D4157F190E70C75 /* Sources */,
+				3230120EEF481FEF0589CBB4C2AF4566 /* Frameworks */,
+				E3D9F6658C53034512EF2C291D1CDA57 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				76D37B1C2D42DE5A2B33CD495FB50E69 /* PBXTargetDependency */,
+				541EA71C4D104D15122C079929E82010 /* PBXTargetDependency */,
+			);
+			name = "Pods-Carita";
+			productName = Pods_Carita;
+			productReference = 84DCB9EE9F8DE1FCB208B61508371545 /* Pods-Carita */;
+			productType = "com.apple.product-type.framework";
+		};
 		0B967D7F8561D42493EE289EC8D450D1 /* lottie-ios */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDF6ED993782F250ACC8290C57369483 /* Build configuration list for PBXNativeTarget "lottie-ios" */;
@@ -932,46 +950,46 @@
 			);
 			name = "lottie-ios";
 			productName = Lottie;
-			productReference = 51BA97E8B5085EFFB47BC9C0B785CEA7 /* lottie-ios */;
+			productReference = 51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		0FF938D11342023073C9B42452A0EB4D /* Pods-CeriaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CD452F2DB500C5F17A92848877BDF248 /* Build configuration list for PBXNativeTarget "Pods-CeriaTests" */;
+			buildConfigurationList = 37B2BF7E97E81B6CA25EF5143BA6BB3E /* Build configuration list for PBXNativeTarget "Pods-CeriaTests" */;
 			buildPhases = (
-				A5BCD7BF73FF0C7097CA498CEB4079A2 /* Headers */,
-				183CCE7E636DFF8E282985D04261460E /* Sources */,
-				A241A0B1E860FA4796ACA0222BA98959 /* Frameworks */,
-				3647FEADCCF01AFD581D26CFF5B6EB1B /* Resources */,
+				859B56753DF5B76BFD667957D4D13C62 /* Headers */,
+				D31635297961630D327D6CA89AF9E9EA /* Sources */,
+				03B6424CC44E4C7206DCC4E6EBF0E039 /* Frameworks */,
+				C6E30F5552461FD4A89CD13847F2A03A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				450C08079B9FC30D6C5839F8074FD892 /* PBXTargetDependency */,
+				D8E65E88907BEFA461545B44F77693A5 /* PBXTargetDependency */,
 			);
 			name = "Pods-CeriaTests";
 			productName = Pods_CeriaTests;
 			productReference = 72DFEBC4898D861736122CF9E97459F3 /* Pods-CeriaTests */;
 			productType = "com.apple.product-type.framework";
 		};
-		41C8946D05AA351A8B0042F97CF9F36F /* Pods-Ceria-CeriaUITests */ = {
+		AC1E190DB3FB0468CA0A225501895D51 /* Pods-Carita-CeriaUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 84B7F6D9979C9AAEE2BE24E2DA654ABD /* Build configuration list for PBXNativeTarget "Pods-Ceria-CeriaUITests" */;
+			buildConfigurationList = EA2106F9D01C378A2ABA7F208C77A50D /* Build configuration list for PBXNativeTarget "Pods-Carita-CeriaUITests" */;
 			buildPhases = (
-				FE1E361C2112C8E30935078D3A350265 /* Headers */,
-				5722123F507D15F19C1AAA22FFB69226 /* Sources */,
-				337641957C4B0D57ADCF3F90A8FFA0D3 /* Frameworks */,
-				25E400E747FD878912D68E1AFEAD7C76 /* Resources */,
+				1A0F4EC255A3C00590AD767CC355B29A /* Headers */,
+				0D6964B6294F4BBEFD7968081870E12B /* Sources */,
+				47A4AE58F8AE7AD0212C3C93C6BE70CD /* Frameworks */,
+				EA9FE55D6E0EA540144C76925496A617 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F961C2AB0C148622D18C6AA139FA4315 /* PBXTargetDependency */,
-				48342D8CDDF2A2EECCA9ADF459FA2961 /* PBXTargetDependency */,
+				03D9139869AE2DA4A6AD5F515B0299E8 /* PBXTargetDependency */,
+				60225A14054CB53B7F4A22556A77474A /* PBXTargetDependency */,
 			);
-			name = "Pods-Ceria-CeriaUITests";
-			productName = Pods_Ceria_CeriaUITests;
-			productReference = 8294E10AFE46B09CC9599919204FCE9F /* Pods-Ceria-CeriaUITests */;
+			name = "Pods-Carita-CeriaUITests";
+			productName = Pods_Carita_CeriaUITests;
+			productReference = E8CE0DA1DC81ABF1FD3C16DC6E829F51 /* Pods-Carita-CeriaUITests */;
 			productType = "com.apple.product-type.framework";
 		};
 		AF76419D4650F093FFACB1AD713C1EF1 /* SwiftySound */ = {
@@ -989,27 +1007,7 @@
 			);
 			name = SwiftySound;
 			productName = SwiftySound;
-			productReference = 996615DEDCD6C2933EC3F8504427765B /* SwiftySound */;
-			productType = "com.apple.product-type.framework";
-		};
-		CAD0DF0B401A40AF8B687EDEB7D6491E /* Pods-Ceria */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 75BE563D146135AD0AE0597BA20872B1 /* Build configuration list for PBXNativeTarget "Pods-Ceria" */;
-			buildPhases = (
-				F8FE7E8DF127297F552E7546E5E1D18D /* Headers */,
-				71C81C5D13BD1B5403D7C7E1763A63F9 /* Sources */,
-				1707BB1E55E309740B324379FCCDDF06 /* Frameworks */,
-				A3F42CF072EBF35D4BA9864F287BF509 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CC8493EB842282274B1F12A6FB9E04E8 /* PBXTargetDependency */,
-				7531E520F59983F073AA25DBAC90C19C /* PBXTargetDependency */,
-			);
-			name = "Pods-Ceria";
-			productName = Pods_Ceria;
-			productReference = 99158FD75C28427B6DDB5E8D18606E83 /* Pods-Ceria */;
+			productReference = 996615DEDCD6C2933EC3F8504427765B /* SwiftySound.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1019,7 +1017,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1410;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -1030,13 +1028,13 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 4A45D394C04D2ECFEFD7B8444FC431C8 /* Products */;
+			productRefGroup = 752F310CC219FDBE164CAFCDEB85C811 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				0B967D7F8561D42493EE289EC8D450D1 /* lottie-ios */,
-				CAD0DF0B401A40AF8B687EDEB7D6491E /* Pods-Ceria */,
-				41C8946D05AA351A8B0042F97CF9F36F /* Pods-Ceria-CeriaUITests */,
+				04EAA0772CC0725DDEE16E9F9C342553 /* Pods-Carita */,
+				AC1E190DB3FB0468CA0A225501895D51 /* Pods-Carita-CeriaUITests */,
 				0FF938D11342023073C9B42452A0EB4D /* Pods-CeriaTests */,
 				AF76419D4650F093FFACB1AD713C1EF1 /* SwiftySound */,
 			);
@@ -1051,21 +1049,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		25E400E747FD878912D68E1AFEAD7C76 /* Resources */ = {
+		C6E30F5552461FD4A89CD13847F2A03A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3647FEADCCF01AFD581D26CFF5B6EB1B /* Resources */ = {
+		E3D9F6658C53034512EF2C291D1CDA57 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A3F42CF072EBF35D4BA9864F287BF509 /* Resources */ = {
+		EA9FE55D6E0EA540144C76925496A617 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1082,11 +1080,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		183CCE7E636DFF8E282985D04261460E /* Sources */ = {
+		0D6964B6294F4BBEFD7968081870E12B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				988706CDCD09E753DF45C50AAF4938DC /* Pods-CeriaTests-dummy.m in Sources */,
+				9463A89C8D31E144FA61F4D0F9328FB8 /* Pods-Carita-CeriaUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1099,19 +1097,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5722123F507D15F19C1AAA22FFB69226 /* Sources */ = {
+		72F3A7B6EF9497E49D4157F190E70C75 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2AD55BF4E27BC1A978292E924B041AD /* Pods-Ceria-CeriaUITests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		71C81C5D13BD1B5403D7C7E1763A63F9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D11B6C7A6FAF967C56C5C64F1F585061 /* Pods-Ceria-dummy.m in Sources */,
+				460A2F0B64C721CBBF7F892297A2A29C /* Pods-Carita-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1303,42 +1293,88 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D31635297961630D327D6CA89AF9E9EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				066772FC33364B8A5449ACBDA564271F /* Pods-CeriaTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		450C08079B9FC30D6C5839F8074FD892 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-Ceria";
-			target = CAD0DF0B401A40AF8B687EDEB7D6491E /* Pods-Ceria */;
-			targetProxy = 7AE022322CB9C477FF7A2E36704138CA /* PBXContainerItemProxy */;
-		};
-		48342D8CDDF2A2EECCA9ADF459FA2961 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "lottie-ios";
-			target = 0B967D7F8561D42493EE289EC8D450D1 /* lottie-ios */;
-			targetProxy = 1F30F822FDDEF47FA4E8BFD7D598750B /* PBXContainerItemProxy */;
-		};
-		7531E520F59983F073AA25DBAC90C19C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "lottie-ios";
-			target = 0B967D7F8561D42493EE289EC8D450D1 /* lottie-ios */;
-			targetProxy = DFA725A80A270A83E2520CA06626D795 /* PBXContainerItemProxy */;
-		};
-		CC8493EB842282274B1F12A6FB9E04E8 /* PBXTargetDependency */ = {
+		03D9139869AE2DA4A6AD5F515B0299E8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftySound;
 			target = AF76419D4650F093FFACB1AD713C1EF1 /* SwiftySound */;
-			targetProxy = E7856387AFEC790D853E9893B3354ACE /* PBXContainerItemProxy */;
+			targetProxy = F331E15062D59BDD1107F8531E15A708 /* PBXContainerItemProxy */;
 		};
-		F961C2AB0C148622D18C6AA139FA4315 /* PBXTargetDependency */ = {
+		541EA71C4D104D15122C079929E82010 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "lottie-ios";
+			target = 0B967D7F8561D42493EE289EC8D450D1 /* lottie-ios */;
+			targetProxy = A08C6169D152FE01A6A78F3EB51E0AEB /* PBXContainerItemProxy */;
+		};
+		60225A14054CB53B7F4A22556A77474A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "lottie-ios";
+			target = 0B967D7F8561D42493EE289EC8D450D1 /* lottie-ios */;
+			targetProxy = BDE6C2668B47EF50D87C075DDA103E96 /* PBXContainerItemProxy */;
+		};
+		76D37B1C2D42DE5A2B33CD495FB50E69 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftySound;
 			target = AF76419D4650F093FFACB1AD713C1EF1 /* SwiftySound */;
-			targetProxy = 373284FD92DFDF5A7F8C13F32D8B8F58 /* PBXContainerItemProxy */;
+			targetProxy = 3159F2715001869FBF38CF4EE27F093B /* PBXContainerItemProxy */;
+		};
+		D8E65E88907BEFA461545B44F77693A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Carita";
+			target = 04EAA0772CC0725DDEE16E9F9C342553 /* Pods-Carita */;
+			targetProxy = A101C5996CB35070EFB0432D7EF3C782 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		19437438575C1E375F3585DFDBF52B22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EC3500C7A184DA0526F046A5C5E2674 /* Pods-Carita.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Carita/Pods-Carita-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Carita/Pods-Carita.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		3FF812E07E56D6C0F0B88F9FF389E520 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6ED6E6A7807329E6D2E0F6D4AF54D7A6 /* lottie-ios.release.xcconfig */;
@@ -1355,7 +1391,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/lottie-ios/lottie-ios-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/lottie-ios/lottie-ios-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1375,9 +1411,9 @@
 			};
 			name = Release;
 		};
-		4799E53D5C16392C95107F7FA498A864 /* Debug */ = {
+		41585A7FDA6D3F53DA0331C507684C54 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF9A67F6F090D73DA9F2428AB88EB4AC /* Pods-Ceria-CeriaUITests.debug.xcconfig */;
+			baseConfigurationReference = B9318E0DD2A458A988921529E4F8AF7D /* Pods-Carita-CeriaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1389,7 +1425,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Ceria-CeriaUITests/Pods-Ceria-CeriaUITests-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Carita-CeriaUITests/Pods-Carita-CeriaUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1398,7 +1434,83 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Ceria-CeriaUITests/Pods-Ceria-CeriaUITests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Carita-CeriaUITests/Pods-Carita-CeriaUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4200F2E8333DCDD8FBEF4E2EE93A2889 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A0CB3D03BDD9CB780B023F1DEE70D41 /* Pods-CeriaTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CeriaTests/Pods-CeriaTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CeriaTests/Pods-CeriaTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		65AD88224594716918EBE3973E75465F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8DEF4595F7C19235DDAF8F302EF341D /* Pods-CeriaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CeriaTests/Pods-CeriaTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CeriaTests/Pods-CeriaTests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -1427,7 +1539,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftySound/SwiftySound-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftySound/SwiftySound-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1481,6 +1593,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1547,6 +1660,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1574,9 +1688,9 @@
 			};
 			name = Release;
 		};
-		98BBB35A960D828DF98CD00C452F8D14 /* Debug */ = {
+		E75210BAF96918B085BCF4C3131CCFC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87D664B4DF1E88B2B8B8AD19AA0E3064 /* Pods-Ceria.debug.xcconfig */;
+			baseConfigurationReference = C0B834EEB79258F4DE191504CADC4675 /* Pods-Carita-CeriaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1588,7 +1702,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Ceria/Pods-Ceria-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Carita-CeriaUITests/Pods-Carita-CeriaUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1597,7 +1711,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Ceria/Pods-Ceria.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Carita-CeriaUITests/Pods-Carita-CeriaUITests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -1610,157 +1724,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		B034AF45AEF43EBD9196D0D96DAB5893 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC016A71D471AE522D4BD6A5B9805451 /* Pods-Ceria-CeriaUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Ceria-CeriaUITests/Pods-Ceria-CeriaUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Ceria-CeriaUITests/Pods-Ceria-CeriaUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		CAE41C3CB5EB1C9B108162D0F7C60E96 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D46465C3F99099BB39C92F99E799044E /* Pods-CeriaTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CeriaTests/Pods-CeriaTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CeriaTests/Pods-CeriaTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		E794E019C79B674554C596117C6CBD5F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A9B257FDC38A5B729D0E47E88791C8CB /* Pods-CeriaTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CeriaTests/Pods-CeriaTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CeriaTests/Pods-CeriaTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E99BF5B2A2ABB6CD11C2A407C002308E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED817135879F0023120693331E5B811C /* Pods-Ceria.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Ceria/Pods-Ceria-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Ceria/Pods-Ceria.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		F1236B56E1162C6A302E500B32BD086A /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1777,7 +1740,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftySound/SwiftySound-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftySound/SwiftySound-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1813,7 +1776,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/lottie-ios/lottie-ios-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/lottie-ios/lottie-ios-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1832,32 +1795,69 @@
 			};
 			name = Debug;
 		};
+		F9DFDA916011614BD24F015581F76F8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49944F3521F5D136C5D95F38D54F8557 /* Pods-Carita.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Carita/Pods-Carita-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Carita/Pods-Carita.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1BB0E1505D5F83298C576F64120DA851 /* Build configuration list for PBXNativeTarget "Pods-Carita" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9DFDA916011614BD24F015581F76F8F /* Debug */,
+				19437438575C1E375F3585DFDBF52B22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37B2BF7E97E81B6CA25EF5143BA6BB3E /* Build configuration list for PBXNativeTarget "Pods-CeriaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65AD88224594716918EBE3973E75465F /* Debug */,
+				4200F2E8333DCDD8FBEF4E2EE93A2889 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				90D4D09BCB6A4660E43ACBE9ECB6FE9A /* Debug */,
 				9553C89E183877A5CB2F3C6801BEC129 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		75BE563D146135AD0AE0597BA20872B1 /* Build configuration list for PBXNativeTarget "Pods-Ceria" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				98BBB35A960D828DF98CD00C452F8D14 /* Debug */,
-				E99BF5B2A2ABB6CD11C2A407C002308E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		84B7F6D9979C9AAEE2BE24E2DA654ABD /* Build configuration list for PBXNativeTarget "Pods-Ceria-CeriaUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4799E53D5C16392C95107F7FA498A864 /* Debug */,
-				B034AF45AEF43EBD9196D0D96DAB5893 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1871,20 +1871,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CD452F2DB500C5F17A92848877BDF248 /* Build configuration list for PBXNativeTarget "Pods-CeriaTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E794E019C79B674554C596117C6CBD5F /* Debug */,
-				CAE41C3CB5EB1C9B108162D0F7C60E96 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		CF74FADB2B69096A7F543A113959FD60 /* Build configuration list for PBXNativeTarget "SwiftySound" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7C32EFD23F77627430DC503377A94E94 /* Debug */,
 				F1236B56E1162C6A302E500B32BD086A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA2106F9D01C378A2ABA7F208C77A50D /* Build configuration list for PBXNativeTarget "Pods-Carita-CeriaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E75210BAF96918B085BCF4C3131CCFC3 /* Debug */,
+				41585A7FDA6D3F53DA0331C507684C54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

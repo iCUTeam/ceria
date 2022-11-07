@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10E42F8F3DB18887E4E1A642 /* Pods_CeriaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A63DDF22E05F3976C7ECD4B /* Pods_CeriaTests.framework */; };
 		1413AFF928F4497B00FB552A /* Game3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1413AFF828F4497B00FB552A /* Game3ViewController.swift */; };
 		1413AFFB28F4498800FB552A /* Game1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1413AFFA28F4498800FB552A /* Game1ViewController.swift */; };
 		1413AFFD28F4499300FB552A /* Game4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1413AFFC28F4499300FB552A /* Game4ViewController.swift */; };
@@ -17,7 +16,8 @@
 		142AFC4F28F42EFB0069046C /* VectorOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AFC4D28F42EFB0069046C /* VectorOperation.swift */; };
 		142AFC5128F42F030069046C /* HorizontalProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AFC5028F42F030069046C /* HorizontalProgressBar.swift */; };
 		14E89D4428FD561A007EB47A /* collection.json in Resources */ = {isa = PBXBuildFile; fileRef = 14E89D4328FD561A007EB47A /* collection.json */; };
-		2FDD8FC974CCB4309C7F42F5 /* Pods_Ceria_CeriaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68E101B4910F5A147B96657 /* Pods_Ceria_CeriaUITests.framework */; };
+		30D07B2E68AFEB19D7F2FA7F /* Pods_CeriaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2E8954778005090F0CBB7D /* Pods_CeriaTests.framework */; };
+		3ED2A2746DEE4F3CEF2C389E /* Pods_Carita.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BCD3D0B663989844EBA4CA9 /* Pods_Carita.framework */; };
 		9515E488290103CA00D8C948 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9515E487290103CA00D8C948 /* ExploreView.swift */; };
 		951C638E28F7C71700002FA5 /* MakeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951C638D28F7C71700002FA5 /* MakeButton.swift */; };
 		951C639028F7C76900002FA5 /* MakeStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951C638F28F7C76900002FA5 /* MakeStack.swift */; };
@@ -151,7 +151,7 @@
 		95EBB88728F8184400EE82E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E1730E28F66156005252B0 /* Assets.xcassets */; };
 		95EBB88928F852BE00EE82E7 /* stories.json in Resources */ = {isa = PBXBuildFile; fileRef = 95EBB88828F852BE00EE82E7 /* stories.json */; };
 		A91DA8F928FFE484009E2428 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91DA8F828FFE484009E2428 /* Checkbox.swift */; };
-		BBD8F63D9A2C283F97DAC813 /* Pods_Ceria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5039E298D11B9EA863C1D3 /* Pods_Ceria.framework */; };
+		B7EA454375D24A9BD7104134 /* Pods_Carita_CeriaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BC1FB11A541D21CC2B57AF /* Pods_Carita_CeriaUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,11 +185,9 @@
 		1490D4D428FE5D13005660C6 /* CollectionItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionItem.xib; sourceTree = "<group>"; };
 		1490D4D628FE5D2B005660C6 /* CollectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionItem.swift; sourceTree = "<group>"; };
 		14E89D4328FD561A007EB47A /* collection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collection.json; sourceTree = "<group>"; };
-		1D00A8085E8999FBE00BA709 /* Pods-Ceria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ceria.debug.xcconfig"; path = "Target Support Files/Pods-Ceria/Pods-Ceria.debug.xcconfig"; sourceTree = "<group>"; };
-		5A63DDF22E05F3976C7ECD4B /* Pods_CeriaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CeriaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		62179B09A34CE40C2E0AF8C0 /* Pods-Ceria-CeriaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ceria-CeriaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Ceria-CeriaUITests/Pods-Ceria-CeriaUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		632FDF5FB3A06526EDB55ED6 /* Pods-CeriaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CeriaTests.debug.xcconfig"; path = "Target Support Files/Pods-CeriaTests/Pods-CeriaTests.debug.xcconfig"; sourceTree = "<group>"; };
-		7D0A12468DD5D24103C47F59 /* Pods-Ceria.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ceria.release.xcconfig"; path = "Target Support Files/Pods-Ceria/Pods-Ceria.release.xcconfig"; sourceTree = "<group>"; };
+		1BCD3D0B663989844EBA4CA9 /* Pods_Carita.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Carita.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A26E86BE9FBA076FD72C33C /* Pods-Carita-CeriaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carita-CeriaUITests.release.xcconfig"; path = "Target Support Files/Pods-Carita-CeriaUITests/Pods-Carita-CeriaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5E2E8954778005090F0CBB7D /* Pods_CeriaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CeriaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9515E487290103CA00D8C948 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		951C638D28F7C71700002FA5 /* MakeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeButton.swift; sourceTree = "<group>"; };
 		951C638F28F7C76900002FA5 /* MakeStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeStack.swift; sourceTree = "<group>"; };
@@ -247,9 +245,9 @@
 		95AB323628F3C59C0003DCB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95AB323A28F3C59C0003DCB0 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		95AB324228F3C59D0003DCB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		95AB324828F3C59D0003DCB0 /* CaritaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaritaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		95AB324828F3C59D0003DCB0 /* CaritaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CaritaTests.xctest; path = CeriaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AB324C28F3C59D0003DCB0 /* CeriaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeriaTests.swift; sourceTree = "<group>"; };
-		95AB325228F3C59D0003DCB0 /* CaritaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaritaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		95AB325228F3C59D0003DCB0 /* CaritaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CaritaUITests.xctest; path = CeriaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AB325628F3C59D0003DCB0 /* CeriaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeriaUITests.swift; sourceTree = "<group>"; };
 		95AB325828F3C59D0003DCB0 /* CeriaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeriaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		95BD1E3C28FF078C003832EF /* CollectionFeeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionFeeder.swift; sourceTree = "<group>"; };
@@ -326,11 +324,13 @@
 		95EBB88128F8160200EE82E7 /* ClueExploration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClueExploration.swift; sourceTree = "<group>"; };
 		95EBB88228F8160200EE82E7 /* ClueExploration.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClueExploration.xib; sourceTree = "<group>"; };
 		95EBB88828F852BE00EE82E7 /* stories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stories.json; sourceTree = "<group>"; };
-		A0EFD431A5CCE27FC26AC7CF /* Pods-CeriaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CeriaTests.release.xcconfig"; path = "Target Support Files/Pods-CeriaTests/Pods-CeriaTests.release.xcconfig"; sourceTree = "<group>"; };
 		A91DA8F828FFE484009E2428 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
-		BB5039E298D11B9EA863C1D3 /* Pods_Ceria.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ceria.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C377D7A2916A58F426FC98E8 /* Pods-Ceria-CeriaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ceria-CeriaUITests.release.xcconfig"; path = "Target Support Files/Pods-Ceria-CeriaUITests/Pods-Ceria-CeriaUITests.release.xcconfig"; sourceTree = "<group>"; };
-		C68E101B4910F5A147B96657 /* Pods_Ceria_CeriaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ceria_CeriaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAD72BB487071430D19A63A7 /* Pods-Carita-CeriaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carita-CeriaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Carita-CeriaUITests/Pods-Carita-CeriaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D3BC1FB11A541D21CC2B57AF /* Pods_Carita_CeriaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Carita_CeriaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA262E3CEA4F5DB87E34499F /* Pods-CeriaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CeriaTests.debug.xcconfig"; path = "Target Support Files/Pods-CeriaTests/Pods-CeriaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DEFDB120CF7E421844FE0540 /* Pods-CeriaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CeriaTests.release.xcconfig"; path = "Target Support Files/Pods-CeriaTests/Pods-CeriaTests.release.xcconfig"; sourceTree = "<group>"; };
+		DF8D330C59AEB5D7B338471E /* Pods-Carita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carita.release.xcconfig"; path = "Target Support Files/Pods-Carita/Pods-Carita.release.xcconfig"; sourceTree = "<group>"; };
+		E12B371B9E2EBD5C1D22EBA2 /* Pods-Carita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carita.debug.xcconfig"; path = "Target Support Files/Pods-Carita/Pods-Carita.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,7 +338,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBD8F63D9A2C283F97DAC813 /* Pods_Ceria.framework in Frameworks */,
+				3ED2A2746DEE4F3CEF2C389E /* Pods_Carita.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +346,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10E42F8F3DB18887E4E1A642 /* Pods_CeriaTests.framework in Frameworks */,
+				30D07B2E68AFEB19D7F2FA7F /* Pods_CeriaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,7 +354,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FDD8FC974CCB4309C7F42F5 /* Pods_Ceria_CeriaUITests.framework in Frameworks */,
+				B7EA454375D24A9BD7104134 /* Pods_Carita_CeriaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,12 +403,12 @@
 		8B728F15CC201DD8CE6F1133 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1D00A8085E8999FBE00BA709 /* Pods-Ceria.debug.xcconfig */,
-				7D0A12468DD5D24103C47F59 /* Pods-Ceria.release.xcconfig */,
-				62179B09A34CE40C2E0AF8C0 /* Pods-Ceria-CeriaUITests.debug.xcconfig */,
-				C377D7A2916A58F426FC98E8 /* Pods-Ceria-CeriaUITests.release.xcconfig */,
-				632FDF5FB3A06526EDB55ED6 /* Pods-CeriaTests.debug.xcconfig */,
-				A0EFD431A5CCE27FC26AC7CF /* Pods-CeriaTests.release.xcconfig */,
+				E12B371B9E2EBD5C1D22EBA2 /* Pods-Carita.debug.xcconfig */,
+				DF8D330C59AEB5D7B338471E /* Pods-Carita.release.xcconfig */,
+				BAD72BB487071430D19A63A7 /* Pods-Carita-CeriaUITests.debug.xcconfig */,
+				4A26E86BE9FBA076FD72C33C /* Pods-Carita-CeriaUITests.release.xcconfig */,
+				DA262E3CEA4F5DB87E34499F /* Pods-CeriaTests.debug.xcconfig */,
+				DEFDB120CF7E421844FE0540 /* Pods-CeriaTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -582,8 +582,8 @@
 				95AB325528F3C59D0003DCB0 /* CeriaUITests */,
 				95AB323428F3C59C0003DCB0 /* Products */,
 				8B728F15CC201DD8CE6F1133 /* Pods */,
-				DFFED23D3FBF4BE8647BF6C2 /* Frameworks */,
 				95BD1E3128FF055F003832EF /* Recovered References */,
+				EB7807172289A2E899570844 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1012,12 +1012,12 @@
 			path = Files;
 			sourceTree = "<group>";
 		};
-		DFFED23D3FBF4BE8647BF6C2 /* Frameworks */ = {
+		EB7807172289A2E899570844 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BB5039E298D11B9EA863C1D3 /* Pods_Ceria.framework */,
-				C68E101B4910F5A147B96657 /* Pods_Ceria_CeriaUITests.framework */,
-				5A63DDF22E05F3976C7ECD4B /* Pods_CeriaTests.framework */,
+				1BCD3D0B663989844EBA4CA9 /* Pods_Carita.framework */,
+				D3BC1FB11A541D21CC2B57AF /* Pods_Carita_CeriaUITests.framework */,
+				5E2E8954778005090F0CBB7D /* Pods_CeriaTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1029,11 +1029,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95AB325C28F3C59D0003DCB0 /* Build configuration list for PBXNativeTarget "Carita" */;
 			buildPhases = (
-				9C410C60358A11B1FA86079C /* [CP] Check Pods Manifest.lock */,
+				B8E1BA14965277C30FC954B3 /* [CP] Check Pods Manifest.lock */,
 				95AB322F28F3C59C0003DCB0 /* Sources */,
 				95AB323028F3C59C0003DCB0 /* Frameworks */,
 				95AB323128F3C59C0003DCB0 /* Resources */,
-				34C13E2639B36506D73D0D3F /* [CP] Embed Pods Frameworks */,
+				80B3139E1D033970F15BCFE8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1044,11 +1044,11 @@
 			productReference = 95AB323328F3C59C0003DCB0 /* Carita.app */;
 			productType = "com.apple.product-type.application";
 		};
-		95AB324728F3C59D0003DCB0 /* CaritaTests */ = {
+		95AB324728F3C59D0003DCB0 /* CeriaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95AB325F28F3C59D0003DCB0 /* Build configuration list for PBXNativeTarget "CaritaTests" */;
+			buildConfigurationList = 95AB325F28F3C59D0003DCB0 /* Build configuration list for PBXNativeTarget "CeriaTests" */;
 			buildPhases = (
-				F374E0FC310563A3AE0F2EB9 /* [CP] Check Pods Manifest.lock */,
+				01C12E28B4D2ABF1D4BF7E8A /* [CP] Check Pods Manifest.lock */,
 				95AB324428F3C59D0003DCB0 /* Sources */,
 				95AB324528F3C59D0003DCB0 /* Frameworks */,
 				95AB324628F3C59D0003DCB0 /* Resources */,
@@ -1058,27 +1058,27 @@
 			dependencies = (
 				95AB324A28F3C59D0003DCB0 /* PBXTargetDependency */,
 			);
-			name = CaritaTests;
+			name = CeriaTests;
 			productName = CeriaTests;
 			productReference = 95AB324828F3C59D0003DCB0 /* CaritaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		95AB325128F3C59D0003DCB0 /* CaritaUITests */ = {
+		95AB325128F3C59D0003DCB0 /* CeriaUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95AB326228F3C59D0003DCB0 /* Build configuration list for PBXNativeTarget "CaritaUITests" */;
+			buildConfigurationList = 95AB326228F3C59D0003DCB0 /* Build configuration list for PBXNativeTarget "CeriaUITests" */;
 			buildPhases = (
-				137B935154F5AB432E32BF37 /* [CP] Check Pods Manifest.lock */,
+				6BD19E13A536AE6DF659FEF6 /* [CP] Check Pods Manifest.lock */,
 				95AB324E28F3C59D0003DCB0 /* Sources */,
 				95AB324F28F3C59D0003DCB0 /* Frameworks */,
 				95AB325028F3C59D0003DCB0 /* Resources */,
-				04A8498313CC2C35DB5C3ACD /* [CP] Embed Pods Frameworks */,
+				10FCC5F362B333286EC98992 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				95AB325428F3C59D0003DCB0 /* PBXTargetDependency */,
 			);
-			name = CaritaUITests;
+			name = CeriaUITests;
 			productName = CeriaUITests;
 			productReference = 95AB325228F3C59D0003DCB0 /* CaritaUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -1120,8 +1120,8 @@
 			projectRoot = "";
 			targets = (
 				95AB323228F3C59C0003DCB0 /* Carita */,
-				95AB324728F3C59D0003DCB0 /* CaritaTests */,
-				95AB325128F3C59D0003DCB0 /* CaritaUITests */,
+				95AB324728F3C59D0003DCB0 /* CeriaTests */,
+				95AB325128F3C59D0003DCB0 /* CeriaUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1232,85 +1232,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		04A8498313CC2C35DB5C3ACD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Ceria-CeriaUITests/Pods-Ceria-CeriaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Ceria-CeriaUITests/Pods-Ceria-CeriaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ceria-CeriaUITests/Pods-Ceria-CeriaUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		137B935154F5AB432E32BF37 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Ceria-CeriaUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		34C13E2639B36506D73D0D3F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Ceria/Pods-Ceria-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Ceria/Pods-Ceria-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ceria/Pods-Ceria-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9C410C60358A11B1FA86079C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Ceria-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F374E0FC310563A3AE0F2EB9 /* [CP] Check Pods Manifest.lock */ = {
+		01C12E28B4D2ABF1D4BF7E8A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1326,6 +1248,84 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-CeriaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		10FCC5F362B333286EC98992 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Carita-CeriaUITests/Pods-Carita-CeriaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Carita-CeriaUITests/Pods-Carita-CeriaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Carita-CeriaUITests/Pods-Carita-CeriaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BD19E13A536AE6DF659FEF6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Carita-CeriaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80B3139E1D033970F15BCFE8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Carita/Pods-Carita-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Carita/Pods-Carita-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Carita/Pods-Carita-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8E1BA14965277C30FC954B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Carita-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1560,13 +1560,13 @@
 		};
 		95AB325D28F3C59D0003DCB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D00A8085E8999FBE00BA709 /* Pods-Ceria.debug.xcconfig */;
+			baseConfigurationReference = E12B371B9E2EBD5C1D22EBA2 /* Pods-Carita.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = S955BH56FW;
+				DEVELOPMENT_TEAM = KHN5V927Z7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Ceria/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Carita;
@@ -1597,13 +1597,13 @@
 		};
 		95AB325E28F3C59D0003DCB0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D0A12468DD5D24103C47F59 /* Pods-Ceria.release.xcconfig */;
+			baseConfigurationReference = DF8D330C59AEB5D7B338471E /* Pods-Carita.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = S955BH56FW;
+				DEVELOPMENT_TEAM = KHN5V927Z7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Ceria/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Carita;
@@ -1634,7 +1634,7 @@
 		};
 		95AB326028F3C59D0003DCB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 632FDF5FB3A06526EDB55ED6 /* Pods-CeriaTests.debug.xcconfig */;
+			baseConfigurationReference = DA262E3CEA4F5DB87E34499F /* Pods-CeriaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1655,7 +1655,7 @@
 		};
 		95AB326128F3C59D0003DCB0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0EFD431A5CCE27FC26AC7CF /* Pods-CeriaTests.release.xcconfig */;
+			baseConfigurationReference = DEFDB120CF7E421844FE0540 /* Pods-CeriaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1676,7 +1676,7 @@
 		};
 		95AB326328F3C59D0003DCB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62179B09A34CE40C2E0AF8C0 /* Pods-Ceria-CeriaUITests.debug.xcconfig */;
+			baseConfigurationReference = BAD72BB487071430D19A63A7 /* Pods-Carita-CeriaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1695,7 +1695,7 @@
 		};
 		95AB326428F3C59D0003DCB0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C377D7A2916A58F426FC98E8 /* Pods-Ceria-CeriaUITests.release.xcconfig */;
+			baseConfigurationReference = 4A26E86BE9FBA076FD72C33C /* Pods-Carita-CeriaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1733,7 +1733,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95AB325F28F3C59D0003DCB0 /* Build configuration list for PBXNativeTarget "CaritaTests" */ = {
+		95AB325F28F3C59D0003DCB0 /* Build configuration list for PBXNativeTarget "CeriaTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95AB326028F3C59D0003DCB0 /* Debug */,
@@ -1742,7 +1742,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95AB326228F3C59D0003DCB0 /* Build configuration list for PBXNativeTarget "CaritaUITests" */ = {
+		95AB326228F3C59D0003DCB0 /* Build configuration list for PBXNativeTarget "CeriaUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95AB326328F3C59D0003DCB0 /* Debug */,
