@@ -4,8 +4,8 @@
   <contributor>
    <authoring_tool>SceneKit Collada Exporter v1.0</authoring_tool>
   </contributor>
-  <created>2022-11-08T08:39:13Z</created>
-  <modified>2022-11-08T08:39:13Z</modified>
+  <created>2022-11-08T10:41:05Z</created>
+  <modified>2022-11-08T10:41:05Z</modified>
   <unit meter="0.010000"/>
   <up_axis>Y_UP</up_axis>
  </asset>
@@ -82,7 +82,7 @@
        <color>0 0 0 1</color>
       </ambient>
       <diffuse>
-       <color>0.392 0.3565 0.19992 1</color>
+       <color>0.738117 0.671488 0.378982 1</color>
       </diffuse>
       <transparent opaque="RGB_ZERO">
        <color>0 0 0 1</color>
