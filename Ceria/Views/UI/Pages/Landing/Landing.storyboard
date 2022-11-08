@@ -485,10 +485,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Wxa-ar-8yJ">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </sceneKitView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Xy-YX-qrA" customClass="HorizontalProgressBar" customModule="Carita" customModuleProvider="target">
                                 <rect key="frame" x="76" y="1020" width="683" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -499,6 +495,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Wxa-ar-8yJ">
+                                <rect key="frame" x="-95" y="-61" width="1024" height="1366"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </sceneKitView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rgt-x9-pVV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
