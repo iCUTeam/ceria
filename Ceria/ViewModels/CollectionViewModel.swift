@@ -15,6 +15,9 @@ final class CollectionViewModel {
     var collectibleDesc: ObservableObject<String> = ObservableObject(value: "")
     var collectibleOrigin: ObservableObject<String> = ObservableObject(value: "")
     var isObtained: ObservableObject<Bool> = ObservableObject(value: false)
+    var collectibleCard: ObservableObject<String> = ObservableObject(value: "")
+    var collectibleHint: ObservableObject<String> = ObservableObject(value: "")
+    var collectibleHintString: ObservableObject<String> = ObservableObject(value: "")
     
     var collectionArray: [Collection] = []
     var feeder = CollectionFeeder()
@@ -50,6 +53,9 @@ final class CollectionViewModel {
         self.collectibleName.value = collectionArray[index].collectibleName
         self.collectibleDesc.value = collectionArray[index].collectibleDesc
         self.collectibleOrigin.value = collectionArray[index].collectibleOrigin
+        self.collectibleCard.value = collectionArray[index].collectibleCard
+        self.collectibleHint.value = collectionArray[index].collectibleHint
+        self.collectibleHintString.value = collectionArray[index].collectibleHintString
         self.isObtained.value = obtainedStatus[index]
     }
     
@@ -71,6 +77,9 @@ final class CollectionViewModel {
                 self.isObtained.value = obtainedStatus[collectionArray.firstIndex(where: { collection in
                     collection.collectibleName == card
                 }) ?? 0]
+                self.collectibleCard.value = collection.collectibleCard
+                self.collectibleHint.value = collection.collectibleHint
+                self.collectibleHintString.value = collection.collectibleHintString
             }
         }
     }

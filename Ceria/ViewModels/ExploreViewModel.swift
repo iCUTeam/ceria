@@ -17,6 +17,8 @@ final class ExploreViewModel
     var cardModel: ObservableObject<String> = ObservableObject(value: "")
     var canInteract: ObservableObject<Bool> = ObservableObject(value: false)
     var currentName: ObservableObject<String> = ObservableObject(value: "checkpoint_istana")
+    var hintVoice: ObservableObject<String> = ObservableObject(value: "")
+    var hintString: ObservableObject<String> = ObservableObject(value: "")
     
     var cardArray: [Card] = []
     var feeder = CardFeeder()
@@ -34,6 +36,8 @@ final class ExploreViewModel
                 self.cardName.value = card.cardName
                 self.cardModel.value = card.cardModel
                 self.canInteract.value = defaults.bool(forKey: currentName.value)
+                self.hintVoice.value = card.hintVoice
+                self.hintString.value = card.hintString
             }
         }
     }
