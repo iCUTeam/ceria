@@ -57,19 +57,9 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     }()
     
     
-    var blueCheckPointNode : SCNNode? = nil
+    var checkpointNode: SCNNode!
     
-    var redCheckPointNode : SCNNode? = nil
-    
-    var greenCheckPointNode : SCNNode? = nil
-//
-    var seraungNode: SCNNode? = nil
-//
-    var tarumpahNode: SCNNode? = nil
-//
-    var tinimiNode: SCNNode? = nil
-
-    var lontongNode: SCNNode? = nil
+    var treasureNode: SCNNode!
     
     var hint: String = ""
     var hint2: String = ""
@@ -78,11 +68,9 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     var hintImage: String = ""
     var hintImage2: String = ""
     
-    var isCheckpointFound: Bool = false
-    var isCollectibleFound: Bool = false
-    
     
     private let collectionViewModel = CollectionViewModel()
+    private let explorationModel = ExploreViewModel()
     
     private var collectionItem: CollectionItem!
     
@@ -95,9 +83,6 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        isCheckpointFound = false
-        isCollectibleFound = false
         
         let screenSize: CGRect = UIScreen.main.bounds
         let screenWidth: CGFloat = screenSize.width
@@ -261,9 +246,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             {
                 
                 
-                if imageAnchor.referenceImage.name == "kartu_pulau2" && self.defaults.string(forKey: "userState") == "clear_story_1" {
-                    
-                    self.isCheckpointFound = true
+                if imageAnchor.referenceImage.name?.localizedStandardContains("checkpoint") == true{
                     
                     let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
                     
@@ -275,11 +258,15 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                     
                     node.addChildNode(planeNode)
                     
-                    if let checkPointScene = SCNScene(named: "Models.scnassets/Checkpoint_blue.scn") {
+                    explorationModel.currentName.value = imageAnchor.referenceImage.name ?? "checkpoint_istana"
+                    
+                    explorationModel.getExploring()
+                    
+                    if let checkPointScene = SCNScene(named: "Models.scnassets/\(explorationModel.cardName.value)") {
 
                         if let checkPoint = checkPointScene.rootNode.childNodes.first {
                             
-                            self.blueCheckPointNode = checkPoint
+                            self.checkpointNode = checkPoint
 
                             checkPoint.eulerAngles.x = .pi / 2
                             
@@ -289,114 +276,15 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
 
                             planeNode.addChildNode(checkPoint)
                             
-                            
-                            if self.isCheckpointFound == true {
                                 Sound.play(file: "checkpoint_found.wav")
                                 Sound.play(file:"explore2_found.m4a")
-                            }
-                        }
-                    }
-                }
-
-                if imageAnchor.referenceImage.name == "kartu_kapal2" && self.defaults.string(forKey: "userState") == "clear_story_4" {
-                    
-                    self.isCheckpointFound = true
-                    
-                    let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
-                    
-                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0)
-                    
-                    let planeNode = SCNNode(geometry: plane)
-                    
-                    planeNode.eulerAngles.x = -.pi / 2
-                    
-                    
-                    node.addChildNode(planeNode)
-                    
-                    if let checkPointScene = SCNScene(named: "Models.scnassets/Checkpoint_green.scn") {
-
-                        if let checkPoint = checkPointScene.rootNode.childNodes.first {
-                            
-                            self.greenCheckPointNode = checkPoint
-                            
-                            checkPoint.eulerAngles.x = .pi / 2
-                            
-                            checkPoint.eulerAngles.z = .pi / 2
-
-                            checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
-
-                            planeNode.addChildNode(checkPoint)
-                            
-                            
-                            
-                            if self.isCheckpointFound == true {
-                                Sound.play(file: "checkpoint_found.wav")
-                                Sound.play(file:"explore3_found.m4a")
-                            }
+                        
                         }
                     }
                 }
                 
-//                if imageAnchor.referenceImage.name == "kartu_istana" {
-//
-//                    let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
-//
-//                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0)
-//
-//                    let planeNode = SCNNode(geometry: plane)
-//
-//                    planeNode.eulerAngles.x = -.pi / 2
-//
-//
-//                    self.redCheckPointNode = planeNode
-//
-//                    node.addChildNode(planeNode)
-//
-//                    if let checkPointScene = SCNScene(named: "Models.scnassets/Checkpoint_red.scn") {
-//
-//                        if let checkPoint = checkPointScene.rootNode.childNodes.first {
-//
-//                            checkPoint.eulerAngles.x = .pi / 2
-//
-//                            checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
-//
-//                            planeNode.addChildNode(checkPoint)
-//                        }
-//                    }
-//                }
                 
-                
-    //
-    //            if imageAnchor.referenceImage.name == "seraung-card" {
-    //
-    //                let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
-    //
-    //                plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
-    //
-    //                let planeNode = SCNNode(geometry: plane)
-    //
-    //                planeNode.eulerAngles.x = -.pi / 2
-    //
-    //
-    //                self.seraungNode = planeNode
-    //
-    //                node.addChildNode(planeNode)
-    //
-    //                if let checkPointScene = SCNScene(named: "Models.scnassets/seraung.scn") {
-    //
-    //                    if let checkPoint = checkPointScene.rootNode.childNodes.first {
-    //
-    //                        checkPoint.eulerAngles.x = .pi / 2
-    //
-    //                        planeNode.addChildNode(checkPoint)
-    //                    }
-    //                }
-    //            }
-    //
-    //
                 if imageAnchor.referenceImage.name == "kartu_rua2" && self.defaults.string(forKey: "userState") == "clear_story_4" {
-    
-                    self.isCollectibleFound = true
                     
                     let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
     
@@ -414,9 +302,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                     if let checkPointScene = SCNScene(named: "Models.scnassets/Treasure_chest.scn") {
     
                         if let checkPoint = checkPointScene.rootNode.childNodes.first {
-                            
-    
-                            self.tarumpahNode = checkPoint
+                        
                             
                             checkPoint.eulerAngles.x = .pi / 2
                             
@@ -433,59 +319,6 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                     }
                 }
     
-    //
-    //            if imageAnchor.referenceImage.name == "tinim-card" {
-    //
-    //                let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
-    //
-    //                plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
-    //
-    //                let planeNode = SCNNode(geometry: plane)
-    //
-    //                planeNode.eulerAngles.x = -.pi / 2
-    //
-    //
-    //                self.tinimiNode = planeNode
-    //
-    //                node.addChildNode(planeNode)
-    //
-    //                if let checkPointScene = SCNScene(named: "Models.scnassets/tinim.scn") {
-    //
-    //                    if let checkPoint = checkPointScene.rootNode.childNodes.first {
-    //
-    //                        checkPoint.eulerAngles.x = .pi / 2
-    //
-    //                        planeNode.addChildNode(checkPoint)
-    //                    }
-    //                }
-    //            }
-    //
-    //            if imageAnchor.referenceImage.name == "lontong-card" {
-    //
-    //                let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
-    //
-    //                plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
-    //
-    //                let planeNode = SCNNode(geometry: plane)
-    //
-    //                planeNode.eulerAngles.x = -.pi / 2
-    //
-    //
-    //                self.lontongNode = planeNode
-    //
-    //                node.addChildNode(planeNode)
-    //
-    //                if let checkPointScene = SCNScene(named: "Models.scnassets/lontong.scn") {
-    //
-    //                    if let checkPoint = checkPointScene.rootNode.childNodes.first {
-    //
-    //                        checkPoint.eulerAngles.x = .pi / 2
-    //
-    //                        planeNode.addChildNode(checkPoint)
-    //                    }
-    //                }
-    //            }
-    //
                 
                 
                 
