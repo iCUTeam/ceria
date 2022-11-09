@@ -10,6 +10,7 @@ import Foundation
 final class CollectionViewModel {
     
     var collectibleItem: ObservableObject<String> = ObservableObject(value: "")
+    var collectibleLocked: ObservableObject<String> = ObservableObject(value: "")
     var collectibleName: ObservableObject<String> = ObservableObject(value: "")
     var collectibleDesc: ObservableObject<String> = ObservableObject(value: "")
     var collectibleOrigin: ObservableObject<String> = ObservableObject(value: "")
@@ -45,6 +46,7 @@ final class CollectionViewModel {
         obtainedStatus = defaults.array(forKey: "collectiblesObtainedStatus") as? [Bool] ?? [Bool]()
         
         self.collectibleItem.value = collectionArray[index].collectibleItem
+        self.collectibleLocked.value = collectionArray[index].collectibleLockedModel
         self.collectibleName.value = collectionArray[index].collectibleName
         self.collectibleDesc.value = collectionArray[index].collectibleDesc
         self.collectibleOrigin.value = collectionArray[index].collectibleOrigin
