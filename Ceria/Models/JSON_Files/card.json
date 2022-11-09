@@ -1,0 +1,36 @@
+[
+  
+    {
+        "card_name": "checkpoint_kapal",
+        "card_model": "Checkpoint_blue.scn",
+        "can_interact": false,
+        "hint_voice": "",
+        "hint_string": "Cari kartu dengan gambar kapal di sekitar rumahmu untuk membantu Rua dan tuan putri kembali ke kapal",
+    },
+    
+    {
+        "card_name": "checkpoint_pulau",
+        "card_model": "Checkpoint_hijau.scn",
+        "can_interact": false,
+        "hint_voice": "",
+        "hint_string": "Cari kartu dengan gambar pulau di sekitar rumahmu untuk membantu kapal berlabuh ke pulau yang tepat",
+    },
+    
+    {
+        "card_name": "checkpoint_istana",
+        "card_model": "Checkpoint_red.scn",
+        "can_interact": true,
+        "hint_voice": "",
+        "hint_string": "Cari kartu dengan gambar istana di sekitar rumahmu untuk membantu keempat bersaudara sampai ke istana paduka raja",
+    },
+    
+    {
+        "card_name": "checkpoint_dermaga",
+        "card_model": "Checkpoint_yellow.scn",
+        "can_interact": false,
+        "hint_voice": "",
+        "hint_string": "Cari kartu dengan gambar dermaga di sekitar rumahmu untuk membantu keempat bersaudara berlabuh dan sampai kembali ke istana",
+    },
+    
+]
+

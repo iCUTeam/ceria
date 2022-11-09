@@ -53,6 +53,28 @@ final class CollectionViewModel {
         self.isObtained.value = obtainedStatus[index]
     }
     
+    func getCollection(card: String)
+    {
+        let collectionArray = feeder.feedCollection()
+        
+        obtainedStatus = defaults.array(forKey: "collectiblesObtainedStatus") as? [Bool] ?? [Bool]()
+        
+        for collection in collectionArray
+        {
+            if collection.collectibleName == card
+            {
+                self.collectibleItem.value = collection.collectibleItem
+                self.collectibleLocked.value = collection.collectibleLockedModel
+                self.collectibleName.value = collection.collectibleName
+                self.collectibleDesc.value = collection.collectibleDesc
+                self.collectibleOrigin.value = collection.collectibleOrigin
+                self.isObtained.value = obtainedStatus[collectionArray.firstIndex(where: { collection in
+                    collection.collectibleName == card
+                }) ?? 0]
+            }
+        }
+    }
+    
     func obtainItem(index: Int)
     {
         obtainedStatus[index].toggle()

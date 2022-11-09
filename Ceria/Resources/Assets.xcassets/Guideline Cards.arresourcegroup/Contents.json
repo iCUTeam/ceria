@@ -5,13 +5,13 @@
   },
   "resources" : [
     {
-      "filename" : "kartu_kapal2.arreferenceimage"
+      "filename" : "checkpoint_kapal.arreferenceimage"
     },
     {
-      "filename" : "kartu_pulau2.arreferenceimage"
+      "filename" : "checkpoint_pulau.arreferenceimage"
     },
     {
-      "filename" : "kartu_rua2.arreferenceimage"
+      "filename" : "collection_rua.arreferenceimage"
     }
   ]
 }
