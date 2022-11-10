@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "about_judul.png",
+      "filename" : "tentang kami.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "about_judul@2x.png",
+      "filename" : "tentang kami@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "about_judul@3x.png",
+      "filename" : "tentang kami@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

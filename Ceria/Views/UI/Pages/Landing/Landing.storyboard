@@ -37,7 +37,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_page" translatesAutoresizingMaskIntoConstraints="NO" id="TZB-fH-9iz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_page" translatesAutoresizingMaskIntoConstraints="NO" id="TZB-fH-9iz">
                                 <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_title" translatesAutoresizingMaskIntoConstraints="NO" id="ylv-gK-hEJ">
@@ -434,7 +434,7 @@
                                                                     <constraint firstAttribute="trailing" secondItem="BhM-6f-MsH" secondAttribute="trailing" id="adq-8y-jqQ"/>
                                                                 </constraints>
                                                             </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="dk9-XX-OKh" userLabel="StackView Musik Latar">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TbE-tZ-Nbw" userLabel="StackView Musik Latar">
                                                                 <rect key="frame" x="10.5" y="2017" width="553.5" height="3388"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_subtitle4" translatesAutoresizingMaskIntoConstraints="NO" id="hSl-v0-y0P">
@@ -444,82 +444,83 @@
                                                                             <constraint firstAttribute="height" constant="50" id="U8u-w3-x0J"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geoffharvey - Best Adventure Ever" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPV-bk-yfW">
-                                                                        <rect key="frame" x="38" y="282.5" width="477" height="29"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lesfm - Kingdom of Fantasy Epic Cinematic" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fsu-l0-zZe">
+                                                                        <rect key="frame" x="80" y="260.5" width="393" height="58"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="30"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lesfm - Kingdom of Fantasy Epic Cinematic" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VqH-gN-n0S">
-                                                                        <rect key="frame" x="80" y="543.5" width="393" height="58"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FunWithSound - Success Fanfare Trumpets" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlU-Jb-2GE">
+                                                                        <rect key="frame" x="111" y="529" width="331" height="58"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="30"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FunWithSound - Success Fanfare Trumpets" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5VI-9B-F3X">
-                                                                        <rect key="frame" x="111" y="834" width="331" height="58"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lexin Music - Midnight" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmf-t4-HPu">
+                                                                        <rect key="frame" x="125" y="797.5" width="303" height="29"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="30"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geoffharvey - Magic In the Air" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYT-GC-4JT">
-                                                                        <rect key="frame" x="67.5" y="1124" width="418" height="29"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geoffharvey - Best Adventure Ever" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2S-3E-dxA">
+                                                                        <rect key="frame" x="38" y="1037" width="477" height="29"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="30"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lexin Music - Midnight" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaj-Yh-MWf">
-                                                                        <rect key="frame" x="125" y="1385.5" width="303" height="29"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jackmichaelking - Gentle Ocean Waves Birdsong and Gull" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFi-pL-d7o">
+                                                                        <rect key="frame" x="13.5" y="1276.5" width="526" height="58"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="30"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vadim Krahkhmal - Journey To The Toucan Isle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3UB-KH-HKB">
-                                                                        <rect key="frame" x="35.5" y="1646.5" width="482.5" height="58"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music Unlimited - Cinematic Epic Trailer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="746-uE-3ZC">
+                                                                        <rect key="frame" x="8.5" y="1545" width="536.5" height="29"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="30"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jackmichaelking - Gentle Ocean Waves Birdsong and Gull" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oA-dv-WJb">
-                                                                        <rect key="frame" x="13.5" y="1937" width="526" height="58"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Solbox - This Is War (Version C)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="90h-Uf-c9H">
+                                                                        <rect key="frame" x="66" y="1785" width="421" height="29"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="30"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music Unlimited - Cinematic Epic Trailer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCY-b0-7OP">
-                                                                        <rect key="frame" x="8.5" y="2227" width="536.5" height="29"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vadim Krahkhmal - Journey To The Toucan Isle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcj-gV-4fT">
+                                                                        <rect key="frame" x="35.5" y="2024.5" width="482.5" height="58"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="30"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brolefilmer - Jungle Sneak, Track by, Kelly James" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEl-aY-a5n">
-                                                                        <rect key="frame" x="23.5" y="2488.5" width="506" height="58"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REDproductions - Game Comedy Interesting Playful Sweet Bright Childish Music" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRB-JZ-J1O">
+                                                                        <rect key="frame" x="0.0" y="2293" width="553.5" height="87"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="30"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MusicLFiles - Final Battle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QH4-fx-rUP">
-                                                                        <rect key="frame" x="112.5" y="2778.5" width="328" height="29"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MusicLFiles - Final Battle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7A6-2H-E66">
+                                                                        <rect key="frame" x="112.5" y="2590.5" width="328" height="29"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="30"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Solbox - This Is War (Version C)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZM-IX-aTg">
-                                                                        <rect key="frame" x="66" y="3040" width="421" height="29"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brolefilmer - Jungle Sneak, Track by, Kelly James" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQZ-5p-QIx">
+                                                                        <rect key="frame" x="23.5" y="2830" width="506" height="58"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="30"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REDproductions - Game Comedy Interesting Playful Sweet Bright Childish Music" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bV6-0U-I3K">
-                                                                        <rect key="frame" x="0.0" y="3301" width="553.5" height="87"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geoffharvey - Magic In the Air" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLC-rm-pOg">
+                                                                        <rect key="frame" x="67.5" y="3098.5" width="418" height="29"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="30"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Okl-PQ-4o2">
+                                                                        <rect key="frame" x="156.5" y="3338" width="240" height="50"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    </view>
                                                                 </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="hSl-v0-y0P" firstAttribute="top" secondItem="dk9-XX-OKh" secondAttribute="top" id="HYv-0B-w9W"/>
-                                                                </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RhI-Yn-53d" userLabel="StackView Efek Suara">
                                                                 <rect key="frame" x="92" y="5485" width="390" height="362"/>
@@ -920,19 +921,19 @@
         </scene>
     </scenes>
     <resources>
-        <image name="about_abm_logo" width="102" height="64"/>
+        <image name="about_abm_logo" width="407" height="257"/>
         <image name="about_bungko" width="54.5" height="74"/>
         <image name="about_lompo" width="102" height="96.5"/>
         <image name="about_page" width="278" height="398"/>
         <image name="about_puteri" width="83.5" height="83.5"/>
         <image name="about_rua" width="65.5" height="79"/>
-        <image name="about_subtitle1" width="135" height="11"/>
-        <image name="about_subtitle2" width="122" height="12.5"/>
-        <image name="about_subtitle3" width="157" height="13"/>
-        <image name="about_subtitle4" width="110" height="11.5"/>
-        <image name="about_subtitle5" width="105" height="11.5"/>
+        <image name="about_subtitle1" width="540.5" height="44.5"/>
+        <image name="about_subtitle2" width="486" height="49.5"/>
+        <image name="about_subtitle3" width="626.5" height="51"/>
+        <image name="about_subtitle4" width="439" height="46"/>
+        <image name="about_subtitle5" width="418" height="46"/>
         <image name="about_tallu" width="60.5" height="80.5"/>
-        <image name="about_title" width="211.5" height="31"/>
+        <image name="about_title" width="846.5" height="124.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

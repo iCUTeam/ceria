@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "judul_instruction.png",
+      "filename" : "persiapan bermain.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "judul_instruction@2x.png",
+      "filename" : "persiapan bermain@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "judul_instruction@3x.png",
+      "filename" : "persiapan bermain@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
