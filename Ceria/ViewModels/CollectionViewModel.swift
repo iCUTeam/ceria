@@ -15,9 +15,14 @@ final class CollectionViewModel {
     var collectibleDesc: ObservableObject<String> = ObservableObject(value: "")
     var collectibleOrigin: ObservableObject<String> = ObservableObject(value: "")
     var isObtained: ObservableObject<Bool> = ObservableObject(value: false)
+    var collectibleCard: ObservableObject<String> = ObservableObject(value: "")
+    var collectibleHint: ObservableObject<String> = ObservableObject(value: "")
+    var collectibleHintString: ObservableObject<String> = ObservableObject(value: "")
     
     var collectionArray: [Collection] = []
     var feeder = CollectionFeeder()
+    
+    var currentIndex: Int = 0
     
     var obtainedStatus: [Bool] = []
     
@@ -50,12 +55,44 @@ final class CollectionViewModel {
         self.collectibleName.value = collectionArray[index].collectibleName
         self.collectibleDesc.value = collectionArray[index].collectibleDesc
         self.collectibleOrigin.value = collectionArray[index].collectibleOrigin
+        self.collectibleCard.value = collectionArray[index].collectibleCard
+        self.collectibleHint.value = collectionArray[index].collectibleHint
+        self.collectibleHintString.value = collectionArray[index].collectibleHintString
         self.isObtained.value = obtainedStatus[index]
+        self.currentIndex = index
     }
     
-    func obtainItem(index: Int)
+    func getCollection(card: String)
     {
-        obtainedStatus[index].toggle()
+        let collectionArray = feeder.feedCollection()
+        
+        obtainedStatus = defaults.array(forKey: "collectiblesObtainedStatus") as? [Bool] ?? [Bool]()
+        
+        for collection in collectionArray
+        {
+            if collection.collectibleName == card
+            {
+                self.collectibleItem.value = collection.collectibleItem
+                self.collectibleLocked.value = collection.collectibleLockedModel
+                self.collectibleName.value = collection.collectibleName
+                self.collectibleDesc.value = collection.collectibleDesc
+                self.collectibleOrigin.value = collection.collectibleOrigin
+                self.isObtained.value = obtainedStatus[collectionArray.firstIndex(where: { collection in
+                    collection.collectibleName == card
+                }) ?? 0]
+                self.collectibleCard.value = collection.collectibleCard
+                self.collectibleHint.value = collection.collectibleHint
+                self.collectibleHintString.value = collection.collectibleHintString
+                self.currentIndex = collectionArray.firstIndex(where: { collection in
+                    collection.collectibleName == card
+                }) ?? 0
+            }
+        }
+    }
+    
+    func obtainItem()
+    {
+        obtainedStatus[currentIndex].toggle()
         defaults.set(obtainedStatus, forKey: "collectiblesObtainedStatus")
     }
        
