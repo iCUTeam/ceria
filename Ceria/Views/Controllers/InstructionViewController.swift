@@ -24,38 +24,39 @@ class InstructionViewController: UIViewController, Storyboarded {
         return button
     }()
     
-    private lazy var background: UIView = {
-        let background = UIView()
-        background.backgroundColor = UIColor(red: 253.0/255, green: 248.0/255, blue: 235.0/255, alpha: 1)
-        return background
+    private lazy var background: UIImageView = {
+        let image = UIImage(named: "instruction_background")
+        let imageView = UIImageView(image: image!)
+        imageView.contentMode = .scaleToFill
+        imageView.frame = UIScreen.main.bounds
+        return imageView
     }()
         
     private lazy var instructionStackView: UIStackView = {
         
         //MARK: Persiapan Bermain
+        let titleHalaman = UIImage(named: "instruction_title")?.resizedImage(size: CGSize(width: 635, height: 85))
+        let titleImageView = UIImageView(image: titleHalaman!)
+        
         let labelHalaman = UILabel()
-        labelHalaman.text = "Persiapan Bermain"
-        labelHalaman.font = UIFont.scriptFont(size: 64)
+        labelHalaman.text = "oleh orang tua"
+        labelHalaman.textColor = .white
+        labelHalaman.font = UIFont.scriptFont(size: 26)
         labelHalaman.textAlignment = .center
-        labelHalaman.heightAnchor.constraint(equalToConstant: 110).isActive = true
+        labelHalaman.heightAnchor.constraint(equalToConstant: 43).isActive = true
+        
+        let stackTitle = UIStackView(arrangedSubviews: [titleImageView, labelHalaman])
+        stackTitle.axis = .vertical
+        stackTitle.spacing = 0
         
         //MARK: Langkah 1
-        let labelLangkahSatu = UILabel()
-        labelLangkahSatu.text = "Langkah"
-        labelLangkahSatu.textColor = .white
-        labelLangkahSatu.textAlignment = .center
-        labelLangkahSatu.font = UIFont.scriptFont(size: 30)
-        labelLangkahSatu.heightAnchor.constraint(equalToConstant: 70).isActive = true
-        
         let labelSatu = UILabel()
         labelSatu.text = "1"
         labelSatu.textColor = .white
         labelSatu.textAlignment = .center
-        labelSatu.font = UIFont.scriptFont(size: 60)
+        labelSatu.font = UIFont.scriptFont(size: 100)
         
-        let stackLabelSatu = UIStackView(arrangedSubviews: [labelLangkahSatu, labelSatu])
-        stackLabelSatu.axis = .vertical
-        stackLabelSatu.distribution = .fill
+        let stackLabelSatu = UIStackView(arrangedSubviews: [labelSatu])
         stackLabelSatu.backgroundColor = UIColor(red: 69.0/255, green: 173.0/255, blue: 226.0/225, alpha: 1)
         stackLabelSatu.layer.cornerRadius = 20
         stackLabelSatu.widthAnchor.constraint(equalToConstant: 177).isActive = true
@@ -104,23 +105,14 @@ class InstructionViewController: UIViewController, Storyboarded {
         stackInstruksiSatu.frame = view.bounds
         
         //MARK: Langkah 2
-        let labelLangkahDua = UILabel()
-        labelLangkahDua.text = "Langkah"
-        labelLangkahDua.textColor = .white
-        labelLangkahDua.textAlignment = .center
-        labelLangkahDua.font = UIFont.scriptFont(size: 30)
-        labelLangkahDua.heightAnchor.constraint(equalToConstant: 70).isActive = true
-        
         let labelDua = UILabel()
         labelDua.text = "2"
         labelDua.textColor = .white
         labelDua.textAlignment = .center
-        labelDua.font = UIFont.scriptFont(size: 60)
+        labelDua.font = UIFont.scriptFont(size: 100)
         
         //MARK: Langkah 2 Stack Vertical
-        let stackLabelDua = UIStackView(arrangedSubviews: [labelLangkahDua, labelDua])
-        stackLabelDua.axis = .vertical
-        stackLabelDua.distribution = .fill
+        let stackLabelDua = UIStackView(arrangedSubviews: [labelDua])
         stackLabelDua.backgroundColor = UIColor(red: 69.0/255, green: 173.0/255, blue: 226.0/225, alpha: 1)
         stackLabelDua.layer.cornerRadius = 20
         stackLabelDua.widthAnchor.constraint(equalToConstant: 177).isActive = true
@@ -158,23 +150,14 @@ class InstructionViewController: UIViewController, Storyboarded {
         stackInstruksiDua.frame = view.bounds
         
         //MARK: Langkah 3
-        let labelLangkahTiga = UILabel()
-        labelLangkahTiga.text = "Langkah"
-        labelLangkahTiga.textColor = .white
-        labelLangkahTiga.textAlignment = .center
-        labelLangkahTiga.font = UIFont.scriptFont(size: 30)
-        labelLangkahTiga.heightAnchor.constraint(equalToConstant: 70).isActive = true
-        
         let labelTiga = UILabel()
         labelTiga.text = "3"
         labelTiga.textColor = .white
         labelTiga.textAlignment = .center
-        labelTiga.font = UIFont.scriptFont(size: 60)
+        labelTiga.font = UIFont.scriptFont(size: 100)
         
         //MARK: Langkah 3 Stack Vertical
-        let stackLabelTiga = UIStackView(arrangedSubviews: [labelLangkahTiga, labelTiga])
-        stackLabelTiga.axis = .vertical
-        stackLabelTiga.distribution = .fill
+        let stackLabelTiga = UIStackView(arrangedSubviews: [labelTiga])
         stackLabelTiga.backgroundColor = UIColor(red: 69.0/255, green: 173.0/255, blue: 226.0/225, alpha: 1)
         stackLabelTiga.layer.cornerRadius = 20
         stackLabelTiga.widthAnchor.constraint(equalToConstant: 177).isActive = true
@@ -216,6 +199,7 @@ class InstructionViewController: UIViewController, Storyboarded {
         
         let agreeLabel = UILabel()
         agreeLabel.text = "Persiapan permainan untuk anak sudah siap!"
+        agreeLabel.textColor = .white
         agreeLabel.textAlignment = .left
         agreeLabel.font = UIFont.scriptFont(size: 25)
         
@@ -234,7 +218,7 @@ class InstructionViewController: UIViewController, Storyboarded {
         
         //MARK: Spacer
         let spacerOuterTop = UIView()
-        spacerOuterTop.heightAnchor.constraint(equalToConstant: 55).isActive = true
+        spacerOuterTop.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
         let spacerCheckbox = UIView()
         spacerCheckbox.heightAnchor.constraint(equalToConstant: 20).isActive = true
@@ -242,7 +226,7 @@ class InstructionViewController: UIViewController, Storyboarded {
         let spacerOuterBottom = UIView()
         
         //MARK: Instruksi all stack vertival
-        let stackAll = UIStackView(arrangedSubviews: [spacerOuterTop, labelHalaman, stackInstruksiSatu, stackInstruksiDua, stackInstruksiTiga, spacerCheckbox, stackCheckbox, spacerOuterBottom])
+        let stackAll = UIStackView(arrangedSubviews: [spacerOuterTop, stackTitle, stackInstruksiSatu, stackInstruksiDua, stackInstruksiTiga, spacerCheckbox, stackCheckbox, spacerOuterBottom])
         stackAll.axis = .vertical
         stackAll.spacing = 20
         stackAll.distribution = .fill
@@ -256,8 +240,8 @@ class InstructionViewController: UIViewController, Storyboarded {
         
         let stackOuterAll = UIStackView(arrangedSubviews: [spacerOuterLeft, stackAll, spacerOuterRight])
         stackOuterAll.axis = .horizontal
-        stackOuterAll.backgroundColor = UIColor(red: 253.0/255, green: 248.0/255, blue: 235.0/255, alpha: 1)
-        stackOuterAll.spacing = 0
+        //stackOuterAll.backgroundColor = UIColor(red: 253.0/255, green: 248.0/255, blue: 235.0/255, alpha: 1)
+        stackOuterAll.backgroundColor = .clear
         stackOuterAll.distribution = .fillProportionally
         stackOuterAll.frame = view.bounds
         
@@ -270,10 +254,10 @@ class InstructionViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         startStoryButton.isEnabled = false
+        view.addSubview(background)
         view.addSubview(instructionStackView)
         view.addSubview(homeButton)
         view.addSubview(startStoryButton)
-        view.addSubview(background)
         setUpAutoLayout()
         // Do any additional setup after loading the view.
     }
