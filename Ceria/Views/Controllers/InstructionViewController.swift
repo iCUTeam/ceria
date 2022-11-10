@@ -58,7 +58,8 @@ class InstructionViewController: UIViewController, Storyboarded {
         
         let stackLabelSatu = UIStackView(arrangedSubviews: [labelSatu])
         stackLabelSatu.backgroundColor = UIColor(red: 69.0/255, green: 173.0/255, blue: 226.0/225, alpha: 1)
-        stackLabelSatu.layer.cornerRadius = 20
+        stackLabelSatu.frame = CGRect(x: 0, y: 0, width: 200, height: 194)
+        stackLabelSatu.roundCornerView(corners: [.topLeft, .bottomLeft], radius: 20)
         stackLabelSatu.widthAnchor.constraint(equalToConstant: 177).isActive = true
         
         //MARK: Perintah 1
@@ -114,7 +115,8 @@ class InstructionViewController: UIViewController, Storyboarded {
         //MARK: Langkah 2 Stack Vertical
         let stackLabelDua = UIStackView(arrangedSubviews: [labelDua])
         stackLabelDua.backgroundColor = UIColor(red: 69.0/255, green: 173.0/255, blue: 226.0/225, alpha: 1)
-        stackLabelDua.layer.cornerRadius = 20
+        stackLabelDua.frame = CGRect(x: 0, y: 0, width: 200, height: 194)
+        stackLabelDua.roundCornerView(corners: [.topLeft, .bottomLeft], radius: 20)
         stackLabelDua.widthAnchor.constraint(equalToConstant: 177).isActive = true
         
         //MARK: Perintah 2
@@ -159,7 +161,8 @@ class InstructionViewController: UIViewController, Storyboarded {
         //MARK: Langkah 3 Stack Vertical
         let stackLabelTiga = UIStackView(arrangedSubviews: [labelTiga])
         stackLabelTiga.backgroundColor = UIColor(red: 69.0/255, green: 173.0/255, blue: 226.0/225, alpha: 1)
-        stackLabelTiga.layer.cornerRadius = 20
+        stackLabelTiga.frame = CGRect(x: 0, y: 0, width: 200, height: 194)
+        stackLabelTiga.roundCornerView(corners: [.topLeft, .bottomLeft], radius: 20)
         stackLabelTiga.widthAnchor.constraint(equalToConstant: 177).isActive = true
         
         //MARK: Perintah 3
