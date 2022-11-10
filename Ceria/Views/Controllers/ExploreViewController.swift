@@ -128,6 +128,9 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         
         arSCN.autoenablesDefaultLighting = true
         
+        hint2Button.isHidden = true
+        dialogueTextBox2.isHidden = true
+        
         //set primary clue data
 //        instructionViewPrimary.clueDescription.text = getDescClue(clueCode: 1)
 //        instructionViewPrimary.clueGreyBackView.layer.cornerRadius = 20
@@ -139,45 +142,75 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
 //        instructionViewSecondary.clueImage.image = UIImage(named: "blue-card")
         
         
-        if defaults.string(forKey: "userState") == "clear_story_1" {
-            Sound.play(file: "explore2-intro.m4a")
-            
-            hint = "explore2_hint.m4a"
-            hint2 = ""
-            
-            dialogueTextBox.dialogueLabel.text = "Cari kartu dengan gambar pulau di sekitarmu untuk membantu kapal berlabuh ke pulau yang tepat."
-            
-            let customButtonImage = UIImage(named:  "kartu_pulau")
-            let newimage = customButtonImage?.resizedImage(size: CGSize(width: 115, height: 150))
-            hintButton.setImage(newimage, for: .normal)
-            
-            hint2Button.isHidden = true
-            dialogueTextBox2.isHidden = true
-            
-        } else {
-            Sound.play(file: "tallu_explore3.m4a")
-            
-            hint = "explore3_hint.m4a"
-            hint2 = "explore3_collect_hint.m4a"
-            
-            dialogueTextBox.dialogueLabel.text = "Cari kartu dengan gambar kapal di sekitarmu untuk membantu Rua dan tuan puteri kembali ke kapal."
-            dialogueTextBox2.dialogueLabel.text = "Cari kartu bergambar wajah Rua sebelum cerita usai untuk mengambil hadiah dari Rua ya."
-            
-            let customButtonImage = UIImage(named:  "kartu_kapal")
-            let newimage = customButtonImage?.resizedImage(size: CGSize(width: 115, height: 150))
-            hintButton.setImage(newimage, for: .normal)
-            
-            let customButtonImage2 = UIImage(named:  "kartu_rua")
-            let newimage2 = customButtonImage2?.resizedImage(size: CGSize(width: 115, height: 150))
-            hint2Button.setImage(newimage2, for: .normal)
-            
-            hint2Button.isHidden = false
-            dialogueTextBox2.isHidden = false
-        }
-        
         if collectionViewModel.obtainedStatus.count == 0
         {
             collectionViewModel.initializeCollection()
+        }
+        
+        switch(defaults.string(forKey: "userState"))
+        {
+            //MARK: ganti aja klo user statenya beda ternyata
+            case "clear_story_1":
+            explorationModel.setCurrentName(name: "checkpoint_istana")
+            explorationModel.changeInteractionPerm()
+            //Input audio intro here
+            case "clear_story_2":
+            explorationModel.setCurrentName(name: "checkpoint_pulau")
+            explorationModel.changeInteractionPerm()
+            collectionViewModel.getCollection(card: "collection_lompo")
+            //Input audio intro here
+            case "clear_story_3":
+            explorationModel.setCurrentName(name: "checkpoint_kapal")
+            explorationModel.changeInteractionPerm()
+            collectionViewModel.getCollection(card: "collection_rua")
+            //Input audio intro here
+            case "clear_story_4":
+            explorationModel.setCurrentName(name: "checkpoint_dermaga")
+            explorationModel.changeInteractionPerm()
+            collectionViewModel.getCollection(card: "collection_tallu")
+            //Input audio intro here
+            default:
+            explorationModel.setCurrentName(name: "checkpoint_istana")
+            explorationModel.changeInteractionPerm()
+            //Input audio intro here
+        }
+        
+        explorationModel.getExploring()
+        
+        explorationModel.hintVoice.bind { voice in
+            self.hint = voice
+        }
+        
+        explorationModel.hintString.bind { hintString in
+            self.dialogueTextBox.dialogueLabel.text = hintString
+        }
+        
+        explorationModel.cardName.bind { cardName in
+            let customButtonImage = UIImage(named: cardName)
+            let newimage = customButtonImage?.resizedImage(size: CGSize(width: 115, height: 150))
+            self.hintButton.setImage(newimage, for: .normal)
+        }
+        
+        
+        if defaults.string(forKey: "userState") != "clear_story_1"
+        {
+            collectionViewModel.collectibleHint.bind { voice in
+                self.hint2 = voice
+            }
+            
+            collectionViewModel.collectibleHintString.bind { hintString in
+                self.dialogueTextBox2.dialogueLabel.text = hintString
+            }
+            
+            collectionViewModel.collectibleCard.bind { card_name in
+                let customButtonImage2 = UIImage(named:  card_name)
+                let newimage2 = customButtonImage2?.resizedImage(size: CGSize(width: 115, height: 150))
+                self.hint2Button.setImage(newimage2, for: .normal)
+            }
+            
+            hint2Button.isHidden = false
+            dialogueTextBox2.isHidden = false
+     
         }
     }
     
@@ -246,82 +279,122 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             {
                 
                 
-                if imageAnchor.referenceImage.name?.localizedStandardContains("checkpoint") == true{
+                self.explorationModel.cardName.bind { [weak self] card in
                     
-                    let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
-                    
-                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0)
-                    
-                    let planeNode = SCNNode(geometry: plane)
-                    
-                    planeNode.eulerAngles.x = -.pi / 2
-                    
-                    node.addChildNode(planeNode)
-                    
-                    explorationModel.currentName.value = imageAnchor.referenceImage.name ?? "checkpoint_istana"
-                    
-                    explorationModel.getExploring()
-                    
-                    if let checkPointScene = SCNScene(named: "Models.scnassets/\(explorationModel.cardName.value)") {
-
-                        if let checkPoint = checkPointScene.rootNode.childNodes.first {
-                            
-                            self.checkpointNode = checkPoint
-
-                            checkPoint.eulerAngles.x = .pi / 2
-                            
-                            checkPoint.eulerAngles.z = .pi / 2
-
-                            checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
-
-                            planeNode.addChildNode(checkPoint)
-                            
-                                Sound.play(file: "checkpoint_found.wav")
-                                Sound.play(file:"explore2_found.m4a")
+                    if imageAnchor.referenceImage.name == card
+                    {
                         
+                        let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
+                        
+                        plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0)
+                        
+                        let planeNode = SCNNode(geometry: plane)
+                        
+                        planeNode.eulerAngles.x = -.pi / 2
+                        
+                        node.addChildNode(planeNode)
+                        
+                        self?.explorationModel.cardModel.bind { [weak self] model in
+                            
+                            if let checkPointScene = SCNScene(named: "Models.scnassets/\(model)")
+                            {
+
+                                if let checkPoint = checkPointScene.rootNode.childNodes.first {
+                                    
+                                    self?.checkpointNode = checkPoint
+
+                                    checkPoint.eulerAngles.x = .pi / 2
+                                    
+                                    checkPoint.eulerAngles.z = .pi / 2
+
+                                    checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
+
+                                    planeNode.addChildNode(checkPoint)
+                                    
+                                    self?.explorationModel.canInteract.bind { canInteract in
+                                        if canInteract
+                                        {
+                                            Sound.play(file: "checkpoint_found.wav")
+                                            Sound.play(file: self?.explorationModel.hintVoice.value ?? "")
+                                        }
+                                    }
+                                    
+                                
+                                
+                                }
+                            }
                         }
+                       
                     }
                 }
-                
-                
-                if imageAnchor.referenceImage.name == "kartu_rua2" && self.defaults.string(forKey: "userState") == "clear_story_4" {
+              
+                self.collectionViewModel.collectibleCard.bind { card in
                     
-                    let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
-    
-                    plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
-    
-                    let planeNode = SCNNode(geometry: plane)
-    
-                    planeNode.eulerAngles.x = -.pi / 2
-    
-                    
-                
-    
-                    node.addChildNode(planeNode)
-    
-                    if let checkPointScene = SCNScene(named: "Models.scnassets/Treasure_chest.scn") {
-    
-                        if let checkPoint = checkPointScene.rootNode.childNodes.first {
+                    if imageAnchor.referenceImage.name == card
+                    {
                         
-                            
-                            checkPoint.eulerAngles.x = .pi / 2
-                            
-                            checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
-    
-                            planeNode.addChildNode(checkPoint)
-                            
-                            if self.isCollectibleFound == true {
-                                Sound.play(file: "checkpoint_found.wav")
-                                Sound.play(file:"explore3_collect_found.m4a")
+                        let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
+        
+                        plane.firstMaterial?.diffuse.contents = UIColor(white: 1.0, alpha: 0.5)
+        
+                        let planeNode = SCNNode(geometry: plane)
+        
+                        planeNode.eulerAngles.x = -.pi / 2
+        
+                        node.addChildNode(planeNode)
+                        
+                        self.collectionViewModel.isObtained.bind { obtained in
+                            if obtained
+                            {
+                                if let checkPointScene = SCNScene(named: "Models.scnassets/chest_open.scn")
+                                {
+                
+                                    if let checkPoint = checkPointScene.rootNode.childNodes.first {
+                                        
+                                        self.treasureNode = checkPoint
+                                        
+                                        checkPoint.eulerAngles.x = .pi / 2
+                                        
+                                        checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
+                
+                                        planeNode.addChildNode(checkPoint)
+                                        
+                                    }
+                                }
                             }
                             
+                            else
+                                
+                            {
+                                if let checkPointScene = SCNScene(named: "Models.scnassets/chest_open.scn")
+                                {
+                
+                                    if let checkPoint = checkPointScene.rootNode.childNodes.first {
+                                        
+                                        self.treasureNode = checkPoint
+                                        
+                                        checkPoint.eulerAngles.x = .pi / 2
+                                        
+                                        checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
+                
+                                        planeNode.addChildNode(checkPoint)
+                                        
+                                       
+                                        Sound.play(file: "checkpoint_found.wav")
+                                        self.collectionViewModel.collectibleHint.bind { sound in
+                                            Sound.play(file: "sound")
+                                        }
+                                        
+                                        
+                                    }
+                                }
+                            }
                         }
+                        
+        
+                      
                     }
                 }
-    
-                
-                
-                
                 
             }
         }
@@ -394,10 +467,8 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         ])
     }
     
-    private func setupPopUP(index: Int)
+    private func setupPopUP()
     {
-        
-            collectionViewModel.getCollection(index: index)
         
             collectionItem.isHidden = false
             closeButton.isHidden = false
@@ -424,7 +495,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         dialogueTextBox.isHidden.toggle()
         dialogueTextBox2.isHidden = true
         
-        collectionViewModel.obtainItem(index: 1)
+        collectionViewModel.obtainItem()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -432,58 +503,34 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         
         if (touch.view == self.arSCN)
         {
-            print("Is Touching")
             let viewTouchLocation:CGPoint = touch.location(in: arSCN)
             guard let result = arSCN.hitTest(viewTouchLocation, options: nil).first else {
                 return
             }
             
-            //pulau
-            if let planeNode = blueCheckPointNode, planeNode == result.node {
+            //checkpoint
+            if let planeNode = checkpointNode, planeNode == result.node {
                 Sound.play(file: "checkpoint_clicked.wav")
                 sleep(2)
                 coordinator?.toStory()
-                defaults.set("clear_explore_1", forKey: "userState")
                 
-                
+                explorationModel.nextState.bind { next in
+                    self.defaults.set(next, forKey: "userState")
+                }
             }
             
-            //kapal
-            if let planeNode = greenCheckPointNode, planeNode == result.node {
+            //collection
+            if let planeNode = treasureNode, planeNode == result.node {
                 Sound.play(file: "checkpoint_clicked.wav")
                 sleep(2)
-                coordinator?.toStory()
-                defaults.set("clear_explore_2", forKey: "userState")
                 
+                collectionViewModel.isObtained.bind { obtained in
+                    if !obtained
+                    {
+                        self.setupPopUP()
+                    }
+                }
                 
-                
-                
-            }
-            
-            if let planeNode = redCheckPointNode, planeNode == result.node {
-//                coordinator?.toStory()
-//                defaults.set("clear_explore_3", forKey: "userState")
-//                Sound.play(file: "checkpoint_found.m4a")
-            }
-            
-            if let planeNode = seraungNode, planeNode == result.node {
-                collectionViewModel.obtainItem(index: 0)
-                setupPopUP(index: 0)
-            }
-//
-            if let planeNode = tarumpahNode, planeNode == result.node {
-                Sound.play(file: "checkpoint_clicked.wav")
-                setupPopUP(index: 1)
-            }
-
-            if let planeNode = tinimiNode, planeNode == result.node {
-                collectionViewModel.obtainItem(index: 2)
-                setupPopUP(index: 2)
-            }
-
-            if let planeNode = lontongNode, planeNode == result.node {
-                collectionViewModel.obtainItem(index: 3)
-                setupPopUP(index: 3)
             }
 
         }

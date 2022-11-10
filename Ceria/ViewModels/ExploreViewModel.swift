@@ -19,6 +19,7 @@ final class ExploreViewModel
     var currentName: ObservableObject<String> = ObservableObject(value: "checkpoint_istana")
     var hintVoice: ObservableObject<String> = ObservableObject(value: "")
     var hintString: ObservableObject<String> = ObservableObject(value: "")
+    var nextState: ObservableObject<String> = ObservableObject(value: "")
     
     var cardArray: [Card] = []
     var feeder = CardFeeder()
@@ -38,8 +39,14 @@ final class ExploreViewModel
                 self.canInteract.value = defaults.bool(forKey: currentName.value)
                 self.hintVoice.value = card.hintVoice
                 self.hintString.value = card.hintString
+                self.nextState.value = card.nextState
             }
         }
+    }
+    
+    func setCurrentName(name: String)
+    {
+        self.currentName.value = name
     }
     
     func changeInteractionPerm()

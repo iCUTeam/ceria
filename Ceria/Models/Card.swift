@@ -14,6 +14,7 @@ struct Card: Codable
     let canInteract: Bool
     let hintVoice: String
     let hintString: String
+    let nextState: String
     
     enum CodingKeys: String, CodingKey
     {
@@ -22,5 +23,6 @@ struct Card: Codable
         case canInteract = "can_interact"
         case hintVoice = "hint_voice"
         case hintString = "hint_string"
+        case nextState = "next_state"
     }
 }

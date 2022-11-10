@@ -22,6 +22,8 @@ final class CollectionViewModel {
     var collectionArray: [Collection] = []
     var feeder = CollectionFeeder()
     
+    var currentIndex: Int = 0
+    
     var obtainedStatus: [Bool] = []
     
     let defaults = UserDefaults.standard
@@ -57,6 +59,7 @@ final class CollectionViewModel {
         self.collectibleHint.value = collectionArray[index].collectibleHint
         self.collectibleHintString.value = collectionArray[index].collectibleHintString
         self.isObtained.value = obtainedStatus[index]
+        self.currentIndex = index
     }
     
     func getCollection(card: String)
@@ -80,13 +83,16 @@ final class CollectionViewModel {
                 self.collectibleCard.value = collection.collectibleCard
                 self.collectibleHint.value = collection.collectibleHint
                 self.collectibleHintString.value = collection.collectibleHintString
+                self.currentIndex = collectionArray.firstIndex(where: { collection in
+                    collection.collectibleName == card
+                }) ?? 0
             }
         }
     }
     
-    func obtainItem(index: Int)
+    func obtainItem()
     {
-        obtainedStatus[index].toggle()
+        obtainedStatus[currentIndex].toggle()
         defaults.set(obtainedStatus, forKey: "collectiblesObtainedStatus")
     }
        
