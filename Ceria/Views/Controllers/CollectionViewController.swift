@@ -22,9 +22,6 @@ class CollectionViewController: UIViewController, Storyboarded {
         return scnView
     }()
     
-    var tarumpahLocked: SCNNode!
-    
-    var tarumpahUnlocked: SCNNode!
     
     private lazy var homeButton: MakeButton = {
         let button = MakeButton(image: "home.png", size: CGSize(width: 100, height: 100))
@@ -112,29 +109,35 @@ class CollectionViewController: UIViewController, Storyboarded {
             let result = hitResults.first
             if let node = result?.node
             {
-                
-                //MARK: Temporary Code
-                if node.name == "tarumpah_unlocked"
+                for x in 0..<4
                 {
-                    AudioSFXPlayer.shared.playCommonSFX()
-                    setupPopUP(index: 1, isUnlocked: true)
+                    if node.name == "\(x)-unlocked"
+                    {
+                        AudioSFXPlayer.shared.playCommonSFX()
+                        setupPopUP(index: x, isUnlocked: true)
+                        
+                        UIView.animate(withDuration: 2) {
+                            self.collectionItem.isHidden = false
+                            self.closeButton.isHidden = false
+                        }
+                        
+                        break
+                    }
                     
-                    UIView.animate(withDuration: 2) {
-                        self.collectionItem.isHidden = false
-                        self.closeButton.isHidden = false
+                    else if node.name == "\(x)-locked"
+                    {
+                        AudioSFXPlayer.shared.playCommonSFX()
+                        setupPopUP(index: x, isUnlocked: false)
+                        
+                        UIView.animate(withDuration: 2) {
+                            self.collectionItem.isHidden = false
+                            self.closeButton.isHidden = false
+                        }
+                        
+                        break
                     }
                 }
                 
-                else if node.name == "tarumpah_locked"
-                {
-                    AudioSFXPlayer.shared.playCommonSFX()
-                    setupPopUP(index: 1, isUnlocked: false)
-                    
-                    UIView.animate(withDuration: 2) {
-                        self.collectionItem.isHidden = false
-                        self.closeButton.isHidden = false
-                    }
-                }
                
             }
         }
@@ -168,37 +171,43 @@ class CollectionViewController: UIViewController, Storyboarded {
 //
 //
             case false:
+            viewModel.getCollection(index: index)
             
             collectionItem.itemName.text = "???"
             collectionItem.itemOrigin.text = "???"
             collectionItem.itemDesc.text = "\n\nIkuti cerita Tuappaka Sisarikbattang untuk menemukan benda tersembunyi ini ya."
 
-            //MARK: Temporary Code
-
-            collectionItem.setSCNView(scn: "Models.scnassets/tarumpah-shadow.scn")
+            viewModel.collectibleLocked.bind { [weak self] item in
+                self?.collectionItem.setSCNView(scn: "Models.scnassets/\(item)")
+            }
         }
       
     }
     
     func setupNode()
     {
-        tarumpahLocked = collectionSceneView.scene?.rootNode.childNode(withName: "tarumpah_locked", recursively: true)
-        tarumpahUnlocked = collectionSceneView.scene?.rootNode.childNode(withName: "tarumpah_unlocked", recursively: true)
+        var unlockedNodes: [SCNNode] = []
         
-        //MARK: Temporary Code
+        var lockedNodes: [SCNNode] = []
         
-        viewModel.getCollection(index: 1)
-        if viewModel.obtainedStatus[1]
+        for x in 0..<4
         {
-            tarumpahUnlocked.isHidden = false
-            tarumpahLocked.isHidden = true
-        }
-        
-        else
+            unlockedNodes.append((collectionSceneView.scene?.rootNode.childNode(withName: "\(x)-unlocked", recursively: true))!)
+            lockedNodes.append((collectionSceneView.scene?.rootNode.childNode(withName: "\(x)-locked", recursively: true))!)
             
-        {
-            tarumpahUnlocked.isHidden = true
-            tarumpahLocked.isHidden = false
+            viewModel.getCollection(index: x)
+            
+            if viewModel.obtainedStatus[x]
+            {
+                unlockedNodes[x].isHidden = false
+                lockedNodes[x].isHidden = true
+            }
+            
+            else
+            {
+                unlockedNodes[x].isHidden = true
+                lockedNodes[x].isHidden = false
+            }
         }
        
     }
