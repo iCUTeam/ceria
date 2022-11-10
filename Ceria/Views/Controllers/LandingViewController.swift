@@ -12,7 +12,7 @@ class LandingViewController: UIViewController, Storyboarded {
     private lazy var landingLogoImage: UIImageView = {
         let imageView = UIImageView()
         let firstImage = UIImage(named: "logo.png")
-        let newImage = firstImage?.resizedImage(size: CGSize(width: 785, height: 242))
+        let newImage = firstImage?.resizedImage(size: CGSize(width: 570, height: 330))
         imageView.image = newImage
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -107,7 +107,7 @@ class LandingViewController: UIViewController, Storyboarded {
         
         NSLayoutConstraint.activate([
             
-            landingLogoImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 66),
+            landingLogoImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
             landingLogoImage.centerXAnchor.constraint(equalToSystemSpacingAfter: view.centerXAnchor, multiplier: 1),
             
             landingButtonStackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
