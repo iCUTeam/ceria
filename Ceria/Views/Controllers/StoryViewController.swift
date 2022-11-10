@@ -83,6 +83,12 @@ class StoryViewController: UIViewController, Storyboarded {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        self.removeFromParent()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     private func setupBinders() {
         viewModel.storyDialogue.bind { [weak self] dialogue in
             self?.storyTextBox.dialogueLabel.text = dialogue

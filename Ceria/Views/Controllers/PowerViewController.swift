@@ -37,7 +37,7 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         canvas.translatesAutoresizingMaskIntoConstraints = false
         return canvas
     }()
-
+    
     private let canvasView: PKCanvasView =
     {
         let canvas = PKCanvasView()
@@ -81,19 +81,19 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         return button
     }()
     
-//    private lazy var ruaSilhouette: UIImageView = {
-//        let silhouette = UIImageView(frame: CGRect(x: 5, y: 1200, width: 150, height: 150))
-//        silhouette.image = UIImage(named: "rua_silhouette.png")
-//        silhouette.contentMode = .scaleAspectFit
-//        return silhouette
-//    }()
-//
-//    private lazy var ruaFace: UIImageView = {
-//        let face = UIImageView(frame: CGRect(x: 5, y: 1200, width: 150, height: 150))
-//        face.image = UIImage(named: "rua.png")
-//        face.contentMode = .scaleAspectFit
-//        return face
-//    }()
+    //    private lazy var ruaSilhouette: UIImageView = {
+    //        let silhouette = UIImageView(frame: CGRect(x: 5, y: 1200, width: 150, height: 150))
+    //        silhouette.image = UIImage(named: "rua_silhouette.png")
+    //        silhouette.contentMode = .scaleAspectFit
+    //        return silhouette
+    //    }()
+    //
+    //    private lazy var ruaFace: UIImageView = {
+    //        let face = UIImageView(frame: CGRect(x: 5, y: 1200, width: 150, height: 150))
+    //        face.image = UIImage(named: "rua.png")
+    //        face.contentMode = .scaleAspectFit
+    //        return face
+    //    }()
     
     
     let defaults = UserDefaults.standard
@@ -192,24 +192,30 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        self.removeFromParent()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     //MARK: Step Animation
     
     @objc
-        func homeTapped() {
-            coordinator?.toLanding()
-            AudioSFXPlayer.shared.playCommonSFX()
-            Sound.stopAll()
-            AudioBGMPlayer.shared.playStoryBGM1()
-        }
+    func homeTapped() {
+        coordinator?.toLanding()
+        AudioSFXPlayer.shared.playCommonSFX()
+        Sound.stopAll()
+        AudioBGMPlayer.shared.playStoryBGM1()
+    }
     
     @objc
-        func hintTapped() {
-            if isCharacterShown == false {
-                Sound.play(file: "power2_hint.m4a")
-            } else {
-                Sound.play(file: "")
-            }
+    func hintTapped() {
+        if isCharacterShown == false {
+            Sound.play(file: "power2_hint.m4a")
+        } else {
+            Sound.play(file: "")
         }
+    }
     
     @objc
     func nextTapped() {
@@ -344,7 +350,7 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
             Sound.play(file: "rua_power_success.m4a")
             
             
-//            AudioBGMPlayer.shared.playStoryBGM1()
+            //            AudioBGMPlayer.shared.playStoryBGM1()
             //MARK: In 3 second, move to next page
         } else {
             // If the stroke drawn was bad, remove it so the user can try again.
@@ -356,8 +362,8 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         startAnimation(afterDelay: PowerViewController.nextStrokeAnimationTime)
         isUpdatingDrawing = false
     }
-
-
     
-
+    
+    
+    
 }

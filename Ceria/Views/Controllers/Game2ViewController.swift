@@ -25,13 +25,13 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
     //collision bitmask
     let categoryObstacles = 2
     
-    var scene: SCNScene!
+    weak var scene: SCNScene!
     
     var gameStarted = false
     var lifeTotal: Int = 1000
     
-    var crashNode: SCNNode!
-    var selfieNode: SCNNode!
+    weak var crashNode: SCNNode!
+    weak var selfieNode: SCNNode!
     
     var initialPosition: SCNVector3!
     
@@ -51,7 +51,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
     var sounds:[String:SCNAudioSource] = [:]
     
     var ruaImage: UIImageView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupScene()
@@ -79,13 +79,19 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        self.removeFromParent()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @objc
-        func homeTapped() {
-            coordinator?.toLanding()
-            AudioSFXPlayer.shared.playCommonSFX()
-            Sound.stopAll()
-            AudioBGMPlayer.shared.stopGame2BGM()
-        }
+    func homeTapped() {
+        coordinator?.toLanding()
+        AudioSFXPlayer.shared.playCommonSFX()
+        Sound.stopAll()
+        AudioBGMPlayer.shared.stopGame2BGM()
+    }
     
     func setupOverlays() {
         
@@ -157,7 +163,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
     //manggil scene dan set delegate
     func setupScene()
     {
-//        sceneView = self.view as? SCNView
+        //        sceneView = self.view as? SCNView
         sceneView.delegate = self
         sceneView.allowsCameraControl = false
         scene = SCNScene(named: "Models.scnassets/Game2.scn")
@@ -173,7 +179,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         
         tapRecognizer.addTarget(self, action: #selector(Game2ViewController.startPauseGame(recognizer:)))
         sceneView.addGestureRecognizer(tapRecognizer)
-       
+        
     }
     
     //set nodes dari yang ada didalem scene yang dipanggil (cari node dengan nama yang diset recursively jadi bisa dpt lebih dari satu asal punya nama yang sama mereka termasuk satu node itu)
@@ -185,7 +191,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         selfieNode = scene.rootNode.childNode(withName: "selfie-stick", recursively: true)!
     }
     
-
+    
     //hide status bar wktu gameplay
     override var prefersStatusBarHidden: Bool{
         return true
@@ -244,7 +250,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                         self.count = 0
                     }
                     
-//
+                    //
                     //validasi kalau sudah sampe finish
                     if self.crashNode.position.x >= 280
                     {
@@ -262,15 +268,15 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                         
                         
                         //temporary alert
-//                        let alert = UIAlertController(title: "Kamu berhasil!", message: "Asik, kita sudah sampai ke sarang Garuda! Ayo selamatkan tuan putri!", preferredStyle: .alert)
-//
-//                        alert.addAction(UIAlertAction(title: "Asik", style: .default)
-//                        {_ in
-//                            alert.dismiss(animated: true)
-//
-//                        })
-//
-//                        self.present(alert, animated: true)
+                        //                        let alert = UIAlertController(title: "Kamu berhasil!", message: "Asik, kita sudah sampai ke sarang Garuda! Ayo selamatkan tuan putri!", preferredStyle: .alert)
+                        //
+                        //                        alert.addAction(UIAlertAction(title: "Asik", style: .default)
+                        //                        {_ in
+                        //                            alert.dismiss(animated: true)
+                        //
+                        //                        })
+                        //
+                        //                        self.present(alert, animated: true)
                         
                         
                     }
@@ -286,7 +292,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
             }
         }
         
-       
+        
     }
     
     //fungsi buat update view per frame
@@ -294,7 +300,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         let crash = crashNode.presentation
         let crashing = crash.position
         
-       
+        
         //make camera follow object based on targeted position per frame (using selfie node yang ditaruh dibawah object yang difollow)
         let targetPosition = SCNVector3(x: crashing.x - 3, y: crashing.y + 2, z:crashing.z )
         var cameraPosition = selfieNode.position
@@ -307,7 +313,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         
         cameraPosition = SCNVector3(x: xComponent, y: yComponent, z: zComponent)
         selfieNode.position = cameraPosition
-
+        
     }
     
     //fungsi buat deteksi collision (tabrakan) antar object
@@ -320,7 +326,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
             contactNode = contact.nodeA
         }
         
-    //detect klo yang dicollide itu obstacles bukan pake bit mask
+        //detect klo yang dicollide itu obstacles bukan pake bit mask
         if contactNode.physicsBody?.categoryBitMask == categoryObstacles {
             
             //cek dia immune atau engga sama kalau total lifenya masih ada or not
@@ -375,10 +381,10 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                     self.index = 0
                     self.count = 0
                 }
-               
+                
                 
             }
-          
+            
             
             //setelah 2 second, nodenya akan ditampilin lagi
             let waitAction = SCNAction.wait(duration: 1)
@@ -392,5 +398,5 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
             contactNode.runAction(actionSequence)
         }
     }
-
+    
 }

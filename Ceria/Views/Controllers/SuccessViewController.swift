@@ -9,7 +9,7 @@ import UIKit
 import SwiftySound
 
 class SuccessViewController: UIViewController, Storyboarded {
-
+    
     weak var coordinator: MainCoordinator?
     
     let defaults = UserDefaults.standard
@@ -71,13 +71,19 @@ class SuccessViewController: UIViewController, Storyboarded {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        self.removeFromParent()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @objc
-        func homeTapped() {
-            coordinator?.toLanding()
-            AudioSFXPlayer.shared.playCommonSFX()
-            AudioBGMPlayer.shared.stopSuccessBGM()
-            Sound.stopAll()
-        }
+    func homeTapped() {
+        coordinator?.toLanding()
+        AudioSFXPlayer.shared.playCommonSFX()
+        AudioBGMPlayer.shared.stopSuccessBGM()
+        Sound.stopAll()
+    }
     
     @objc
     func hintTapped() {
@@ -116,13 +122,13 @@ class SuccessViewController: UIViewController, Storyboarded {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

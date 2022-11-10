@@ -9,7 +9,7 @@ import UIKit
 import SwiftySound
 
 class ReflectionViewController: UIViewController, Storyboarded {
-
+    
     weak var coordinator: MainCoordinator?
     
     let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
@@ -54,7 +54,7 @@ class ReflectionViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         defaults.set(0, forKey: "promptIndex")
@@ -84,6 +84,12 @@ class ReflectionViewController: UIViewController, Storyboarded {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        self.removeFromParent()
+        self.dismiss(animated: true, completion: nil)
     }
     
     private func setupBinders() {
@@ -126,12 +132,12 @@ class ReflectionViewController: UIViewController, Storyboarded {
     }
     
     @objc
-        func homeTapped() {
-            coordinator?.toLanding()
-            AudioSFXPlayer.shared.playCommonSFX()
-            Sound.stopAll()
-            defaults.set(0, forKey: "promptIndex")
-        }
+    func homeTapped() {
+        coordinator?.toLanding()
+        AudioSFXPlayer.shared.playCommonSFX()
+        Sound.stopAll()
+        defaults.set(0, forKey: "promptIndex")
+    }
     
     @objc
     func nextTapped() {
@@ -216,13 +222,13 @@ class ReflectionViewController: UIViewController, Storyboarded {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
