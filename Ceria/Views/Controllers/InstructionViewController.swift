@@ -70,7 +70,7 @@ class InstructionViewController: UIViewController, Storyboarded {
         judulSatu.heightAnchor.constraint(equalToConstant: 70).isActive = true
         
         let perintahSatu = UILabel()
-        perintahSatu.text = "Permainan ini membutuhkan kartu fisik yang dicetak berwarna. Instruksi bermain dan kartu permainan bisa diunduh dengan menekan link di bawah ini."
+        perintahSatu.text = "Permainan ini membutuhkan kartu fisik yang dicetak berwarna. Instruksi bermain dan kartu permainan bisa diunduh dengan menekan ikon di bawah ini."
         perintahSatu.textAlignment = .left
         perintahSatu.font = UIFont.scriptFont(size: 20)
         perintahSatu.setLineHeight(lineHeight: 6)
@@ -78,11 +78,11 @@ class InstructionViewController: UIViewController, Storyboarded {
         perintahSatu.numberOfLines = 0
         
         let buttonInstruksi = UIButton()
-        buttonInstruksi.setTitle("Instruksi & Kartu Permainan", for: .normal)
         buttonInstruksi.setTitleColor(.black, for: .normal)
+        buttonInstruksi.setImage(UIImage(named: "icon_cards"), for: .normal)
         buttonInstruksi.titleLabel?.font = UIFont.scriptFont(size: 20)
         
-        let attributedString = NSAttributedString(string: NSLocalizedString("Instruksi & Kartu Permainan", comment: ""), attributes: [
+        let attributedString = NSAttributedString(string: NSLocalizedString(" Instruksi & Kartu Permainan", comment: ""), attributes: [
             NSAttributedString.Key.underlineStyle: 1.0
         ] )
         
