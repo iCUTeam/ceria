@@ -15,7 +15,7 @@ final class Checkbox: UIView {
        let imageView = UIImageView()
         imageView.isHidden = true
         imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = UIColor(red: 242.0/255, green: 205.0/255, blue: 93.0/255, alpha: 1)
+        imageView.tintColor = UIColor.black
         imageView.image = UIImage(systemName: "checkmark")
         return imageView
     }()
@@ -23,7 +23,7 @@ final class Checkbox: UIView {
     let boxView: UIView = {
        let boxView = UIView()
         boxView.layer.cornerRadius = 10
-        boxView.layer.backgroundColor = UIColor(red: 69.0/255, green: 173.0/255, blue: 226.0/225, alpha: 1).cgColor
+        boxView.layer.backgroundColor = UIColor.white.cgColor
         return boxView
     }()
     
