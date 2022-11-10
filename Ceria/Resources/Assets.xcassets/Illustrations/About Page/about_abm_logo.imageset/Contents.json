@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "abm_logo.png",
+      "filename" : "Logo ABM png Cut 1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "abm_logo@2x.png",
+      "filename" : "Logo ABM png Cut 1@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "abm_logo@3x.png",
+      "filename" : "Logo ABM png Cut 1@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
