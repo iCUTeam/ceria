@@ -366,7 +366,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                             else
                                 
                             {
-                                if let checkPointScene = SCNScene(named: "Models.scnassets/chest_open.scn")
+                                if let checkPointScene = SCNScene(named: "Models.scnassets/chest.scn")
                                 {
                 
                                     if let checkPoint = checkPointScene.rootNode.childNodes.first {
@@ -522,6 +522,9 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             //collection
             if let planeNode = treasureNode, planeNode == result.node {
                 Sound.play(file: "checkpoint_clicked.wav")
+                let animation = animationFromSceneNamed(path: "Models.scnassets/chest_animated.scn")
+                planeNode.addAnimation(animation!, forKey: "anim")
+                
                 sleep(2)
                 
                 collectionViewModel.isObtained.bind { obtained in
