@@ -58,6 +58,7 @@ class SuccessViewController: UIViewController, Storyboarded {
         setUpAutoLayout()
         
         AudioBGMPlayer.shared.playSuccessBGM()
+        Sound.stopAll()
         Sound.play(file: "rua_challenge_success.m4a")
         // Do any additional setup after loading the view.
     }
@@ -74,7 +75,8 @@ class SuccessViewController: UIViewController, Storyboarded {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
         self.removeFromParent()
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.presentedViewController?.dismiss(animated: false, completion: nil)
     }
     
     @objc
@@ -92,6 +94,7 @@ class SuccessViewController: UIViewController, Storyboarded {
     
     @objc
     func toStory() {
+        Sound.stopAll()
         coordinator?.toStory()
         self.defaults.set("clear_challenge_1", forKey: "userState")
         AudioSFXPlayer.shared.playCommonSFX()

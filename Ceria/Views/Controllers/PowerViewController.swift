@@ -146,7 +146,7 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         canvasView.delegate = self
         
         nextButton.isHidden = true
-        
+        Sound.stopAll()
         Sound.play(file: "tallu_power2.m4a")
         AudioBGMPlayer.shared.playStoryBGM1()
     }
@@ -195,7 +195,8 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
         self.removeFromParent()
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.presentedViewController?.dismiss(animated: false, completion: nil)
     }
     
     //MARK: Step Animation
@@ -219,7 +220,7 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
     
     @objc
     func nextTapped() {
-        
+        Sound.stopAll()
         coordinator?.toStory()
         defaults.set("clear_power_1", forKey: "userState")
     }

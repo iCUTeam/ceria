@@ -105,7 +105,8 @@ class CollectionViewController: UIViewController, Storyboarded {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
         self.removeFromParent()
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.presentedViewController?.dismiss(animated: false, completion: nil)
     }
     
     @objc func tapObject(recognizer: UITapGestureRecognizer)
@@ -147,7 +148,7 @@ class CollectionViewController: UIViewController, Storyboarded {
                     }
                 }
                 
-
+                
             }
         }
     }
@@ -180,14 +181,14 @@ class CollectionViewController: UIViewController, Storyboarded {
             //
             //
             
-            case false:
+        case false:
             viewModel.getCollection(index: index)
             
             collectionItem.itemName.text = "???"
             collectionItem.itemOrigin.text = "???"
             collectionItem.itemDesc.text = "\n\nIkuti cerita Tuappaka Sisarikbattang untuk menemukan benda tersembunyi ini ya."
-
-
+            
+            
             viewModel.collectibleLocked.bind { [weak self] item in
                 self?.collectionItem.setSCNView(scn: "Models.scnassets/\(item)")
             }
@@ -219,7 +220,7 @@ class CollectionViewController: UIViewController, Storyboarded {
                 unlockedNodes[x].isHidden = true
                 lockedNodes[x].isHidden = false
             }
-
+            
         }
         
     }

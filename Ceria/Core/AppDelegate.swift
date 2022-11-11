@@ -31,7 +31,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
         
+        extendAudioFileLimit()
+        
         return true
+    }
+    
+    func extendAudioFileLimit() {
+        var limit:rlimit = rlimit()
+        getrlimit(RLIMIT_NOFILE, &limit)
+        // change this value to suit your needs
+        limit.rlim_cur = 500
+        setrlimit(RLIMIT_NOFILE, &limit)
+        getrlimit(RLIMIT_NOFILE, &limit)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

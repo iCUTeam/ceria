@@ -69,6 +69,7 @@ class TutorialViewController: UIViewController, Storyboarded {
         setupBinders()
         
         viewModel.getTutorial()
+        Sound.stopAll()
         Sound.play(file: tutorialVoice)
         checkBGMChange()
         currentBGM = tutorialMusic
@@ -87,7 +88,8 @@ class TutorialViewController: UIViewController, Storyboarded {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
         self.removeFromParent()
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.presentedViewController?.dismiss(animated: false, completion: nil)
     }
     
     private func setupBinders() {
@@ -139,7 +141,7 @@ class TutorialViewController: UIViewController, Storyboarded {
     @objc
     func nextTapped() {
         
-        Sound.stop(file: tutorialVoice)
+        Sound.stopAll()
         viewModel.nextIndex()
         checkBGMChange()
         AudioSFXPlayer.shared.playCommonSFX()
@@ -150,7 +152,7 @@ class TutorialViewController: UIViewController, Storyboarded {
     @objc
     func previousTapped() {
         
-        Sound.stop(file: tutorialVoice)
+        Sound.stopAll()
         viewModel.previousIndex()
         checkBGMChange()
         AudioSFXPlayer.shared.playBackSFX()

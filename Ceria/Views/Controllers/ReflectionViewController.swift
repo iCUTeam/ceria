@@ -72,6 +72,7 @@ class ReflectionViewController: UIViewController, Storyboarded {
         setupBinders()
         
         viewModel.getPrompt()
+        Sound.stopAll()
         Sound.play(file: promptVoice)
         checkBGMChange()
         currentBGM = promptMusic
@@ -89,7 +90,8 @@ class ReflectionViewController: UIViewController, Storyboarded {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
         self.removeFromParent()
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.presentedViewController?.dismiss(animated: false, completion: nil)
     }
     
     private func setupBinders() {
@@ -142,7 +144,7 @@ class ReflectionViewController: UIViewController, Storyboarded {
     @objc
     func nextTapped() {
         
-        Sound.stop(file: promptVoice)
+        Sound.stopAll()
         viewModel.nextIndex()
         checkBGMChange()
         AudioSFXPlayer.shared.playCommonSFX()
@@ -153,7 +155,7 @@ class ReflectionViewController: UIViewController, Storyboarded {
     @objc
     func previousTapped() {
         
-        Sound.stop(file: promptVoice)
+        Sound.stopAll()
         viewModel.previousIndex()
         checkBGMChange()
         AudioSFXPlayer.shared.playBackSFX()
