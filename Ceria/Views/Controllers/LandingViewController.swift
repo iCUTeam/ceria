@@ -26,7 +26,7 @@ class LandingViewController: UIViewController, Storyboarded {
         button.addTarget(self, action: #selector(collectionTapped), for: .touchUpInside)
         return button
     }()
-
+    
     private lazy var aboutButton: MakeButton = {
         let button = MakeButton(image: "about.png", size: CGSize(width: 100, height: 100))
         button.addTarget(self, action: #selector(aboutTapped), for: .touchUpInside)
@@ -75,30 +75,37 @@ class LandingViewController: UIViewController, Storyboarded {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    @objc
-        func collectionTapped() {
-            coordinator?.tapCollection()
-            AudioSFXPlayer.shared.playCommonSFX()
-        }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        self.removeFromParent()
+        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.presentedViewController?.dismiss(animated: false, completion: nil)
+    }
     
     @objc
-        func aboutTapped() {
-            coordinator?.tapAbout()
-            AudioSFXPlayer.shared.playCommonSFX()
-        }
+    func collectionTapped() {
+        coordinator?.tapCollection()
+        AudioSFXPlayer.shared.playCommonSFX()
+    }
     
     @objc
-        func playTapped() {
-            coordinator?.tapPlay()
-            AudioSFXPlayer.shared.playCommonSFX()
-        }
+    func aboutTapped() {
+        coordinator?.tapAbout()
+        AudioSFXPlayer.shared.playCommonSFX()
+    }
+    
+    @objc
+    func playTapped() {
+        coordinator?.tapPlay()
+        AudioSFXPlayer.shared.playCommonSFX()
+    }
     
     func setUpAutoLayout() {
         
         let screenSize: CGRect = UIScreen.main.bounds
         let screenWidth = screenSize.width
         let constant: CGFloat
-       
+        
         if screenWidth == 834.0 {
             constant = 250
         } else {
@@ -121,16 +128,16 @@ class LandingViewController: UIViewController, Storyboarded {
             landingTextView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: constant),
         ])
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 

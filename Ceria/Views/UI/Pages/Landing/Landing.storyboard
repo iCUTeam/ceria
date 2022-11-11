@@ -719,7 +719,7 @@
                                     <action selector="showedPressed:" destination="vBz-OZ-fS4" eventType="touchUpInside" id="JjC-0h-KRa"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfL-pH-0EG">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfL-pH-0EG">
                                 <rect key="frame" x="614" y="74" width="170" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RRI-gZ-2UZ"/>

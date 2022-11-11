@@ -8,7 +8,7 @@
 import UIKit
 
 class InstructionViewController: UIViewController, Storyboarded {
-
+    
     weak var coordinator: MainCoordinator?
     private let checkbox = Checkbox()
     
@@ -31,7 +31,7 @@ class InstructionViewController: UIViewController, Storyboarded {
         imageView.frame = UIScreen.main.bounds
         return imageView
     }()
-        
+    
     private lazy var instructionStackView: UIStackView = {
         
         //MARK: Persiapan Bermain
@@ -274,35 +274,42 @@ class InstructionViewController: UIViewController, Storyboarded {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    @objc
-        func homeTapped() {
-            coordinator?.toLanding()
-            AudioSFXPlayer.shared.playCommonSFX()
-        }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        self.removeFromParent()
+        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.presentedViewController?.dismiss(animated: false, completion: nil)
+    }
     
     @objc
-        func startStoryTapped() {
-            let state = defaults.string(forKey: "userState")
-            switch state {
-            case "clear_story_1":
-                coordinator?.toExplore()
-                sleep(3)
-            case "clear_story_2":
-                coordinator?.toPower()
-            case "clear_story_3":
-                coordinator?.toTutorial()
-            case "clear_story_4":
-                coordinator?.toExplore()
-                sleep(3)
-            case "cleared":
-                coordinator?.toReflection()
-            default:
-                coordinator?.toStory()
-            }
-            
-            AudioSFXPlayer.shared.playCommonSFX()
-            AudioBGMPlayer.shared.stopLanding()
+    func homeTapped() {
+        coordinator?.toLanding()
+        AudioSFXPlayer.shared.playCommonSFX()
+    }
+    
+    @objc
+    func startStoryTapped() {
+        let state = defaults.string(forKey: "userState")
+        switch state {
+        case "clear_story_1":
+            coordinator?.toExplore()
+            sleep(3)
+        case "clear_story_2":
+            coordinator?.toPower()
+        case "clear_story_3":
+            coordinator?.toTutorial()
+        case "clear_story_4":
+            coordinator?.toExplore()
+            sleep(3)
+        case "cleared":
+            coordinator?.toReflection()
+        default:
+            coordinator?.toStory()
         }
+        
+        AudioSFXPlayer.shared.playCommonSFX()
+        AudioBGMPlayer.shared.stopLanding()
+    }
     
     @objc
     func instructionClicked(_ sender: UIButton) {
@@ -335,7 +342,7 @@ class InstructionViewController: UIViewController, Storyboarded {
         let screenSize: CGRect = UIScreen.main.bounds
         let screenWidth = screenSize.width
         let constant: CGFloat
-       
+        
         if screenWidth == 834.0 {
             constant = 500
         } else {
@@ -352,15 +359,15 @@ class InstructionViewController: UIViewController, Storyboarded {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 

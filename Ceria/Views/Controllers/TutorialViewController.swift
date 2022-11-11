@@ -9,7 +9,7 @@ import UIKit
 import SwiftySound
 
 class TutorialViewController: UIViewController, Storyboarded {
-
+    
     weak var coordinator: MainCoordinator?
     
     let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
@@ -54,7 +54,7 @@ class TutorialViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         backgroundImage.contentMode = .scaleToFill
         view.insertSubview(backgroundImage, at: 0)
@@ -69,6 +69,7 @@ class TutorialViewController: UIViewController, Storyboarded {
         setupBinders()
         
         viewModel.getTutorial()
+        Sound.stopAll()
         Sound.play(file: tutorialVoice)
         checkBGMChange()
         currentBGM = tutorialMusic
@@ -82,6 +83,13 @@ class TutorialViewController: UIViewController, Storyboarded {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        self.removeFromParent()
+        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.presentedViewController?.dismiss(animated: false, completion: nil)
     }
     
     private func setupBinders() {
@@ -124,16 +132,16 @@ class TutorialViewController: UIViewController, Storyboarded {
     }
     
     @objc
-        func homeTapped() {
-            coordinator?.toLanding()
-            AudioSFXPlayer.shared.playCommonSFX()
-            Sound.stopAll()
-        }
+    func homeTapped() {
+        coordinator?.toLanding()
+        AudioSFXPlayer.shared.playCommonSFX()
+        Sound.stopAll()
+    }
     
     @objc
     func nextTapped() {
         
-        Sound.stop(file: tutorialVoice)
+        Sound.stopAll()
         viewModel.nextIndex()
         checkBGMChange()
         AudioSFXPlayer.shared.playCommonSFX()
@@ -144,7 +152,7 @@ class TutorialViewController: UIViewController, Storyboarded {
     @objc
     func previousTapped() {
         
-        Sound.stop(file: tutorialVoice)
+        Sound.stopAll()
         viewModel.previousIndex()
         checkBGMChange()
         AudioSFXPlayer.shared.playBackSFX()
@@ -220,13 +228,13 @@ class TutorialViewController: UIViewController, Storyboarded {
         ])
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

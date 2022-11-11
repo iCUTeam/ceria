@@ -9,7 +9,7 @@ import UIKit
 import SwiftySound
 
 class SuccessViewController: UIViewController, Storyboarded {
-
+    
     weak var coordinator: MainCoordinator?
     
     let defaults = UserDefaults.standard
@@ -58,6 +58,7 @@ class SuccessViewController: UIViewController, Storyboarded {
         setUpAutoLayout()
         
         AudioBGMPlayer.shared.playSuccessBGM()
+        Sound.stopAll()
         Sound.play(file: "rua_challenge_success.m4a")
         // Do any additional setup after loading the view.
     }
@@ -71,13 +72,20 @@ class SuccessViewController: UIViewController, Storyboarded {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        self.removeFromParent()
+        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.presentedViewController?.dismiss(animated: false, completion: nil)
+    }
+    
     @objc
-        func homeTapped() {
-            coordinator?.toLanding()
-            AudioSFXPlayer.shared.playCommonSFX()
-            AudioBGMPlayer.shared.stopSuccessBGM()
-            Sound.stopAll()
-        }
+    func homeTapped() {
+        coordinator?.toLanding()
+        AudioSFXPlayer.shared.playCommonSFX()
+        AudioBGMPlayer.shared.stopSuccessBGM()
+        Sound.stopAll()
+    }
     
     @objc
     func hintTapped() {
@@ -86,6 +94,7 @@ class SuccessViewController: UIViewController, Storyboarded {
     
     @objc
     func toStory() {
+        Sound.stopAll()
         coordinator?.toStory()
         self.defaults.set("clear_challenge_1", forKey: "userState")
         AudioSFXPlayer.shared.playCommonSFX()
@@ -116,13 +125,13 @@ class SuccessViewController: UIViewController, Storyboarded {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -22,6 +22,9 @@ class CollectionViewController: UIViewController, Storyboarded {
         return scnView
     }()
     
+    weak var tarumpahLocked: SCNNode!
+    
+    weak var tarumpahUnlocked: SCNNode!
     
     private lazy var homeButton: MakeButton = {
         let button = MakeButton(image: "home.png", size: CGSize(width: 100, height: 100))
@@ -69,12 +72,12 @@ class CollectionViewController: UIViewController, Storyboarded {
             w = 700
             h = 1000
         }
-    
+        
         collectionItem = CollectionItem(frame: CGRect(x: x, y: y, width: w, height: h))
         collectionItem.roundCornerView(corners: .allCorners, radius: 30)
         view.addSubview(collectionItem)
         view.addSubview(homeButton)
-    
+        
         view.addSubview(closeButton)
         
         collectionItem.isHidden = true
@@ -97,6 +100,13 @@ class CollectionViewController: UIViewController, Storyboarded {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionSceneView.frame = view.bounds
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        self.removeFromParent()
+        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.presentedViewController?.dismiss(animated: false, completion: nil)
     }
     
     @objc func tapObject(recognizer: UITapGestureRecognizer)
@@ -138,7 +148,7 @@ class CollectionViewController: UIViewController, Storyboarded {
                     }
                 }
                 
-               
+                
             }
         }
     }
@@ -148,7 +158,7 @@ class CollectionViewController: UIViewController, Storyboarded {
         
         switch(isUnlocked)
         {
-            case true:
+        case true:
             viewModel.getCollection(index: index)
             
             viewModel.collectibleName.bind { [weak self] name in
@@ -168,20 +178,22 @@ class CollectionViewController: UIViewController, Storyboarded {
                 self?.collectionItem.setSCNView(scn: "Models.scnassets/\(item)")
             }
             
-//
-//
-            case false:
+            //
+            //
+            
+        case false:
             viewModel.getCollection(index: index)
             
             collectionItem.itemName.text = "???"
             collectionItem.itemOrigin.text = "???"
             collectionItem.itemDesc.text = "\n\nIkuti cerita Tuappaka Sisarikbattang untuk menemukan benda tersembunyi ini ya."
-
+            
+            
             viewModel.collectibleLocked.bind { [weak self] item in
                 self?.collectionItem.setSCNView(scn: "Models.scnassets/\(item)")
             }
         }
-      
+        
     }
     
     func setupNode()
@@ -208,8 +220,9 @@ class CollectionViewController: UIViewController, Storyboarded {
                 unlockedNodes[x].isHidden = true
                 lockedNodes[x].isHidden = false
             }
+            
         }
-       
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -222,10 +235,10 @@ class CollectionViewController: UIViewController, Storyboarded {
     }
     
     @objc
-        func homeTapped() {
-            coordinator?.toLanding()
-            AudioSFXPlayer.shared.playCommonSFX()
-        }
+    func homeTapped() {
+        coordinator?.toLanding()
+        AudioSFXPlayer.shared.playCommonSFX()
+    }
     
     @objc func closeTapped()
     {
@@ -261,6 +274,6 @@ class CollectionViewController: UIViewController, Storyboarded {
         ])
     }
     
-  
-
+    
+    
 }
