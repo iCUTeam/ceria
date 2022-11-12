@@ -231,7 +231,27 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                 DispatchQueue.main.async {
                     self.motion.getAccelerometerData{ (x, y, z) in
                         
-                        self.crashNode.position += SCNVector3(x: self.accelerationData[self.index], y: 0, z: x * 0.50)
+                        if self.crashNode.position.z > -12 && self.crashNode.position.z < 12
+                        {
+                            self.crashNode.position += SCNVector3(x: self.accelerationData[self.index], y: 0, z: x * 0.50)
+                        }
+                        
+                        else if self.crashNode.position.z <= -12 && x > 0
+                        {
+                            self.crashNode.position += SCNVector3(x: self.accelerationData[self.index], y: 0, z: x * 0.50)
+                        }
+                        
+                        else if self.crashNode.position.z >= 12 && x < 0
+                        {
+                            self.crashNode.position += SCNVector3(x: self.accelerationData[self.index], y: 0, z: x * 0.50)
+                        }
+                        
+                        else
+                            
+                        {
+                            self.crashNode.position += SCNVector3(x: self.accelerationData[self.index], y: 0, z: 0)
+                        }
+                       
                         
                     }
                     
@@ -253,7 +273,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                     
                     //
                     //validasi kalau sudah sampe finish
-                    if self.crashNode.position.x >= 280
+                    if self.crashNode.position.x >= 280 && self.crashNode.position.y <= 6 && self.crashNode.position.y >= -6
                     {
                         
                         Sound.play(file: "finish.wav")
@@ -333,6 +353,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
             //cek dia immune atau engga sama kalau total lifenya masih ada or not
             if lifeTotal > 0 && !immune
             {
+                print("crash")
                 //kalau nabrak nodenya kita hide dan nyawa berkurang
                 contactNode.isHidden = true
                 lifeTotal -= 200
