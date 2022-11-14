@@ -203,7 +203,7 @@ class TutorialViewController: UIViewController, Storyboarded {
         let screenWidth: CGFloat = screenSize.width
         let constant: CGFloat
         
-        if screenWidth == 834.0 {
+        if screenWidth <= 834.0 {
             constant = 200
         } else {
             constant = 100

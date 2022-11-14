@@ -7,12 +7,15 @@
 
 import UIKit
 import SwiftySound
+import AVFoundation
 
-class StoryViewController: UIViewController, Storyboarded {
+class StoryViewController: UIViewController, AVAudioPlayerDelegate, Storyboarded {
     
     weak var coordinator: MainCoordinator?
     
     let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+    var storyTextLine1 = 0
+    var storyTextLine2 = 0
     var storyVoice = ""
     var storyMusic = ""
     var actionButtonSFX = ""
@@ -20,6 +23,7 @@ class StoryViewController: UIViewController, Storyboarded {
     var currentBGM = ""
     var currentIndex = 0
     let defaults = UserDefaults.standard
+    var voicePlayer: AVAudioPlayer = AVAudioPlayer()
     
     private lazy var homeButton: MakeButton = {
         let button = MakeButton(image: "home.png", size: CGSize(width: 100, height: 100))
@@ -46,7 +50,7 @@ class StoryViewController: UIViewController, Storyboarded {
     }()
     
     private lazy var storyTextBox: StoryView = {
-        let dialogue = StoryView(content: "Pada suatu ketika, hiduplah seorang kaya dan keempat orang anaknya. Anak pertama bernama Lompo, anak kedua bernama Rua, anak ketiga bernama Tallu, dan anak keempat bernama Bungko. Keempat anak tersebut lalu ditugaskan oleh sang ayah untuk menimba ilmu seorang diri ke berbagai penjuru negeri dan segera setelah mendapatkan kemampuan masing-masing, keempat anak tersebut kembali lagi kepada sang ayah.")
+        let dialogue = StoryView(content: "Pada suatu ketika di sebuah kerajaan di Sulawesi Selatan, hiduplah seorang saudagar yang kaya dengan keempat orang anaknya.")
         return dialogue
     }()
     
@@ -69,10 +73,14 @@ class StoryViewController: UIViewController, Storyboarded {
         setupBinders()
         
         viewModel.loadStory()
+        
         Sound.stopAll()
-        Sound.play(file: storyVoice)
+        checkVoiceChange()
+        voicePlayer.play()
         checkBGMChange()
         currentBGM = storyMusic
+        disablingNextButton()
+        disablingActionButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,6 +103,15 @@ class StoryViewController: UIViewController, Storyboarded {
         viewModel.storyDialogue.bind { [weak self] dialogue in
             self?.storyTextBox.dialogueLabel.text = dialogue
         }
+        
+        viewModel.storyTextLine1.bind { [weak self] line1 in
+            self?.storyTextLine1 = line1
+        }
+        
+        viewModel.storyTextLine2.bind { [weak self] line2 in
+            self?.storyTextLine2 = line2
+        }
+        
         viewModel.storyImage.bind { [weak self] image in
             self?.backgroundImage.image = UIImage(named: image)
         }
@@ -134,57 +151,81 @@ class StoryViewController: UIViewController, Storyboarded {
     func homeTapped() {
         coordinator?.toLanding()
         AudioSFXPlayer.shared.playCommonSFX()
-        Sound.stopAll()
+        voicePlayer.stop()
         AudioBGMPlayer.shared.stopStoryBGM()
     }
     
     @objc
     func nextTapped() {
-        
-        Sound.stopAll()
         viewModel.nextIndex()
         checkBGMChange()
+        checkTextHeightChange()
         AudioSFXPlayer.shared.playCommonSFX()
         checkActionButtonChange()
-        Sound.play(file: storyVoice)
+        checkVoiceChange()
+        voicePlayer.play()
+        disablingNextButton()
+        disablingActionButton()
     }
     
     @objc
     func previousTapped() {
-        
-        Sound.stopAll()
         viewModel.previousIndex()
         checkBGMChange()
+        checkTextHeightChange()
         AudioSFXPlayer.shared.playBackSFX()
         checkActionButtonChange()
-        Sound.play(file: storyVoice)
+        checkVoiceChange()
+        voicePlayer.play()
+        disablingNextButton()
+        disablingActionButton()
     }
     
     @objc
     func actionTapped() {
-        Sound.stopAll()
+        voicePlayer.stop()
         AudioBGMPlayer.shared.stopStoryBGM()
         Sound.play(file: actionButtonSFX)
         
         switch actionButtonType {
-        case "explore2.png":
+        case "explore1.png":
             saveAndNextIndex()
             defaults.set("clear_story_1", forKey: "userState")
             coordinator?.toExplore()
             sleep(3)
-        case "power2.png":
+        case "power1.png":
             saveAndNextIndex()
             defaults.set("clear_story_2", forKey: "userState")
             coordinator?.toPower()
             sleep(5)
-        case "game2.png":
+        case "explore2.png":
             saveAndNextIndex()
             defaults.set("clear_story_3", forKey: "userState")
-            coordinator?.toTutorial()
+            coordinator?.toExplore()
+            sleep(3)
+        case "power2.png":
+            saveAndNextIndex()
+            defaults.set("clear_story_4", forKey: "userState")
+            coordinator?.toPower()
             sleep(3)
         case "explore3.png":
             saveAndNextIndex()
-            defaults.set("clear_story_4", forKey: "userState")
+            defaults.set("clear_story_5", forKey: "userState")
+            coordinator?.toExplore()
+            sleep(3)
+        case "power3.png":
+            saveAndNextIndex()
+            defaults.set("clear_story_6", forKey: "userState")
+            coordinator?.toPower()
+            sleep(3)
+        case "power4.png":
+            saveAndNextIndex()
+            defaults.set("clear_story_7", forKey: "userState")
+            coordinator?.toPower()
+            sleep(3)
+        case "explore4.png":
+            saveAndNextIndex()
+            defaults.set("clear_story_8", forKey: "userState")
             coordinator?.toExplore()
             sleep(3)
         case "reflection.png":
@@ -201,6 +242,38 @@ class StoryViewController: UIViewController, Storyboarded {
     func saveAndNextIndex() {
         viewModel.nextIndex()
         viewModel.saveIndex()
+    }
+    
+    func disablingNextButton() {
+        if defaults.bool(forKey: "disableSkip") == true {
+            nextButton.isEnabled = false
+        }
+    }
+    
+    func disablingActionButton() {
+        if defaults.bool(forKey: "disableSkip") == true {
+            actionButton.isEnabled = false
+        }
+    }
+    
+    func checkVoiceChange() {
+        do{
+            let audioName = storyVoice.components(separatedBy: ".")[0]
+            let audioPath = Bundle.main.path(forResource: audioName, ofType: "m4a")
+            voicePlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: audioPath!))
+            voicePlayer.prepareToPlay()
+            voicePlayer.delegate = self
+        }
+        catch{
+            print(error)
+        }
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool){
+        if flag == true && defaults.bool(forKey: "disableSkip") == true {
+            nextButton.isEnabled.toggle()
+            actionButton.isEnabled.toggle()
+        }
     }
     
     func checkBGMChange() {
@@ -227,6 +300,43 @@ class StoryViewController: UIViewController, Storyboarded {
         let customButtonImage = UIImage(named: actionButtonType)
         let newimage = customButtonImage?.resizedImage(size: CGSize(width: 267, height: 76.35))
         actionButton.setImage(newimage, for: .normal)
+    }
+    
+    func checkTextHeightChange() {
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        var boxHeight: CGFloat = 0
+        
+        if screenWidth == 834.0 {
+            switch storyTextLine1 {
+            case 1:
+                boxHeight = 60
+            case 2:
+                boxHeight = 100
+            case 3:
+                boxHeight = 120
+            case 4:
+                boxHeight = 160
+            default:
+                print("they are not this long!")
+            }
+        } else {
+            switch storyTextLine2 {
+            case 1:
+                boxHeight = 60
+            case 2:
+                boxHeight = 100
+            case 3:
+                boxHeight = 130
+            case 4:
+                boxHeight = 180
+            default:
+                print("they are not this long!")
+            }
+        }
+        
+        storyTextBox.dialogueTextFrame.frame.size.height = boxHeight
+        storyTextBox.dialogueTextFrame.roundCornerView(corners: .allCorners, radius: 25)
     }
     
     func setUpAutoLayout() {

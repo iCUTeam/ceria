@@ -15,16 +15,12 @@ class CollectionViewController: UIViewController, Storyboarded {
     private let collectionSceneView: SCNView =
     {
         let scnView = SCNView()
-        let scene = SCNScene(named: "Models.scnassets/CollectionScene.scn")
+        let scene = SCNScene(named: "Models.scnassets/Collection/CollectionScene.scn")
         scnView.allowsCameraControl = false
         scnView.scene = scene
         
         return scnView
     }()
-    
-    weak var tarumpahLocked: SCNNode!
-    
-    weak var tarumpahUnlocked: SCNNode!
     
     private lazy var homeButton: MakeButton = {
         let button = MakeButton(image: "home.png", size: CGSize(width: 100, height: 100))
@@ -61,7 +57,7 @@ class CollectionViewController: UIViewController, Storyboarded {
         let w: CGFloat
         let h: CGFloat
         
-        if screenWidth == 834.0 {
+        if screenWidth <= 834.0 {
             x = 65
             y = 150
             w = 700
@@ -175,11 +171,8 @@ class CollectionViewController: UIViewController, Storyboarded {
             }
             
             viewModel.collectibleItem.bind { [weak self] item in
-                self?.collectionItem.setSCNView(scn: "Models.scnassets/\(item)")
+                self?.collectionItem.setSCNView(scn: "Models.scnassets/Collection/\(item)")
             }
-            
-            //
-            //
             
         case false:
             viewModel.getCollection(index: index)
@@ -190,7 +183,7 @@ class CollectionViewController: UIViewController, Storyboarded {
             
             
             viewModel.collectibleLocked.bind { [weak self] item in
-                self?.collectionItem.setSCNView(scn: "Models.scnassets/\(item)")
+                self?.collectionItem.setSCNView(scn: "Models.scnassets/Collection/\(item)")
             }
         }
         

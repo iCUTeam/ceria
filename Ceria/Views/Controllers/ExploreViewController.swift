@@ -444,7 +444,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         let constant: CGFloat
         let constant2: CGFloat
         
-        if screenWidth == 834.0 {
+        if screenWidth <= 834.0 {
             constant = 100
             constant2 = 700
         } else {

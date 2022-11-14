@@ -11,6 +11,8 @@ class InstructionViewController: UIViewController, Storyboarded {
     
     weak var coordinator: MainCoordinator?
     private let checkbox = Checkbox()
+    private let checkboxVoice = Checkbox()
+    var isSkipDisabled = false
     
     private lazy var homeButton: MakeButton = {
         let button = MakeButton(image: "home.png", size: CGSize(width: 100, height: 100))
@@ -37,6 +39,8 @@ class InstructionViewController: UIViewController, Storyboarded {
         //MARK: Persiapan Bermain
         let titleHalaman = UIImage(named: "instruction_title")?.resizedImage(size: CGSize(width: 635, height: 85))
         let titleImageView = UIImageView(image: titleHalaman!)
+        titleImageView.heightAnchor.constraint(equalToConstant: 85).isActive = true
+        titleImageView.contentMode = .scaleAspectFit
         
         let labelHalaman = UILabel()
         labelHalaman.text = "oleh orang tua"
@@ -204,7 +208,7 @@ class InstructionViewController: UIViewController, Storyboarded {
         agreeLabel.text = "Persiapan permainan untuk anak sudah siap!"
         agreeLabel.textColor = .white
         agreeLabel.textAlignment = .left
-        agreeLabel.font = UIFont.scriptFont(size: 25)
+        agreeLabel.font = UIFont.scriptFont(size: 20)
         
         //MARK: Clickable UI agree
         checkbox.isUserInteractionEnabled = true
@@ -216,20 +220,39 @@ class InstructionViewController: UIViewController, Storyboarded {
         stackCheckbox.axis = .horizontal
         stackCheckbox.spacing = 20
         stackCheckbox.distribution = .fill
-        stackCheckbox.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        stackCheckbox.heightAnchor.constraint(equalToConstant: 30).isActive = true
         stackCheckbox.frame = view.bounds
+        
+        //MARK: Voice Checkbox
+        checkboxVoice.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        let agreeLabelVoice = UILabel()
+        agreeLabelVoice.text = "(Opsional) Saya ingin anak saya mendengarkan setiap narasi hingga tuntas."
+        agreeLabelVoice.textColor = .white
+        agreeLabelVoice.textAlignment = .left
+        agreeLabelVoice.font = UIFont.scriptFont(size: 20)
+        
+        //MARK: Clickable UI agree
+        checkboxVoice.isUserInteractionEnabled = true
+        let tapAgreeVoice = UITapGestureRecognizer.init(target: self, action: #selector(disableSkipClicked))
+        tapAgreeVoice.numberOfTapsRequired = 1
+        checkboxVoice.addGestureRecognizer(tapAgreeVoice)
+        
+        let stackCheckboxVoice = UIStackView(arrangedSubviews: [checkboxVoice, agreeLabelVoice])
+        stackCheckboxVoice.axis = .horizontal
+        stackCheckboxVoice.spacing = 20
+        stackCheckboxVoice.distribution = .fill
+        stackCheckboxVoice.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        stackCheckboxVoice.frame = view.bounds
         
         //MARK: Spacer
         let spacerOuterTop = UIView()
         spacerOuterTop.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
-        let spacerCheckbox = UIView()
-        spacerCheckbox.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        
         let spacerOuterBottom = UIView()
         
-        //MARK: Instruksi all stack vertival
-        let stackAll = UIStackView(arrangedSubviews: [spacerOuterTop, stackTitle, stackInstruksiSatu, stackInstruksiDua, stackInstruksiTiga, spacerCheckbox, stackCheckbox, spacerOuterBottom])
+        //MARK: Instruksi all stack vertical
+        let stackAll = UIStackView(arrangedSubviews: [spacerOuterTop, stackTitle, stackInstruksiSatu, stackInstruksiDua, stackInstruksiTiga, stackCheckboxVoice, stackCheckbox, spacerOuterBottom])
         stackAll.axis = .vertical
         stackAll.spacing = 20
         stackAll.distribution = .fill
@@ -243,7 +266,6 @@ class InstructionViewController: UIViewController, Storyboarded {
         
         let stackOuterAll = UIStackView(arrangedSubviews: [spacerOuterLeft, stackAll, spacerOuterRight])
         stackOuterAll.axis = .horizontal
-        //stackOuterAll.backgroundColor = UIColor(red: 253.0/255, green: 248.0/255, blue: 235.0/255, alpha: 1)
         stackOuterAll.backgroundColor = .clear
         stackOuterAll.distribution = .fillProportionally
         stackOuterAll.frame = view.bounds
@@ -289,17 +311,14 @@ class InstructionViewController: UIViewController, Storyboarded {
     
     @objc
     func startStoryTapped() {
+        defaults.set(isSkipDisabled, forKey: "disableSkip")
         let state = defaults.string(forKey: "userState")
         switch state {
-        case "clear_story_1":
+        case "clear_story_1", "clear_story_3", "clear_story_5", "clear_story_8":
             coordinator?.toExplore()
             sleep(3)
-        case "clear_story_2":
+        case "clear_story_2", "clear_story_4", "clear_story_6", "clear_story_7":
             coordinator?.toPower()
-        case "clear_story_3":
-            coordinator?.toTutorial()
-        case "clear_story_4":
-            coordinator?.toExplore()
             sleep(3)
         case "cleared":
             coordinator?.toReflection()
@@ -337,13 +356,25 @@ class InstructionViewController: UIViewController, Storyboarded {
         AudioSFXPlayer.shared.playCommonSFX()
     }
     
+    @objc
+    func disableSkipClicked() {
+        let isChecked = checkboxVoice.toggle()
+        
+        if isChecked {
+            isSkipDisabled = true
+        } else {
+            isSkipDisabled = false
+        }
+        AudioSFXPlayer.shared.playCommonSFX()
+    }
+    
     func setUpAutoLayout() {
         
         let screenSize: CGRect = UIScreen.main.bounds
         let screenWidth = screenSize.width
         let constant: CGFloat
         
-        if screenWidth == 834.0 {
+        if screenWidth <= 834.0 {
             constant = 500
         } else {
             constant = 580

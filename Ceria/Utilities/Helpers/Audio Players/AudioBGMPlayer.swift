@@ -17,7 +17,7 @@ class AudioBGMPlayer {
     var playerBGMSuccess: AVAudioPlayer?
     
     func playLanding() {
-        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "landing", ofType: "mp3")!)
+        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "landing", ofType: "m4a")!)
         do {
             playerBGMLanding = try AVAudioPlayer(contentsOf:sound as URL)
             playerBGMLanding?.numberOfLoops = -1

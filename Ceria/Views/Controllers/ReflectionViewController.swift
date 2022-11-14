@@ -7,12 +7,15 @@
 
 import UIKit
 import SwiftySound
+import AVFoundation
 
-class ReflectionViewController: UIViewController, Storyboarded {
+class ReflectionViewController: UIViewController, AVAudioPlayerDelegate, Storyboarded {
     
     weak var coordinator: MainCoordinator?
     
     let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+    var promptTextLine1 = 0
+    var promptTextLine2 = 0
     var promptVoice = ""
     var promptMusic = ""
     var actionButtonSFX = ""
@@ -20,6 +23,7 @@ class ReflectionViewController: UIViewController, Storyboarded {
     var currentBGM = ""
     var currentIndex = 0
     let defaults = UserDefaults.standard
+    var promptPlayer: AVAudioPlayer = AVAudioPlayer()
     
     private lazy var homeButton: MakeButton = {
         let button = MakeButton(image: "home.png", size: CGSize(width: 100, height: 100))
@@ -46,7 +50,7 @@ class ReflectionViewController: UIViewController, Storyboarded {
     }()
     
     private lazy var promptTextBox: ReflectionView = {
-        let prompt = ReflectionView(content: "Pada suatu ketika, hiduplah seorang kaya dan keempat orang anaknya. Anak pertama bernama Lompo, anak kedua bernama Rua, anak ketiga bernama Tallu, dan anak keempat bernama Bungko. Keempat anak tersebut lalu ditugaskan oleh sang ayah untuk menimba ilmu seorang diri ke berbagai penjuru negeri dan segera setelah mendapatkan kemampuan masing-masing, keempat anak tersebut kembali lagi kepada sang ayah.")
+        let prompt = ReflectionView(content: "Lompo:\nKami semua belajar dengan giat dan tekun sampai bisa memiliki keahlian masing-masing loh.")
         return prompt
     }()
     
@@ -72,10 +76,13 @@ class ReflectionViewController: UIViewController, Storyboarded {
         setupBinders()
         
         viewModel.getPrompt()
+        
         Sound.stopAll()
-        Sound.play(file: promptVoice)
+        checkVoiceChange()
+        promptPlayer.play()
         checkBGMChange()
         currentBGM = promptMusic
+        disablingNextButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -98,6 +105,15 @@ class ReflectionViewController: UIViewController, Storyboarded {
         viewModel.promptDialogue.bind { [weak self] prompt in
             self?.promptTextBox.promptLabel.text = prompt
         }
+        
+        viewModel.promptTextLine1.bind { [weak self] line1 in
+            self?.promptTextLine1 = line1
+        }
+        
+        viewModel.promptTextLine2.bind { [weak self] line2 in
+            self?.promptTextLine2 = line2
+        }
+        
         viewModel.promptImage.bind { [weak self] image in
             self?.backgroundImage.image = UIImage(named: image)
         }
@@ -143,29 +159,31 @@ class ReflectionViewController: UIViewController, Storyboarded {
     
     @objc
     func nextTapped() {
-        
-        Sound.stopAll()
         viewModel.nextIndex()
         checkBGMChange()
+        checkTextHeightChange()
         AudioSFXPlayer.shared.playCommonSFX()
         checkActionButtonChange()
-        Sound.play(file: promptVoice)
+        checkVoiceChange()
+        promptPlayer.play()
+        disablingNextButton()
     }
     
     @objc
     func previousTapped() {
-        
-        Sound.stopAll()
         viewModel.previousIndex()
         checkBGMChange()
+        checkTextHeightChange()
         AudioSFXPlayer.shared.playBackSFX()
         checkActionButtonChange()
-        Sound.play(file: promptVoice)
+        checkVoiceChange()
+        promptPlayer.play()
+        disablingNextButton()
     }
     
     @objc
     func retryTapped() {
-        Sound.stopAll()
+        promptPlayer.stop()
         AudioBGMPlayer.shared.stopStoryBGM()
         Sound.play(file: actionButtonSFX)
         
@@ -175,6 +193,31 @@ class ReflectionViewController: UIViewController, Storyboarded {
         sleep(5)
         coordinator?.toStory()
         
+    }
+    
+    func disablingNextButton() {
+        if defaults.bool(forKey: "disableSkip") == true {
+            nextButton.isEnabled = false
+        }
+    }
+    
+    func checkVoiceChange() {
+        do{
+            let audioName = promptVoice.components(separatedBy: ".")[0]
+            let audioPath = Bundle.main.path(forResource: audioName, ofType: "m4a")
+            promptPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: audioPath!))
+            promptPlayer.prepareToPlay()
+            promptPlayer.delegate = self
+        }
+        catch{
+            print(error)
+        }
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool){
+        if flag == true && defaults.bool(forKey: "disableSkip") == true {
+            nextButton.isEnabled.toggle()
+        }
     }
     
     func checkBGMChange() {
@@ -201,6 +244,43 @@ class ReflectionViewController: UIViewController, Storyboarded {
         let customButtonImage = UIImage(named: actionButtonType)
         let newimage = customButtonImage?.resizedImage(size: CGSize(width: 267, height: 76.35))
         actionButton.setImage(newimage, for: .normal)
+    }
+    
+    func checkTextHeightChange() {
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        var boxHeight: CGFloat = 0
+        
+        if screenWidth == 834.0 {
+            switch promptTextLine1 {
+            case 1:
+                boxHeight = 60
+            case 2:
+                boxHeight = 100
+            case 3:
+                boxHeight = 125
+            case 4:
+                boxHeight = 150
+            default:
+                print("they are not this long!")
+            }
+        } else {
+            switch promptTextLine2 {
+            case 1:
+                boxHeight = 60
+            case 2:
+                boxHeight = 100
+            case 3:
+                boxHeight = 125
+            case 4:
+                boxHeight = 170
+            default:
+                print("they are not this long!")
+            }
+        }
+        
+        promptTextBox.promptTextFrame.frame.size.height = boxHeight
+        promptTextBox.promptTextFrame.roundCornerView(corners: .allCorners, radius: 25)
     }
     
     func setUpAutoLayout() {

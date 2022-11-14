@@ -107,7 +107,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         let w: CGFloat
         let h: CGFloat
         
-        if screenWidth == 834.0 {
+        if screenWidth <= 834.0 {
             x = 150
             y = 30
             
@@ -167,7 +167,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         //        sceneView = self.view as? SCNView
         sceneView.delegate = self
         sceneView.allowsCameraControl = false
-        scene = SCNScene(named: "Models.scnassets/Game2.scn")
+        scene = SCNScene(named: "Models.scnassets/Game Rua/Game2.scn")
         sceneView.scene = scene
         sceneView.frame = view.bounds
         

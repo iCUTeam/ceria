@@ -56,9 +56,9 @@ final class StoryView: UIView {
         return label
     }()
     
-    private lazy var dialogueTextFrame: UIView = {
-        
-        let frame = UIView(frame: CGRect(x:0, y:0, width: (UIScreen.main.bounds.width)-54, height: 215))
+    lazy var dialogueTextFrame: UIView = {
+            
+        let frame = UIView(frame: CGRect(x:0, y:0, width: (UIScreen.main.bounds.width)-54, height: 100))
         frame.backgroundColor = UIColor(red: 242.0/255, green: 205.0/255, blue: 93.0/255, alpha: 1.0)
         frame.roundCornerView(corners: .allCorners, radius: 25)
         addSubview(frame)

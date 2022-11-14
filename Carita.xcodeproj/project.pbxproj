@@ -29,7 +29,6 @@
 		951C639628F7E4DB00002FA5 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951C639528F7E4DB00002FA5 /* Card.swift */; };
 		951C639828F7E4EB00002FA5 /* Reflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951C639728F7E4EB00002FA5 /* Reflection.swift */; };
 		951C639A28F7E4FB00002FA5 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951C639928F7E4FB00002FA5 /* Tutorial.swift */; };
-		95326A5328FACD91002BAB3B /* landing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 95326A5228FACD91002BAB3B /* landing.mp3 */; };
 		95326A5628FB3A46002BAB3B /* PowerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95326A5528FB3A46002BAB3B /* PowerViewModel.swift */; };
 		953B9A7528F92C5F001C4A56 /* ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953B9A7428F92C5F001C4A56 /* ObservableObject.swift */; };
 		953B9AAE28FA069C001C4A56 /* StoryFeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953B9AAD28FA069C001C4A56 /* StoryFeeder.swift */; };
@@ -95,25 +94,8 @@
 		95BD1E5A28FF988A003832EF /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BD1E5928FF988A003832EF /* TutorialView.swift */; };
 		95BD1E5C28FFBB59003832EF /* PowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BD1E5B28FFBB59003832EF /* PowerView.swift */; };
 		95BD1E5E28FFC1D1003832EF /* power2_fail.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95BD1E5D28FFC1D1003832EF /* power2_fail.m4a */; };
-		95C77C0428FEDEC9009B9D69 /* bungko_3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C0128FEDEC8009B9D69 /* bungko_3.m4a */; };
-		95C77C0528FEDEC9009B9D69 /* bungko_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C0228FEDEC8009B9D69 /* bungko_2.m4a */; };
-		95C77C0628FEDEC9009B9D69 /* bungko_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C0328FEDEC8009B9D69 /* bungko_1.m4a */; };
-		95C77C0B28FEDF8C009B9D69 /* lompo_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C0728FEDF8C009B9D69 /* lompo_1.m4a */; };
-		95C77C0C28FEDF8C009B9D69 /* lompo_4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C0828FEDF8C009B9D69 /* lompo_4.m4a */; };
-		95C77C0D28FEDF8C009B9D69 /* lompo_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C0928FEDF8C009B9D69 /* lompo_2.m4a */; };
-		95C77C0E28FEDF8C009B9D69 /* lompo_3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C0A28FEDF8C009B9D69 /* lompo_3.m4a */; };
-		95C77C1228FEE058009B9D69 /* puteri_3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C0F28FEE058009B9D69 /* puteri_3.m4a */; };
-		95C77C1328FEE058009B9D69 /* puteri_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C1028FEE058009B9D69 /* puteri_1.m4a */; };
-		95C77C1428FEE058009B9D69 /* puteri_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C1128FEE058009B9D69 /* puteri_2.m4a */; };
 		95C77C1728FEE0E1009B9D69 /* tallu_explore3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C1528FEE0E0009B9D69 /* tallu_explore3.m4a */; };
 		95C77C1828FEE0E1009B9D69 /* tallu_power2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C1628FEE0E1009B9D69 /* tallu_power2.m4a */; };
-		95C77C1B28FEE127009B9D69 /* tallu_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C1928FEE127009B9D69 /* tallu_1.m4a */; };
-		95C77C1C28FEE127009B9D69 /* tallu_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C1A28FEE127009B9D69 /* tallu_2.m4a */; };
-		95C77C2228FEE2F1009B9D69 /* rua_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C1D28FEE2F1009B9D69 /* rua_2.m4a */; };
-		95C77C2328FEE2F1009B9D69 /* rua_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C1E28FEE2F1009B9D69 /* rua_1.m4a */; };
-		95C77C2428FEE2F1009B9D69 /* rua_5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C1F28FEE2F1009B9D69 /* rua_5.m4a */; };
-		95C77C2528FEE2F1009B9D69 /* rua_4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C2028FEE2F1009B9D69 /* rua_4.m4a */; };
-		95C77C2628FEE2F1009B9D69 /* rua_3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C2128FEE2F1009B9D69 /* rua_3.m4a */; };
 		95C77C2E28FEE30C009B9D69 /* rua_game_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C2728FEE30C009B9D69 /* rua_game_2.m4a */; };
 		95C77C2F28FEE30C009B9D69 /* rua_tutorial_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C2828FEE30C009B9D69 /* rua_tutorial_2.m4a */; };
 		95C77C3028FEE30C009B9D69 /* rua_tutorial_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C2928FEE30C009B9D69 /* rua_tutorial_1.m4a */; };
@@ -121,29 +103,73 @@
 		95C77C3228FEE30C009B9D69 /* rua_challenge_success.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C2B28FEE30C009B9D69 /* rua_challenge_success.m4a */; };
 		95C77C3328FEE30C009B9D69 /* rua_power_success.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C2C28FEE30C009B9D69 /* rua_power_success.m4a */; };
 		95C77C3428FEE30C009B9D69 /* rua_tutorial_3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C2D28FEE30C009B9D69 /* rua_tutorial_3.m4a */; };
-		95C77C5328FEEE8B009B9D69 /* narrator_7.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C3D28FEEE8A009B9D69 /* narrator_7.m4a */; };
-		95C77C5428FEEE8B009B9D69 /* narrator_11.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C3E28FEEE8A009B9D69 /* narrator_11.m4a */; };
-		95C77C5528FEEE8B009B9D69 /* narrator_6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C3F28FEEE8A009B9D69 /* narrator_6.m4a */; };
-		95C77C5628FEEE8B009B9D69 /* narrator_12.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C4028FEEE8A009B9D69 /* narrator_12.m4a */; };
 		95C77C5728FEEE8B009B9D69 /* retry.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C4128FEEE8A009B9D69 /* retry.m4a */; };
-		95C77C5828FEEE8B009B9D69 /* narrator_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C4228FEEE8A009B9D69 /* narrator_1.m4a */; };
 		95C77C5928FEEE8B009B9D69 /* explore3_collect_hint.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C4328FEEE8A009B9D69 /* explore3_collect_hint.m4a */; };
-		95C77C5A28FEEE8B009B9D69 /* narrator_14.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C4428FEEE8A009B9D69 /* narrator_14.m4a */; };
 		95C77C5B28FEEE8B009B9D69 /* power2_hint.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C4528FEEE8A009B9D69 /* power2_hint.m4a */; };
 		95C77C5C28FEEE8B009B9D69 /* explore2_hint.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C4628FEEE8A009B9D69 /* explore2_hint.m4a */; };
-		95C77C5D28FEEE8B009B9D69 /* narrator_13.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C4728FEEE8B009B9D69 /* narrator_13.m4a */; };
-		95C77C5E28FEEE8B009B9D69 /* narrator_9.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C4828FEEE8B009B9D69 /* narrator_9.m4a */; };
 		95C77C5F28FEEE8B009B9D69 /* explore3_collect_found.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C4928FEEE8B009B9D69 /* explore3_collect_found.m4a */; };
-		95C77C6028FEEE8B009B9D69 /* narrator_10.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C4A28FEEE8B009B9D69 /* narrator_10.m4a */; };
-		95C77C6128FEEE8B009B9D69 /* narrator_3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C4B28FEEE8B009B9D69 /* narrator_3.m4a */; };
-		95C77C6228FEEE8B009B9D69 /* narrator_8.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C4C28FEEE8B009B9D69 /* narrator_8.m4a */; };
 		95C77C6328FEEE8B009B9D69 /* explore2_found.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C4D28FEEE8B009B9D69 /* explore2_found.m4a */; };
 		95C77C6428FEEE8B009B9D69 /* explore3_hint.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C4E28FEEE8B009B9D69 /* explore3_hint.m4a */; };
-		95C77C6528FEEE8B009B9D69 /* narrator_5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C4F28FEEE8B009B9D69 /* narrator_5.m4a */; };
 		95C77C6628FEEE8B009B9D69 /* explore3_found.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C5028FEEE8B009B9D69 /* explore3_found.m4a */; };
-		95C77C6728FEEE8B009B9D69 /* narrator_4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C5128FEEE8B009B9D69 /* narrator_4.m4a */; };
-		95C77C6828FEEE8B009B9D69 /* narrator_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95C77C5228FEEE8B009B9D69 /* narrator_2.m4a */; };
 		95C814B028FAA810008E3036 /* UIView+RoundCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C814AF28FAA810008E3036 /* UIView+RoundCornerView.swift */; };
+		95DD01A12920090F00C568BF /* landing.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01A02920090F00C568BF /* landing.m4a */; };
+		95DD01B2292169DF00C568BF /* lompo_12.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01B0292169DF00C568BF /* lompo_12.m4a */; };
+		95DD01B3292169DF00C568BF /* lompo_11.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01B1292169DF00C568BF /* lompo_11.m4a */; };
+		95DD01BE292169F100C568BF /* lompo_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01B4292169F000C568BF /* lompo_2.m4a */; };
+		95DD01BF292169F100C568BF /* lompo_6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01B5292169F000C568BF /* lompo_6.m4a */; };
+		95DD01C0292169F100C568BF /* lompo_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01B6292169F000C568BF /* lompo_1.m4a */; };
+		95DD01C1292169F100C568BF /* lompo_7.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01B7292169F000C568BF /* lompo_7.m4a */; };
+		95DD01C2292169F100C568BF /* lompo_8.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01B8292169F100C568BF /* lompo_8.m4a */; };
+		95DD01C3292169F100C568BF /* lompo_9.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01B9292169F100C568BF /* lompo_9.m4a */; };
+		95DD01C4292169F100C568BF /* lompo_10.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01BA292169F100C568BF /* lompo_10.m4a */; };
+		95DD01C5292169F100C568BF /* lompo_5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01BB292169F100C568BF /* lompo_5.m4a */; };
+		95DD01C6292169F100C568BF /* lompo_3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01BC292169F100C568BF /* lompo_3.m4a */; };
+		95DD01C7292169F100C568BF /* lompo_4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01BD292169F100C568BF /* lompo_4.m4a */; };
+		95DD01CA29216A1100C568BF /* rua_7.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01C829216A1100C568BF /* rua_7.m4a */; };
+		95DD01CB29216A1100C568BF /* rua_8.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01C929216A1100C568BF /* rua_8.m4a */; };
+		95DD01D229216A2200C568BF /* rua_5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01CC29216A2200C568BF /* rua_5.m4a */; };
+		95DD01D329216A2200C568BF /* rua_6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01CD29216A2200C568BF /* rua_6.m4a */; };
+		95DD01D429216A2200C568BF /* rua_3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01CE29216A2200C568BF /* rua_3.m4a */; };
+		95DD01D529216A2200C568BF /* rua_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01CF29216A2200C568BF /* rua_2.m4a */; };
+		95DD01D629216A2200C568BF /* rua_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01D029216A2200C568BF /* rua_1.m4a */; };
+		95DD01D729216A2200C568BF /* rua_4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01D129216A2200C568BF /* rua_4.m4a */; };
+		95DD01DA29216A3D00C568BF /* tallu_6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01D829216A3D00C568BF /* tallu_6.m4a */; };
+		95DD01DB29216A3D00C568BF /* tallu_5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01D929216A3D00C568BF /* tallu_5.m4a */; };
+		95DD01E029216A4A00C568BF /* tallu_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01DC29216A4900C568BF /* tallu_2.m4a */; };
+		95DD01E129216A4A00C568BF /* tallu_4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01DD29216A4A00C568BF /* tallu_4.m4a */; };
+		95DD01E229216A4A00C568BF /* tallu_3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01DE29216A4A00C568BF /* tallu_3.m4a */; };
+		95DD01E329216A4A00C568BF /* tallu_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01DF29216A4A00C568BF /* tallu_1.m4a */; };
+		95DD01E629216A6500C568BF /* bungko_7.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01E429216A6500C568BF /* bungko_7.m4a */; };
+		95DD01E729216A6500C568BF /* bungko_6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01E529216A6500C568BF /* bungko_6.m4a */; };
+		95DD01ED29216A7800C568BF /* bungko_3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01E829216A7700C568BF /* bungko_3.m4a */; };
+		95DD01EE29216A7800C568BF /* bungko_4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01E929216A7700C568BF /* bungko_4.m4a */; };
+		95DD01EF29216A7800C568BF /* bungko_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01EA29216A7800C568BF /* bungko_1.m4a */; };
+		95DD01F029216A7800C568BF /* bungko_5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01EB29216A7800C568BF /* bungko_5.m4a */; };
+		95DD01F129216A7800C568BF /* bungko_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01EC29216A7800C568BF /* bungko_2.m4a */; };
+		95DD01FB29216B0A00C568BF /* puteri_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01F829216B0900C568BF /* puteri_1.m4a */; };
+		95DD01FC29216B0A00C568BF /* puteri_3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01F929216B0900C568BF /* puteri_3.m4a */; };
+		95DD01FD29216B0A00C568BF /* puteri_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01FA29216B0900C568BF /* puteri_2.m4a */; };
+		95DD020529216BC800C568BF /* raja_4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01FE29216BC700C568BF /* raja_4.m4a */; };
+		95DD020629216BC800C568BF /* raja_6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD01FF29216BC700C568BF /* raja_6.m4a */; };
+		95DD020729216BC800C568BF /* raja_3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD020029216BC700C568BF /* raja_3.m4a */; };
+		95DD020829216BC800C568BF /* raja_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD020129216BC700C568BF /* raja_1.m4a */; };
+		95DD020929216BC800C568BF /* raja_5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD020229216BC700C568BF /* raja_5.m4a */; };
+		95DD020A29216BC800C568BF /* raja_7.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD020329216BC800C568BF /* raja_7.m4a */; };
+		95DD020B29216BC800C568BF /* raja_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD020429216BC800C568BF /* raja_2.m4a */; };
+		95DD021B2921E66600C568BF /* narrator_6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD020D2921E66400C568BF /* narrator_6.m4a */; };
+		95DD021C2921E66600C568BF /* narrator_2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD020E2921E66400C568BF /* narrator_2.m4a */; };
+		95DD021D2921E66600C568BF /* narrator_5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD020F2921E66400C568BF /* narrator_5.m4a */; };
+		95DD021E2921E66600C568BF /* narrator_13.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD02102921E66400C568BF /* narrator_13.m4a */; };
+		95DD021F2921E66600C568BF /* narrator_7.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD02112921E66400C568BF /* narrator_7.m4a */; };
+		95DD02202921E66600C568BF /* narrator_3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD02122921E66500C568BF /* narrator_3.m4a */; };
+		95DD02212921E66600C568BF /* narrator_9.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD02132921E66500C568BF /* narrator_9.m4a */; };
+		95DD02222921E66600C568BF /* narrator_14.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD02142921E66500C568BF /* narrator_14.m4a */; };
+		95DD02232921E66600C568BF /* narrator_10.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD02152921E66500C568BF /* narrator_10.m4a */; };
+		95DD02242921E66600C568BF /* narrator_8.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD02162921E66500C568BF /* narrator_8.m4a */; };
+		95DD02252921E66600C568BF /* narrator_4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD02172921E66600C568BF /* narrator_4.m4a */; };
+		95DD02262921E66600C568BF /* narrator_1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD02182921E66600C568BF /* narrator_1.m4a */; };
+		95DD02272921E66600C568BF /* narrator_12.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD02192921E66600C568BF /* narrator_12.m4a */; };
+		95DD02282921E66600C568BF /* narrator_11.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 95DD021A2921E66600C568BF /* narrator_11.m4a */; };
 		95E1732828F67158005252B0 /* Stanberry.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95E1732728F67158005252B0 /* Stanberry.ttf */; };
 		95EBB87528F8055500EE82E7 /* PatternGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EBB87428F8055500EE82E7 /* PatternGenerator.swift */; };
 		95EBB87C28F8068400EE82E7 /* PKStrokePathAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EBB87A28F8068400EE82E7 /* PKStrokePathAdditions.swift */; };
@@ -202,7 +228,6 @@
 		951C639528F7E4DB00002FA5 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		951C639728F7E4EB00002FA5 /* Reflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reflection.swift; sourceTree = "<group>"; };
 		951C639928F7E4FB00002FA5 /* Tutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
-		95326A5228FACD91002BAB3B /* landing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = landing.mp3; sourceTree = "<group>"; };
 		95326A5528FB3A46002BAB3B /* PowerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerViewModel.swift; sourceTree = "<group>"; };
 		953B9A7428F92C5F001C4A56 /* ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObject.swift; sourceTree = "<group>"; };
 		953B9AAD28FA069C001C4A56 /* StoryFeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryFeeder.swift; sourceTree = "<group>"; };
@@ -272,25 +297,8 @@
 		95BD1E5928FF988A003832EF /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		95BD1E5B28FFBB59003832EF /* PowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerView.swift; sourceTree = "<group>"; };
 		95BD1E5D28FFC1D1003832EF /* power2_fail.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = power2_fail.m4a; sourceTree = "<group>"; };
-		95C77C0128FEDEC8009B9D69 /* bungko_3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bungko_3.m4a; sourceTree = "<group>"; };
-		95C77C0228FEDEC8009B9D69 /* bungko_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bungko_2.m4a; sourceTree = "<group>"; };
-		95C77C0328FEDEC8009B9D69 /* bungko_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bungko_1.m4a; sourceTree = "<group>"; };
-		95C77C0728FEDF8C009B9D69 /* lompo_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lompo_1.m4a; sourceTree = "<group>"; };
-		95C77C0828FEDF8C009B9D69 /* lompo_4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lompo_4.m4a; sourceTree = "<group>"; };
-		95C77C0928FEDF8C009B9D69 /* lompo_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lompo_2.m4a; sourceTree = "<group>"; };
-		95C77C0A28FEDF8C009B9D69 /* lompo_3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lompo_3.m4a; sourceTree = "<group>"; };
-		95C77C0F28FEE058009B9D69 /* puteri_3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = puteri_3.m4a; sourceTree = "<group>"; };
-		95C77C1028FEE058009B9D69 /* puteri_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = puteri_1.m4a; sourceTree = "<group>"; };
-		95C77C1128FEE058009B9D69 /* puteri_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = puteri_2.m4a; sourceTree = "<group>"; };
 		95C77C1528FEE0E0009B9D69 /* tallu_explore3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = tallu_explore3.m4a; sourceTree = "<group>"; };
 		95C77C1628FEE0E1009B9D69 /* tallu_power2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = tallu_power2.m4a; sourceTree = "<group>"; };
-		95C77C1928FEE127009B9D69 /* tallu_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = tallu_1.m4a; sourceTree = "<group>"; };
-		95C77C1A28FEE127009B9D69 /* tallu_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = tallu_2.m4a; sourceTree = "<group>"; };
-		95C77C1D28FEE2F1009B9D69 /* rua_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = rua_2.m4a; sourceTree = "<group>"; };
-		95C77C1E28FEE2F1009B9D69 /* rua_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = rua_1.m4a; sourceTree = "<group>"; };
-		95C77C1F28FEE2F1009B9D69 /* rua_5.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = rua_5.m4a; sourceTree = "<group>"; };
-		95C77C2028FEE2F1009B9D69 /* rua_4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = rua_4.m4a; sourceTree = "<group>"; };
-		95C77C2128FEE2F1009B9D69 /* rua_3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = rua_3.m4a; sourceTree = "<group>"; };
 		95C77C2728FEE30C009B9D69 /* rua_game_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = rua_game_2.m4a; sourceTree = "<group>"; };
 		95C77C2828FEE30C009B9D69 /* rua_tutorial_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = rua_tutorial_2.m4a; sourceTree = "<group>"; };
 		95C77C2928FEE30C009B9D69 /* rua_tutorial_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = rua_tutorial_1.m4a; sourceTree = "<group>"; };
@@ -298,29 +306,73 @@
 		95C77C2B28FEE30C009B9D69 /* rua_challenge_success.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = rua_challenge_success.m4a; sourceTree = "<group>"; };
 		95C77C2C28FEE30C009B9D69 /* rua_power_success.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = rua_power_success.m4a; sourceTree = "<group>"; };
 		95C77C2D28FEE30C009B9D69 /* rua_tutorial_3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = rua_tutorial_3.m4a; sourceTree = "<group>"; };
-		95C77C3D28FEEE8A009B9D69 /* narrator_7.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_7.m4a; sourceTree = "<group>"; };
-		95C77C3E28FEEE8A009B9D69 /* narrator_11.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_11.m4a; sourceTree = "<group>"; };
-		95C77C3F28FEEE8A009B9D69 /* narrator_6.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_6.m4a; sourceTree = "<group>"; };
-		95C77C4028FEEE8A009B9D69 /* narrator_12.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_12.m4a; sourceTree = "<group>"; };
 		95C77C4128FEEE8A009B9D69 /* retry.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = retry.m4a; sourceTree = "<group>"; };
-		95C77C4228FEEE8A009B9D69 /* narrator_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_1.m4a; sourceTree = "<group>"; };
 		95C77C4328FEEE8A009B9D69 /* explore3_collect_hint.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = explore3_collect_hint.m4a; sourceTree = "<group>"; };
-		95C77C4428FEEE8A009B9D69 /* narrator_14.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_14.m4a; sourceTree = "<group>"; };
 		95C77C4528FEEE8A009B9D69 /* power2_hint.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = power2_hint.m4a; sourceTree = "<group>"; };
 		95C77C4628FEEE8A009B9D69 /* explore2_hint.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = explore2_hint.m4a; sourceTree = "<group>"; };
-		95C77C4728FEEE8B009B9D69 /* narrator_13.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_13.m4a; sourceTree = "<group>"; };
-		95C77C4828FEEE8B009B9D69 /* narrator_9.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_9.m4a; sourceTree = "<group>"; };
 		95C77C4928FEEE8B009B9D69 /* explore3_collect_found.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = explore3_collect_found.m4a; sourceTree = "<group>"; };
-		95C77C4A28FEEE8B009B9D69 /* narrator_10.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_10.m4a; sourceTree = "<group>"; };
-		95C77C4B28FEEE8B009B9D69 /* narrator_3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_3.m4a; sourceTree = "<group>"; };
-		95C77C4C28FEEE8B009B9D69 /* narrator_8.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_8.m4a; sourceTree = "<group>"; };
 		95C77C4D28FEEE8B009B9D69 /* explore2_found.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = explore2_found.m4a; sourceTree = "<group>"; };
 		95C77C4E28FEEE8B009B9D69 /* explore3_hint.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = explore3_hint.m4a; sourceTree = "<group>"; };
-		95C77C4F28FEEE8B009B9D69 /* narrator_5.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_5.m4a; sourceTree = "<group>"; };
 		95C77C5028FEEE8B009B9D69 /* explore3_found.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = explore3_found.m4a; sourceTree = "<group>"; };
-		95C77C5128FEEE8B009B9D69 /* narrator_4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_4.m4a; sourceTree = "<group>"; };
-		95C77C5228FEEE8B009B9D69 /* narrator_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_2.m4a; sourceTree = "<group>"; };
 		95C814AF28FAA810008E3036 /* UIView+RoundCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RoundCornerView.swift"; sourceTree = "<group>"; };
+		95DD01A02920090F00C568BF /* landing.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = landing.m4a; sourceTree = "<group>"; };
+		95DD01B0292169DF00C568BF /* lompo_12.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lompo_12.m4a; sourceTree = "<group>"; };
+		95DD01B1292169DF00C568BF /* lompo_11.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lompo_11.m4a; sourceTree = "<group>"; };
+		95DD01B4292169F000C568BF /* lompo_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lompo_2.m4a; sourceTree = "<group>"; };
+		95DD01B5292169F000C568BF /* lompo_6.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lompo_6.m4a; sourceTree = "<group>"; };
+		95DD01B6292169F000C568BF /* lompo_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lompo_1.m4a; sourceTree = "<group>"; };
+		95DD01B7292169F000C568BF /* lompo_7.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lompo_7.m4a; sourceTree = "<group>"; };
+		95DD01B8292169F100C568BF /* lompo_8.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lompo_8.m4a; sourceTree = "<group>"; };
+		95DD01B9292169F100C568BF /* lompo_9.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lompo_9.m4a; sourceTree = "<group>"; };
+		95DD01BA292169F100C568BF /* lompo_10.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lompo_10.m4a; sourceTree = "<group>"; };
+		95DD01BB292169F100C568BF /* lompo_5.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lompo_5.m4a; sourceTree = "<group>"; };
+		95DD01BC292169F100C568BF /* lompo_3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lompo_3.m4a; sourceTree = "<group>"; };
+		95DD01BD292169F100C568BF /* lompo_4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lompo_4.m4a; sourceTree = "<group>"; };
+		95DD01C829216A1100C568BF /* rua_7.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = rua_7.m4a; sourceTree = "<group>"; };
+		95DD01C929216A1100C568BF /* rua_8.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = rua_8.m4a; sourceTree = "<group>"; };
+		95DD01CC29216A2200C568BF /* rua_5.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = rua_5.m4a; sourceTree = "<group>"; };
+		95DD01CD29216A2200C568BF /* rua_6.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = rua_6.m4a; sourceTree = "<group>"; };
+		95DD01CE29216A2200C568BF /* rua_3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = rua_3.m4a; sourceTree = "<group>"; };
+		95DD01CF29216A2200C568BF /* rua_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = rua_2.m4a; sourceTree = "<group>"; };
+		95DD01D029216A2200C568BF /* rua_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = rua_1.m4a; sourceTree = "<group>"; };
+		95DD01D129216A2200C568BF /* rua_4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = rua_4.m4a; sourceTree = "<group>"; };
+		95DD01D829216A3D00C568BF /* tallu_6.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = tallu_6.m4a; sourceTree = "<group>"; };
+		95DD01D929216A3D00C568BF /* tallu_5.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = tallu_5.m4a; sourceTree = "<group>"; };
+		95DD01DC29216A4900C568BF /* tallu_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = tallu_2.m4a; sourceTree = "<group>"; };
+		95DD01DD29216A4A00C568BF /* tallu_4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = tallu_4.m4a; sourceTree = "<group>"; };
+		95DD01DE29216A4A00C568BF /* tallu_3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = tallu_3.m4a; sourceTree = "<group>"; };
+		95DD01DF29216A4A00C568BF /* tallu_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = tallu_1.m4a; sourceTree = "<group>"; };
+		95DD01E429216A6500C568BF /* bungko_7.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bungko_7.m4a; sourceTree = "<group>"; };
+		95DD01E529216A6500C568BF /* bungko_6.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bungko_6.m4a; sourceTree = "<group>"; };
+		95DD01E829216A7700C568BF /* bungko_3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bungko_3.m4a; sourceTree = "<group>"; };
+		95DD01E929216A7700C568BF /* bungko_4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bungko_4.m4a; sourceTree = "<group>"; };
+		95DD01EA29216A7800C568BF /* bungko_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bungko_1.m4a; sourceTree = "<group>"; };
+		95DD01EB29216A7800C568BF /* bungko_5.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bungko_5.m4a; sourceTree = "<group>"; };
+		95DD01EC29216A7800C568BF /* bungko_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bungko_2.m4a; sourceTree = "<group>"; };
+		95DD01F829216B0900C568BF /* puteri_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = puteri_1.m4a; sourceTree = "<group>"; };
+		95DD01F929216B0900C568BF /* puteri_3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = puteri_3.m4a; sourceTree = "<group>"; };
+		95DD01FA29216B0900C568BF /* puteri_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = puteri_2.m4a; sourceTree = "<group>"; };
+		95DD01FE29216BC700C568BF /* raja_4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = raja_4.m4a; sourceTree = "<group>"; };
+		95DD01FF29216BC700C568BF /* raja_6.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = raja_6.m4a; sourceTree = "<group>"; };
+		95DD020029216BC700C568BF /* raja_3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = raja_3.m4a; sourceTree = "<group>"; };
+		95DD020129216BC700C568BF /* raja_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = raja_1.m4a; sourceTree = "<group>"; };
+		95DD020229216BC700C568BF /* raja_5.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = raja_5.m4a; sourceTree = "<group>"; };
+		95DD020329216BC800C568BF /* raja_7.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = raja_7.m4a; sourceTree = "<group>"; };
+		95DD020429216BC800C568BF /* raja_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = raja_2.m4a; sourceTree = "<group>"; };
+		95DD020D2921E66400C568BF /* narrator_6.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_6.m4a; sourceTree = "<group>"; };
+		95DD020E2921E66400C568BF /* narrator_2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_2.m4a; sourceTree = "<group>"; };
+		95DD020F2921E66400C568BF /* narrator_5.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_5.m4a; sourceTree = "<group>"; };
+		95DD02102921E66400C568BF /* narrator_13.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_13.m4a; sourceTree = "<group>"; };
+		95DD02112921E66400C568BF /* narrator_7.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_7.m4a; sourceTree = "<group>"; };
+		95DD02122921E66500C568BF /* narrator_3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_3.m4a; sourceTree = "<group>"; };
+		95DD02132921E66500C568BF /* narrator_9.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_9.m4a; sourceTree = "<group>"; };
+		95DD02142921E66500C568BF /* narrator_14.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_14.m4a; sourceTree = "<group>"; };
+		95DD02152921E66500C568BF /* narrator_10.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_10.m4a; sourceTree = "<group>"; };
+		95DD02162921E66500C568BF /* narrator_8.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_8.m4a; sourceTree = "<group>"; };
+		95DD02172921E66600C568BF /* narrator_4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_4.m4a; sourceTree = "<group>"; };
+		95DD02182921E66600C568BF /* narrator_1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_1.m4a; sourceTree = "<group>"; };
+		95DD02192921E66600C568BF /* narrator_12.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_12.m4a; sourceTree = "<group>"; };
+		95DD021A2921E66600C568BF /* narrator_11.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = narrator_11.m4a; sourceTree = "<group>"; };
 		95E1730E28F66156005252B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95E1732728F67158005252B0 /* Stanberry.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Stanberry.ttf; sourceTree = "<group>"; };
 		95EBB87428F8055500EE82E7 /* PatternGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternGenerator.swift; sourceTree = "<group>"; };
@@ -367,34 +419,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1413AFF428F4494200FB552A /* Game 1 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Game 1";
-			sourceTree = "<group>";
-		};
-		1413AFF528F4494700FB552A /* Game 2 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Game 2";
-			sourceTree = "<group>";
-		};
-		1413AFF628F4494D00FB552A /* Game 3 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Game 3";
-			sourceTree = "<group>";
-		};
-		1413AFF728F4495600FB552A /* Game 4 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Game 4";
-			sourceTree = "<group>";
-		};
 		142AFC5228F42F170069046C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,37 +467,8 @@
 		951C639D28F7EC4600002FA5 /* Voices */ = {
 			isa = PBXGroup;
 			children = (
-				95C77C4228FEEE8A009B9D69 /* narrator_1.m4a */,
-				95C77C5228FEEE8B009B9D69 /* narrator_2.m4a */,
-				95C77C4B28FEEE8B009B9D69 /* narrator_3.m4a */,
-				95C77C5128FEEE8B009B9D69 /* narrator_4.m4a */,
-				95C77C4F28FEEE8B009B9D69 /* narrator_5.m4a */,
-				95C77C3F28FEEE8A009B9D69 /* narrator_6.m4a */,
-				95C77C3D28FEEE8A009B9D69 /* narrator_7.m4a */,
-				95C77C4C28FEEE8B009B9D69 /* narrator_8.m4a */,
-				95C77C4828FEEE8B009B9D69 /* narrator_9.m4a */,
-				95C77C4A28FEEE8B009B9D69 /* narrator_10.m4a */,
-				95C77C3E28FEEE8A009B9D69 /* narrator_11.m4a */,
-				95C77C4028FEEE8A009B9D69 /* narrator_12.m4a */,
-				95C77C4728FEEE8B009B9D69 /* narrator_13.m4a */,
-				95C77C4428FEEE8A009B9D69 /* narrator_14.m4a */,
-				95C77C1E28FEE2F1009B9D69 /* rua_1.m4a */,
-				95C77C1D28FEE2F1009B9D69 /* rua_2.m4a */,
-				95C77C2128FEE2F1009B9D69 /* rua_3.m4a */,
-				95C77C2028FEE2F1009B9D69 /* rua_4.m4a */,
-				95C77C1F28FEE2F1009B9D69 /* rua_5.m4a */,
-				95C77C1928FEE127009B9D69 /* tallu_1.m4a */,
-				95C77C1A28FEE127009B9D69 /* tallu_2.m4a */,
-				95C77C1028FEE058009B9D69 /* puteri_1.m4a */,
-				95C77C1128FEE058009B9D69 /* puteri_2.m4a */,
-				95C77C0F28FEE058009B9D69 /* puteri_3.m4a */,
-				95C77C0728FEDF8C009B9D69 /* lompo_1.m4a */,
-				95C77C0928FEDF8C009B9D69 /* lompo_2.m4a */,
-				95C77C0A28FEDF8C009B9D69 /* lompo_3.m4a */,
-				95C77C0828FEDF8C009B9D69 /* lompo_4.m4a */,
-				95C77C0328FEDEC8009B9D69 /* bungko_1.m4a */,
-				95C77C0228FEDEC8009B9D69 /* bungko_2.m4a */,
-				95C77C0128FEDEC8009B9D69 /* bungko_3.m4a */,
+				95DD01A3292166F600C568BF /* Reflection */,
+				95DD01A2292166E400C568BF /* Story */,
 			);
 			path = Voices;
 			sourceTree = "<group>";
@@ -481,12 +476,12 @@
 		95326A5128FACD88002BAB3B /* BGM */ = {
 			isa = PBXGroup;
 			children = (
+				95DD020C2921ADFB00C568BF /* Landing */,
 				95BD1E4728FF1D0F003832EF /* game2-bgm.m4a */,
 				95BD1E4D28FF2866003832EF /* success-page.m4a */,
 				95A6C5D828FC338800055B0A /* petualangan.m4a */,
 				9557987729002B0B0082C57B /* laut.m4a */,
 				95A6C5D728FC338700055B0A /* sedih.m4a */,
-				95326A5228FACD91002BAB3B /* landing.mp3 */,
 			);
 			path = BGM;
 			sourceTree = "<group>";
@@ -755,6 +750,181 @@
 			path = commonbutton;
 			sourceTree = "<group>";
 		};
+		95DD01A2292166E400C568BF /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				95DD02182921E66600C568BF /* narrator_1.m4a */,
+				95DD020E2921E66400C568BF /* narrator_2.m4a */,
+				95DD02122921E66500C568BF /* narrator_3.m4a */,
+				95DD02172921E66600C568BF /* narrator_4.m4a */,
+				95DD020F2921E66400C568BF /* narrator_5.m4a */,
+				95DD020D2921E66400C568BF /* narrator_6.m4a */,
+				95DD02112921E66400C568BF /* narrator_7.m4a */,
+				95DD02162921E66500C568BF /* narrator_8.m4a */,
+				95DD02132921E66500C568BF /* narrator_9.m4a */,
+				95DD02152921E66500C568BF /* narrator_10.m4a */,
+				95DD021A2921E66600C568BF /* narrator_11.m4a */,
+				95DD02192921E66600C568BF /* narrator_12.m4a */,
+				95DD02102921E66400C568BF /* narrator_13.m4a */,
+				95DD02142921E66500C568BF /* narrator_14.m4a */,
+				95DD01AA2921674800C568BF /* Paduka Raja */,
+				95DD01A92921673700C568BF /* Tuan Puteri */,
+				95DD01A82921672C00C568BF /* Bungko */,
+				95DD01A72921672200C568BF /* Tallu */,
+				95DD01A62921671800C568BF /* Rua */,
+				95DD01A52921670E00C568BF /* Lompo */,
+				95DD01A4292166FE00C568BF /* Narrator */,
+			);
+			path = Story;
+			sourceTree = "<group>";
+		};
+		95DD01A3292166F600C568BF /* Reflection */ = {
+			isa = PBXGroup;
+			children = (
+				95DD01AF2921678B00C568BF /* Bungko */,
+				95DD01AE2921678200C568BF /* Tallu */,
+				95DD01AD2921677B00C568BF /* Rua */,
+				95DD01AC2921677200C568BF /* Lompo */,
+				95DD01AB2921676700C568BF /* Narrator */,
+			);
+			path = Reflection;
+			sourceTree = "<group>";
+		};
+		95DD01A4292166FE00C568BF /* Narrator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Narrator;
+			sourceTree = "<group>";
+		};
+		95DD01A52921670E00C568BF /* Lompo */ = {
+			isa = PBXGroup;
+			children = (
+				95DD01B6292169F000C568BF /* lompo_1.m4a */,
+				95DD01B4292169F000C568BF /* lompo_2.m4a */,
+				95DD01BC292169F100C568BF /* lompo_3.m4a */,
+				95DD01BD292169F100C568BF /* lompo_4.m4a */,
+				95DD01BB292169F100C568BF /* lompo_5.m4a */,
+				95DD01B5292169F000C568BF /* lompo_6.m4a */,
+				95DD01B7292169F000C568BF /* lompo_7.m4a */,
+				95DD01B8292169F100C568BF /* lompo_8.m4a */,
+				95DD01B9292169F100C568BF /* lompo_9.m4a */,
+				95DD01BA292169F100C568BF /* lompo_10.m4a */,
+			);
+			path = Lompo;
+			sourceTree = "<group>";
+		};
+		95DD01A62921671800C568BF /* Rua */ = {
+			isa = PBXGroup;
+			children = (
+				95DD01D029216A2200C568BF /* rua_1.m4a */,
+				95DD01CF29216A2200C568BF /* rua_2.m4a */,
+				95DD01CE29216A2200C568BF /* rua_3.m4a */,
+				95DD01D129216A2200C568BF /* rua_4.m4a */,
+				95DD01CC29216A2200C568BF /* rua_5.m4a */,
+				95DD01CD29216A2200C568BF /* rua_6.m4a */,
+			);
+			path = Rua;
+			sourceTree = "<group>";
+		};
+		95DD01A72921672200C568BF /* Tallu */ = {
+			isa = PBXGroup;
+			children = (
+				95DD01DF29216A4A00C568BF /* tallu_1.m4a */,
+				95DD01DC29216A4900C568BF /* tallu_2.m4a */,
+				95DD01DE29216A4A00C568BF /* tallu_3.m4a */,
+				95DD01DD29216A4A00C568BF /* tallu_4.m4a */,
+			);
+			path = Tallu;
+			sourceTree = "<group>";
+		};
+		95DD01A82921672C00C568BF /* Bungko */ = {
+			isa = PBXGroup;
+			children = (
+				95DD01EA29216A7800C568BF /* bungko_1.m4a */,
+				95DD01EC29216A7800C568BF /* bungko_2.m4a */,
+				95DD01E829216A7700C568BF /* bungko_3.m4a */,
+				95DD01E929216A7700C568BF /* bungko_4.m4a */,
+				95DD01EB29216A7800C568BF /* bungko_5.m4a */,
+			);
+			path = Bungko;
+			sourceTree = "<group>";
+		};
+		95DD01A92921673700C568BF /* Tuan Puteri */ = {
+			isa = PBXGroup;
+			children = (
+				95DD01F829216B0900C568BF /* puteri_1.m4a */,
+				95DD01FA29216B0900C568BF /* puteri_2.m4a */,
+				95DD01F929216B0900C568BF /* puteri_3.m4a */,
+			);
+			path = "Tuan Puteri";
+			sourceTree = "<group>";
+		};
+		95DD01AA2921674800C568BF /* Paduka Raja */ = {
+			isa = PBXGroup;
+			children = (
+				95DD020129216BC700C568BF /* raja_1.m4a */,
+				95DD020429216BC800C568BF /* raja_2.m4a */,
+				95DD020029216BC700C568BF /* raja_3.m4a */,
+				95DD01FE29216BC700C568BF /* raja_4.m4a */,
+				95DD020229216BC700C568BF /* raja_5.m4a */,
+				95DD01FF29216BC700C568BF /* raja_6.m4a */,
+				95DD020329216BC800C568BF /* raja_7.m4a */,
+			);
+			path = "Paduka Raja";
+			sourceTree = "<group>";
+		};
+		95DD01AB2921676700C568BF /* Narrator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Narrator;
+			sourceTree = "<group>";
+		};
+		95DD01AC2921677200C568BF /* Lompo */ = {
+			isa = PBXGroup;
+			children = (
+				95DD01B1292169DF00C568BF /* lompo_11.m4a */,
+				95DD01B0292169DF00C568BF /* lompo_12.m4a */,
+			);
+			path = Lompo;
+			sourceTree = "<group>";
+		};
+		95DD01AD2921677B00C568BF /* Rua */ = {
+			isa = PBXGroup;
+			children = (
+				95DD01C829216A1100C568BF /* rua_7.m4a */,
+				95DD01C929216A1100C568BF /* rua_8.m4a */,
+			);
+			path = Rua;
+			sourceTree = "<group>";
+		};
+		95DD01AE2921678200C568BF /* Tallu */ = {
+			isa = PBXGroup;
+			children = (
+				95DD01D929216A3D00C568BF /* tallu_5.m4a */,
+				95DD01D829216A3D00C568BF /* tallu_6.m4a */,
+			);
+			path = Tallu;
+			sourceTree = "<group>";
+		};
+		95DD01AF2921678B00C568BF /* Bungko */ = {
+			isa = PBXGroup;
+			children = (
+				95DD01E529216A6500C568BF /* bungko_6.m4a */,
+				95DD01E429216A6500C568BF /* bungko_7.m4a */,
+			);
+			path = Bungko;
+			sourceTree = "<group>";
+		};
+		95DD020C2921ADFB00C568BF /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				95DD01A02920090F00C568BF /* landing.m4a */,
+			);
+			path = Landing;
+			sourceTree = "<group>";
+		};
 		95E1730D28F6612C005252B0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -863,9 +1033,6 @@
 			isa = PBXGroup;
 			children = (
 				95E1731B28F66BD0005252B0 /* Landing */,
-				95E1731E28F66C98005252B0 /* About */,
-				95E1731D28F66C8F005252B0 /* Collection */,
-				95E1731C28F66C74005252B0 /* Instruction */,
 				95E1731F28F66CB6005252B0 /* Story */,
 				95E1732228F66D18005252B0 /* Gameplay */,
 				957D952A28F71BB9009AA012 /* Reflection */,
@@ -893,27 +1060,6 @@
 				957D952028F70B8D009AA012 /* LandingView.swift */,
 			);
 			path = Landing;
-			sourceTree = "<group>";
-		};
-		95E1731C28F66C74005252B0 /* Instruction */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Instruction;
-			sourceTree = "<group>";
-		};
-		95E1731D28F66C8F005252B0 /* Collection */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Collection;
-			sourceTree = "<group>";
-		};
-		95E1731E28F66C98005252B0 /* About */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = About;
 			sourceTree = "<group>";
 		};
 		95E1731F28F66CB6005252B0 /* Story */ = {
@@ -946,21 +1092,9 @@
 				95E1732028F66CCA005252B0 /* Explore */,
 				95E1732128F66CEF005252B0 /* Power */,
 				957D951A28F709E0009AA012 /* Tutorial */,
-				95E1732328F66D2D005252B0 /* Challenge */,
 				957D951F28F70AAB009AA012 /* Success */,
 			);
 			path = Gameplay;
-			sourceTree = "<group>";
-		};
-		95E1732328F66D2D005252B0 /* Challenge */ = {
-			isa = PBXGroup;
-			children = (
-				1413AFF428F4494200FB552A /* Game 1 */,
-				1413AFF528F4494700FB552A /* Game 2 */,
-				1413AFF628F4494D00FB552A /* Game 3 */,
-				1413AFF728F4495600FB552A /* Game 4 */,
-			);
-			path = Challenge;
 			sourceTree = "<group>";
 		};
 		95E1732528F66E22005252B0 /* Themes */ = {
@@ -1149,87 +1283,113 @@
 			buildActionMask = 2147483647;
 			files = (
 				957D950828F701ED009AA012 /* Landing.storyboard in Resources */,
+				95DD021E2921E66600C568BF /* narrator_13.m4a in Resources */,
 				95A6C5D128FC2A4400055B0A /* explore2-intro.m4a in Resources */,
+				95DD01E029216A4A00C568BF /* tallu_2.m4a in Resources */,
 				95A6C5D328FC2A4400055B0A /* explore2.m4a in Resources */,
-				95C77C2628FEE2F1009B9D69 /* rua_3.m4a in Resources */,
+				95DD02202921E66600C568BF /* narrator_3.m4a in Resources */,
+				95DD020629216BC800C568BF /* raja_6.m4a in Resources */,
+				95DD020929216BC800C568BF /* raja_5.m4a in Resources */,
+				95DD021D2921E66600C568BF /* narrator_5.m4a in Resources */,
 				95C77C6628FEEE8B009B9D69 /* explore3_found.m4a in Resources */,
 				95C77C5F28FEEE8B009B9D69 /* explore3_collect_found.m4a in Resources */,
 				95BD1E4828FF1D0F003832EF /* game2-bgm.m4a in Resources */,
 				95BD1E5228FF61EC003832EF /* checkpoint_found.wav in Resources */,
 				95AB324328F3C59D0003DCB0 /* LaunchScreen.storyboard in Resources */,
-				95C77C0628FEDEC9009B9D69 /* bungko_1.m4a in Resources */,
-				95C77C5E28FEEE8B009B9D69 /* narrator_9.m4a in Resources */,
 				95C77C2F28FEE30C009B9D69 /* rua_tutorial_2.m4a in Resources */,
+				95DD02252921E66600C568BF /* narrator_4.m4a in Resources */,
 				95BD1E4E28FF2866003832EF /* success-page.m4a in Resources */,
+				95DD02262921E66600C568BF /* narrator_1.m4a in Resources */,
 				95BD1E4228FF07DA003832EF /* CollectionItem.xib in Resources */,
 				A97F0DD7291CB74D00592FA0 /* Instruksi_Dan_Kartu_Permainan.pdf in Resources */,
 				95C77C3028FEE30C009B9D69 /* rua_tutorial_1.m4a in Resources */,
+				95DD01E729216A6500C568BF /* bungko_6.m4a in Resources */,
+				95DD01C3292169F100C568BF /* lompo_9.m4a in Resources */,
 				95BD1E4A28FF2609003832EF /* game2_fail.m4a in Resources */,
 				95C77C5928FEEE8B009B9D69 /* explore3_collect_hint.m4a in Resources */,
+				95DD01EE29216A7800C568BF /* bungko_4.m4a in Resources */,
 				95C77C5C28FEEE8B009B9D69 /* explore2_hint.m4a in Resources */,
-				95C77C6028FEEE8B009B9D69 /* narrator_10.m4a in Resources */,
+				95DD020B29216BC800C568BF /* raja_2.m4a in Resources */,
 				95A6C5D528FC2A4400055B0A /* game2.m4a in Resources */,
-				95C77C6128FEEE8B009B9D69 /* narrator_3.m4a in Resources */,
-				95C77C5528FEEE8B009B9D69 /* narrator_6.m4a in Resources */,
-				95C77C6728FEEE8B009B9D69 /* narrator_4.m4a in Resources */,
-				95C77C0D28FEDF8C009B9D69 /* lompo_2.m4a in Resources */,
+				95DD01C5292169F100C568BF /* lompo_5.m4a in Resources */,
+				95DD01F129216A7800C568BF /* bungko_2.m4a in Resources */,
+				95DD01D729216A2200C568BF /* rua_4.m4a in Resources */,
+				95DD020529216BC800C568BF /* raja_4.m4a in Resources */,
+				95DD01CB29216A1100C568BF /* rua_8.m4a in Resources */,
+				95DD020729216BC800C568BF /* raja_3.m4a in Resources */,
+				95DD01E329216A4A00C568BF /* tallu_1.m4a in Resources */,
+				95DD01DA29216A3D00C568BF /* tallu_6.m4a in Resources */,
+				95DD01EF29216A7800C568BF /* bungko_1.m4a in Resources */,
 				95BD1E5E28FFC1D1003832EF /* power2_fail.m4a in Resources */,
-				95C77C0428FEDEC9009B9D69 /* bungko_3.m4a in Resources */,
+				95DD01D529216A2200C568BF /* rua_2.m4a in Resources */,
+				95DD02242921E66600C568BF /* narrator_8.m4a in Resources */,
 				95A6C5D628FC2A4400055B0A /* reflection.m4a in Resources */,
 				953B9AB228FA21B7001C4A56 /* reflection.json in Resources */,
-				95C77C1B28FEE127009B9D69 /* tallu_1.m4a in Resources */,
 				95C77C1728FEE0E1009B9D69 /* tallu_explore3.m4a in Resources */,
-				95C77C5828FEEE8B009B9D69 /* narrator_1.m4a in Resources */,
 				95A6C5D928FC338800055B0A /* sedih.m4a in Resources */,
 				95A6C5D428FC2A4400055B0A /* power2.m4a in Resources */,
-				95C77C1328FEE058009B9D69 /* puteri_1.m4a in Resources */,
-				95C77C5D28FEEE8B009B9D69 /* narrator_13.m4a in Resources */,
-				95C77C2528FEE2F1009B9D69 /* rua_4.m4a in Resources */,
+				95DD01D329216A2200C568BF /* rua_6.m4a in Resources */,
+				95DD020A29216BC800C568BF /* raja_7.m4a in Resources */,
 				143EE789291BA89A0082FEE1 /* card.json in Resources */,
-				95C77C6528FEEE8B009B9D69 /* narrator_5.m4a in Resources */,
+				95DD01E629216A6500C568BF /* bungko_7.m4a in Resources */,
 				95A6C5D228FC2A4400055B0A /* previous.wav in Resources */,
-				95C77C5428FEEE8B009B9D69 /* narrator_11.m4a in Resources */,
+				95DD01E229216A4A00C568BF /* tallu_3.m4a in Resources */,
 				95E1732828F67158005252B0 /* Stanberry.ttf in Resources */,
-				95C77C0528FEDEC9009B9D69 /* bungko_2.m4a in Resources */,
-				95C77C5A28FEEE8B009B9D69 /* narrator_14.m4a in Resources */,
+				95DD01F029216A7800C568BF /* bungko_5.m4a in Resources */,
+				95DD01DB29216A3D00C568BF /* tallu_5.m4a in Resources */,
+				95DD01E129216A4A00C568BF /* tallu_4.m4a in Resources */,
+				95DD01D429216A2200C568BF /* rua_3.m4a in Resources */,
 				95C77C5728FEEE8B009B9D69 /* retry.m4a in Resources */,
-				95326A5328FACD91002BAB3B /* landing.mp3 in Resources */,
 				95A6C5D028FC2A4400055B0A /* explore3.m4a in Resources */,
+				95DD01D629216A2200C568BF /* rua_1.m4a in Resources */,
+				95DD01B2292169DF00C568BF /* lompo_12.m4a in Resources */,
 				142AFC4328F42DA20069046C /* Models.scnassets in Resources */,
+				95DD021C2921E66600C568BF /* narrator_2.m4a in Resources */,
 				95BD1E4628FF1CE6003832EF /* damage.m4a in Resources */,
+				95DD01FC29216B0A00C568BF /* puteri_3.m4a in Resources */,
+				95DD01BF292169F100C568BF /* lompo_6.m4a in Resources */,
+				95DD01A12920090F00C568BF /* landing.m4a in Resources */,
 				95C77C5B28FEEE8B009B9D69 /* power2_hint.m4a in Resources */,
-				95C77C0C28FEDF8C009B9D69 /* lompo_4.m4a in Resources */,
-				95C77C2228FEE2F1009B9D69 /* rua_2.m4a in Resources */,
 				954C9CE228FAC5650005960D /* clicked.wav in Resources */,
-				95C77C2328FEE2F1009B9D69 /* rua_1.m4a in Resources */,
-				95C77C5628FEEE8B009B9D69 /* narrator_12.m4a in Resources */,
+				95DD01C1292169F100C568BF /* lompo_7.m4a in Resources */,
+				95DD01B3292169DF00C568BF /* lompo_11.m4a in Resources */,
 				95C77C2E28FEE30C009B9D69 /* rua_game_2.m4a in Resources */,
 				95C77C3428FEE30C009B9D69 /* rua_tutorial_3.m4a in Resources */,
+				95DD01ED29216A7800C568BF /* bungko_3.m4a in Resources */,
 				95C77C6328FEEE8B009B9D69 /* explore2_found.m4a in Resources */,
+				95DD01C2292169F100C568BF /* lompo_8.m4a in Resources */,
+				95DD01C7292169F100C568BF /* lompo_4.m4a in Resources */,
 				95C77C3328FEE30C009B9D69 /* rua_power_success.m4a in Resources */,
-				95C77C1228FEE058009B9D69 /* puteri_3.m4a in Resources */,
-				95C77C2428FEE2F1009B9D69 /* rua_5.m4a in Resources */,
+				95DD01C0292169F100C568BF /* lompo_1.m4a in Resources */,
 				95BD1E4528FF1CE6003832EF /* walk.m4a in Resources */,
 				95BD1E5628FF93B9003832EF /* tutorial.json in Resources */,
 				95C77C3128FEE30C009B9D69 /* rua_game_1.m4a in Resources */,
 				95C77C3228FEE30C009B9D69 /* rua_challenge_success.m4a in Resources */,
+				95DD02222921E66600C568BF /* narrator_14.m4a in Resources */,
 				95C77C1828FEE0E1009B9D69 /* tallu_power2.m4a in Resources */,
-				95C77C1428FEE058009B9D69 /* puteri_2.m4a in Resources */,
+				95DD01FD29216B0A00C568BF /* puteri_2.m4a in Resources */,
 				95BD1E4C28FF27D0003832EF /* finish.wav in Resources */,
-				95C77C1C28FEE127009B9D69 /* tallu_2.m4a in Resources */,
+				95DD01FB29216B0A00C568BF /* puteri_1.m4a in Resources */,
+				95DD021B2921E66600C568BF /* narrator_6.m4a in Resources */,
 				95C77C6428FEEE8B009B9D69 /* explore3_hint.m4a in Resources */,
-				95C77C0B28FEDF8C009B9D69 /* lompo_1.m4a in Resources */,
+				95DD02212921E66600C568BF /* narrator_9.m4a in Resources */,
+				95DD01D229216A2200C568BF /* rua_5.m4a in Resources */,
 				14E89D4428FD561A007EB47A /* collection.json in Resources */,
+				95DD021F2921E66600C568BF /* narrator_7.m4a in Resources */,
 				95EBB88728F8184400EE82E7 /* Assets.xcassets in Resources */,
 				95EBB88928F852BE00EE82E7 /* stories.json in Resources */,
-				95C77C6828FEEE8B009B9D69 /* narrator_2.m4a in Resources */,
-				95C77C0E28FEDF8C009B9D69 /* lompo_3.m4a in Resources */,
+				95DD01C6292169F100C568BF /* lompo_3.m4a in Resources */,
+				95DD01C4292169F100C568BF /* lompo_10.m4a in Resources */,
+				95DD02232921E66600C568BF /* narrator_10.m4a in Resources */,
+				95DD02272921E66600C568BF /* narrator_12.m4a in Resources */,
+				95DD01CA29216A1100C568BF /* rua_7.m4a in Resources */,
+				95DD02282921E66600C568BF /* narrator_11.m4a in Resources */,
+				95DD020829216BC800C568BF /* raja_1.m4a in Resources */,
+				95DD01BE292169F100C568BF /* lompo_2.m4a in Resources */,
 				95BD1E5128FF61EC003832EF /* checkpoint_clicked.wav in Resources */,
-				95C77C5328FEEE8B009B9D69 /* narrator_7.m4a in Resources */,
 				95A6C5DA28FC338800055B0A /* petualangan.m4a in Resources */,
 				95EBB88428F8160200EE82E7 /* ClueExploration.xib in Resources */,
 				9557987829002B0B0082C57B /* laut.m4a in Resources */,
-				95C77C6228FEEE8B009B9D69 /* narrator_8.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1586,7 +1746,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4C96B7697Z;
+				DEVELOPMENT_TEAM = S955BH56FW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Ceria/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Carita;
@@ -1623,7 +1783,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4C96B7697Z;
+				DEVELOPMENT_TEAM = S955BH56FW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Ceria/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Carita;
