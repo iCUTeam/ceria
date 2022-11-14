@@ -43,19 +43,16 @@ struct PatternGenerator
         switch (currentShape)
         {
             case .psychic:
-            //MARK: Add the shape later
-            return [CGPoint(x: 0, y: 0)]
+            return [CGPoint(x: frame.width * 0.75, y: frame.height * 0.25), CGPoint(x: frame.width * 0.03, y: frame.height * 0.5), CGPoint(x: frame.width * 0.8, y: frame.height * 0.9), CGPoint(x: frame.width * 0.8, y: frame.height * 0.5), CGPoint(x: frame.width * 0.5, y: frame.height * 0.5)]
             
             case .flash:
-            return [CGPoint(x: frame.width * 0.7, y: frame.height * 0.2), CGPoint(x: frame.width * 0.1, y: frame.height * 0.5), CGPoint(x: frame.width * 0.8, y: frame.height * 0.55), CGPoint(x: frame.width * 0.3, y: frame.height * 0.85)]
+            return [CGPoint(x: frame.width * 0.7, y: frame.height * 0.2), CGPoint(x: frame.width * 0.05, y: frame.height * 0.6), CGPoint(x: frame.width * 0.9, y: frame.height * 0.5), CGPoint(x: frame.width * 0.3, y: frame.height * 0.85)]
             
             case .arrow:
-            //MARK: Add the shape later
-            return [CGPoint(x: 0, y: 0)]
+            return [CGPoint(x: frame.width * 0.72, y: frame.height * 0.25), CGPoint(x: frame.width * 0.1, y: frame.height * 0.45), CGPoint(x: frame.width * 0.95, y: frame.height * 0.8), CGPoint(x: frame.width * 0.9, y: frame.height * 0.001), CGPoint(x: frame.width * 0.38, y: frame.height * 0.8)]
             
             case .flag:
-            //MARK: Add the shape later
-            return [CGPoint(x: 0, y: 0)]
+            return [CGPoint(x: frame.width * 0.4, y: frame.height * 0.25), CGPoint(x: frame.width * 0.2, y: frame.height * 0.2), CGPoint(x: frame.width * 0.4, y: frame.height * 0.5), CGPoint(x: frame.width * 0.8, y: frame.height * 0.55), CGPoint(x: frame.width * 0.75, y: frame.height * 0.25), CGPoint(x: frame.width * 0.45, y: frame.height * 0.25), CGPoint(x: frame.width * 0.4, y: frame.height * 0.85)]
             
             case .notSet:
             print("Error: Pattern Unset")
