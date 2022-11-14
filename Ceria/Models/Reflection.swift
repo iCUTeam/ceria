@@ -10,6 +10,8 @@ import Foundation
 struct Prompt: Codable {
     let promptImage: String
     let promptDialogue: String
+    let promptTextLine1: Int
+    let promptTextLine2: Int
     let promptVoice: String
     let promptMusic: String
     let isBackButtonHidden: Bool
@@ -21,6 +23,8 @@ struct Prompt: Codable {
     enum CodingKeys: String, CodingKey {
         case promptImage = "prompt_image"
         case promptDialogue = "prompt_dialogue"
+        case promptTextLine1 = "prompt_dialogue_line_1"
+        case promptTextLine2 = "prompt_dialogue_line_2"
         case promptVoice = "prompt_voice"
         case promptMusic = "prompt_music"
         case isBackButtonHidden = "back_button_hidden"

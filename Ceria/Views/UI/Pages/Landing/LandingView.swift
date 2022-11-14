@@ -18,7 +18,7 @@ final class LandingView: UIView {
     */
     private lazy var landingLabel: UILabel = {
         let label = UILabel()
-        label.text = "Kisah dari Sulawesi Selatan tentang keempat\nbersaudara bersama-sama menyelamatkan\nputeri yang hilang"
+        label.text = "Cerita rakyat Sulawesi Selatan tentang keempat\nbersaudara bersama-sama menyelamatkan\ntuan puteri yang diculik"
         label.setLineHeight(lineHeight: 10.0)
         label.font = UIFont.scriptFont(size: 36)
         label.translatesAutoresizingMaskIntoConstraints = false

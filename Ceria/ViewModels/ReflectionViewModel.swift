@@ -11,6 +11,8 @@ final class ReflectionViewModel {
     
     var promptImage: ObservableObject<String> = ObservableObject(value: "")
     var promptDialogue: ObservableObject<String> = ObservableObject(value: "")
+    var promptTextLine1: ObservableObject<Int> = ObservableObject(value: 0)
+    var promptTextLine2: ObservableObject<Int> = ObservableObject(value: 0)
     var promptVoice: ObservableObject<String> = ObservableObject(value: "")
     var promptMusic: ObservableObject<String> = ObservableObject(value: "")
     var isBackButtonHidden: ObservableObject<Bool> = ObservableObject(value: false)
@@ -31,6 +33,8 @@ final class ReflectionViewModel {
        
         self.promptImage.value = promptsArray[currentIndex.value].promptImage
         self.promptDialogue.value = promptsArray[currentIndex.value].promptDialogue
+        self.promptTextLine1.value = promptsArray[currentIndex.value].promptTextLine1
+        self.promptTextLine2.value = promptsArray[currentIndex.value].promptTextLine2
         self.promptVoice.value = promptsArray[currentIndex.value].promptVoice
         self.promptMusic.value = promptsArray[currentIndex.value].promptMusic
         self.isBackButtonHidden.value = promptsArray[currentIndex.value].isBackButtonHidden

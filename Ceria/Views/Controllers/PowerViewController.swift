@@ -161,7 +161,7 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         let w: CGFloat
         let h: CGFloat
         
-        if screenWidth == 834.0 {
+        if screenWidth <= 834.0 {
             x = -90
             y = -120
             w = 1020

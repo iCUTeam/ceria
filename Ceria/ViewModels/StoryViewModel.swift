@@ -11,6 +11,8 @@ final class StoryViewModel {
     
     var storyImage: ObservableObject<String> = ObservableObject(value: "")
     var storyDialogue: ObservableObject<String> = ObservableObject(value: "")
+    var storyTextLine1: ObservableObject<Int> = ObservableObject(value: 0)
+    var storyTextLine2: ObservableObject<Int> = ObservableObject(value: 0)
     var storyVoice: ObservableObject<String> = ObservableObject(value: "")
     var storyMusic: ObservableObject<String> = ObservableObject(value: "")
     var isBackButtonHidden: ObservableObject<Bool> = ObservableObject(value: false)
@@ -31,6 +33,8 @@ final class StoryViewModel {
        
         self.storyImage.value = storiesArray[currentIndex.value].storyImage
         self.storyDialogue.value = storiesArray[currentIndex.value].storyDialogue
+        self.storyTextLine1.value = storiesArray[currentIndex.value].storyTextLine1
+        self.storyTextLine2.value = storiesArray[currentIndex.value].storyTextLine2
         self.storyVoice.value = storiesArray[currentIndex.value].storyVoice
         self.storyMusic.value = storiesArray[currentIndex.value].storyMusic
         self.isBackButtonHidden.value = storiesArray[currentIndex.value].isBackButtonHidden

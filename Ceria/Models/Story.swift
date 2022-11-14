@@ -10,6 +10,8 @@ import Foundation
 struct Story: Codable {
     let storyImage: String
     let storyDialogue: String
+    let storyTextLine1: Int
+    let storyTextLine2: Int
     let storyVoice: String
     let storyMusic: String
     let isBackButtonHidden: Bool
@@ -21,6 +23,8 @@ struct Story: Codable {
     enum CodingKeys: String, CodingKey {
         case storyImage = "story_image"
         case storyDialogue = "story_dialogue"
+        case storyTextLine1 = "story_dialogue_line_1"
+        case storyTextLine2 = "story_dialogue_line_2"
         case storyVoice = "story_voice"
         case storyMusic = "story_music"
         case isBackButtonHidden = "back_button_hidden"
