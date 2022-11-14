@@ -70,7 +70,7 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         }
         
         let ruaSymbol = UIImageView(frame: CGRect(x: x, y: y, width: w, height: h))
-        ruaSymbol.image = UIImage(named: "rua_symbol.png")
+        ruaSymbol.image = UIImage(named: "bungko_symbol.png")
         ruaSymbol.contentMode = .scaleToFill
         return ruaSymbol
     }()
@@ -176,7 +176,7 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         backgroundCanvasView.frame = CGRect(x: x, y: y, width: w, height: h)
         canvasView.frame = CGRect(x: x, y: y, width: w, height: h)
         
-        patternGenerator.dotsPoint = patternGenerator.setPoints(currentShape: .flash, frame: backgroundCanvasView.frame)
+        patternGenerator.dotsPoint = patternGenerator.setPoints(currentShape: .flag, frame: backgroundCanvasView.frame)
         backgroundCanvasView.drawing = patternGenerator.synthDrawing(frame: backgroundCanvasView.frame)
         
         animateNextStroke()
@@ -277,7 +277,7 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         animationTimer = Timer.scheduledTimer(withTimeInterval: 1.0 / 60, repeats: true) { _ in self.stepAnimation() }
         
         // Setup the start marker layer.
-        animationStartMarkerLayer.position = CGPoint(x: backgroundCanvasView.frame.width * 0.7, y: backgroundCanvasView.frame.width * 0.25)
+        animationStartMarkerLayer.position = patternGenerator.dotsPoint.first ?? CGPoint(x: backgroundCanvasView.frame.width * 0.7, y: backgroundCanvasView.frame.width * 0.2)
         animationStartMarkerLayer.opacity = 1.0
     }
     
@@ -310,7 +310,7 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         animationParametricValue = animatingStroke.path.parametricValue(
             animationParametricValue,
             offsetBy: .time(delta * TimeInterval(animationSpeed)))
-        animationMarkerLayer.position = CGPoint(x: backgroundCanvasView.frame.width * 0.7, y: backgroundCanvasView.frame.width * 0.2)
+        animationMarkerLayer.position = patternGenerator.dotsPoint.first ?? CGPoint(x: backgroundCanvasView.frame.width * 0.7, y: backgroundCanvasView.frame.width * 0.2)
         
         print(animationMarkerLayer.position)
         animationMarkerLayer.opacity = 1
@@ -341,9 +341,10 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         let distance = lastStroke.discreteFrechetDistance(to: testDrawing.strokes[strokeIndex], maxThreshold: 5)
         
         print(distance)
-        if distance < 50 {
+        if distance < 20 {
             // Adjust the correct stroke to have a green ink.
             canvasView.drawing.strokes[strokeIndex].ink.color = .init(red: 255/255, green: 196/255, blue: 0/255, alpha: 1)
+            canvasView.tool = PKInkingTool(.marker, color: .clear, width: 70)
             Sound.play(file: "finish.wav")
             checkHintButtonChange()
             
