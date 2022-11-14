@@ -96,7 +96,7 @@ class LandingViewController: UIViewController, Storyboarded {
     
     @objc
     func playTapped() {
-        coordinator?.toPower()
+        coordinator?.tapPlay()
         AudioSFXPlayer.shared.playCommonSFX()
     }
     
