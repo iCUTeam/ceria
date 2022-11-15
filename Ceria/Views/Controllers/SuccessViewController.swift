@@ -46,7 +46,7 @@ class SuccessViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "rua_success.png")
+        backgroundImage.image = UIImage(named: "rua_yay.png")
         backgroundImage.contentMode = .scaleToFill
         view.insertSubview(backgroundImage, at: 0)
         

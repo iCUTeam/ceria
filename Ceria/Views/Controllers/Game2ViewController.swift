@@ -91,7 +91,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         coordinator?.toLanding()
         AudioSFXPlayer.shared.playCommonSFX()
         Sound.stopAll()
-        AudioBGMPlayer.shared.stopGame2BGM()
+        AudioBGMPlayer.shared.stopGameBGM()
     }
     
     func setupOverlays() {
@@ -284,7 +284,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                         sleep(2)
                         self.coordinator?.toSuccess()
                         Sound.stopAll()
-                        AudioBGMPlayer.shared.stopGame2BGM()
+                        AudioBGMPlayer.shared.stopGameBGM()
                         
                         
                         

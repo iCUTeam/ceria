@@ -17,7 +17,7 @@ class AudioBGMPlayer {
     var playerBGMSuccess: AVAudioPlayer?
     
     func playLanding() {
-        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "landing", ofType: "m4a")!)
+        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "abm-hutantropis", ofType: "m4a")!)
         do {
             playerBGMLanding = try AVAudioPlayer(contentsOf:sound as URL)
             playerBGMLanding?.numberOfLoops = -1
@@ -34,12 +34,12 @@ class AudioBGMPlayer {
     }
     
     func playStoryBGM1() {
-        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "petualangan", ofType: "m4a")!)
+        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "brolefilmer-junglesneak", ofType: "m4a")!)
         do {
             playerBGMStory = try AVAudioPlayer(contentsOf:sound as URL)
             playerBGMStory?.numberOfLoops = -1
             playerBGMStory?.prepareToPlay()
-            playerBGMStory?.volume = 0.1
+            playerBGMStory?.volume = 0.3
             playerBGMStory?.numberOfLoops = -1
             playerBGMStory?.play()
         }
@@ -49,7 +49,7 @@ class AudioBGMPlayer {
     }
     
     func playStoryBGM2() {
-        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "sedih", ofType: "m4a")!)
+        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "geoffharvey-adventure", ofType: "m4a")!)
         do {
             playerBGMStory = try AVAudioPlayer(contentsOf:sound as URL)
             playerBGMStory?.numberOfLoops = -1
@@ -64,7 +64,127 @@ class AudioBGMPlayer {
     }
     
     func playStoryBGM3() {
-        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "laut", ofType: "m4a")!)
+        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "geoffharvey-magic", ofType: "m4a")!)
+        do {
+            playerBGMStory = try AVAudioPlayer(contentsOf:sound as URL)
+            playerBGMStory?.numberOfLoops = -1
+            playerBGMStory?.prepareToPlay()
+            playerBGMStory?.volume = 0.3
+            playerBGMStory?.numberOfLoops = -1
+            playerBGMStory?.play()
+        }
+        catch {
+            print("Cannot play the file")
+        }
+    }
+    
+    func playStoryBGM4() {
+        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "jackmichaelking-ocean", ofType: "m4a")!)
+        do {
+            playerBGMStory = try AVAudioPlayer(contentsOf:sound as URL)
+            playerBGMStory?.numberOfLoops = -1
+            playerBGMStory?.prepareToPlay()
+            playerBGMStory?.volume = 0.3
+            playerBGMStory?.numberOfLoops = -1
+            playerBGMStory?.play()
+        }
+        catch {
+            print("Cannot play the file")
+        }
+    }
+    
+    func playStoryBGM5() {
+        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "lesfm-kingdom", ofType: "m4a")!)
+        do {
+            playerBGMStory = try AVAudioPlayer(contentsOf:sound as URL)
+            playerBGMStory?.numberOfLoops = -1
+            playerBGMStory?.prepareToPlay()
+            playerBGMStory?.volume = 0.3
+            playerBGMStory?.numberOfLoops = -1
+            playerBGMStory?.play()
+        }
+        catch {
+            print("Cannot play the file")
+        }
+    }
+    
+    func playStoryBGM6() {
+        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "lexin-midnight", ofType: "m4a")!)
+        do {
+            playerBGMStory = try AVAudioPlayer(contentsOf:sound as URL)
+            playerBGMStory?.numberOfLoops = -1
+            playerBGMStory?.prepareToPlay()
+            playerBGMStory?.volume = 0.3
+            playerBGMStory?.numberOfLoops = -1
+            playerBGMStory?.play()
+        }
+        catch {
+            print("Cannot play the file")
+        }
+    }
+    
+    func playStoryBGM7() {
+        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "musiclfiles-finalbattle", ofType: "m4a")!)
+        do {
+            playerBGMStory = try AVAudioPlayer(contentsOf:sound as URL)
+            playerBGMStory?.numberOfLoops = -1
+            playerBGMStory?.prepareToPlay()
+            playerBGMStory?.volume = 0.3
+            playerBGMStory?.numberOfLoops = -1
+            playerBGMStory?.play()
+        }
+        catch {
+            print("Cannot play the file")
+        }
+    }
+    
+    func playStoryBGM8() {
+        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "musicunlimited-epic", ofType: "m4a")!)
+        do {
+            playerBGMStory = try AVAudioPlayer(contentsOf:sound as URL)
+            playerBGMStory?.numberOfLoops = -1
+            playerBGMStory?.prepareToPlay()
+            playerBGMStory?.volume = 0.3
+            playerBGMStory?.numberOfLoops = -1
+            playerBGMStory?.play()
+        }
+        catch {
+            print("Cannot play the file")
+        }
+    }
+    
+    func playStoryBGM9() {
+        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "redproductions-sweet", ofType: "m4a")!)
+        do {
+            playerBGMStory = try AVAudioPlayer(contentsOf:sound as URL)
+            playerBGMStory?.numberOfLoops = -1
+            playerBGMStory?.prepareToPlay()
+            playerBGMStory?.volume = 0.3
+            playerBGMStory?.numberOfLoops = -1
+            playerBGMStory?.play()
+        }
+        catch {
+            print("Cannot play the file")
+        }
+    }
+    
+    func playStoryBGM10() {
+        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "solbox-war", ofType: "m4a")!)
+        do {
+            playerBGMStory = try AVAudioPlayer(contentsOf:sound as URL)
+            playerBGMStory?.numberOfLoops = -1
+            playerBGMStory?.prepareToPlay()
+            playerBGMStory?.volume = 0.3
+            playerBGMStory?.numberOfLoops = -1
+            playerBGMStory?.play()
+        }
+        catch {
+            print("Cannot play the file")
+        }
+    }
+    
+    func playStoryBGM11() {
+        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "vadim-journey", ofType: "m4a")!)
         do {
             playerBGMStory = try AVAudioPlayer(contentsOf:sound as URL)
             playerBGMStory?.numberOfLoops = -1
@@ -83,7 +203,7 @@ class AudioBGMPlayer {
     }
     
     func playGame2BGM() {
-        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "game2-bgm", ofType: "m4a")!)
+        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "abm-jalanjalansore", ofType: "m4a")!)
         do {
             playerBGMGame = try AVAudioPlayer(contentsOf:sound as URL)
             playerBGMGame?.numberOfLoops = -1
@@ -97,7 +217,7 @@ class AudioBGMPlayer {
         }
     }
     
-    func stopGame2BGM() {
+    func stopGameBGM() {
         playerBGMGame?.stop()
     }
     

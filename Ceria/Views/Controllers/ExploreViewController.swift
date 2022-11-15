@@ -32,7 +32,6 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     //checkpoint
     private lazy var dialogueTextBox: ExploreView = {
         let dialogue = ExploreView(content: "Cari kartu dengan gambar pulau di sekitarmu untuk membantu kapal berlabuh ke pulau yang tepat.")
-        
         return dialogue
     }()
     
@@ -92,7 +91,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         let w: CGFloat
         let h: CGFloat
         
-        if screenWidth == 834.0 {
+        if screenWidth <= 834.0 {
             x = 65
             y = 150
             w = 700

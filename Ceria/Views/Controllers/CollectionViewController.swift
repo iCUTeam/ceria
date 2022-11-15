@@ -7,6 +7,7 @@
 
 import UIKit
 import SceneKit
+import SwiftySound
 
 class CollectionViewController: UIViewController, Storyboarded {
     
@@ -39,6 +40,7 @@ class CollectionViewController: UIViewController, Storyboarded {
     
     let viewModel = CollectionViewModel()
     let defaults = UserDefaults.standard
+    var collectionSFX = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +93,8 @@ class CollectionViewController: UIViewController, Storyboarded {
         
         collectionSceneView.addGestureRecognizer(tapRecognizer)
         //Do any additional setup after loading the view.
+        
+        AudioBGMPlayer.shared.playerBGMLanding?.volume = 0.2
     }
     
     override func viewDidLayoutSubviews() {
@@ -121,6 +125,7 @@ class CollectionViewController: UIViewController, Storyboarded {
                     {
                         AudioSFXPlayer.shared.playCommonSFX()
                         setupPopUP(index: x, isUnlocked: true)
+                        Sound.play(file: collectionSFX)
                         
                         UIView.animate(withDuration: 2) {
                             self.collectionItem.isHidden = false
@@ -163,6 +168,10 @@ class CollectionViewController: UIViewController, Storyboarded {
             
             viewModel.collectibleOrigin.bind { [weak self] origin in
                 self?.collectionItem.itemOrigin.text = origin
+            }
+            
+            viewModel.collectibleSFX.bind { [weak self] sfx in
+                self?.collectionSFX = sfx
             }
             
             viewModel.collectibleDesc.bind { [weak self] desc in
@@ -210,8 +219,8 @@ class CollectionViewController: UIViewController, Storyboarded {
             
             else
             {
-                unlockedNodes[x].isHidden = true
-                lockedNodes[x].isHidden = false
+                unlockedNodes[x].isHidden = false
+                lockedNodes[x].isHidden = true
             }
             
         }
@@ -247,7 +256,7 @@ class CollectionViewController: UIViewController, Storyboarded {
         let constant: CGFloat
         let constant2: CGFloat
         
-        if screenWidth == 834.0 {
+        if screenWidth <= 834.0 {
             constant = 100
             constant2 = 700
         } else {

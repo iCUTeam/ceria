@@ -76,7 +76,7 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
     }()
     
     private lazy var hintButton: MakeButton = {
-        let button = MakeButton(image: "rua_silhouette.png", size: CGSize(width: 150, height: 150))
+        let button = MakeButton(image: "bungko.png", size: CGSize(width: 150, height: 150))
         button.addTarget(self, action: #selector(hintTapped), for: .touchUpInside)
         return button
     }()
@@ -176,7 +176,7 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         backgroundCanvasView.frame = CGRect(x: x, y: y, width: w, height: h)
         canvasView.frame = CGRect(x: x, y: y, width: w, height: h)
         
-        patternGenerator.dotsPoint = patternGenerator.setPoints(currentShape: .flag, frame: backgroundCanvasView.frame)
+        patternGenerator.dotsPoint = patternGenerator.setPoints(currentShape: .hammer, frame: backgroundCanvasView.frame)
         backgroundCanvasView.drawing = patternGenerator.synthDrawing(frame: backgroundCanvasView.frame)
         
         animateNextStroke()
@@ -226,7 +226,7 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
     }
     
     func checkHintButtonChange() {
-        let customButtonImage = UIImage(named: "rua.png")
+        let customButtonImage = UIImage(named: "bungko_succcess.png")
         let newimage = customButtonImage?.resizedImage(size: CGSize(width: 150, height: 150))
         hintButton.setImage(newimage, for: .normal)
         

@@ -81,6 +81,7 @@ class ReflectionViewController: UIViewController, AVAudioPlayerDelegate, Storybo
         checkVoiceChange()
         promptPlayer.play()
         checkBGMChange()
+        checkTextHeightChange()
         currentBGM = promptMusic
         disablingNextButton()
     }
@@ -227,12 +228,8 @@ class ReflectionViewController: UIViewController, AVAudioPlayerDelegate, Storybo
             currentBGM = promptMusic
             
             switch promptMusic {
-            case "petualangan":
-                AudioBGMPlayer.shared.playStoryBGM1()
-            case "sedih":
-                AudioBGMPlayer.shared.playStoryBGM2()
-            case "laut":
-                AudioBGMPlayer.shared.playStoryBGM3()
+            case "redproductions-sweet":
+                AudioBGMPlayer.shared.playStoryBGM9()
             default:
                 print("nothing to play")
             }
