@@ -81,6 +81,7 @@ class ReflectionViewController: UIViewController, AVAudioPlayerDelegate, Storybo
         checkVoiceChange()
         promptPlayer.play()
         checkBGMChange()
+        checkTextHeightChange()
         currentBGM = promptMusic
         disablingNextButton()
     }
@@ -186,13 +187,18 @@ class ReflectionViewController: UIViewController, AVAudioPlayerDelegate, Storybo
         promptPlayer.stop()
         AudioBGMPlayer.shared.stopStoryBGM()
         Sound.play(file: actionButtonSFX)
-        
-        defaults.set("not_started", forKey: "userState")
-        defaults.set(0, forKey: "promptIndex")
-        defaults.set(0, forKey: "storyIndex")
+        resetProgress()
         sleep(5)
         coordinator?.toStory()
         
+    }
+    
+    func resetProgress() {
+        defaults.set("not_started", forKey: "userState")
+        defaults.set(0, forKey: "promptIndex")
+        defaults.set(0, forKey: "storyIndex")
+        defaults.set(0, forKey: "powerIndex")
+        defaults.set(0, forKey: "successIndex")
     }
     
     func disablingNextButton() {
@@ -227,12 +233,8 @@ class ReflectionViewController: UIViewController, AVAudioPlayerDelegate, Storybo
             currentBGM = promptMusic
             
             switch promptMusic {
-            case "petualangan":
-                AudioBGMPlayer.shared.playStoryBGM1()
-            case "sedih":
-                AudioBGMPlayer.shared.playStoryBGM2()
-            case "laut":
-                AudioBGMPlayer.shared.playStoryBGM3()
+            case "redproductions-sweet":
+                AudioBGMPlayer.shared.playStoryBGM9()
             default:
                 print("nothing to play")
             }

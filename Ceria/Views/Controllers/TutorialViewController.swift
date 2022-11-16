@@ -111,9 +111,11 @@ class TutorialViewController: UIViewController, Storyboarded {
         viewModel.isNextButtonHidden.bind { [weak self] toggle in
             self?.nextButton.isHidden = toggle
         }
+        
         viewModel.isBackButtonHidden.bind { [weak self] toggle in
             self?.previousButton.isHidden = toggle
         }
+        
         viewModel.isActionButtonHidden.bind { [weak self] toggle in
             self?.actionButton.isHidden = toggle
         }
@@ -135,6 +137,7 @@ class TutorialViewController: UIViewController, Storyboarded {
     func homeTapped() {
         coordinator?.toLanding()
         AudioSFXPlayer.shared.playCommonSFX()
+        AudioBGMPlayer.shared.stopStoryBGM()
         Sound.stopAll()
     }
     

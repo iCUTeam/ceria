@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "checkpoint_dermaga.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "width" : 10.5
+  }
+}

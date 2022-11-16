@@ -78,6 +78,7 @@ class StoryViewController: UIViewController, AVAudioPlayerDelegate, Storyboarded
         checkVoiceChange()
         voicePlayer.play()
         checkBGMChange()
+        checkTextHeightChange()
         currentBGM = storyMusic
         disablingNextButton()
         disablingActionButton()
@@ -197,42 +198,42 @@ class StoryViewController: UIViewController, AVAudioPlayerDelegate, Storyboarded
             saveAndNextIndex()
             defaults.set("clear_story_2", forKey: "userState")
             coordinator?.toPower()
-            sleep(5)
+            sleep(6)
         case "explore2.png":
             saveAndNextIndex()
             defaults.set("clear_story_3", forKey: "userState")
             coordinator?.toExplore()
-            sleep(3)
+            sleep(5)
         case "power2.png":
             saveAndNextIndex()
             defaults.set("clear_story_4", forKey: "userState")
             coordinator?.toPower()
-            sleep(3)
+            sleep(5)
         case "explore3.png":
             saveAndNextIndex()
             defaults.set("clear_story_5", forKey: "userState")
             coordinator?.toExplore()
-            sleep(3)
+            sleep(5)
         case "power3.png":
             saveAndNextIndex()
             defaults.set("clear_story_6", forKey: "userState")
             coordinator?.toPower()
-            sleep(3)
+            sleep(5)
         case "power4.png":
             saveAndNextIndex()
             defaults.set("clear_story_7", forKey: "userState")
             coordinator?.toPower()
-            sleep(3)
+            sleep(5)
         case "explore4.png":
             saveAndNextIndex()
             defaults.set("clear_story_8", forKey: "userState")
             coordinator?.toExplore()
-            sleep(3)
+            sleep(5)
         case "reflection.png":
             viewModel.saveIndex()
             defaults.set("cleared", forKey: "userState")
             coordinator?.toReflection()
-            sleep(5)
+            sleep(8)
         default:
             print("nowhere to go")
         }
@@ -283,12 +284,26 @@ class StoryViewController: UIViewController, AVAudioPlayerDelegate, Storyboarded
             currentBGM = storyMusic
             
             switch storyMusic {
-            case "petualangan":
+            case "brolefilmer-junglesneak":
                 AudioBGMPlayer.shared.playStoryBGM1()
-            case "sedih":
+            case "geoffharvey-adventure":
                 AudioBGMPlayer.shared.playStoryBGM2()
-            case "laut":
+            case "geoffharvey-magic":
                 AudioBGMPlayer.shared.playStoryBGM3()
+            case "jackmichaelking-ocean":
+                AudioBGMPlayer.shared.playStoryBGM4()
+            case "lesfm-kingdom":
+                AudioBGMPlayer.shared.playStoryBGM5()
+            case "lexin-midnight":
+                AudioBGMPlayer.shared.playStoryBGM6()
+            case "musiclfiles-finalbattle":
+                AudioBGMPlayer.shared.playStoryBGM7()
+            case "musicunlimited-epic":
+                AudioBGMPlayer.shared.playStoryBGM8()
+            case "solbox-war":
+                AudioBGMPlayer.shared.playStoryBGM10()
+            case "vadim-journey":
+                AudioBGMPlayer.shared.playStoryBGM11()
             default:
                 print("nothing to play")
             }
@@ -307,7 +322,7 @@ class StoryViewController: UIViewController, AVAudioPlayerDelegate, Storyboarded
         let screenWidth = screenSize.width
         var boxHeight: CGFloat = 0
         
-        if screenWidth == 834.0 {
+        if screenWidth <= 834.0 {
             switch storyTextLine1 {
             case 1:
                 boxHeight = 60

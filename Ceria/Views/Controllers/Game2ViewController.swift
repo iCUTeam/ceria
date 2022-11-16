@@ -22,6 +22,11 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         return button
     }()
     
+    private lazy var tapLayer: Game2View = {
+        let layer = Game2View()
+        return layer
+    }()
+    
     //collision bitmask
     let categoryObstacles = 2
     
@@ -60,7 +65,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         
         
         powerProgressBar.progress = 1
-        
+        view.addSubview(tapLayer)
         view.addSubview(homeButton)
         setUpAutoLayout()
         
@@ -68,6 +73,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         
         Sound.stopAll()
         Sound.play(file: "rua_game_1.m4a")
+        tapLayer.isHidden = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,7 +97,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         coordinator?.toLanding()
         AudioSFXPlayer.shared.playCommonSFX()
         Sound.stopAll()
-        AudioBGMPlayer.shared.stopGame2BGM()
+        AudioBGMPlayer.shared.stopGameBGM()
     }
     
     func setupOverlays() {
@@ -134,7 +140,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         }
         
         ruaImage = UIImageView(frame: CGRect(x: x, y: y, width: 100, height: 100))
-        ruaImage.image = UIImage(named: "rua.png")
+        ruaImage.image = UIImage(named: "rua_head.png")
         ruaImage.contentMode = .scaleAspectFit
         view.insertSubview(ruaImage, at: 1)
         
@@ -222,6 +228,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         
         gameStarted.toggle()
         
+        tapLayer.isHidden = true
         //cek klo game start dia mulai jalanin objectnya sesuai accelerationdata yang diatas per sumbu x dan z nya ngikut dari pergerakan accelerometer
         
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
@@ -284,22 +291,8 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                         sleep(2)
                         self.coordinator?.toSuccess()
                         Sound.stopAll()
-                        AudioBGMPlayer.shared.stopGame2BGM()
-                        
-                        
-                        
-                        //temporary alert
-                        //                        let alert = UIAlertController(title: "Kamu berhasil!", message: "Asik, kita sudah sampai ke sarang Garuda! Ayo selamatkan tuan putri!", preferredStyle: .alert)
-                        //
-                        //                        alert.addAction(UIAlertAction(title: "Asik", style: .default)
-                        //                        {_ in
-                        //                            alert.dismiss(animated: true)
-                        //
-                        //                        })
-                        //
-                        //                        self.present(alert, animated: true)
-                        
-                        
+                        AudioBGMPlayer.shared.stopGameBGM()
+
                     }
                 }
             }

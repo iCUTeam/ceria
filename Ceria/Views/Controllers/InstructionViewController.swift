@@ -316,10 +316,8 @@ class InstructionViewController: UIViewController, Storyboarded {
         switch state {
         case "clear_story_1", "clear_story_3", "clear_story_5", "clear_story_8":
             coordinator?.toExplore()
-            sleep(3)
         case "clear_story_2", "clear_story_4", "clear_story_6", "clear_story_7":
             coordinator?.toPower()
-            sleep(3)
         case "cleared":
             coordinator?.toReflection()
         default:

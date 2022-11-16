@@ -64,6 +64,7 @@ class LandingViewController: UIViewController, Storyboarded {
         setUpAutoLayout()
         
         AudioBGMPlayer.shared.playLanding()
+        AudioSFXPlayer.shared.playCaritaSFX()
     }
     
     override func viewWillAppear(_ animated: Bool) {

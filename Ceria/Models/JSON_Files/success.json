@@ -1,0 +1,43 @@
+[
+ {
+ "success_text_1" : "Lompo:\nWah terima kasih ya, kamu baik sekali! Sekarang aku sudah bisa melihat keberadaan tuan puteri! Ini hadiah untuk kamu!",
+ "success_text_2" : "Lompo:\nWah terima kasih ya, kamu baik sekali! Sekarang aku sudah bisa melihat keberadaan tuan puteri!",
+ "success_voice_1" : "success1_card.m4a",
+ "success_voice_2" : "success1.m4a",
+ "success_card_image" : "kartu_lompo",
+ "success_card_text": "Cari kartu bergambar wajah Lompo sebelum cerita usai untuk mengambil hadiah dari Lompo ya.",
+ "success_card_voice": "explore2_collect_hint.m4a",
+ "success_background": "lompo_yay"
+ },
+ {
+ "success_text_1" : "Rua:\nYay, kita berhasil sampai ke tuan puteri! Terima kasih ya untuk bantuannya! Ini untuk kamu!",
+ "success_text_2" : "Rua:\nYay, kita berhasil sampai ke tuan puteri! Terima kasih ya untuk bantuannya!",
+ "success_voice_1" : "success2_card.m4a",
+ "success_voice_2" : "success2.m4a",
+ "success_card_image" : "kartu_rua",
+ "success_card_text": "Cari kartu bergambar wajah Rua sebelum cerita usai untuk mengambil hadiah dari Rua ya.",
+ "success_card_voice": "explore3_collect_hint.m4a",
+ "success_background": "rua_yay"
+ },
+ {
+ "success_text_1" : "Tallu:\nKita berhasil memanah burung garuda dengan tepat sasaran! Semua berkat bantuanmu, terima kasih ya! Ini untukmu!",
+ "success_text_2" : "Tallu:\nKita berhasil memanah burung garuda dengan tepat sasaran! Semua berkat bantuanmu, terima kasih ya!",
+ "success_voice_1" : "success3_card.m4a",
+ "success_voice_2" : "success3.m4a",
+ "success_card_image" : "kartu_tallu",
+ "success_card_text": "Cari kartu bergambar wajah Tallu sebelum cerita usai untuk mengambil hadiah dari Tallu ya.",
+ "success_card_voice": "explore4_collect_hint_1.m4a",
+ "success_background": "tallu_yay"
+ },
+ {
+ "success_text_1" : "Bungko:\nKapal sudah utuh kembali dan tidak ada yang tenggelam! Kamu hebat sekali dalam membantuku! Ini buatmu ya.",
+ "success_text_2" : "Bungko:\nKapal sudah utuh kembali dan tidak ada yang tenggelam! Kamu hebat sekali dalam membantuku!",
+ "success_voice_1" : "success4_card.m4a",
+ "success_voice_2" : "success4.m4a",
+ "success_card_image" : "kartu_bungko",
+ "success_card_text": "Cari kartu bergambar wajah Bungko sebelum cerita usai untuk mengambil hadiah dari Bungko ya.",
+ "success_card_voice": "explore4_collect_hint_2.m4a",
+ "success_background": "bungko_yay"
+ }
+]
+

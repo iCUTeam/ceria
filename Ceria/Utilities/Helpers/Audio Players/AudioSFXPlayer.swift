@@ -14,6 +14,19 @@ class AudioSFXPlayer {
     var playerCommonSFX: AVAudioPlayer?
     var playerBackSFX: AVAudioPlayer?
     
+    func playCaritaSFX() {
+        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "carita", ofType: "m4a")!)
+        do {
+            playerCommonSFX = try AVAudioPlayer(contentsOf:sound as URL)
+            playerCommonSFX?.prepareToPlay()
+            playerCommonSFX?.volume = 2.0
+            playerCommonSFX?.play()
+        }
+        catch {
+            print("Cannot play the file")
+        }
+    }
+    
     func playCommonSFX() {
         let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "clicked", ofType: "wav")!)
         do {

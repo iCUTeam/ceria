@@ -15,9 +15,11 @@ final class ExploreViewModel
     
     var cardName: ObservableObject<String> = ObservableObject(value: "")
     var cardModel: ObservableObject<String> = ObservableObject(value: "")
+    var cardButton: ObservableObject<String> = ObservableObject(value: "")
     var canInteract: ObservableObject<Bool> = ObservableObject(value: false)
-    var currentName: ObservableObject<String> = ObservableObject(value: "checkpoint_istana")
+    var currentName: ObservableObject<String> = ObservableObject(value: "")
     var hintVoice: ObservableObject<String> = ObservableObject(value: "")
+    var foundVoice: ObservableObject<String> = ObservableObject(value: "")
     var hintString: ObservableObject<String> = ObservableObject(value: "")
     var nextState: ObservableObject<String> = ObservableObject(value: "")
     
@@ -36,8 +38,10 @@ final class ExploreViewModel
             {
                 self.cardName.value = card.cardName
                 self.cardModel.value = card.cardModel
+                self.cardButton.value = card.cardButton
                 self.canInteract.value = defaults.bool(forKey: currentName.value)
                 self.hintVoice.value = card.hintVoice
+                self.foundVoice.value = card.foundVoice
                 self.hintString.value = card.hintString
                 self.nextState.value = card.nextState
             }

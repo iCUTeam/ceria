@@ -1,0 +1,32 @@
+{
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "resources" : [
+    {
+      "filename" : "checkpoint_dermaga.arreferenceimage"
+    },
+    {
+      "filename" : "checkpoint_istana.arreferenceimage"
+    },
+    {
+      "filename" : "checkpoint_kapal.arreferenceimage"
+    },
+    {
+      "filename" : "checkpoint_pulau.arreferenceimage"
+    },
+    {
+      "filename" : "collection_bungko.arreferenceimage"
+    },
+    {
+      "filename" : "collection_lompo.arreferenceimage"
+    },
+    {
+      "filename" : "collection_rua.arreferenceimage"
+    },
+    {
+      "filename" : "collection_tallu.arreferenceimage"
+    }
+  ]
+}
