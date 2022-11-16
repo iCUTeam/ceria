@@ -238,17 +238,17 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                 DispatchQueue.main.async {
                     self.motion.getAccelerometerData{ (x, y, z) in
                         
-                        if self.crashNode.position.z > -12 && self.crashNode.position.z < 12
+                        if self.crashNode.position.z > -8 && self.crashNode.position.z < 8
                         {
                             self.crashNode.position += SCNVector3(x: self.accelerationData[self.index], y: 0, z: x * 0.50)
                         }
                         
-                        else if self.crashNode.position.z <= -12 && x > 0
+                        else if self.crashNode.position.z <= -8 && x > 0
                         {
                             self.crashNode.position += SCNVector3(x: self.accelerationData[self.index], y: 0, z: x * 0.50)
                         }
                         
-                        else if self.crashNode.position.z >= 12 && x < 0
+                        else if self.crashNode.position.z >= 8 && x < 0
                         {
                             self.crashNode.position += SCNVector3(x: self.accelerationData[self.index], y: 0, z: x * 0.50)
                         }
@@ -280,7 +280,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                     
                     //
                     //validasi kalau sudah sampe finish
-                    if self.crashNode.position.x >= 280 && self.crashNode.position.y <= 6 && self.crashNode.position.y >= -6
+                    if self.crashNode.position.x >= 280 && self.crashNode.position.y <= 8 && self.crashNode.position.y >= -8
                     {
                         
                         Sound.play(file: "finish.wav")

@@ -370,7 +370,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                             else
                             
                             {
-                                if let checkPointScene = SCNScene(named: "Models.scnassets/Explore/chest.scn")
+                                if let checkPointScene = SCNScene(named: "Models.scnassets/Explore/chest_new.scn")
                                 {
                                     
                                     if let checkPoint = checkPointScene.rootNode.childNodes.first {

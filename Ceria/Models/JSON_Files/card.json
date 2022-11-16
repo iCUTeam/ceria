@@ -31,7 +31,7 @@
     },
     {
         "card_name": "checkpoint_dermaga",
-        "card_model": "Checkpoint_yellow.scn",
+        "card_model": "Checkpoint_red.scn",
         "card_button": "kartu_dermaga",
         "can_interact": false,
         "hint_voice": "explore4_hint.m4a",
