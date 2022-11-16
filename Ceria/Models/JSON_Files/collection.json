@@ -7,9 +7,10 @@
         "collectible_origin": "Kalimantan Timur",
         "collectible_sfx": "seraung.m4a",
         "collectible_desc": "Seraung adalah pelindung kepala yang digunakan oleh suku Dayak. Tahukah kamu? Topi unik ini terbuat dari daun! Yaitu daun biru, semacam daun palem yang banyak tumbuh di hutan Kalimantan. Daun ini kemudian dikeringkan lalu dijahit menjadi topi.\n\nSumber: https://indonesiakaya.com/pustaka-indonesia/seraung-pelindung-kepala-khas-kalimantan/",
-        "collectible_card": "collectible_lompo",
-        "collectible_hint": "",
-        "collectible_hint_string": "Cari kartu bergambar wajah Lompo sebelum cerita usai untuk mengambil hadiah dari Lompo ya"
+        "collectible_card": "collection_lompo",
+        "collectible_button": "kartu_lompo",
+        "collectible_hint": "explore2_collect_hint.m4a",
+        "collectible_hint_string": "Cari kartu bergambar wajah Lompo sebelum cerita usai untuk mengambil hadiah dari Lompo ya."
     },
     {
         "collectible_item": "tarumpah.scn",
@@ -18,9 +19,10 @@
         "collectible_origin": "Jawa Barat",
         "collectible_sfx": "tarumpah.m4a",
         "collectible_desc": "Tarumpah adalah sandal tradisional khas Garut, Jawa Barat. Sandal ini konon sudah ada dari masa perjuangan bangsa Indonesia melawan Belanda, loh! Bahkan pahlawan Betawi, si Pitung juga konon suka memakai sandal ini!\n\nSumber: https://www.tarumpah.com/2013/01/sejarah-sandal-tarumpah.html",
-        "collectible_card": "collectible_rua",
-        "collectible_hint": "",
-        "collectible_hint_string": "Cari kartu bergambar wajah Rua sebelum cerita usai untuk mengambil hadiah dari Rua ya"
+        "collectible_card": "collection_rua",
+        "collectible_button": "kartu_rua",
+        "collectible_hint": "explore3_collect_hint.m4a",
+        "collectible_hint_string": "Cari kartu bergambar wajah Rua sebelum cerita usai untuk mengambil hadiah dari Rua ya."
     },
     {
         "collectible_item": "tinim_ando.scn",
@@ -29,9 +31,10 @@
         "collectible_origin": "Papua Barat",
         "collectible_sfx": "tinim-ando.m4a",
         "collectible_desc": "Tinim dan Ando adalah busur dan panah yang berasal dari suku Muyu. Busur Tinim ini dibuat menggunakan daun palem/enau kecil, sementara anak panah Ando dibuat menggunakan pohon kasim, sejenis pohon bambu yang diambil lalu dipanaskan dalam api untuk meluruskan mata panah. Keren yaa!\n\nSumber: https://warisanbudaya.kemdikbud.go.id/?newdetail&detailCatat=6401",
-        "collectible_card": "collectible_tallu",
-        "collectible_hint": "",
-        "collectible_hint_string": "Cari kartu bergambar wajah Tallu sebelum cerita usai untuk mengambil hadiah dari Tallu ya"
+        "collectible_card": "collection_tallu",
+        "collectible_button": "kartu_tallu",
+        "collectible_hint": "explore4_collect_hint_1.m4a",
+        "collectible_hint_string": "Cari kartu bergambar wajah Tallu sebelum cerita usai untuk mengambil hadiah dari Tallu ya."
     },
     {
         "collectible_item": "Lontong.scn",
@@ -40,9 +43,10 @@
         "collectible_origin": "Sumatera Barat",
         "collectible_sfx": "lontong-sayur.m4a",
         "collectible_desc": "Lontong sayur adalah makanan tradisional Indonesia yang berasal dari Sumatera Barat. Meskipun begitu, makanan ini juga dapat ditemukan di berbagai daerah di Indonesia, loh! Kamu mungkin pernah makan juga nih. Nah, makanan ini biasa terdiri dari lontong yang disajikan dengan santan, telur rebus, parutan labu siam, tahu tempe, sambal, dan kerupuk.",
-        "collectible_card": "collectible_bungko",
-        "collectible_hint": "",
-        "collectible_hint_string": "Cari kartu bergambar wajah Bungko sebelum cerita usai untuk mengambil hadiah dari Bungko ya"
+        "collectible_card": "collection_bungko",
+        "collectible_button": "kartu_bungko",
+        "collectible_hint": "explore4_collect_hint_2.m4a",
+        "collectible_hint_string": "Cari kartu bergambar wajah Bungko sebelum cerita usai untuk mengambil hadiah dari Bungko ya."
     }
 ]
 

@@ -16,6 +16,7 @@ struct Collection: Codable
     let collectibleSFX: String
     let collectibleDesc: String
     let collectibleCard: String
+    let collectibleButton: String
     let collectibleHint: String
     let collectibleHintString: String
     
@@ -28,6 +29,7 @@ struct Collection: Codable
         case collectibleSFX = "collectible_sfx"
         case collectibleDesc = "collectible_desc"
         case collectibleCard = "collectible_card"
+        case collectibleButton = "collectible_button"
         case collectibleHint = "collectible_hint"
         case collectibleHintString = "collectible_hint_string"
     }

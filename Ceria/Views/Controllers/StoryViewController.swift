@@ -198,42 +198,42 @@ class StoryViewController: UIViewController, AVAudioPlayerDelegate, Storyboarded
             saveAndNextIndex()
             defaults.set("clear_story_2", forKey: "userState")
             coordinator?.toPower()
-            sleep(5)
+            sleep(6)
         case "explore2.png":
             saveAndNextIndex()
             defaults.set("clear_story_3", forKey: "userState")
             coordinator?.toExplore()
-            sleep(3)
+            sleep(5)
         case "power2.png":
             saveAndNextIndex()
             defaults.set("clear_story_4", forKey: "userState")
             coordinator?.toPower()
-            sleep(3)
+            sleep(5)
         case "explore3.png":
             saveAndNextIndex()
             defaults.set("clear_story_5", forKey: "userState")
             coordinator?.toExplore()
-            sleep(3)
+            sleep(5)
         case "power3.png":
             saveAndNextIndex()
             defaults.set("clear_story_6", forKey: "userState")
             coordinator?.toPower()
-            sleep(3)
+            sleep(5)
         case "power4.png":
             saveAndNextIndex()
             defaults.set("clear_story_7", forKey: "userState")
             coordinator?.toPower()
-            sleep(3)
+            sleep(5)
         case "explore4.png":
             saveAndNextIndex()
             defaults.set("clear_story_8", forKey: "userState")
             coordinator?.toExplore()
-            sleep(3)
+            sleep(5)
         case "reflection.png":
             viewModel.saveIndex()
             defaults.set("cleared", forKey: "userState")
             coordinator?.toReflection()
-            sleep(5)
+            sleep(8)
         default:
             print("nowhere to go")
         }

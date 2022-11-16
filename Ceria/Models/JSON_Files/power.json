@@ -1,0 +1,51 @@
+[
+ {
+ "power_head_normal" : "Lompo",
+ "power_head_success" : "lompo_success",
+ "power_hint" : "Ikuti pola di atas untuk membantu Lompo melihat keberadaan tuan puteri.",
+ "power_success" : "Oke, aku sudah melihat tuan puteri dengan jelas!",
+ "power_intro_sfx" : "power1-intro.m4a",
+ "power_hint_sfx" : "power1_hint.m4a",
+ "power_success_sfx" : "power1_success.m4a",
+ "power_pattern_image" : "lompo_symbol",
+ "power_background": "lompo_power_background",
+ "power_pattern_draw": ".eye"
+ },
+ {
+ "power_head_normal" : "Rua",
+ "power_head_success" : "rua_success",
+ "power_hint" : "Ikuti pola di atas untuk membantu memperkuat kaki Rua untuk dapat berlari dengan cepat.",
+ "power_success" : "Wah, aku merasa makin kuat dan cepat! Aku siap berlari!",
+ "power_intro_sfx" : "power2-intro.m4a",
+ "power_hint_sfx" : "power2_hint.m4a",
+ "power_success_sfx" : "power2_success.m4a",
+ "power_pattern_image" : "rua_symbol",
+ "power_background": "rua_power_background",
+ "power_pattern_draw": ".flash"
+ },
+ {
+ "power_head_normal" : "Tallu",
+ "power_head_success" : "tallu_success",
+ "power_hint" : "Ikuti pola di atas untuk membantu Tallu membidik burung garuda dengan kuat dan tepat sasaran.",
+ "power_success" : "Baiklah, panahku sudah siap, terimalah ini burung garuda!",
+ "power_intro_sfx" : "power3-intro.m4a",
+ "power_hint_sfx" : "power3_hint.m4a",
+ "power_success_sfx" : "power3_success.m4a",
+ "power_pattern_image" : "tallu_symbol",
+ "power_background": "tallu_power_background",
+ "power_pattern_draw": ".arrow"
+ },
+ {
+ "power_head_normal" : "Bungko",
+ "power_head_success" : "bungko_success",
+ "power_hint" : "Ikuti pola di atas untuk membantu Bungko menemukan seluruh pecahan kapal dan menyatukannya kembali.",
+ "power_success" : "Aku dapat menemukan semua pecahannya, sekarang bersatulah!",
+ "power_intro_sfx" : "power4-intro.m4a",
+ "power_hint_sfx" : "power4_hint.m4a",
+ "power_success_sfx" : "power4_success.m4a",
+ "power_pattern_image" : "bungko_symbol",
+ "power_background": "bungko_power_background",
+ "power_pattern_draw": ".hammer"
+ }
+]
+

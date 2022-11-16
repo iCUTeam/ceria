@@ -38,7 +38,7 @@ class ExploreView: UIView {
         let size: CGFloat
         
         if screenWidth == 834.0 {
-            constant = 12.0
+            constant = 10.0
             size = 21
         } else {
             constant = 15.0

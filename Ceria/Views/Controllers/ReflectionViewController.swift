@@ -187,13 +187,18 @@ class ReflectionViewController: UIViewController, AVAudioPlayerDelegate, Storybo
         promptPlayer.stop()
         AudioBGMPlayer.shared.stopStoryBGM()
         Sound.play(file: actionButtonSFX)
-        
-        defaults.set("not_started", forKey: "userState")
-        defaults.set(0, forKey: "promptIndex")
-        defaults.set(0, forKey: "storyIndex")
+        resetProgress()
         sleep(5)
         coordinator?.toStory()
         
+    }
+    
+    func resetProgress() {
+        defaults.set("not_started", forKey: "userState")
+        defaults.set(0, forKey: "promptIndex")
+        defaults.set(0, forKey: "storyIndex")
+        defaults.set(0, forKey: "powerIndex")
+        defaults.set(0, forKey: "successIndex")
     }
     
     func disablingNextButton() {

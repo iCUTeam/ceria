@@ -43,12 +43,12 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         let canvas = PKCanvasView()
         canvas.drawingPolicy = .anyInput
         canvas.backgroundColor = .clear
-        canvas.tool = PKInkingTool(.marker, color: .black, width: 70)
+        canvas.tool = PKInkingTool(.marker, color: .white, width: 70) // ubah warnanya stroke drawing
         canvas.translatesAutoresizingMaskIntoConstraints = false
         return canvas
     }()
     
-    private lazy var ruaSymbol: UIImageView = {
+    private lazy var powerSymbol: UIImageView = {
         
         let screenSize: CGRect = UIScreen.main.bounds
         let screenWidth: CGFloat = screenSize.width
@@ -69,34 +69,31 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
             h = 1200
         }
         
-        let ruaSymbol = UIImageView(frame: CGRect(x: x, y: y, width: w, height: h))
-        ruaSymbol.image = UIImage(named: "bungko_symbol.png")
-        ruaSymbol.contentMode = .scaleToFill
-        return ruaSymbol
+        let powerSymbol = UIImageView(frame: CGRect(x: x, y: y, width: w, height: h))
+        powerSymbol.image = UIImage(named: "lompo_symbol.png")
+        powerSymbol.contentMode = .scaleToFill
+        return powerSymbol
     }()
     
     private lazy var hintButton: MakeButton = {
-        let button = MakeButton(image: "bungko.png", size: CGSize(width: 150, height: 150))
+        let button = MakeButton(image: "Lompo.png", size: CGSize(width: 150, height: 150))
         button.addTarget(self, action: #selector(hintTapped), for: .touchUpInside)
         return button
     }()
     
-    //    private lazy var ruaSilhouette: UIImageView = {
-    //        let silhouette = UIImageView(frame: CGRect(x: 5, y: 1200, width: 150, height: 150))
-    //        silhouette.image = UIImage(named: "rua_silhouette.png")
-    //        silhouette.contentMode = .scaleAspectFit
-    //        return silhouette
-    //    }()
-    //
-    //    private lazy var ruaFace: UIImageView = {
-    //        let face = UIImageView(frame: CGRect(x: 5, y: 1200, width: 150, height: 150))
-    //        face.image = UIImage(named: "rua.png")
-    //        face.contentMode = .scaleAspectFit
-    //        return face
-    //    }()
-    
-    
+    private let viewModel = PowerViewModel()
+    let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
     let defaults = UserDefaults.standard
+    var powerHeadNormal = ""
+    var powerHeadSuccess = ""
+    var powerPattern = ""
+    var patternEnum: shape = .eye
+    var patternColor: UIColor = .green
+    var powerIntroVoice = ""
+    var powerHintVoice = ""
+    var powerSuccessVoice = ""
+    var powerSuccessText = ""
+    var currentIndex = 0
     
     // Animation.
     static let repeatStrokeAnimationTime: TimeInterval = 4
@@ -108,7 +105,7 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
     var animationParametricValue: CGFloat = 0
     var animationLastFrameTime = Date()
     var animationTimer: Timer?
-    var isCharacterShown: Bool = false
+    var isSuccess: Bool = false
     
     var patternGenerator = PatternGenerator()
     
@@ -116,7 +113,10 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(ruaSymbol)
+        backgroundImage.contentMode = .scaleToFill
+        view.insertSubview(backgroundImage, at: 0)
+        
+        view.addSubview(powerSymbol)
         
         view.addSubview(hintButton)
         
@@ -128,16 +128,23 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         view.addSubview(nextButton)
         setUpAutoLayout()
         
+        setupBinders()
+        
+        viewModel.loadPower()
+        initialButtonChange()
+        
         animationMarkerLayer = CALayer()
         animationMarkerLayer.frame = CGRect(x: 0, y: 0, width: view.frame.width * 0.1, height: view.frame.width * 0.1)
-        animationMarkerLayer.backgroundColor = UIColor.red.cgColor
+        choosePatternColor()
+        animationMarkerLayer.backgroundColor = patternColor.cgColor
         animationMarkerLayer.cornerRadius = view.frame.width * 0.05
         animationMarkerLayer.delegate = self
         backgroundCanvasView.layer.addSublayer(animationMarkerLayer)
         
         animationStartMarkerLayer = CALayer()
         animationStartMarkerLayer.frame = CGRect(x: 0, y: 0, width: view.frame.width * 0.1, height: view.frame.width * 0.1)
-        animationStartMarkerLayer.borderColor = UIColor.yellow.cgColor
+        choosePatternColor()
+        animationStartMarkerLayer.borderColor = patternColor.cgColor
         animationStartMarkerLayer.borderWidth = view.frame.width * 0.01
         animationStartMarkerLayer.cornerRadius = view.frame.width * 0.05
         animationStartMarkerLayer.delegate = self
@@ -147,8 +154,8 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         
         nextButton.isHidden = true
         Sound.stopAll()
-        Sound.play(file: "tallu_power2.m4a")
-        AudioBGMPlayer.shared.playStoryBGM1()
+        setBGMPower()
+        Sound.play(file: powerIntroVoice)
     }
     
     override func viewDidLayoutSubviews() {
@@ -176,7 +183,18 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         backgroundCanvasView.frame = CGRect(x: x, y: y, width: w, height: h)
         canvasView.frame = CGRect(x: x, y: y, width: w, height: h)
         
-        patternGenerator.dotsPoint = patternGenerator.setPoints(currentShape: .hammer, frame: backgroundCanvasView.frame)
+        switch powerHeadNormal {
+        case "Lompo":
+            patternEnum = .eye
+        case "Rua":
+            patternEnum = .flash
+        case "Tallu":
+            patternEnum = .arrow
+        default:
+            patternEnum = .hammer
+        }
+        
+        patternGenerator.dotsPoint = patternGenerator.setPoints(currentShape: patternEnum, frame: backgroundCanvasView.frame)
         backgroundCanvasView.drawing = patternGenerator.synthDrawing(frame: backgroundCanvasView.frame)
         
         animateNextStroke()
@@ -199,6 +217,53 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         self.navigationController?.presentedViewController?.dismiss(animated: false, completion: nil)
     }
     
+    private func setupBinders() {
+        viewModel.powerHeadNormal.bind { [weak self] head in
+            self?.powerHeadNormal = head
+        }
+        
+        viewModel.powerHeadSuccess.bind { [weak self] head in
+            self?.powerHeadSuccess = head
+        }
+        
+        viewModel.powerHintText.bind { [weak self] hint in
+            self?.dialogueTextBox.titleLabel.text = "Petunjuk:"
+            self?.dialogueTextBox.dialogueLabel.text = hint
+        }
+        
+        viewModel.powerSuccessText.bind { [weak self] success in
+            self?.powerSuccessText = success
+        }
+        
+        viewModel.powerIntroVoice.bind { [weak self] voice in
+            self?.powerIntroVoice = voice
+        }
+        
+        viewModel.powerHintVoice.bind { [weak self] voice in
+            self?.powerHintVoice = voice
+        }
+        
+        viewModel.powerSuccessVoice.bind { [weak self] voice in
+            self?.powerSuccessVoice = voice
+        }
+        
+        viewModel.powerPatternImage.bind { [weak self] image in
+            self?.powerSymbol.image = UIImage(named: image)
+        }
+        
+        viewModel.powerBackgroundImage.bind { [weak self] image in
+            self?.backgroundImage.image = UIImage(named: image)
+        }
+        
+        viewModel.powerPatternReference.bind { [weak self] pattern in
+            self?.powerPattern = pattern
+        }
+        
+        viewModel.currentIndex.bind { [weak self] index in
+            self?.currentIndex = index
+        }
+    }
+    
     //MARK: Step Animation
     
     @objc
@@ -206,13 +271,15 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         coordinator?.toLanding()
         AudioSFXPlayer.shared.playCommonSFX()
         Sound.stopAll()
-        AudioBGMPlayer.shared.playStoryBGM1()
+        AudioBGMPlayer.shared.stopStoryBGM()
     }
     
     @objc
     func hintTapped() {
-        if isCharacterShown == false {
-            Sound.play(file: "power2_hint.m4a")
+        
+        if isSuccess == false {
+            Sound.stopAll()
+            Sound.play(file: powerHintVoice)
         } else {
             Sound.play(file: "")
         }
@@ -221,18 +288,47 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
     @objc
     func nextTapped() {
         Sound.stopAll()
-        coordinator?.toStory()
-        defaults.set("clear_power_1", forKey: "userState")
+        
+        switch defaults.integer(forKey: "powerIndex") {
+        case 1:
+            coordinator?.toTutorial()
+        default:
+            coordinator?.toSuccess()
+        }
     }
     
-    func checkHintButtonChange() {
-        let customButtonImage = UIImage(named: "bungko_succcess.png")
+    func setBGMPower() {
+        switch powerHeadNormal {
+        case "Lompo":
+            AudioBGMPlayer.shared.playStoryBGM3()
+        case "Rua":
+            AudioBGMPlayer.shared.playStoryBGM8()
+        case "Tallu":
+            AudioBGMPlayer.shared.playStoryBGM7()
+        default:
+            AudioBGMPlayer.shared.playStoryBGM10()
+        }
+    }
+    
+    func initialButtonChange() {
+        let customButtonImage = UIImage(named: powerHeadNormal)
         let newimage = customButtonImage?.resizedImage(size: CGSize(width: 150, height: 150))
         hintButton.setImage(newimage, for: .normal)
+        hintButton.contentMode = .scaleAspectFit
+    }
+    
+    func applySuccessChange() {
+        let customButtonImage = UIImage(named: powerHeadSuccess)
+        let newimage = customButtonImage?.resizedImage(size: CGSize(width: 150, height: 150))
+        hintButton.setImage(newimage, for: .normal)
+        hintButton.contentMode = .scaleAspectFit
         
-        isCharacterShown = true
+        isSuccess = true
         
         nextButton.isHidden = false
+        
+        dialogueTextBox.titleLabel.text = "\(powerHeadNormal):"
+        dialogueTextBox.dialogueLabel.text = powerSuccessText
     }
     
     func setUpAutoLayout() {
@@ -241,7 +337,7 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
             homeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
             homeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
             
-            hintButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15),
+            hintButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
             hintButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
             
             nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200),
@@ -325,6 +421,19 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         animationStartMarkerLayer.opacity = 0.0
     }
     
+    func choosePatternColor() {
+        switch powerHeadNormal {
+        case "Lompo":
+            patternColor = .init(red: 209/255, green: 100/255, blue: 100/255, alpha: 1)
+        case "Rua":
+            patternColor = .init(red: 255/255, green: 196/255, blue: 0/255, alpha: 1)
+        case "Tallu":
+            patternColor = .init(red: 100/255, green: 196/255, blue: 116/255, alpha: 1)
+        default:
+            patternColor = .init(red: 5/255, green: 180/255, blue: 255/255, alpha: 1)
+        }
+    }
+    
     func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
         // Avoid triggering the scoring, if we are programatically mutating the drawing.
         guard !isUpdatingDrawing else { return }
@@ -343,20 +452,22 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         print(distance)
         if distance < 20 {
             // Adjust the correct stroke to have a green ink.
-            canvasView.drawing.strokes[strokeIndex].ink.color = .init(red: 255/255, green: 196/255, blue: 0/255, alpha: 1)
+            choosePatternColor()
+            canvasView.drawing.strokes[strokeIndex].ink.color = patternColor // ubah warnanya stroke correct
             canvasView.tool = PKInkingTool(.marker, color: .clear, width: 70)
-            Sound.play(file: "finish.wav")
-            checkHintButtonChange()
+            Sound.stopAll()
+            Sound.play(file: "power_success.wav")
+            applySuccessChange()
             
             backgroundCanvasView.drawing.strokes[strokeIndex].ink.color = .clear
-            Sound.play(file: "rua_power_success.m4a")
+            Sound.play(file: powerSuccessVoice)
             
             
             //            AudioBGMPlayer.shared.playStoryBGM1()
             //MARK: In 3 second, move to next page
         } else {
             // If the stroke drawn was bad, remove it so the user can try again.
-            Sound.play(file: "power2_fail.m4a")
+            Sound.play(file: "power_fail.m4a")
             canvasView.drawing.strokes.removeLast()
             
         }

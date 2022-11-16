@@ -220,23 +220,4 @@ class AudioBGMPlayer {
     func stopGameBGM() {
         playerBGMGame?.stop()
     }
-    
-    func playSuccessBGM() {
-        let sound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "success-page", ofType: "m4a")!)
-        do {
-            playerBGMSuccess = try AVAudioPlayer(contentsOf:sound as URL)
-            playerBGMSuccess?.numberOfLoops = -1
-            playerBGMSuccess?.prepareToPlay()
-            playerBGMSuccess?.volume = 0.2
-            playerBGMSuccess?.numberOfLoops = -1
-            playerBGMSuccess?.play()
-        }
-        catch {
-            print("Cannot play the file")
-        }
-    }
-    
-    func stopSuccessBGM() {
-        playerBGMSuccess?.stop()
-    }
 }

@@ -45,7 +45,7 @@ class CollectionViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if defaults.string(forKey: "userState") == nil
+        if defaults.array(forKey: "collectiblesObtainedStatus") == nil
         {
             viewModel.initializeCollection()
         }
@@ -93,8 +93,6 @@ class CollectionViewController: UIViewController, Storyboarded {
         
         collectionSceneView.addGestureRecognizer(tapRecognizer)
         //Do any additional setup after loading the view.
-        
-        AudioBGMPlayer.shared.playerBGMLanding?.volume = 0.2
     }
     
     override func viewDidLayoutSubviews() {
@@ -125,6 +123,7 @@ class CollectionViewController: UIViewController, Storyboarded {
                     {
                         AudioSFXPlayer.shared.playCommonSFX()
                         setupPopUP(index: x, isUnlocked: true)
+                        AudioBGMPlayer.shared.playerBGMLanding?.volume = 0.1
                         Sound.play(file: collectionSFX)
                         
                         UIView.animate(withDuration: 2) {
@@ -219,8 +218,8 @@ class CollectionViewController: UIViewController, Storyboarded {
             
             else
             {
-                unlockedNodes[x].isHidden = false
-                lockedNodes[x].isHidden = true
+                unlockedNodes[x].isHidden = true
+                lockedNodes[x].isHidden = false
             }
             
         }
@@ -247,6 +246,7 @@ class CollectionViewController: UIViewController, Storyboarded {
         collectionItem.isHidden = true
         closeButton.isHidden = true
         AudioSFXPlayer.shared.playBackSFX()
+        AudioBGMPlayer.shared.playerBGMLanding?.volume = 1.0
     }
     
     func setUpAutoLayout() {

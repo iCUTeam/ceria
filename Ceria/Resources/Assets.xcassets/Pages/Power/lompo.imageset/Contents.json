@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "lompo.png",
+      "filename" : "Lompo.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "lompo@2x.png",
+      "filename" : "Lompo@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "lompo@3x.png",
+      "filename" : "Lompo@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -7,12 +7,30 @@
 
 import UIKit
 import SwiftySound
+import AVFoundation
 
-class SuccessViewController: UIViewController, Storyboarded {
+class SuccessViewController: UIViewController, AVAudioPlayerDelegate, Storyboarded {
     
     weak var coordinator: MainCoordinator?
     
+    private let viewModel = SuccessViewModel()
+    private let powerViewModel = PowerViewModel()
+    
     let defaults = UserDefaults.standard
+    let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+    var successText1 = ""
+    var successText2 = ""
+    var successText = ""
+    var successVoice1 = ""
+    var successVoice2 = ""
+    var successVoice = ""
+    var successCardImage = ""
+    var successCardVoice = ""
+    var nextVoice = ""
+    var currentIndex = 0
+    var currentIndex2 = 0
+    var sfxPlayer: AVAudioPlayer = AVAudioPlayer()
+    var obtainedStatus: [Bool] = []
     
     private lazy var homeButton: MakeButton = {
         let button = MakeButton(image: "home.png", size: CGSize(width: 100, height: 100))
@@ -22,7 +40,7 @@ class SuccessViewController: UIViewController, Storyboarded {
     
     private lazy var nextButton: MakeButton = {
         let button = MakeButton(image: "next.png", size: CGSize(width: 100, height: 100))
-        button.addTarget(self, action: #selector(toStory), for: .touchUpInside)
+        button.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
         return button
     }()
     
@@ -45,8 +63,6 @@ class SuccessViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "rua_yay.png")
         backgroundImage.contentMode = .scaleToFill
         view.insertSubview(backgroundImage, at: 0)
         
@@ -57,9 +73,19 @@ class SuccessViewController: UIViewController, Storyboarded {
         view.addSubview(dialogueTextBox)
         setUpAutoLayout()
         
-        AudioBGMPlayer.shared.playSuccessBGM()
+        setupBinders()
+        
+        viewModel.loadSuccess()
+        powerViewModel.loadPower()
+        
         Sound.stopAll()
-        Sound.play(file: "rua_challenge_success.m4a")
+        obtainedStatus = defaults.array(forKey: "collectiblesObtainedStatus") as? [Bool] ?? [Bool]()
+        checkObtainedItem()
+        initialButtonChange()
+        applyDialogueChange()
+        playSuccessVoice()
+        disablingNextButton()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -79,28 +105,160 @@ class SuccessViewController: UIViewController, Storyboarded {
         self.navigationController?.presentedViewController?.dismiss(animated: false, completion: nil)
     }
     
+    private func setupBinders() {
+        viewModel.successText1.bind { [weak self] text in
+            self?.successText1 = text
+        }
+        
+        viewModel.successText2.bind { [weak self] text in
+            self?.successText2 = text
+        }
+        
+        viewModel.successVoice1.bind { [weak self] voice in
+            self?.successVoice1 = voice
+        }
+        
+        viewModel.successVoice2.bind { [weak self] voice in
+            self?.successVoice2 = voice
+        }
+        
+        viewModel.successCardImage.bind { [weak self] image in
+            self?.successCardImage = image
+        }
+        
+        viewModel.successCardText.bind { [weak self] text in
+            self?.dialogueTextBox.titleLabel.text = "Petunjuk:"
+            self?.dialogueTextBox.dialogueLabel.text = text
+        }
+        
+        viewModel.successCardVoice.bind { [weak self] voice in
+            self?.successCardVoice = voice
+        }
+        
+        viewModel.successBackground.bind { [weak self] image in
+            self?.backgroundImage.image = UIImage(named: image)
+        }
+        
+        viewModel.currentIndex.bind { [weak self] index in
+            self?.currentIndex = index
+        }
+        
+        powerViewModel.currentIndex.bind { [weak self] index in
+            self?.currentIndex2 = index
+        }
+    }
+    
     @objc
     func homeTapped() {
         coordinator?.toLanding()
         AudioSFXPlayer.shared.playCommonSFX()
-        AudioBGMPlayer.shared.stopSuccessBGM()
+        AudioBGMPlayer.shared.stopStoryBGM()
         Sound.stopAll()
     }
     
     @objc
     func hintTapped() {
-        Sound.play(file: "explore3_collect_hint.m4a")
+        Sound.stopAll()
+        Sound.play(file: "")
     }
     
     @objc
-    func toStory() {
+    func nextTapped() {
+        
         Sound.stopAll()
+        sfxPlayer.stop()
         coordinator?.toStory()
-        self.defaults.set("clear_challenge_1", forKey: "userState")
+        Sound.play(file: nextVoice)
+        switch defaults.integer(forKey: "successIndex") {
+        case 0:
+            saveAndNextIndex()
+            defaults.set("clear_power_1", forKey: "userState")
+        case 1:
+            saveAndNextIndex()
+            defaults.set("clear_power_2", forKey: "userState")
+        case 2:
+            saveAndNextIndex()
+            defaults.set("clear_power_3", forKey: "userState")
+        default:
+            viewModel.saveIndex()
+            defaults.set(currentIndex2, forKey: "powerIndex")
+            defaults.set("clear_power_4", forKey: "userState")
+        }
+        
         AudioSFXPlayer.shared.playCommonSFX()
-        AudioBGMPlayer.shared.stopSuccessBGM()
-        Sound.play(file: "explore3_collect_hint.m4a")
+        AudioBGMPlayer.shared.stopStoryBGM()
+        
         sleep(6)
+    }
+    
+    func checkObtainedItem() {
+        if obtainedStatus[currentIndex] == false {
+            successText = successText1
+            successVoice = successVoice1
+            hintButton.isHidden = false
+            dialogueTextBox.isHidden = false
+            nextVoice = successCardVoice
+        } else {
+            successText = successText2
+            successVoice = successVoice2
+            hintButton.isHidden = true
+            dialogueTextBox.isHidden = true
+            nextVoice = ""
+        }
+    }
+    
+    func saveAndNextIndex() {
+        viewModel.nextIndex()
+        viewModel.saveIndex()
+        nextIndex()
+        defaults.set(currentIndex2, forKey: "powerIndex")
+    }
+    
+    func nextIndex() {
+        if currentIndex2 == powerViewModel.powerArray.count-1 {
+            currentIndex2 = 0
+        } else {
+            currentIndex2 += 1
+        }
+        
+        powerViewModel.getPower()
+    }
+    
+    func applyDialogueChange() {
+        promptTextBox.promptLabel.text = successText
+    }
+    
+    func initialButtonChange() {
+        let customButtonImage = UIImage(named: successCardImage)
+        let newimage = customButtonImage?.resizedImage(size: CGSize(width: 115, height: 150))
+        hintButton.setImage(newimage, for: .normal)
+        hintButton.contentMode = .scaleAspectFit
+    }
+    
+    func disablingNextButton() {
+        if defaults.bool(forKey: "disableSkip") == true {
+            nextButton.isEnabled = false
+        }
+    }
+    
+    func playSuccessVoice() {
+        do{
+            let audioName = successVoice.components(separatedBy: ".")[0]
+            let audioPath = Bundle.main.path(forResource: audioName, ofType: "m4a")
+            sfxPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: audioPath!))
+            sfxPlayer.prepareToPlay()
+            sfxPlayer.delegate = self
+            sfxPlayer.play()
+        }
+        catch{
+            print(error)
+        }
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool){
+        if flag == true && defaults.bool(forKey: "disableSkip") == true {
+            nextButton.isEnabled.toggle()
+        }
     }
     
     func setUpAutoLayout() {

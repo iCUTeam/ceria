@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "bungko.png",
+      "filename" : "Bungko.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "bungko@2x.png",
+      "filename" : "Bungko@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "bungko@3x.png",
+      "filename" : "Bungko@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

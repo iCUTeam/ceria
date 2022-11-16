@@ -19,7 +19,7 @@ class AudioSFXPlayer {
         do {
             playerCommonSFX = try AVAudioPlayer(contentsOf:sound as URL)
             playerCommonSFX?.prepareToPlay()
-            playerCommonSFX?.volume = 3.0
+            playerCommonSFX?.volume = 2.0
             playerCommonSFX?.play()
         }
         catch {

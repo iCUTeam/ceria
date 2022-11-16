@@ -67,7 +67,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     var hintText2: String = ""
     var hintImage: String = ""
     var hintImage2: String = ""
-    
+    var itemObtained: [Bool] = []
     
     private let collectionViewModel = CollectionViewModel()
     private let explorationModel = ExploreViewModel()
@@ -142,38 +142,58 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         //        instructionViewSecondary.clueImage.image = UIImage(named: "blue-card")
         
         
-        if collectionViewModel.obtainedStatus.count == 0
+        if defaults.array(forKey: "collectiblesObtainedStatus") == nil
         {
             collectionViewModel.initializeCollection()
         }
         
+        if defaults.string(forKey: "userState") != "clear_story_1"
+        {
+            collectionViewModel.collectibleHint.bind { voice in
+                self.hint2 = voice
+            }
+            
+            collectionViewModel.collectibleHintString.bind { hintString in
+                self.dialogueTextBox2.dialogueLabel.text = hintString
+            }
+            
+            collectionViewModel.collectibleButton.bind { cardButton in
+                let customButtonImage2 = UIImage(named:  cardButton)
+                let newimage2 = customButtonImage2?.resizedImage(size: CGSize(width: 115, height: 150))
+                self.hint2Button.setImage(newimage2, for: .normal)
+            }
+            
+            hint2Button.isHidden = false
+            dialogueTextBox2.isHidden = false
+            
+            checkObtained()
+        }
+        
         Sound.stopAll()
+        itemObtained = defaults.array(forKey: "collectiblesObtainedStatus") as? [Bool] ?? [Bool]()
+        
         switch(defaults.string(forKey: "userState"))
         {
             //MARK: ganti aja klo user statenya beda ternyata
         case "clear_story_1":
             explorationModel.setCurrentName(name: "checkpoint_istana")
             explorationModel.changeInteractionPerm()
-            //Input audio intro here
-        case "clear_story_2":
+            Sound.play(file: "explore1-intro.m4a")
+        case "clear_story_3":
             explorationModel.setCurrentName(name: "checkpoint_pulau")
             explorationModel.changeInteractionPerm()
-            collectionViewModel.getCollection(card: "collection_lompo")
-            //Input audio intro here
-        case "clear_story_3":
+            collectionViewModel.getCollection(card: "Seraung")
+            Sound.play(file: "explore2-intro.m4a")
+        case "clear_story_5":
             explorationModel.setCurrentName(name: "checkpoint_kapal")
             explorationModel.changeInteractionPerm()
-            collectionViewModel.getCollection(card: "collection_rua")
-            //Input audio intro here
-        case "clear_story_4":
+            collectionViewModel.getCollection(card: "Tarumpah")
+            Sound.play(file: "explore3-intro.m4a")
+        default:
             explorationModel.setCurrentName(name: "checkpoint_dermaga")
             explorationModel.changeInteractionPerm()
-            collectionViewModel.getCollection(card: "collection_tallu")
-            //Input audio intro here
-        default:
-            explorationModel.setCurrentName(name: "checkpoint_istana")
-            explorationModel.changeInteractionPerm()
-            //Input audio intro here
+            updateCollectionObjective()
+            Sound.play(file: "explore4-intro.m4a")
         }
         
         explorationModel.getExploring()
@@ -186,33 +206,12 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             self.dialogueTextBox.dialogueLabel.text = hintString
         }
         
-        explorationModel.cardName.bind { cardName in
-            let customButtonImage = UIImage(named: cardName)
+        explorationModel.cardButton.bind { cardButton in
+            let customButtonImage = UIImage(named: cardButton)
             let newimage = customButtonImage?.resizedImage(size: CGSize(width: 115, height: 150))
             self.hintButton.setImage(newimage, for: .normal)
         }
         
-        
-        if defaults.string(forKey: "userState") != "clear_story_1"
-        {
-            collectionViewModel.collectibleHint.bind { voice in
-                self.hint2 = voice
-            }
-            
-            collectionViewModel.collectibleHintString.bind { hintString in
-                self.dialogueTextBox2.dialogueLabel.text = hintString
-            }
-            
-            collectionViewModel.collectibleCard.bind { card_name in
-                let customButtonImage2 = UIImage(named:  card_name)
-                let newimage2 = customButtonImage2?.resizedImage(size: CGSize(width: 115, height: 150))
-                self.hint2Button.setImage(newimage2, for: .normal)
-            }
-            
-            hint2Button.isHidden = false
-            dialogueTextBox2.isHidden = false
-            
-        }
     }
     
     //MARK: TEMPORARY FOR CODE TESTING
@@ -254,7 +253,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             
         {
             configuration.trackingImages = imageToTrack
-            configuration.maximumNumberOfTrackedImages = 1
+            configuration.maximumNumberOfTrackedImages = 2
             
             print("Image Succesfully Added")
         }
@@ -304,7 +303,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                         
                         self?.explorationModel.cardModel.bind { [weak self] model in
                             
-                            if let checkPointScene = SCNScene(named: "Models.scnassets/\(model)")
+                            if let checkPointScene = SCNScene(named: "Models.scnassets/Explore/\(model)")
                             {
                                 
                                 if let checkPoint = checkPointScene.rootNode.childNodes.first {
@@ -313,7 +312,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                                     
                                     checkPoint.eulerAngles.x = .pi / 2
                                     
-                                    checkPoint.eulerAngles.z = .pi / 2
+                                    checkPoint.eulerAngles.z = -.pi / 2
                                     
                                     checkPoint.scale = SCNVector3(x: 3, y: 3, z: 3)
                                     
@@ -322,13 +321,11 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                                     self?.explorationModel.canInteract.bind { canInteract in
                                         if canInteract
                                         {
+                                            Sound.stopAll()
                                             Sound.play(file: "checkpoint_found.wav")
-                                            Sound.play(file: self?.explorationModel.hintVoice.value ?? "")
+                                            Sound.play(file: self?.explorationModel.foundVoice.value ?? "")
                                         }
                                     }
-                                    
-                                    
-                                    
                                 }
                             }
                         }
@@ -354,7 +351,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                         self.collectionViewModel.isObtained.bind { obtained in
                             if obtained
                             {
-                                if let checkPointScene = SCNScene(named: "Models.scnassets/chest_open.scn")
+                                if let checkPointScene = SCNScene(named: "Models.scnassets/Explore/chest_open.scn")
                                 {
                                     if let checkPoint = checkPointScene.rootNode.childNodes.first {
                                         
@@ -373,7 +370,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                             else
                             
                             {
-                                if let checkPointScene = SCNScene(named: "Models.scnassets/chest.scn")
+                                if let checkPointScene = SCNScene(named: "Models.scnassets/Explore/chest.scn")
                                 {
                                     
                                     if let checkPoint = checkPointScene.rootNode.childNodes.first {
@@ -386,13 +383,9 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                                         
                                         planeNode.addChildNode(checkPoint)
                                         
-                                        
+                                        Sound.stopAll()
                                         Sound.play(file: "checkpoint_found.wav")
-                                        self.collectionViewModel.collectibleHint.bind { sound in
-                                            Sound.play(file: "sound")
-                                        }
-                                        
-                                        
+                                        Sound.play(file: "explore_collect_found.m4a")
                                     }
                                 }
                             }
@@ -427,11 +420,13 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     
     @objc
     func hintTapped() {
+        Sound.stopAll()
         Sound.play(file: hint)
     }
     
     @objc
     func hint2Tapped() {
+        Sound.stopAll()
         Sound.play(file: hint2)
     }
     
@@ -474,6 +469,37 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         ])
     }
     
+    func checkObtained() {
+        collectionViewModel.isObtained.bind { obtained in
+            if obtained
+            {
+                self.hint2Button.isHidden = true
+                self.dialogueTextBox2.isHidden = true
+            }
+        }
+    }
+    
+    func updateCollectionObjective() {
+        
+        let randomNumber = Int.random(in: 1...2)
+        
+        if itemObtained[2] == false && itemObtained[3] == false {
+            switch randomNumber {
+            case 1:
+                collectionViewModel.getCollection(card: "Tinim dan Ando")
+            default:
+                collectionViewModel.getCollection(card: "Lontong Sayur")
+            }
+        } else {
+            if itemObtained[2] == true {
+                collectionViewModel.getCollection(card: "Lontong Sayur")
+            } else {
+                collectionViewModel.getCollection(card: "Tinim dan Ando")
+            }
+            
+        }
+    }
+    
     private func setupPopUP()
     {
         collectionItem.isHidden = false
@@ -488,12 +514,12 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         }
         
         collectionViewModel.collectibleDesc.bind { [weak self] desc in
-            self?.collectionItem.itemDesc.text = "Asik! Kamu menemukan hadiah dari Rua!\nKamu bisa menemukan barang ini di rak koleksi kamu, ya!"
+            self?.collectionItem.itemDesc.text = "Asik! Kamu menemukan harta karun!\nKamu bisa menemukan barang ini di rak koleksi kamu, ya!"
             self?.collectionItem.itemDesc.allowsEditingTextAttributes = false
         }
         
         collectionViewModel.collectibleItem.bind { [weak self] item in
-            self?.collectionItem.setSCNView(scn: "Models.scnassets/\(item)")
+            self?.collectionItem.setSCNView(scn: "Models.scnassets/Collection/\(item)")
         }
         
         hintButton.isHidden.toggle()
@@ -527,11 +553,11 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             
             //collection
             if let planeNode = treasureNode, planeNode == result.node {
+                Sound.stopAll()
                 Sound.play(file: "checkpoint_clicked.wav")
-                let animation = animationFromSceneNamed(path: "Models.scnassets/chest_animated.scn")
-                planeNode.addAnimation(animation!, forKey: "anim")
                 
-                sleep(2)
+//                let animation = animationFromSceneNamed(path: "Models.scnassets/Explore/chest_animated.scn")
+//                planeNode.addAnimation(animation!, forKey: "anim")
                 
                 collectionViewModel.isObtained.bind { obtained in
                     if !obtained
