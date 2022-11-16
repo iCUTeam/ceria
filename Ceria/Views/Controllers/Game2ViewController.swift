@@ -273,7 +273,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                     
                     //
                     //validasi kalau sudah sampe finish
-                    if self.crashNode.position.x >= 280 && self.crashNode.position.y <= 6 && self.crashNode.position.y >= -6
+                    if self.crashNode.position.x >= 280 && self.crashNode.position.y <= 12 && self.crashNode.position.y >= -12
                     {
                         
                         Sound.play(file: "finish.wav")
