@@ -8,8 +8,9 @@
 import UIKit
 import PencilKit
 import SwiftySound
+import AVFoundation
 
-class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelegate, Storyboarded {
+class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelegate, AVAudioPlayerDelegate, Storyboarded {
     
     weak var coordinator: MainCoordinator?
     
@@ -81,6 +82,13 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         return button
     }()
     
+    private lazy var focusLayer: UIView = {
+        let frame = UIView(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        frame.backgroundColor = .black
+        frame.alpha = 0.7
+        return frame
+    }()
+    
     private let viewModel = PowerViewModel()
     let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
     let defaults = UserDefaults.standard
@@ -92,8 +100,10 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
     var powerIntroVoice = ""
     var powerHintVoice = ""
     var powerSuccessVoice = ""
+    var powerVoice = ""
     var powerSuccessText = ""
     var currentIndex = 0
+    var powerVoicePlayer: AVAudioPlayer = AVAudioPlayer()
     
     // Animation.
     static let repeatStrokeAnimationTime: TimeInterval = 4
@@ -117,15 +127,15 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         view.insertSubview(backgroundImage, at: 0)
         
         view.addSubview(powerSymbol)
-        
-        view.addSubview(hintButton)
-        
         view.addSubview(backgroundCanvasView)
         view.addSubview(canvasView)
-        
-        view.addSubview(dialogueTextBox)
         view.addSubview(homeButton)
         view.addSubview(nextButton)
+        view.addSubview(focusLayer)
+        view.addSubview(dialogueTextBox)
+        view.addSubview(hintButton)
+        
+        
         setUpAutoLayout()
         
         setupBinders()
@@ -153,9 +163,13 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         canvasView.delegate = self
         
         nextButton.isHidden = true
+        focusLayer.isHidden = true
         Sound.stopAll()
         setBGMPower()
-        Sound.play(file: powerIntroVoice)
+        powerVoice = powerIntroVoice
+        disablingInteraction()
+        checkVoiceChange()
+        powerVoicePlayer.play()
     }
     
     override func viewDidLayoutSubviews() {
@@ -271,13 +285,14 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         coordinator?.toLanding()
         AudioSFXPlayer.shared.playCommonSFX()
         Sound.stopAll()
+        powerVoicePlayer.stop()
         AudioBGMPlayer.shared.stopStoryBGM()
     }
     
     @objc
     func hintTapped() {
-        
         if isSuccess == false {
+            powerVoicePlayer.stop()
             Sound.stopAll()
             Sound.play(file: powerHintVoice)
         } else {
@@ -288,12 +303,41 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
     @objc
     func nextTapped() {
         Sound.stopAll()
-        
+        powerVoicePlayer.stop()
         switch defaults.integer(forKey: "powerIndex") {
         case 1:
             coordinator?.toTutorial()
         default:
             coordinator?.toSuccess()
+        }
+    }
+    
+    func checkVoiceChange() {
+        do{
+            let audioName = powerVoice.components(separatedBy: ".")[0]
+            let audioPath = Bundle.main.path(forResource: audioName, ofType: "m4a")
+            powerVoicePlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: audioPath!))
+            powerVoicePlayer.prepareToPlay()
+            powerVoicePlayer.delegate = self
+        }
+        catch{
+            print(error)
+        }
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool){
+        if flag == true && defaults.bool(forKey: "disableSkip") == true {
+            focusLayer.isHidden = true
+            hintButton.isUserInteractionEnabled = true
+            nextButton.isEnabled = true
+        }
+    }
+    
+    func disablingInteraction() {
+        if defaults.bool(forKey: "disableSkip") == true {
+            focusLayer.isHidden = false
+            hintButton.isUserInteractionEnabled = false
+            nextButton.isEnabled = false
         }
     }
     
@@ -460,9 +504,12 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
             applySuccessChange()
             
             backgroundCanvasView.drawing.strokes[strokeIndex].ink.color = .clear
-            Sound.play(file: powerSuccessVoice)
-            
-            
+            if defaults.bool(forKey: "disableSkip") == true {
+                nextButton.isEnabled = false
+            }
+            powerVoice = powerSuccessVoice
+            checkVoiceChange()
+            powerVoicePlayer.play()
             //            AudioBGMPlayer.shared.playStoryBGM1()
             //MARK: In 3 second, move to next page
         } else {

@@ -31,6 +31,12 @@ class StoryViewController: UIViewController, AVAudioPlayerDelegate, Storyboarded
         return button
     }()
     
+    private lazy var restartButton: MakeButton = {
+        let button = MakeButton(image: "restart.png", size: CGSize(width: 100, height: 100))
+        button.addTarget(self, action: #selector(restartTapped), for: .touchUpInside)
+        return button
+    }()
+    
     private lazy var nextButton: MakeButton = {
         let button = MakeButton(image: "next.png", size: CGSize(width: 100, height: 100))
         button.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
@@ -49,9 +55,34 @@ class StoryViewController: UIViewController, AVAudioPlayerDelegate, Storyboarded
         return button
     }()
     
+    private lazy var confirmRestartButton: MakeButton = {
+        let button = MakeButton(image: "restartconfirm.png", size: CGSize(width: 267, height: 76.35))
+        button.addTarget(self, action: #selector(restartProgress), for: .touchUpInside)
+        return button
+    }()
+    
     private lazy var storyTextBox: StoryView = {
         let dialogue = StoryView(content: "Pada suatu ketika di sebuah kerajaan di Sulawesi Selatan, hiduplah seorang saudagar yang kaya dengan keempat orang anaknya.")
         return dialogue
+    }()
+    
+    private lazy var restartConfirmTextBox: RestartConfirmationView = {
+        let tutorial = RestartConfirmationView(content: "Jika menekan tombol di bawah ini, kamu bisa kembali lagi ke awal cerita. Apa kamu yakin ingin melakukannya?")
+        return tutorial
+    }()
+    
+    private lazy var confirmationLayer: UIView = {
+        let frame = UIView(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        frame.backgroundColor = .black
+        frame.alpha = 0.9
+        return frame
+    }()
+    
+    private lazy var closeButton: MakeButton =
+    {
+        let button = MakeButton(image: "x.png", size: CGSize(width: 50, height: 50))
+        button.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
+        return button
     }()
     
     private let viewModel = StoryViewModel()
@@ -62,12 +93,16 @@ class StoryViewController: UIViewController, AVAudioPlayerDelegate, Storyboarded
         // Do any additional setup after loading the view.
         backgroundImage.contentMode = .scaleToFill
         view.insertSubview(backgroundImage, at: 0)
-        
         view.addSubview(homeButton)
+        view.addSubview(restartButton)
         view.addSubview(nextButton)
         view.addSubview(actionButton)
         view.addSubview(previousButton)
         view.addSubview(storyTextBox)
+        view.addSubview(confirmationLayer)
+        view.addSubview(restartConfirmTextBox)
+        view.addSubview(confirmRestartButton)
+        view.addSubview(closeButton)
         setUpAutoLayout()
         
         setupBinders()
@@ -82,6 +117,12 @@ class StoryViewController: UIViewController, AVAudioPlayerDelegate, Storyboarded
         currentBGM = storyMusic
         disablingNextButton()
         disablingActionButton()
+        confirmationLayer.isHidden = true
+        restartConfirmTextBox.isHidden = true
+        confirmRestartButton.isHidden = true
+        closeButton.isHidden = true
+        
+        enableRestart()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -157,6 +198,36 @@ class StoryViewController: UIViewController, AVAudioPlayerDelegate, Storyboarded
     }
     
     @objc
+    func restartTapped() {
+        confirmationLayer.isHidden.toggle()
+        restartConfirmTextBox.isHidden.toggle()
+        confirmRestartButton.isHidden.toggle()
+        closeButton.isHidden.toggle()
+        AudioSFXPlayer.shared.playCommonSFX()
+        voicePlayer.pause()
+    }
+    
+    @objc
+    func closeTapped() {
+        confirmationLayer.isHidden.toggle()
+        restartConfirmTextBox.isHidden.toggle()
+        confirmRestartButton.isHidden.toggle()
+        closeButton.isHidden.toggle()
+        AudioSFXPlayer.shared.playBackSFX()
+        voicePlayer.resume()
+    }
+    
+    @objc
+    func restartProgress() {
+        voicePlayer.stop()
+        AudioBGMPlayer.shared.stopStoryBGM()
+        AudioSFXPlayer.shared.playCommonSFX()
+        restartStory()
+        sleep(1)
+        coordinator?.toStory()
+    }
+    
+    @objc
     func nextTapped() {
         viewModel.nextIndex()
         checkBGMChange()
@@ -203,17 +274,17 @@ class StoryViewController: UIViewController, AVAudioPlayerDelegate, Storyboarded
             saveAndNextIndex()
             defaults.set("clear_story_3", forKey: "userState")
             coordinator?.toExplore()
-            sleep(5)
+            sleep(3)
         case "power2.png":
             saveAndNextIndex()
             defaults.set("clear_story_4", forKey: "userState")
             coordinator?.toPower()
-            sleep(5)
+            sleep(4)
         case "explore3.png":
             saveAndNextIndex()
             defaults.set("clear_story_5", forKey: "userState")
             coordinator?.toExplore()
-            sleep(5)
+            sleep(4)
         case "power3.png":
             saveAndNextIndex()
             defaults.set("clear_story_6", forKey: "userState")
@@ -228,16 +299,32 @@ class StoryViewController: UIViewController, AVAudioPlayerDelegate, Storyboarded
             saveAndNextIndex()
             defaults.set("clear_story_8", forKey: "userState")
             coordinator?.toExplore()
-            sleep(5)
+            sleep(3)
         case "reflection.png":
             viewModel.saveIndex()
             defaults.set("cleared", forKey: "userState")
             coordinator?.toReflection()
-            sleep(8)
+            sleep(9)
         default:
             print("nowhere to go")
         }
         
+    }
+    
+    func enableRestart() {
+        if defaults.bool(forKey: "disableSkip") == true || defaults.string(forKey: "userState") == "not_started" {
+            restartButton.isHidden = true
+        } else {
+            restartButton.isHidden = false
+        }
+    }
+    
+    func restartStory() {
+        defaults.set("not_started", forKey: "userState")
+        defaults.set(0, forKey: "promptIndex")
+        defaults.set(0, forKey: "storyIndex")
+        defaults.set(0, forKey: "powerIndex")
+        defaults.set(0, forKey: "successIndex")
     }
     
     func saveAndNextIndex() {
@@ -356,9 +443,22 @@ class StoryViewController: UIViewController, AVAudioPlayerDelegate, Storyboarded
     
     func setUpAutoLayout() {
         
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenWidth: CGFloat = screenSize.width
+        let constant: CGFloat
+        
+        if screenWidth <= 834.0 {
+            constant = 50
+        } else {
+            constant = -70
+        }
+        
         NSLayoutConstraint.activate([
             homeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
             homeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+            
+            restartButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24),
+            restartButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
             
             nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200),
             nextButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24),
@@ -369,8 +469,18 @@ class StoryViewController: UIViewController, AVAudioPlayerDelegate, Storyboarded
             previousButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200),
             previousButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
             
+            confirmRestartButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: constant),
+            confirmRestartButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            confirmRestartButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24),
+            
             storyTextBox.topAnchor.constraint(equalTo: view.topAnchor, constant: 130),
-            storyTextBox.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            storyTextBox.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            restartConfirmTextBox.topAnchor.constraint(equalTo: view.topAnchor, constant: 400),
+            restartConfirmTextBox.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            closeButton.topAnchor.constraint(equalTo: restartConfirmTextBox.topAnchor, constant: -20),
+            closeButton.leftAnchor.constraint(equalTo: restartConfirmTextBox.rightAnchor, constant: -25)
         ])
     }
     /*

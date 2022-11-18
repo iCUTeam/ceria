@@ -7,8 +7,9 @@
 
 import UIKit
 import SwiftySound
+import AVFoundation
 
-class TutorialViewController: UIViewController, Storyboarded {
+class TutorialViewController: UIViewController, AVAudioPlayerDelegate, Storyboarded {
     
     weak var coordinator: MainCoordinator?
     
@@ -17,9 +18,9 @@ class TutorialViewController: UIViewController, Storyboarded {
     var tutorialMusic = ""
     var actionButtonSFX = ""
     var actionButtonType = ""
-    var currentBGM = ""
     var currentIndex = 0
     let defaults = UserDefaults.standard
+    var tutorialVoicePlayer: AVAudioPlayer = AVAudioPlayer()
     
     private lazy var homeButton: MakeButton = {
         let button = MakeButton(image: "home.png", size: CGSize(width: 100, height: 100))
@@ -70,9 +71,10 @@ class TutorialViewController: UIViewController, Storyboarded {
         
         viewModel.getTutorial()
         Sound.stopAll()
-        Sound.play(file: tutorialVoice)
-        checkBGMChange()
-        currentBGM = tutorialMusic
+        checkVoiceChange()
+        tutorialVoicePlayer.play()
+        disablingNextButton()
+        disablingActionButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -146,10 +148,12 @@ class TutorialViewController: UIViewController, Storyboarded {
         
         Sound.stopAll()
         viewModel.nextIndex()
-        checkBGMChange()
         AudioSFXPlayer.shared.playCommonSFX()
         checkActionButtonChange()
-        Sound.play(file: tutorialVoice)
+        checkVoiceChange()
+        tutorialVoicePlayer.play()
+        disablingNextButton()
+        disablingActionButton()
     }
     
     @objc
@@ -157,15 +161,18 @@ class TutorialViewController: UIViewController, Storyboarded {
         
         Sound.stopAll()
         viewModel.previousIndex()
-        checkBGMChange()
         AudioSFXPlayer.shared.playBackSFX()
         checkActionButtonChange()
-        Sound.play(file: tutorialVoice)
+        checkVoiceChange()
+        tutorialVoicePlayer.play()
+        disablingNextButton()
+        disablingActionButton()
     }
     
     @objc
     func startGameTapped() {
         Sound.stopAll()
+        tutorialVoicePlayer.stop()
         AudioBGMPlayer.shared.stopStoryBGM()
         Sound.play(file: actionButtonSFX)
         
@@ -174,23 +181,36 @@ class TutorialViewController: UIViewController, Storyboarded {
         
     }
     
-    func checkBGMChange() {
-        
-        if currentBGM != tutorialMusic {
-            
-            currentBGM = tutorialMusic
-            
-            switch tutorialMusic {
-            case "petualangan":
-                AudioBGMPlayer.shared.playStoryBGM1()
-            case "sedih":
-                AudioBGMPlayer.shared.playStoryBGM2()
-            case "laut":
-                AudioBGMPlayer.shared.playStoryBGM3()
-            default:
-                print("nothing to play")
-            }
-            
+    func checkVoiceChange() {
+        do{
+            let audioName = tutorialVoice.components(separatedBy: ".")[0]
+            let audioPath = Bundle.main.path(forResource: audioName, ofType: "m4a")
+            tutorialVoicePlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: audioPath!))
+            tutorialVoicePlayer.prepareToPlay()
+            tutorialVoicePlayer.volume = 2.0
+            tutorialVoicePlayer.delegate = self
+        }
+        catch{
+            print(error)
+        }
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool){
+        if flag == true && defaults.bool(forKey: "disableSkip") == true {
+            nextButton.isEnabled.toggle()
+            actionButton.isEnabled.toggle()
+        }
+    }
+    
+    func disablingNextButton() {
+        if defaults.bool(forKey: "disableSkip") == true {
+            nextButton.isEnabled = false
+        }
+    }
+    
+    func disablingActionButton() {
+        if defaults.bool(forKey: "disableSkip") == true {
+            actionButton.isEnabled = false
         }
     }
     

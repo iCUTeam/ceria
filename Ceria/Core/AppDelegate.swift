@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var limit:rlimit = rlimit()
         getrlimit(RLIMIT_NOFILE, &limit)
         // change this value to suit your needs
-        limit.rlim_cur = 1000
+        limit.rlim_cur = 20000
         setrlimit(RLIMIT_NOFILE, &limit)
         getrlimit(RLIMIT_NOFILE, &limit)
     }

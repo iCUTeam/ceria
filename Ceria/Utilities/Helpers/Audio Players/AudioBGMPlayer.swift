@@ -39,7 +39,7 @@ class AudioBGMPlayer {
             playerBGMStory = try AVAudioPlayer(contentsOf:sound as URL)
             playerBGMStory?.numberOfLoops = -1
             playerBGMStory?.prepareToPlay()
-            playerBGMStory?.volume = 0.3
+            playerBGMStory?.volume = 0.2
             playerBGMStory?.numberOfLoops = -1
             playerBGMStory?.play()
         }
@@ -84,7 +84,7 @@ class AudioBGMPlayer {
             playerBGMStory = try AVAudioPlayer(contentsOf:sound as URL)
             playerBGMStory?.numberOfLoops = -1
             playerBGMStory?.prepareToPlay()
-            playerBGMStory?.volume = 0.3
+            playerBGMStory?.volume = 0.4
             playerBGMStory?.numberOfLoops = -1
             playerBGMStory?.play()
         }
@@ -99,7 +99,7 @@ class AudioBGMPlayer {
             playerBGMStory = try AVAudioPlayer(contentsOf:sound as URL)
             playerBGMStory?.numberOfLoops = -1
             playerBGMStory?.prepareToPlay()
-            playerBGMStory?.volume = 0.3
+            playerBGMStory?.volume = 0.2
             playerBGMStory?.numberOfLoops = -1
             playerBGMStory?.play()
         }
@@ -129,7 +129,7 @@ class AudioBGMPlayer {
             playerBGMStory = try AVAudioPlayer(contentsOf:sound as URL)
             playerBGMStory?.numberOfLoops = -1
             playerBGMStory?.prepareToPlay()
-            playerBGMStory?.volume = 0.3
+            playerBGMStory?.volume = 0.2
             playerBGMStory?.numberOfLoops = -1
             playerBGMStory?.play()
         }
@@ -144,7 +144,7 @@ class AudioBGMPlayer {
             playerBGMStory = try AVAudioPlayer(contentsOf:sound as URL)
             playerBGMStory?.numberOfLoops = -1
             playerBGMStory?.prepareToPlay()
-            playerBGMStory?.volume = 0.3
+            playerBGMStory?.volume = 0.2
             playerBGMStory?.numberOfLoops = -1
             playerBGMStory?.play()
         }
@@ -159,7 +159,7 @@ class AudioBGMPlayer {
             playerBGMStory = try AVAudioPlayer(contentsOf:sound as URL)
             playerBGMStory?.numberOfLoops = -1
             playerBGMStory?.prepareToPlay()
-            playerBGMStory?.volume = 0.3
+            playerBGMStory?.volume = 0.2
             playerBGMStory?.numberOfLoops = -1
             playerBGMStory?.play()
         }
@@ -174,7 +174,7 @@ class AudioBGMPlayer {
             playerBGMStory = try AVAudioPlayer(contentsOf:sound as URL)
             playerBGMStory?.numberOfLoops = -1
             playerBGMStory?.prepareToPlay()
-            playerBGMStory?.volume = 0.3
+            playerBGMStory?.volume = 0.2
             playerBGMStory?.numberOfLoops = -1
             playerBGMStory?.play()
         }
@@ -189,7 +189,7 @@ class AudioBGMPlayer {
             playerBGMStory = try AVAudioPlayer(contentsOf:sound as URL)
             playerBGMStory?.numberOfLoops = -1
             playerBGMStory?.prepareToPlay()
-            playerBGMStory?.volume = 0.3
+            playerBGMStory?.volume = 0.2
             playerBGMStory?.numberOfLoops = -1
             playerBGMStory?.play()
         }

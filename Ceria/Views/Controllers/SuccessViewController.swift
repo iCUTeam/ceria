@@ -31,6 +31,7 @@ class SuccessViewController: UIViewController, AVAudioPlayerDelegate, Storyboard
     var currentIndex2 = 0
     var sfxPlayer: AVAudioPlayer = AVAudioPlayer()
     var obtainedStatus: [Bool] = []
+    var sleepTime: UInt32 = 1
     
     private lazy var homeButton: MakeButton = {
         let button = MakeButton(image: "home.png", size: CGSize(width: 100, height: 100))
@@ -85,7 +86,7 @@ class SuccessViewController: UIViewController, AVAudioPlayerDelegate, Storyboard
         applyDialogueChange()
         playSuccessVoice()
         disablingNextButton()
-        
+        ruaBGM()
         // Do any additional setup after loading the view.
     }
     
@@ -188,7 +189,13 @@ class SuccessViewController: UIViewController, AVAudioPlayerDelegate, Storyboard
         AudioSFXPlayer.shared.playCommonSFX()
         AudioBGMPlayer.shared.stopStoryBGM()
         
-        sleep(6)
+        sleep(sleepTime)
+    }
+    
+    func ruaBGM() {
+        if defaults.string(forKey: "userState") == "clear_story_4" {
+            AudioBGMPlayer.shared.playStoryBGM8()
+        }
     }
     
     func checkObtainedItem() {
@@ -198,12 +205,14 @@ class SuccessViewController: UIViewController, AVAudioPlayerDelegate, Storyboard
             hintButton.isHidden = false
             dialogueTextBox.isHidden = false
             nextVoice = successCardVoice
+            sleepTime = 6
         } else {
             successText = successText2
             successVoice = successVoice2
             hintButton.isHidden = true
             dialogueTextBox.isHidden = true
             nextVoice = ""
+            sleepTime = 1
         }
     }
     

@@ -36,6 +36,13 @@ class CollectionViewController: UIViewController, Storyboarded {
         return button
     }()
     
+    private lazy var popupLayer: UIView = {
+        let frame = UIView(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        frame.backgroundColor = .black
+        frame.alpha = 0.7
+        return frame
+    }()
+    
     private var collectionItem: CollectionItem!
     
     let viewModel = CollectionViewModel()
@@ -70,17 +77,16 @@ class CollectionViewController: UIViewController, Storyboarded {
             w = 700
             h = 1000
         }
-        
+        view.addSubview(homeButton)
+        view.addSubview(popupLayer)
         collectionItem = CollectionItem(frame: CGRect(x: x, y: y, width: w, height: h))
         collectionItem.roundCornerView(corners: .allCorners, radius: 30)
         view.addSubview(collectionItem)
-        view.addSubview(homeButton)
-        
         view.addSubview(closeButton)
         
         collectionItem.isHidden = true
         closeButton.isHidden = true
-        
+        popupLayer.isHidden = true
         setUpAutoLayout()
         setupNode()
         
@@ -155,7 +161,7 @@ class CollectionViewController: UIViewController, Storyboarded {
     
     private func setupPopUP(index: Int, isUnlocked: Bool)
     {
-        
+        popupLayer.isHidden = false
         switch(isUnlocked)
         {
         case true:
@@ -245,6 +251,7 @@ class CollectionViewController: UIViewController, Storyboarded {
     {
         collectionItem.isHidden = true
         closeButton.isHidden = true
+        popupLayer.isHidden = true
         AudioSFXPlayer.shared.playBackSFX()
         AudioBGMPlayer.shared.playerBGMLanding?.volume = 1.0
     }

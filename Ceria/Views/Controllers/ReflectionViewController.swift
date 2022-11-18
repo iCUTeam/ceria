@@ -154,6 +154,7 @@ class ReflectionViewController: UIViewController, AVAudioPlayerDelegate, Storybo
     func homeTapped() {
         coordinator?.toLanding()
         AudioSFXPlayer.shared.playCommonSFX()
+        AudioBGMPlayer.shared.stopStoryBGM()
         Sound.stopAll()
         defaults.set(0, forKey: "promptIndex")
     }

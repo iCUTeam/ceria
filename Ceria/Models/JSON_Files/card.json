@@ -26,12 +26,12 @@
         "can_interact": false,
         "hint_voice": "explore3_hint.m4a",
         "found_voice": "explore3_found.m4a",
-        "hint_string": "Cari kartu dengan gambar kapal di sekitar rumahmu untuk membantu Rua dan tuan putri kembali ke kapal.",
+        "hint_string": "Cari kartu dengan gambar kapal di sekitar rumahmu untuk membantu Rua dan tuan puteri kembali ke kapal.",
         "next_state": "clear_explore_3"
     },
     {
         "card_name": "checkpoint_dermaga",
-        "card_model": "Checkpoint_red.scn",
+        "card_model": "Checkpoint_yellow.scn",
         "card_button": "kartu_dermaga",
         "can_interact": false,
         "hint_voice": "explore4_hint.m4a",

@@ -39,7 +39,7 @@ class Game2View: UIView {
         
         let frame = UIView(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         frame.backgroundColor = .black
-        frame.alpha = 0.7
+        frame.alpha = 0.9
         addSubview(frame)
         frame.addSubview(tapToStart)
         return frame

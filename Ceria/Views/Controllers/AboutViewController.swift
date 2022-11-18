@@ -12,6 +12,8 @@ class AboutViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
     
     @IBOutlet weak var cardBackground: UIView!
+    @IBOutlet weak var playLandingABM: UIButton!
+    @IBOutlet weak var playGameABM: UIButton!
     
     private lazy var homeButton: MakeButton = {
         let button = MakeButton(image: "home.png", size: CGSize(width: 100, height: 100))
@@ -45,10 +47,22 @@ class AboutViewController: UIViewController, Storyboarded {
         self.navigationController?.presentedViewController?.dismiss(animated: false, completion: nil)
     }
     
+    @IBAction func tapPlayLandingABM(_ sender: Any) {
+        AudioBGMPlayer.shared.stopGameBGM()
+        AudioBGMPlayer.shared.playLanding()
+    }
+    
+    @IBAction func tapPlayGameABM(_ sender: Any) {
+        AudioBGMPlayer.shared.stopLanding()
+        AudioBGMPlayer.shared.playGame2BGM()
+        AudioBGMPlayer.shared.playerBGMGame?.volume = 1.0
+    }
+    
     @objc
     func homeTapped() {
         coordinator?.toLanding()
         AudioSFXPlayer.shared.playCommonSFX()
+        AudioBGMPlayer.shared.stopGameBGM()
     }
     
     func setUpAutoLayout() {

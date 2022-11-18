@@ -30,7 +30,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
     //collision bitmask
     let categoryObstacles = 2
     
-    weak var scene: SCNScene!
+    var scene: SCNScene!
     
     var gameStarted = false
     var lifeTotal: Int = 1000
@@ -45,7 +45,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
     
     var immune = false
     
-    let accelerationData: [Float] = [0.40, 0.50, 0.60, 0.70, 0.80, 0.90]
+    let accelerationData: [Float] = [0.70, 0.80, 0.90, 1.0, 1.1, 1.2]
     
     var count = 0
     
@@ -54,6 +54,8 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
     var voiceName = ""
     
     var sounds:[String:SCNAudioSource] = [:]
+    
+    var immuneCount = 0
     
     var ruaImage: UIImageView!
     
@@ -217,9 +219,9 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         let increment: CGFloat
         
         if screenWidth == 834.0 {
-            increment = 1.1
+            increment = 1.6
         } else {
-            increment = 1.5
+            increment = 2.1
         }
         
         count = 0
@@ -230,6 +232,8 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         
         tapLayer.isHidden = true
         //cek klo game start dia mulai jalanin objectnya sesuai accelerationdata yang diatas per sumbu x dan z nya ngikut dari pergerakan accelerometer
+        
+        sceneView.isUserInteractionEnabled = false
         
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
             
@@ -258,10 +262,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                         {
                             self.crashNode.position += SCNVector3(x: self.accelerationData[self.index], y: 0, z: 0)
                         }
-                       
-                        
                     }
-                    
                     
                     //timernya kan jalan 0.1 detik sekali, jadi itungannya 10 detik tu berarti dah jalan 100 hitungan
                     self.count += 1
@@ -282,17 +283,14 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                     //validasi kalau sudah sampe finish
                     if self.crashNode.position.x >= 280 && self.crashNode.position.y <= 8 && self.crashNode.position.y >= -8
                     {
-                        
                         Sound.play(file: "finish.wav")
                         Sound.play(file: "rua_game_2.m4a")
-                        
                         
                         timer.invalidate()
                         sleep(2)
                         self.coordinator?.toSuccess()
                         Sound.stopAll()
                         AudioBGMPlayer.shared.stopGameBGM()
-
                     }
                 }
             }
@@ -358,22 +356,18 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                 
                 //klo dia nabrak, dia bakal immune for 5 second sebelum dia balik bisa nabrak lagi
                 immune.toggle()
-                
-                var immuneCount = 0
-                
+
                 Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
                     DispatchQueue.main.async {
-                        immuneCount+=1
-                        
-                        if immuneCount == 5
+                        self.immuneCount+=1
+
+                        if self.immuneCount == 5
                         {
                             self.immune.toggle()
                             timer.invalidate()
-                            immuneCount = 0
+                            self.immuneCount = 0
                         }
                     }
-                    
-                    
                 }
             }
             

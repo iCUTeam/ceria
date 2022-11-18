@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PDFKit
 
 class InstructionViewController: UIViewController, Storyboarded {
     
@@ -13,6 +14,7 @@ class InstructionViewController: UIViewController, Storyboarded {
     private let checkbox = Checkbox()
     private let checkboxVoice = Checkbox()
     var isSkipDisabled = false
+    var pdfView: PDFView! = nil
     
     private lazy var homeButton: MakeButton = {
         let button = MakeButton(image: "home.png", size: CGSize(width: 100, height: 100))
@@ -26,12 +28,44 @@ class InstructionViewController: UIViewController, Storyboarded {
         return button
     }()
     
+    private lazy var closeButton: MakeButton =
+    {
+        let button = MakeButton(image: "x.png", size: CGSize(width: 50, height: 50))
+        button.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
+        return button
+    }()
+    
     private lazy var background: UIImageView = {
         let image = UIImage(named: "instruction_background")
         let imageView = UIImageView(image: image!)
         imageView.contentMode = .scaleToFill
         imageView.frame = UIScreen.main.bounds
         return imageView
+    }()
+    
+    private lazy var strictConsentTextBox: RestartConfirmationView = {
+        let tutorial = RestartConfirmationView(content: "Disarankan untuk permainan pertama kali, orang tua dapat membuat anak menikmati narasi tanpa dapat menjedanya. Ingin mengaktifkan fitur ini?")
+        return tutorial
+    }()
+    
+    private lazy var confirmationLayer: UIView = {
+        let frame = UIView(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        frame.backgroundColor = .black
+        frame.alpha = 0.9
+        return frame
+    }()
+    
+    private lazy var confirmConsentButton: MakeButton = {
+        let button = MakeButton(image: "strictconsent.png", size: CGSize(width: 267, height: 76.35))
+        button.addTarget(self, action: #selector(confirmConsent), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var closeConsentButton: MakeButton =
+    {
+        let button = MakeButton(image: "x.png", size: CGSize(width: 50, height: 50))
+        button.addTarget(self, action: #selector(closeConsentTapped), for: .touchUpInside)
+        return button
     }()
     
     private lazy var instructionStackView: UIStackView = {
@@ -70,7 +104,7 @@ class InstructionViewController: UIViewController, Storyboarded {
         let judulSatu = UILabel()
         judulSatu.text = "Cetak Kartu Permainan"
         judulSatu.textAlignment = .left
-        judulSatu.font = UIFont.scriptFont(size: 25)
+        judulSatu.font = UIFont.scriptFont(size: 28)
         judulSatu.heightAnchor.constraint(equalToConstant: 70).isActive = true
         
         let perintahSatu = UILabel()
@@ -127,7 +161,7 @@ class InstructionViewController: UIViewController, Storyboarded {
         let judulDua = UILabel()
         judulDua.text = "Sebarkan Kartu Permainan"
         judulDua.textAlignment = .left
-        judulDua.font = UIFont.scriptFont(size: 25)
+        judulDua.font = UIFont.scriptFont(size: 28)
         judulDua.heightAnchor.constraint(equalToConstant: 75).isActive = true
         
         let perintahDua = UILabel()
@@ -173,7 +207,7 @@ class InstructionViewController: UIViewController, Storyboarded {
         let judulTiga = UILabel()
         judulTiga.text = "Bermain Bersama"
         judulTiga.textAlignment = .left
-        judulTiga.font = UIFont.scriptFont(size: 25)
+        judulTiga.font = UIFont.scriptFont(size: 28)
         judulTiga.heightAnchor.constraint(equalToConstant: 70).isActive = true
         
         let perintahTiga = UILabel()
@@ -279,18 +313,40 @@ class InstructionViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         startStoryButton.isEnabled = false
+        pdfView = PDFView(frame: self.view.bounds)
+        
         view.addSubview(background)
         view.addSubview(instructionStackView)
         view.addSubview(homeButton)
         view.addSubview(startStoryButton)
+        view.addSubview(pdfView)
+        view.addSubview(closeButton)
+        view.addSubview(confirmationLayer)
+        view.addSubview(strictConsentTextBox)
+        view.addSubview(confirmConsentButton)
+        view.addSubview(closeConsentButton)
         setUpAutoLayout()
+        
+        pdfView.autoScales = true
+
+        let fileURL = Bundle.main.url(forResource: "Instruksi_Dan_Kartu_Permainan", withExtension: "pdf")
+        pdfView.document = PDFDocument(url: fileURL!)
         // Do any additional setup after loading the view.
+        
+        pdfView.isHidden = true
+        closeButton.isHidden = true
+        
+        confirmationLayer.isHidden = true
+        strictConsentTextBox.isHidden = true
+        confirmConsentButton.isHidden = true
+        closeConsentButton.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
@@ -310,9 +366,43 @@ class InstructionViewController: UIViewController, Storyboarded {
     }
     
     @objc
+    func closeTapped() {
+        pdfView.isHidden = true
+        closeButton.isHidden = true
+        AudioSFXPlayer.shared.playBackSFX()
+    }
+    
+    @objc
+    func confirmConsent() {
+        isSkipDisabled = true
+        confirmationLayer.isHidden.toggle()
+        strictConsentTextBox.isHidden.toggle()
+        confirmConsentButton.isHidden.toggle()
+        closeConsentButton.isHidden.toggle()
+        AudioSFXPlayer.shared.playCommonSFX()
+    }
+    
+    @objc
+    func closeConsentTapped() {
+        isSkipDisabled = false
+        disableSkipClicked()
+        confirmationLayer.isHidden.toggle()
+        strictConsentTextBox.isHidden.toggle()
+        confirmConsentButton.isHidden.toggle()
+        closeConsentButton.isHidden.toggle()
+        AudioSFXPlayer.shared.playBackSFX()
+    }
+    
+    @objc
     func startStoryTapped() {
         defaults.set(isSkipDisabled, forKey: "disableSkip")
+        
         let state = defaults.string(forKey: "userState")
+        
+        if state == nil {
+            defaults.set("not_started", forKey: "userState")
+        }
+        defaults.set(false, forKey: "itemIsObtained")
         switch state {
         case "clear_story_1", "clear_story_3", "clear_story_5", "clear_story_8":
             coordinator?.toExplore()
@@ -330,7 +420,11 @@ class InstructionViewController: UIViewController, Storyboarded {
     
     @objc
     func instructionClicked(_ sender: UIButton) {
+        
         //MARK: share instruction
+        pdfView.isHidden = false
+        closeButton.isHidden = false
+ 
         guard let url = Bundle.main.url(forResource: "Instruksi_Dan_Kartu_Permainan", withExtension: ".pdf") else {
             return
         }
@@ -339,6 +433,7 @@ class InstructionViewController: UIViewController, Storyboarded {
         
         shareSheetVC.popoverPresentationController?.sourceView = sender
         shareSheetVC.popoverPresentationController?.sourceRect = sender.frame
+        shareSheetVC.excludedActivityTypes = [.airDrop, .addToReadingList, .assignToContact, .copyToPasteboard, .mail, .message, .markupAsPDF, .openInIBooks, .postToFacebook, .postToFlickr, .postToTencentWeibo, .postToTwitter, .postToVimeo, .postToWeibo, .saveToCameraRoll]
         present(shareSheetVC, animated: true)
     }
     
@@ -359,7 +454,10 @@ class InstructionViewController: UIViewController, Storyboarded {
         let isChecked = checkboxVoice.toggle()
         
         if isChecked {
-            isSkipDisabled = true
+            confirmationLayer.isHidden.toggle()
+            strictConsentTextBox.isHidden.toggle()
+            confirmConsentButton.isHidden.toggle()
+            closeConsentButton.isHidden.toggle()
         } else {
             isSkipDisabled = false
         }
@@ -371,11 +469,14 @@ class InstructionViewController: UIViewController, Storyboarded {
         let screenSize: CGRect = UIScreen.main.bounds
         let screenWidth = screenSize.width
         let constant: CGFloat
+        let constant2: CGFloat
         
         if screenWidth <= 834.0 {
             constant = 500
+            constant2 = 50
         } else {
             constant = 580
+            constant2 = -70
         }
         
         NSLayoutConstraint.activate([
@@ -384,20 +485,32 @@ class InstructionViewController: UIViewController, Storyboarded {
             
             startStoryButton.centerXAnchor.constraint(equalToSystemSpacingAfter: view.centerXAnchor, multiplier: 1),
             startStoryButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: constant),
+            
+            confirmConsentButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: constant2),
+            confirmConsentButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            confirmConsentButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24),
+            
+            closeButton.topAnchor.constraint(equalTo: pdfView.topAnchor, constant: 0),
+            closeButton.leftAnchor.constraint(equalTo: pdfView.rightAnchor, constant: -50),
+            
+            strictConsentTextBox.topAnchor.constraint(equalTo: view.topAnchor, constant: 400),
+            strictConsentTextBox.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            closeConsentButton.topAnchor.constraint(equalTo: strictConsentTextBox.topAnchor, constant: -20),
+            closeConsentButton.leftAnchor.constraint(equalTo: strictConsentTextBox.rightAnchor, constant: -25)
         ])
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
 
 
 
+/*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destination.
+ // Pass the selected object to the new view controller.
+ }
+ */

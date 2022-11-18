@@ -10,8 +10,9 @@ import SceneKit
 import RealityKit
 import ARKit
 import SwiftySound
+import AVFoundation
 
-class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
+class ExploreViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate, Storyboarded {
     
     weak var coordinator: MainCoordinator?
     
@@ -55,6 +56,19 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         return button
     }()
     
+    private lazy var popupLayer: UIView = {
+        let frame = UIView(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        frame.backgroundColor = .black
+        frame.alpha = 0.7
+        return frame
+    }()
+    
+    private lazy var focusLayer: UIView = {
+        let frame = UIView(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        frame.backgroundColor = .black
+        frame.alpha = 0.7
+        return frame
+    }()
     
     weak var checkpointNode: SCNNode!
     
@@ -68,6 +82,10 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     var hintImage: String = ""
     var hintImage2: String = ""
     var itemObtained: [Bool] = []
+    var exploreVoicePlayer: AVAudioPlayer = AVAudioPlayer()
+    var exploreVoice = ""
+    var isCheckpointFound = false
+    var isTreasureFound = false
     
     private let collectionViewModel = CollectionViewModel()
     private let explorationModel = ExploreViewModel()
@@ -103,21 +121,25 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             h = 1000
         }
         
+        view.addSubview(homeButton)
+        view.addSubview(hint2Button)
+        view.addSubview(dialogueTextBox2)
+        view.addSubview(focusLayer)
+        
+        view.addSubview(hintButton)
+        view.addSubview(dialogueTextBox)
+        
+        
+        view.addSubview(popupLayer)
         collectionItem = CollectionItem(frame: CGRect(x: x, y: y, width: w, height: h))
         collectionItem.roundCornerView(corners: .allCorners, radius: 30)
         view.addSubview(collectionItem)
-        view.addSubview(homeButton)
-        
-        view.addSubview(hintButton)
-        view.addSubview(hint2Button)
-        view.addSubview(dialogueTextBox)
-        view.addSubview(dialogueTextBox2)
-        
         view.addSubview(closeButton)
         
         collectionItem.isHidden = true
         closeButton.isHidden = true
-        
+        popupLayer.isHidden = true
+        focusLayer.isHidden = true
         setUpAutoLayout()
         
         // Set the view's delegate
@@ -165,8 +187,6 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             
             hint2Button.isHidden = false
             dialogueTextBox2.isHidden = false
-            
-            checkObtained()
         }
         
         Sound.stopAll()
@@ -178,22 +198,28 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         case "clear_story_1":
             explorationModel.setCurrentName(name: "checkpoint_istana")
             explorationModel.changeInteractionPerm()
-            Sound.play(file: "explore1-intro.m4a")
+            exploreVoice = "explore1-intro.m4a"
         case "clear_story_3":
             explorationModel.setCurrentName(name: "checkpoint_pulau")
             explorationModel.changeInteractionPerm()
             collectionViewModel.getCollection(card: "Seraung")
-            Sound.play(file: "explore2-intro.m4a")
+            if defaults.bool(forKey: "itemIsObtained") == false {
+                exploreVoice = "explore2-intro.m4a"
+            }
         case "clear_story_5":
             explorationModel.setCurrentName(name: "checkpoint_kapal")
             explorationModel.changeInteractionPerm()
             collectionViewModel.getCollection(card: "Tarumpah")
-            Sound.play(file: "explore3-intro.m4a")
+            if defaults.bool(forKey: "itemIsObtained") == false {
+                exploreVoice = "explore3-intro.m4a"
+            }
         default:
             explorationModel.setCurrentName(name: "checkpoint_dermaga")
             explorationModel.changeInteractionPerm()
             updateCollectionObjective()
-            Sound.play(file: "explore4-intro.m4a")
+            if defaults.bool(forKey: "itemIsObtained") == false {
+                exploreVoice = "explore4-intro.m4a"
+            }
         }
         
         explorationModel.getExploring()
@@ -212,6 +238,17 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             self.hintButton.setImage(newimage, for: .normal)
         }
         
+        disablingInteraction()
+        checkObtained()
+        
+        if defaults.bool(forKey: "itemIsObtained") == false {
+            checkVoiceChange()
+            exploreVoicePlayer.play()
+        } else {
+            focusLayer.isHidden = true
+            hintButton.isUserInteractionEnabled = true
+            hint2Button.isUserInteractionEnabled = true
+        }
     }
     
     //MARK: TEMPORARY FOR CODE TESTING
@@ -323,7 +360,13 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                                         {
                                             Sound.stopAll()
                                             Sound.play(file: "checkpoint_found.wav")
-                                            Sound.play(file: self?.explorationModel.foundVoice.value ?? "")
+                                            self?.exploreVoice = self?.explorationModel.foundVoice.value ?? ""
+                                            self?.checkVoiceChange()
+                                            self?.exploreVoicePlayer.play()
+                                            if self?.defaults.bool(forKey: "disableSkip") == true {
+                                                self?.view.isUserInteractionEnabled = false
+                                            }
+                                            self?.isCheckpointFound = true
                                         }
                                     }
                                 }
@@ -385,7 +428,13 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
                                         
                                         Sound.stopAll()
                                         Sound.play(file: "checkpoint_found.wav")
-                                        Sound.play(file: "explore_collect_found.m4a")
+                                        self.exploreVoice = "explore_collect_found.m4a"
+                                        self.checkVoiceChange()
+                                        self.exploreVoicePlayer.play()
+                                        if self.defaults.bool(forKey: "disableSkip") == true {
+                                            self.view.isUserInteractionEnabled = false
+                                        }
+                                        self.isTreasureFound = true
                                     }
                                 }
                             }
@@ -407,27 +456,43 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         coordinator?.toLanding()
         AudioSFXPlayer.shared.playCommonSFX()
         Sound.stopAll()
+        exploreVoicePlayer.stop()
+        defaults.set(false, forKey: "itemIsObtained")
     }
     
     @objc func closeTapped()
     {
+        Sound.stopAll()
         collectionItem.isHidden = true
         closeButton.isHidden = true
-        AudioSFXPlayer.shared.playBackSFX()
+        popupLayer.isHidden = true
         hintButton.isHidden.toggle()
         dialogueTextBox.isHidden.toggle()
+        AudioSFXPlayer.shared.playBackSFX()
+        coordinator?.toExplore()
+        defaults.set(true, forKey: "itemIsObtained")
     }
     
     @objc
     func hintTapped() {
-        Sound.stopAll()
-        Sound.play(file: hint)
+        if isCheckpointFound == false {
+            Sound.stopAll()
+            exploreVoicePlayer.stop()
+            Sound.play(file: hint)
+        } else {
+            Sound.play(file: "")
+        }
     }
     
     @objc
     func hint2Tapped() {
-        Sound.stopAll()
-        Sound.play(file: hint2)
+        if isTreasureFound == false {
+            Sound.stopAll()
+            exploreVoicePlayer.stop()
+            Sound.play(file: hint2)
+        } else {
+            Sound.play(file: "")
+        }
     }
     
     
@@ -469,6 +534,36 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         ])
     }
     
+    func checkVoiceChange() {
+        do{
+            let audioName = exploreVoice.components(separatedBy: ".")[0]
+            let audioPath = Bundle.main.path(forResource: audioName, ofType: "m4a")
+            exploreVoicePlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: audioPath!))
+            exploreVoicePlayer.prepareToPlay()
+            exploreVoicePlayer.delegate = self
+        }
+        catch{
+            print(error)
+        }
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        if flag == true && defaults.bool(forKey: "disableSkip") == true {
+            focusLayer.isHidden = true
+            hintButton.isUserInteractionEnabled = true
+            hint2Button.isUserInteractionEnabled = true
+            view.isUserInteractionEnabled = true
+        }
+    }
+    
+    func disablingInteraction() {
+        if defaults.bool(forKey: "disableSkip") == true {
+            focusLayer.isHidden = false
+            hintButton.isUserInteractionEnabled = false
+            hint2Button.isUserInteractionEnabled = false
+        }
+    }
+    
     func checkObtained() {
         collectionViewModel.isObtained.bind { obtained in
             if obtained
@@ -481,27 +576,16 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
     
     func updateCollectionObjective() {
         
-        let randomNumber = Int.random(in: 1...2)
-        
-        if itemObtained[2] == false && itemObtained[3] == false {
-            switch randomNumber {
-            case 1:
-                collectionViewModel.getCollection(card: "Tinim dan Ando")
-            default:
-                collectionViewModel.getCollection(card: "Lontong Sayur")
-            }
+        if itemObtained[2] == true {
+            collectionViewModel.getCollection(card: "Lontong Sayur")
         } else {
-            if itemObtained[2] == true {
-                collectionViewModel.getCollection(card: "Lontong Sayur")
-            } else {
-                collectionViewModel.getCollection(card: "Tinim dan Ando")
-            }
-            
+            collectionViewModel.getCollection(card: "Tinim dan Ando")
         }
     }
     
     private func setupPopUP()
     {
+        popupLayer.isHidden = false
         collectionItem.isHidden = false
         closeButton.isHidden = false
         
@@ -514,7 +598,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         }
         
         collectionViewModel.collectibleDesc.bind { [weak self] desc in
-            self?.collectionItem.itemDesc.text = "Asik! Kamu menemukan harta karun!\nKamu bisa menemukan barang ini di rak koleksi kamu, ya!"
+            self?.collectionItem.itemDesc.text = "Asik! Kamu menemukan harta karun!\nKamu bisa menemukan benda ini di ruang koleksimu, ya!"
             self?.collectionItem.itemDesc.allowsEditingTextAttributes = false
         }
         
@@ -526,7 +610,7 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
         hint2Button.isHidden = true
         dialogueTextBox.isHidden.toggle()
         dialogueTextBox2.isHidden = true
-        
+        Sound.play(file: collectionViewModel.collectibleSFX.value)
         collectionViewModel.obtainItem()
     }
     
@@ -542,10 +626,12 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             
             //checkpoint
             if let planeNode = checkpointNode, planeNode == result.node {
+                Sound.stopAll()
+                exploreVoicePlayer.stop()
                 Sound.play(file: "checkpoint_clicked.wav")
                 sleep(2)
-                Sound.stopAll()
                 coordinator?.toStory()
+                defaults.set(false, forKey: "itemIsObtained")
                 explorationModel.nextState.bind { next in
                     self.defaults.set(next, forKey: "userState")
                 }
@@ -553,15 +639,14 @@ class ExploreViewController: UIViewController, ARSCNViewDelegate, Storyboarded {
             
             //collection
             if let planeNode = treasureNode, planeNode == result.node {
-                Sound.stopAll()
-                Sound.play(file: "checkpoint_clicked.wav")
-                
-//                let animation = animationFromSceneNamed(path: "Models.scnassets/Explore/chest_animated.scn")
-//                planeNode.addAnimation(animation!, forKey: "anim")
-                
+                //                let animation = animationFromSceneNamed(path: "Models.scnassets/Explore/chest_animated.scn")
+                //                planeNode.addAnimation(animation!, forKey: "anim")
                 collectionViewModel.isObtained.bind { obtained in
                     if !obtained
                     {
+                        Sound.stopAll()
+                        self.exploreVoicePlayer.stop()
+                        Sound.play(file: "checkpoint_clicked.wav")
                         self.setupPopUP()
                     }
                 }

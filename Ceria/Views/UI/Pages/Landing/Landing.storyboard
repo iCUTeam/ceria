@@ -57,16 +57,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="674" height="915"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1W-5j-XMg" userLabel="ContentView">
-                                                <rect key="frame" x="0.0" y="0.0" width="674" height="13440"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="674" height="13690"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ylp-Xh-8O5" userLabel="Character Background">
-                                                        <rect key="frame" x="-10" y="0.0" width="694" height="13440"/>
+                                                        <rect key="frame" x="-10" y="0.0" width="694" height="13690"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5uJ-gu-VNY">
-                                                                <rect key="frame" x="-15" y="0.0" width="724" height="13440"/>
+                                                                <rect key="frame" x="-15" y="0.0" width="724" height="13690"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6oE-pc-fyC" userLabel="Stack Left View">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="200" height="13440"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="200" height="13690"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FMM-Vo-nHi">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -82,20 +82,20 @@
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XEr-JF-BNp">
-                                                                                <rect key="frame" x="0.0" y="370" width="150" height="1800"/>
+                                                                                <rect key="frame" x="0.0" y="370" width="150" height="1900"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="height" constant="1800" id="9ZQ-Rg-oKV"/>
+                                                                                    <constraint firstAttribute="height" constant="1900" id="9ZQ-Rg-oKV"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_tallu" translatesAutoresizingMaskIntoConstraints="NO" id="jcz-l0-E7f">
-                                                                                <rect key="frame" x="0.0" y="2180" width="200" height="200"/>
+                                                                                <rect key="frame" x="0.0" y="2280" width="200" height="200"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="200" id="6y6-wt-TPz"/>
                                                                                     <constraint firstAttribute="height" constant="200" id="8B0-IH-ome"/>
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHZ-4C-wXQ">
-                                                                                <rect key="frame" x="0.0" y="2390" width="150" height="11050"/>
+                                                                                <rect key="frame" x="0.0" y="2490" width="150" height="11200"/>
                                                                             </view>
                                                                         </subviews>
                                                                         <constraints>
@@ -103,10 +103,10 @@
                                                                         </constraints>
                                                                     </stackView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mm8-sr-Gde">
-                                                                        <rect key="frame" x="200" y="6656" width="324" height="128"/>
+                                                                        <rect key="frame" x="200" y="6781" width="324" height="128"/>
                                                                     </view>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uLy-rB-X8V" userLabel="Stack Right View">
-                                                                        <rect key="frame" x="524" y="0.0" width="200" height="13440"/>
+                                                                        <rect key="frame" x="524" y="0.0" width="200" height="13690"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpb-aW-u5g">
                                                                                 <rect key="frame" x="50" y="0.0" width="150" height="1150"/>
@@ -122,20 +122,20 @@
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="An2-qK-ZY6">
-                                                                                <rect key="frame" x="50" y="1370" width="150" height="1850"/>
+                                                                                <rect key="frame" x="50" y="1370" width="150" height="1900"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="height" constant="1850" id="Vaz-lv-HN9"/>
+                                                                                    <constraint firstAttribute="height" constant="1900" id="Vaz-lv-HN9"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_bungko" translatesAutoresizingMaskIntoConstraints="NO" id="YY2-vw-2B7">
-                                                                                <rect key="frame" x="0.0" y="3230" width="200" height="200"/>
+                                                                                <rect key="frame" x="0.0" y="3280" width="200" height="200"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="200" id="xl3-bs-vpS"/>
                                                                                     <constraint firstAttribute="height" constant="200" id="zYO-wz-WEp"/>
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5d-2h-q6L">
-                                                                                <rect key="frame" x="50" y="3440" width="150" height="10000"/>
+                                                                                <rect key="frame" x="50" y="3490" width="150" height="10200"/>
                                                                             </view>
                                                                         </subviews>
                                                                         <constraints>
@@ -161,7 +161,7 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="130" translatesAutoresizingMaskIntoConstraints="NO" id="8hv-bC-LZx" userLabel="StackView Scroll View">
-                                                        <rect key="frame" x="50" y="0.0" width="574" height="13440"/>
+                                                        <rect key="frame" x="50" y="0.0" width="574" height="13690"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="7wh-CK-5IQ" userLabel="StackView Tim Pembuat">
                                                                 <rect key="frame" x="0.0" y="0.0" width="574" height="1439.5"/>
@@ -365,7 +365,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="mOk-Mf-r2g" userLabel="StackView Musik Didukung">
-                                                                <rect key="frame" x="0.0" y="1569.5" width="574" height="467.5"/>
+                                                                <rect key="frame" x="0.0" y="1569.5" width="574" height="549.5"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_subtitle2" translatesAutoresizingMaskIntoConstraints="NO" id="5Z2-5G-mRj">
                                                                         <rect key="frame" x="44" y="0.0" width="486" height="49.5"/>
@@ -374,16 +374,24 @@
                                                                         <rect key="frame" x="83.5" y="64.5" width="407" height="257"/>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QAT-oL-BbH">
-                                                                        <rect key="frame" x="42" y="336.5" width="490.5" height="58"/>
+                                                                        <rect key="frame" x="42" y="336.5" width="490.5" height="99"/>
                                                                         <subviews>
+                                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hnb-WW-yRn">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="490.5" height="41"/>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <buttonConfiguration key="configuration" style="plain" image="playsound"/>
+                                                                                <connections>
+                                                                                    <action selector="tapPlayLandingABM:" destination="k61-Qp-Kfm" eventType="touchUpInside" id="jpT-HM-DCm"/>
+                                                                                </connections>
+                                                                            </button>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="“Hutan Tropis” " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5d-Fm-4au">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="490.5" height="29"/>
+                                                                                <rect key="frame" x="0.0" y="41" width="490.5" height="29"/>
                                                                                 <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="30"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dikomposisi oleh Widiyanto Sutanto " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIG-Vm-yHu">
-                                                                                <rect key="frame" x="0.0" y="29" width="490.5" height="29"/>
+                                                                                <rect key="frame" x="0.0" y="70" width="490.5" height="29"/>
                                                                                 <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="30"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -391,16 +399,24 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yTa-cf-vt5">
-                                                                        <rect key="frame" x="42" y="409.5" width="490.5" height="58"/>
+                                                                        <rect key="frame" x="42" y="450.5" width="490.5" height="99"/>
                                                                         <subviews>
+                                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rr-aI-AJM">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="490.5" height="41"/>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <buttonConfiguration key="configuration" style="plain" image="playsound"/>
+                                                                                <connections>
+                                                                                    <action selector="tapPlayGameABM:" destination="k61-Qp-Kfm" eventType="touchUpInside" id="PUt-z7-gbK"/>
+                                                                                </connections>
+                                                                            </button>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="“Jalan-Jalan Sore” " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkW-3U-8lD">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="490.5" height="29"/>
+                                                                                <rect key="frame" x="0.0" y="41" width="490.5" height="29"/>
                                                                                 <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="30"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dikomposisi oleh Widiyanto Sutanto " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRo-Q6-jXe">
-                                                                                <rect key="frame" x="0.0" y="29" width="490.5" height="29"/>
+                                                                                <rect key="frame" x="0.0" y="70" width="490.5" height="29"/>
                                                                                 <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="30"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -410,7 +426,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MSd-d0-lmj" userLabel="StackView Cerita &amp; Illustrasi">
-                                                                <rect key="frame" x="0.0" y="2167" width="574" height="150"/>
+                                                                <rect key="frame" x="0.0" y="2249" width="574" height="150"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_subtitle3" translatesAutoresizingMaskIntoConstraints="NO" id="BhM-6f-MsH">
                                                                         <rect key="frame" x="0.0" y="0.0" width="574" height="51"/>
@@ -430,79 +446,79 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TbE-tZ-Nbw" userLabel="StackView Musik Latar">
-                                                                <rect key="frame" x="0.0" y="2447" width="574" height="10325"/>
+                                                                <rect key="frame" x="0.0" y="2529" width="574" height="10493"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_subtitle4" translatesAutoresizingMaskIntoConstraints="NO" id="hSl-v0-y0P">
                                                                         <rect key="frame" x="67.5" y="0.0" width="439" height="46"/>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geoffharvey - Best Adventure Ever" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJL-Ik-ltG">
-                                                                        <rect key="frame" x="88.5" y="874" width="397.5" height="24.5"/>
+                                                                        <rect key="frame" x="88.5" y="888" width="397.5" height="24.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lesfm - Kingdom of Fantasy Epic Cinematic" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlA-7C-1id">
-                                                                        <rect key="frame" x="41.5" y="1726.5" width="491.5" height="24.5"/>
+                                                                        <rect key="frame" x="41.5" y="1754.5" width="491.5" height="24.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FunWithSound - Success Fanfare Trumpets" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iy6-k4-BNK">
-                                                                        <rect key="frame" x="47" y="2579.5" width="480" height="24.5"/>
+                                                                        <rect key="frame" x="47" y="2621.5" width="480" height="24.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geoffharvey - Magic In the Air" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q60-cN-dZa">
-                                                                        <rect key="frame" x="113" y="3432" width="348.5" height="24.5"/>
+                                                                        <rect key="frame" x="113" y="3488" width="348.5" height="24.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lexin Music - Midnight" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cos-v0-M52">
-                                                                        <rect key="frame" x="161" y="4284.5" width="252.5" height="24.5"/>
+                                                                        <rect key="frame" x="161" y="4354.5" width="252.5" height="24.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vadim Krahkhmal - Journey To The Toucan Isle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIE-uE-L3X">
-                                                                        <rect key="frame" x="23" y="5137" width="528.5" height="24.5"/>
+                                                                        <rect key="frame" x="23" y="5221" width="528.5" height="24.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jackmichaelking - Gentle Ocean Waves Birdsong and Gull" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVm-kX-TTH">
-                                                                        <rect key="frame" x="17.5" y="5989.5" width="539.5" height="48.5"/>
+                                                                        <rect key="frame" x="17.5" y="6087.5" width="539.5" height="48.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I Music Unlimited - Cinematic Epic Trailer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNm-Rw-Ftu">
-                                                                        <rect key="frame" x="55.5" y="6866" width="463" height="24.5"/>
+                                                                        <rect key="frame" x="55.5" y="6978" width="463" height="24.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brolefilmer - Jungle Sneak, Track by, Kelly James" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USt-Cz-qKP">
-                                                                        <rect key="frame" x="11.5" y="7719" width="551.5" height="24.5"/>
+                                                                        <rect key="frame" x="11.5" y="7845" width="551.5" height="24.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MusicLFiles - Final Battle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRI-kl-931">
-                                                                        <rect key="frame" x="150.5" y="8571.5" width="273.5" height="24.5"/>
+                                                                        <rect key="frame" x="150.5" y="8711.5" width="273.5" height="24.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Solbox - This Is War (Version C)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wb8-GE-qOD">
-                                                                        <rect key="frame" x="111.5" y="9424" width="351" height="24.5"/>
+                                                                        <rect key="frame" x="111.5" y="9578" width="351" height="24.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REDproductions - Game Comedy Interesting Playful Sweet Bright Childish Music" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJQ-wR-ovW">
-                                                                        <rect key="frame" x="36.5" y="10276.5" width="501.5" height="48.5"/>
+                                                                        <rect key="frame" x="36.5" y="10444.5" width="501.5" height="48.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -510,7 +526,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RhI-Yn-53d" userLabel="StackView Efek Suara">
-                                                                <rect key="frame" x="0.0" y="12902" width="574" height="358"/>
+                                                                <rect key="frame" x="0.0" y="13152" width="574" height="358"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_subtitle5" translatesAutoresizingMaskIntoConstraints="NO" id="XHk-oO-IGf">
                                                                         <rect key="frame" x="78" y="0.0" width="418" height="46"/>
@@ -566,7 +582,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hnu-PH-sy6">
-                                                                <rect key="frame" x="0.0" y="13390" width="574" height="50"/>
+                                                                <rect key="frame" x="0.0" y="13640" width="574" height="50"/>
                                                             </view>
                                                         </subviews>
                                                     </stackView>
@@ -624,6 +640,8 @@
                     </view>
                     <connections>
                         <outlet property="cardBackground" destination="ORr-ke-pCf" id="Pjl-gU-y1u"/>
+                        <outlet property="playGameABM" destination="6rr-aI-AJM" id="Ad1-Lm-296"/>
+                        <outlet property="playLandingABM" destination="Hnb-WW-yRn" id="Afo-iW-BLD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yi-hz-cs3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -915,6 +933,7 @@
         <image name="about_subtitle5" width="418" height="46"/>
         <image name="about_tallu" width="360" height="360"/>
         <image name="about_title" width="846.5" height="124.5"/>
+        <image name="playsound" width="25.5" height="27"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
