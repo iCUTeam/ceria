@@ -356,12 +356,13 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
                 
                 //klo dia nabrak, dia bakal immune for 5 second sebelum dia balik bisa nabrak lagi
                 immune.toggle()
-
-                Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
-                    DispatchQueue.main.async {
+                
+                DispatchQueue.main.async {
+                    let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+                        
                         self.immuneCount+=1
-
-                        if self.immuneCount == 5
+                        
+                        if self.immuneCount == 1
                         {
                             self.immune.toggle()
                             timer.invalidate()

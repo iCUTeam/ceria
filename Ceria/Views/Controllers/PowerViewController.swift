@@ -304,6 +304,7 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
     func nextTapped() {
         Sound.stopAll()
         powerVoicePlayer.stop()
+        AudioSFXPlayer.shared.playCommonSFX()
         switch defaults.integer(forKey: "powerIndex") {
         case 1:
             coordinator?.toTutorial()

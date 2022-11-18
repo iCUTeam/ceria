@@ -44,7 +44,7 @@ class InstructionViewController: UIViewController, Storyboarded {
     }()
     
     private lazy var strictConsentTextBox: RestartConfirmationView = {
-        let tutorial = RestartConfirmationView(content: "Disarankan untuk permainan pertama kali, orang tua dapat membuat anak menikmati narasi tanpa dapat menjedanya. Ingin mengaktifkan fitur ini?")
+        let tutorial = RestartConfirmationView(content: "Disarankan untuk permainan pertama kali, membantu anak lebih fokus pada cerita dan instruksi. Mengaktifkan?")
         return tutorial
     }()
     
