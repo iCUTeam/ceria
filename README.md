@@ -1,12 +1,12 @@
 # Carita
 
-(Cerita Rakyat Interaktif Anak)
+(Cerita Rakyat Interaktif Anak - #RumahmuPetualanganmu)
 
 MACRO Challenge ADA@BINUS - C5 | iCU (i Curry U) - Group 6 Afternoon
 
 - UI Framework: UIKit Hybrid (Programmatically + Storyboard)
 
-- Tech Stack: TBA
+- Tech Stack: PencilKit, PDFKit, SceneKit, ARKit, RealityKit, AVFoundation, CoreMotion
 
 
 
@@ -16,6 +16,8 @@ MACRO Challenge ADA@BINUS - C5 | iCU (i Curry U) - Group 6 Afternoon
 ceria
 |
 |__ Resources
+|   |
+|   |__ Files
 |   |
 |   |__ Audio
 |   |   |
@@ -31,9 +33,9 @@ ceria
 |   |
 |   |__ Assets
 |   |   |
-|   |   |__ Illustrations
+|   |   |__ Common
 |   |   |
-|   |   |__ Buttons
+|   |   |__ Pages
 |   |
 |   |__ Models
 |
@@ -49,6 +51,8 @@ ceria
 |   |
 |   |__ Helpers
 |       |
+|       |__ 3D Animation
+|       |
 |       |__ Audio Players
 |       |
 |       |__ PencilKit
@@ -63,7 +67,7 @@ ceria
 |
 |__ Models
 |   |
-|   |__ JSON Files
+|   |__ JSON_Files
 |
 |__ Views
 |   |
@@ -74,12 +78,6 @@ ceria
 |   |   |__ Pages
 |   |       |
 |   |       |__ Landing
-|   |       |
-|   |       |__ About
-|   |       |
-|   |       |__ Collection
-|   |       |
-|   |       |__ Instruction
 |   |       |
 |   |       |__ Story
 |   |       |
@@ -93,13 +91,7 @@ ceria
 |   |       |   |
 |   |       |   |__ Challenge
 |   |       |   |   |
-|   |       |   |   |__ Game 1
-|   |       |   |   |
 |   |       |   |   |__ Game 2
-|   |       |   |   |
-|   |       |   |   |__ Game 3
-|   |       |   |   |
-|   |       |   |   |__ Game 4
 |   |       |   |
 |   |       |   |__ Success 
 |   |       |
