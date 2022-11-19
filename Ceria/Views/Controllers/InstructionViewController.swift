@@ -44,7 +44,7 @@ class InstructionViewController: UIViewController, Storyboarded {
     }()
     
     private lazy var strictConsentTextBox: RestartConfirmationView = {
-        let tutorial = RestartConfirmationView(content: "Disarankan untuk permainan pertama kali, membantu anak lebih fokus pada cerita dan instruksi. Mengaktifkan?")
+        let tutorial = RestartConfirmationView(content: "Anak akan menunggu voice-over tuntas agar dapat melanjutkan ke tahap berikutnya. Mengaktifkan?")
         return tutorial
     }()
     
@@ -261,7 +261,7 @@ class InstructionViewController: UIViewController, Storyboarded {
         checkboxVoice.widthAnchor.constraint(equalToConstant: 50).isActive = true
         
         let agreeLabelVoice = UILabel()
-        agreeLabelVoice.text = "(Opsional) Saya ingin anak saya mendengarkan setiap narasi hingga tuntas."
+        agreeLabelVoice.text = "(Opsional) Aktifkan mode fokus, agar anak mengikuti cerita dan instruksi secara jelas dan tuntas."
         agreeLabelVoice.textColor = .white
         agreeLabelVoice.textAlignment = .left
         agreeLabelVoice.font = UIFont.scriptFont(size: 20)
