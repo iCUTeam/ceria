@@ -57,6 +57,8 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
     
     var immuneCount = 0
     
+    var backToHome = false
+    
     var ruaImage: UIImageView!
     
     override func viewDidLoad() {
@@ -76,6 +78,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         Sound.stopAll()
         Sound.play(file: "rua_game_1.m4a")
         tapLayer.isHidden = false
+        backToHome = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,6 +100,7 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
     @objc
     func homeTapped() {
         coordinator?.toLanding()
+        backToHome = true
         AudioSFXPlayer.shared.playCommonSFX()
         Sound.stopAll()
         AudioBGMPlayer.shared.stopGameBGM()
@@ -236,6 +240,10 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         sceneView.isUserInteractionEnabled = false
         
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
+            
+            if self.backToHome {
+                timer.invalidate()
+            }
             
             if self.gameStarted
             {
