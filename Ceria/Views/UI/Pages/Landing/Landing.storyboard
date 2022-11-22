@@ -57,16 +57,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="674" height="915"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1W-5j-XMg" userLabel="ContentView">
-                                                <rect key="frame" x="0.0" y="0.0" width="674" height="13690"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="674" height="13590"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ylp-Xh-8O5" userLabel="Character Background">
-                                                        <rect key="frame" x="-10" y="0.0" width="694" height="13690"/>
+                                                        <rect key="frame" x="-10" y="0.0" width="694" height="13590"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5uJ-gu-VNY">
-                                                                <rect key="frame" x="-15" y="0.0" width="724" height="13690"/>
+                                                                <rect key="frame" x="-15" y="0.0" width="724" height="13590"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6oE-pc-fyC" userLabel="Stack Left View">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="200" height="13690"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="200" height="13590"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FMM-Vo-nHi">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -95,7 +95,7 @@
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHZ-4C-wXQ">
-                                                                                <rect key="frame" x="0.0" y="2490" width="150" height="11200"/>
+                                                                                <rect key="frame" x="0.0" y="2490" width="150" height="11100"/>
                                                                             </view>
                                                                         </subviews>
                                                                         <constraints>
@@ -103,10 +103,10 @@
                                                                         </constraints>
                                                                     </stackView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mm8-sr-Gde">
-                                                                        <rect key="frame" x="200" y="6781" width="324" height="128"/>
+                                                                        <rect key="frame" x="200" y="6731" width="324" height="128"/>
                                                                     </view>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uLy-rB-X8V" userLabel="Stack Right View">
-                                                                        <rect key="frame" x="524" y="0.0" width="200" height="13690"/>
+                                                                        <rect key="frame" x="524" y="0.0" width="200" height="13590"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpb-aW-u5g">
                                                                                 <rect key="frame" x="50" y="0.0" width="150" height="1150"/>
@@ -122,20 +122,20 @@
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="An2-qK-ZY6">
-                                                                                <rect key="frame" x="50" y="1370" width="150" height="1900"/>
+                                                                                <rect key="frame" x="50" y="1370" width="150" height="2000"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="height" constant="1900" id="Vaz-lv-HN9"/>
+                                                                                    <constraint firstAttribute="height" constant="2000" id="Vaz-lv-HN9"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_bungko" translatesAutoresizingMaskIntoConstraints="NO" id="YY2-vw-2B7">
-                                                                                <rect key="frame" x="0.0" y="3280" width="200" height="200"/>
+                                                                                <rect key="frame" x="0.0" y="3380" width="200" height="200"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="200" id="xl3-bs-vpS"/>
                                                                                     <constraint firstAttribute="height" constant="200" id="zYO-wz-WEp"/>
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5d-2h-q6L">
-                                                                                <rect key="frame" x="50" y="3490" width="150" height="10200"/>
+                                                                                <rect key="frame" x="50" y="3590" width="150" height="10000"/>
                                                                             </view>
                                                                         </subviews>
                                                                         <constraints>
@@ -161,7 +161,7 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="130" translatesAutoresizingMaskIntoConstraints="NO" id="8hv-bC-LZx" userLabel="StackView Scroll View">
-                                                        <rect key="frame" x="50" y="0.0" width="574" height="13690"/>
+                                                        <rect key="frame" x="50" y="0.0" width="574" height="13590"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="7wh-CK-5IQ" userLabel="StackView Tim Pembuat">
                                                                 <rect key="frame" x="0.0" y="0.0" width="574" height="1439.5"/>
@@ -446,79 +446,79 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TbE-tZ-Nbw" userLabel="StackView Musik Latar">
-                                                                <rect key="frame" x="0.0" y="2529" width="574" height="10493"/>
+                                                                <rect key="frame" x="0.0" y="2529" width="574" height="10393"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_subtitle4" translatesAutoresizingMaskIntoConstraints="NO" id="hSl-v0-y0P">
                                                                         <rect key="frame" x="67.5" y="0.0" width="439" height="46"/>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geoffharvey - Best Adventure Ever" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJL-Ik-ltG">
-                                                                        <rect key="frame" x="88.5" y="888" width="397.5" height="24.5"/>
+                                                                        <rect key="frame" x="88.5" y="880" width="397.5" height="24.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lesfm - Kingdom of Fantasy Epic Cinematic" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlA-7C-1id">
-                                                                        <rect key="frame" x="41.5" y="1754.5" width="491.5" height="24.5"/>
+                                                                        <rect key="frame" x="41.5" y="1738" width="491.5" height="24.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FunWithSound - Success Fanfare Trumpets" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iy6-k4-BNK">
-                                                                        <rect key="frame" x="47" y="2621.5" width="480" height="24.5"/>
+                                                                        <rect key="frame" x="47" y="2596.5" width="480" height="24.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geoffharvey - Magic In the Air" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q60-cN-dZa">
-                                                                        <rect key="frame" x="113" y="3488" width="348.5" height="24.5"/>
+                                                                        <rect key="frame" x="113" y="3454.5" width="348.5" height="24.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lexin Music - Midnight" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cos-v0-M52">
-                                                                        <rect key="frame" x="161" y="4354.5" width="252.5" height="24.5"/>
+                                                                        <rect key="frame" x="161" y="4313" width="252.5" height="24.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vadim Krahkhmal - Journey To The Toucan Isle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIE-uE-L3X">
-                                                                        <rect key="frame" x="23" y="5221" width="528.5" height="24.5"/>
+                                                                        <rect key="frame" x="23" y="5171" width="528.5" height="24.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jackmichaelking - Gentle Ocean Waves Birdsong and Gull" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVm-kX-TTH">
-                                                                        <rect key="frame" x="17.5" y="6087.5" width="539.5" height="48.5"/>
+                                                                        <rect key="frame" x="17.5" y="6029.5" width="539.5" height="48.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I Music Unlimited - Cinematic Epic Trailer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNm-Rw-Ftu">
-                                                                        <rect key="frame" x="55.5" y="6978" width="463" height="24.5"/>
+                                                                        <rect key="frame" x="55.5" y="6911.5" width="463" height="24.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brolefilmer - Jungle Sneak, Track by, Kelly James" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USt-Cz-qKP">
-                                                                        <rect key="frame" x="11.5" y="7845" width="551.5" height="24.5"/>
+                                                                        <rect key="frame" x="11.5" y="7770" width="551.5" height="24.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MusicLFiles - Final Battle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRI-kl-931">
-                                                                        <rect key="frame" x="150.5" y="8711.5" width="273.5" height="24.5"/>
+                                                                        <rect key="frame" x="150.5" y="8628" width="273.5" height="24.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Solbox - This Is War (Version C)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wb8-GE-qOD">
-                                                                        <rect key="frame" x="111.5" y="9578" width="351" height="24.5"/>
+                                                                        <rect key="frame" x="111.5" y="9486.5" width="351" height="24.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REDproductions - Game Comedy Interesting Playful Sweet Bright Childish Music" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJQ-wR-ovW">
-                                                                        <rect key="frame" x="36.5" y="10444.5" width="501.5" height="48.5"/>
+                                                                        <rect key="frame" x="36.5" y="10344.5" width="501.5" height="48.5"/>
                                                                         <fontDescription key="fontDescription" name="StanberryRegular" family="Stanberry" pointSize="25"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -526,7 +526,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RhI-Yn-53d" userLabel="StackView Efek Suara">
-                                                                <rect key="frame" x="0.0" y="13152" width="574" height="358"/>
+                                                                <rect key="frame" x="0.0" y="13052" width="574" height="358"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_subtitle5" translatesAutoresizingMaskIntoConstraints="NO" id="XHk-oO-IGf">
                                                                         <rect key="frame" x="78" y="0.0" width="418" height="46"/>
@@ -582,7 +582,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hnu-PH-sy6">
-                                                                <rect key="frame" x="0.0" y="13640" width="574" height="50"/>
+                                                                <rect key="frame" x="0.0" y="13540" width="574" height="50"/>
                                                             </view>
                                                         </subviews>
                                                     </stackView>

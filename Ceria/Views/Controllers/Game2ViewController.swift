@@ -119,7 +119,56 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         let w: CGFloat
         let h: CGFloat
         
-        if screenWidth <= 834.0 {
+        switch screenWidth {
+        case 744: //7.9 inch
+            x = 150
+            y = 30
+            
+            x2 = 630
+            y2 = 30
+            
+            x3 = 200
+            y3 = 80
+            
+            w = 510
+            h = 10
+        case 768: //8.3 inch
+            x = 150
+            y = 30
+            
+            x2 = 650
+            y2 = 30
+            
+            x3 = 200
+            y3 = 80
+            
+            w = 530
+            h = 10
+        case 810: //10.2 inch
+            x = 150
+            y = 30
+            
+            x2 = 690
+            y2 = 30
+            
+            x3 = 200
+            y3 = 80
+            
+            w = 570
+            h = 10
+        case 820: //10.9 inch
+            x = 150
+            y = 30
+            
+            x2 = 700
+            y2 = 30
+            
+            x3 = 200
+            y3 = 80
+            
+            w = 580
+            h = 10
+        case 834: //10.5 & 11 inch
             x = 150
             y = 30
             
@@ -131,16 +180,16 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
             
             w = 600
             h = 10
-        } else {
+        default: //12.9 inch
             x = 150
             y = 30
-            
+
             x2 = 900
             y2 = 30
-            
+
             x3 = 200
             y3 = 80
-            
+
             w = 760
             h = 10
         }
@@ -222,9 +271,18 @@ class Game2ViewController: UIViewController, SCNSceneRendererDelegate, SCNPhysic
         let screenWidth: CGFloat = screenSize.width
         let increment: CGFloat
         
-        if screenWidth == 834.0 {
+        switch screenWidth {
+        case 744: //7.9 inch
+            increment = 1.35
+        case 768: //8.3 inch
+            increment = 1.41
+        case 810: //10.2 inch
+            increment = 1.53
+        case 820: //10.9 inch
+            increment = 1.56
+        case 834: //10.5 & 11 inch
             increment = 1.6
-        } else {
+        default: //12.9 inch
             increment = 2.1
         }
         

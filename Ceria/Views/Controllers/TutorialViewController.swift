@@ -226,9 +226,18 @@ class TutorialViewController: UIViewController, AVAudioPlayerDelegate, Storyboar
         let screenWidth: CGFloat = screenSize.width
         let constant: CGFloat
         
-        if screenWidth <= 834.0 {
+        switch screenWidth {
+        case 744: //7.9 inch
             constant = 200
-        } else {
+        case 768: //8.3 inch
+            constant = 250
+        case 810: //10.2 inch
+            constant = 220
+        case 820: //10.9 inch
+            constant = 200
+        case 834: //10.5 & 11 inch
+            constant = 200
+        default: //12.9 inch
             constant = 100
         }
         

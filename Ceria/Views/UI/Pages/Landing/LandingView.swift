@@ -17,10 +17,37 @@ final class LandingView: UIView {
     }
     */
     private lazy var landingLabel: UILabel = {
+        
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        let constant: CGFloat
+        let size: CGFloat
+        
+        switch screenWidth {
+        case 744: //7.9 inch
+            constant = 10.0
+            size = 32
+        case 768: //8.3 inch
+            constant = 10.0
+            size = 33
+        case 810: //10.2 inch
+            constant = 10.0
+            size = 34
+        case 820: //10.9 inch
+            constant = 10.0
+            size = 35
+        case 834: //10.5 & 11 inch
+            constant = 10.0
+            size = 36
+        default: //12.9 inch
+            constant = 10.0
+            size = 36
+        }
+        
         let label = UILabel()
         label.text = "Cerita rakyat Sulawesi Selatan tentang keempat\nbersaudara bersama-sama menyelamatkan\ntuan puteri yang diculik"
-        label.setLineHeight(lineHeight: 10.0)
-        label.font = UIFont.scriptFont(size: 36)
+        label.setLineHeight(lineHeight: constant)
+        label.font = UIFont.scriptFont(size: size)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.numberOfLines = 0

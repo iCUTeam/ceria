@@ -254,29 +254,82 @@ class ReflectionViewController: UIViewController, AVAudioPlayerDelegate, Storybo
         let screenWidth = screenSize.width
         var boxHeight: CGFloat = 0
         
-        if screenWidth == 834.0 {
+        switch screenWidth {
+        case 744: //7.9 inch
             switch promptTextLine1 {
             case 1:
                 boxHeight = 60
             case 2:
                 boxHeight = 100
             case 3:
-                boxHeight = 125
+                boxHeight = 120
             case 4:
-                boxHeight = 150
+                boxHeight = 160
             default:
                 print("they are not this long!")
             }
-        } else {
+        case 768: //8.3 inch
+            switch promptTextLine1 {
+            case 1:
+                boxHeight = 60
+            case 2:
+                boxHeight = 100
+            case 3:
+                boxHeight = 120
+            case 4:
+                boxHeight = 160
+            default:
+                print("they are not this long!")
+            }
+        case 810: //10.2 inch
+            switch promptTextLine1 {
+            case 1:
+                boxHeight = 60
+            case 2:
+                boxHeight = 100
+            case 3:
+                boxHeight = 120
+            case 4:
+                boxHeight = 160
+            default:
+                print("they are not this long!")
+            }
+        case 820: //10.9 inch
+            switch promptTextLine1 {
+            case 1:
+                boxHeight = 60
+            case 2:
+                boxHeight = 100
+            case 3:
+                boxHeight = 120
+            case 4:
+                boxHeight = 160
+            default:
+                print("they are not this long!")
+            }
+        case 834: //10.5 & 11 inch
+            switch promptTextLine1 {
+            case 1:
+                boxHeight = 60
+            case 2:
+                boxHeight = 100
+            case 3:
+                boxHeight = 120
+            case 4:
+                boxHeight = 160
+            default:
+                print("they are not this long!")
+            }
+        default: //12.9 inch
             switch promptTextLine2 {
             case 1:
                 boxHeight = 60
             case 2:
                 boxHeight = 100
             case 3:
-                boxHeight = 125
+                boxHeight = 130
             case 4:
-                boxHeight = 170
+                boxHeight = 180
             default:
                 print("they are not this long!")
             }

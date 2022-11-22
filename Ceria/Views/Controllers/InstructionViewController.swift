@@ -15,6 +15,7 @@ class InstructionViewController: UIViewController, Storyboarded {
     private let checkboxVoice = Checkbox()
     var isSkipDisabled = false
     var pdfView: PDFView! = nil
+    var const: CGFloat = 0
     
     private lazy var homeButton: MakeButton = {
         let button = MakeButton(image: "home.png", size: CGSize(width: 100, height: 100))
@@ -81,7 +82,7 @@ class InstructionViewController: UIViewController, Storyboarded {
         labelHalaman.textColor = .white
         labelHalaman.font = UIFont.scriptFont(size: 26)
         labelHalaman.textAlignment = .center
-        labelHalaman.heightAnchor.constraint(equalToConstant: 43).isActive = true
+        labelHalaman.heightAnchor.constraint(equalToConstant: 28).isActive = true
         
         let stackTitle = UIStackView(arrangedSubviews: [titleImageView, labelHalaman])
         stackTitle.axis = .vertical
@@ -153,7 +154,7 @@ class InstructionViewController: UIViewController, Storyboarded {
         //MARK: Langkah 2 Stack Vertical
         let stackLabelDua = UIStackView(arrangedSubviews: [labelDua])
         stackLabelDua.backgroundColor = UIColor(red: 69.0/255, green: 173.0/255, blue: 226.0/225, alpha: 1)
-        stackLabelDua.frame = CGRect(x: 0, y: 0, width: 200, height: 194)
+        stackLabelDua.frame = CGRect(x: 0, y: 0, width: 200, height: const)
         stackLabelDua.roundCornerView(corners: [.topLeft, .bottomLeft], radius: 20)
         stackLabelDua.widthAnchor.constraint(equalToConstant: 177).isActive = true
         
@@ -186,7 +187,7 @@ class InstructionViewController: UIViewController, Storyboarded {
         stackInstruksiDua.spacing = 20
         stackInstruksiDua.distribution = .fill
         stackInstruksiDua.layer.cornerRadius = 20
-        stackInstruksiDua.heightAnchor.constraint(equalToConstant: 194).isActive = true
+        stackInstruksiDua.heightAnchor.constraint(equalToConstant: const).isActive = true
         stackInstruksiDua.frame = view.bounds
         
         //MARK: Langkah 3
@@ -261,7 +262,7 @@ class InstructionViewController: UIViewController, Storyboarded {
         checkboxVoice.widthAnchor.constraint(equalToConstant: 50).isActive = true
         
         let agreeLabelVoice = UILabel()
-        agreeLabelVoice.text = "Aktifkan mode fokus, agar anak mengikuti cerita secara terarah dan tuntas."
+        agreeLabelVoice.text = "Mode fokus, agar anak mengikuti cerita secara terarah dan tuntas."
         agreeLabelVoice.textColor = .white
         agreeLabelVoice.textAlignment = .left
         agreeLabelVoice.font = UIFont.scriptFont(size: 20)
@@ -314,6 +315,12 @@ class InstructionViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         startStoryButton.isEnabled = false
         pdfView = PDFView(frame: self.view.bounds)
+        
+        if UIScreen.main.bounds.width == 768 {
+            const = 150
+        } else {
+            const = 194
+        }
         
         view.addSubview(background)
         view.addSubview(instructionStackView)
@@ -471,10 +478,23 @@ class InstructionViewController: UIViewController, Storyboarded {
         let constant: CGFloat
         let constant2: CGFloat
         
-        if screenWidth <= 834.0 {
+        switch screenWidth {
+        case 744: //7.9 inch
             constant = 500
             constant2 = 50
-        } else {
+        case 768: //8.3 inch
+            constant = 470
+            constant2 = 100
+        case 810: //10.2 inch
+            constant = 500
+            constant2 = 50
+        case 820: //10.9 inch
+            constant = 500
+            constant2 = 50
+        case 834: //10.5 & 11 inch
+            constant = 500
+            constant2 = 50
+        default: //12.9 inch
             constant = 580
             constant2 = -70
         }

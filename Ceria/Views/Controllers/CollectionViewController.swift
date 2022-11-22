@@ -63,23 +63,31 @@ class CollectionViewController: UIViewController, Storyboarded {
         let screenWidth: CGFloat = screenSize.width
         let x: CGFloat
         let y: CGFloat
-        let w: CGFloat
-        let h: CGFloat
         
-        if screenWidth <= 834.0 {
+        switch screenWidth {
+        case 744: //7.9 inch
+            x = 25
+            y = 150
+        case 768: //8.3 inch
+            x = 30
+            y = 80
+        case 810: //10.2 inch
+            x = 55
+            y = 130
+        case 820: //10.9 inch
+            x = 60
+            y = 150
+        case 834: //10.5 & 11 inch
             x = 65
             y = 150
-            w = 700
-            h = 1000
-        } else {
+        default: //12.9 inch
             x = 160
             y = 200
-            w = 700
-            h = 1000
         }
+        
         view.addSubview(homeButton)
         view.addSubview(popupLayer)
-        collectionItem = CollectionItem(frame: CGRect(x: x, y: y, width: w, height: h))
+        collectionItem = CollectionItem(frame: CGRect(x: x, y: y, width: 700, height: 1000))
         collectionItem.roundCornerView(corners: .allCorners, radius: 30)
         view.addSubview(collectionItem)
         view.addSubview(closeButton)
@@ -263,10 +271,23 @@ class CollectionViewController: UIViewController, Storyboarded {
         let constant: CGFloat
         let constant2: CGFloat
         
-        if screenWidth <= 834.0 {
+        switch screenWidth {
+        case 744: //7.9 inch
+            constant = 100
+            constant2 = 645
+        case 768: //8.3 inch
+            constant = 30
+            constant2 = 670
+        case 810: //10.2 inch
+            constant = 90
+            constant2 = 700
+        case 820: //10.9 inch
             constant = 100
             constant2 = 700
-        } else {
+        case 834: //10.5 & 11 inch
+            constant = 100
+            constant2 = 700
+        default: //12.9 inch
             constant = 150
             constant2 = 800
         }

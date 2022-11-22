@@ -2189,7 +2189,7 @@
 				INFOPLIST_FILE = Ceria/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Carita;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.kids-games";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Kami membutuhkan izin orang tua untuk menggunakan fitur kamera pada iPad ini untuk menunjang permainan";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Aplikasi ini menggunakan kamera untuk mendeteksi kartu permainan, serta menampilkan validasinya dalam bentuk objek AR.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
@@ -2226,7 +2226,7 @@
 				INFOPLIST_FILE = Ceria/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Carita;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.kids-games";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Kami membutuhkan izin orang tua untuk menggunakan fitur kamera pada iPad ini untuk menunjang permainan";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Aplikasi ini menggunakan kamera untuk mendeteksi kartu permainan, serta menampilkan validasinya dalam bentuk objek AR.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;

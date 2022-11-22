@@ -38,10 +38,23 @@ class RestartConfirmationView: UIView {
         let constant: CGFloat
         let size: CGFloat
         
-        if screenWidth == 834.0 {
+        switch screenWidth {
+        case 744: //7.9 inch
+            constant = 11.0
+            size = 20
+        case 768: //8.3 inch
+            constant = 11.0
+            size = 20
+        case 810: //10.2 inch
+            constant = 12.0
+            size = 21
+        case 820: //10.9 inch
+            constant = 12.0
+            size = 21
+        case 834: //10.5 & 11 inch
             constant = 12.0
             size = 23
-        } else {
+        default: //12.9 inch
             constant = 15.0
             size = 25
         }

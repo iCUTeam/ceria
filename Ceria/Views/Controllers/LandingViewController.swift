@@ -108,9 +108,18 @@ class LandingViewController: UIViewController, Storyboarded {
         let screenHeight = screenSize.height
         let constant: CGFloat
         
-        if screenWidth <= 834.0 {
+        switch screenWidth {
+        case 744: //7.9 inch
+            constant = 220
+        case 768: //8.3 inch
+            constant = 180
+        case 810: //10.2 inch
+            constant = 200
+        case 820: //10.9 inch
             constant = 230
-        } else {
+        case 834: //10.5 & 11 inch
+            constant = 230
+        default: //12.9 inch
             constant = 270
         }
         

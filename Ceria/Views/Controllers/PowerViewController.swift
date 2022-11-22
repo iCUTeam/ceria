@@ -58,12 +58,33 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         let w: CGFloat
         let h: CGFloat
         
-        if screenWidth == 834.0 {
+        switch screenWidth {
+        case 744: //7.9 inch
+            x = -60
+            y = -10
+            w = 850
+            h = 1020
+        case 768: //8.3 inch
+            x = -10
+            y = -50
+            w = 800
+            h = 960
+        case 810: //10.2 inch
+            x = -10
+            y = -30
+            w = 850
+            h = 1020
+        case 820: //10.9 inch
             x = -10
             y = -10
             w = 850
             h = 1020
-        } else {
+        case 834: //10.5 & 11 inch
+            x = -10
+            y = -10
+            w = 850
+            h = 1020
+        default: //12.9 inch
             x = 15
             y = -15
             w = 1000
@@ -182,12 +203,33 @@ class PowerViewController: UIViewController, PKCanvasViewDelegate, CALayerDelega
         let w: CGFloat
         let h: CGFloat
         
-        if screenWidth <= 834.0 {
+        switch screenWidth {
+        case 744: //7.9 inch
+            x = -140
+            y = -125
+            w = 1020
+            h = 1190
+        case 768: //8.3 inch
+            x = -90
+            y = -165
+            w = 970
+            h = 1131.67
+        case 810: //10.2 inch
+            x = -90
+            y = -140
+            w = 1020
+            h = 1190
+        case 820: //10.9 inch
             x = -90
             y = -120
             w = 1020
             h = 1190
-        } else {
+        case 834: //10.5 & 11 inch
+            x = -90
+            y = -120
+            w = 1020
+            h = 1190
+        default: //12.9 inch
             x = -100
             y = -150
             w = 1200

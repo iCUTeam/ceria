@@ -37,10 +37,23 @@ final class StoryView: UIView {
         let constant: CGFloat
         let size: CGFloat
         
-        if screenWidth == 834.0 {
+        switch screenWidth {
+        case 744: //7.9 inch
+            constant = 10.0
+            size = 18.5
+        case 768: //8.3 inch
+            constant = 10.0
+            size = 19
+        case 810: //10.2 inch
+            constant = 12.0
+            size = 20
+        case 820: //10.9 inch
+            constant = 12.0
+            size = 20
+        case 834: //10.5 & 11 inch
             constant = 12.0
             size = 21
-        } else {
+        default: //12.9 inch
             constant = 15.0
             size = 23
         }
